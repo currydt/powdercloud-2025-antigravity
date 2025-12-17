@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PowderCloud - Form Elements</title>
+    <link href="/css/mainNew.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/resources/css/ext-all.css" />
+    <script type="module" src="/js/lit/AppLayout.js"></script>
+    <script type="module" src="/js/lit/pages/design-system/DesignSystemFormsPage.js"></script>
+</head>
+
+<body>
+    <app-layout id="layout">
+        <design-system-forms-page></design-system-forms-page>
+    </app-layout>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const layout = document.getElementById('layout');
+            if (layout) {
+                layout.breadcrumbs = [
+                    { label: 'Home', href: '/dashboard_lit.html' },
+                    { label: 'Design System', href: '/admin/design_system/overview.html' },
+                    { label: 'Forms', active: true }
+                ];
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Run Structure :: PowderCloud Antigravity</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- Global CSS -->
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="/css/mainNew.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" id="theme" href="/resources/css/xtheme-gray.css" />
+
+    <!-- Lit Components -->
+    <script type="module" src="/js/lit/AppLayout.js"></script>
+    <script type="module" src="/js/lit/pages/RunStructurePage.js"></script>
+</head>
+
+<body>
+    <app-layout id="layout">
+        <run-structure-page></run-structure-page>
+    </app-layout>
+
+    <script>
+        document.getElementById('layout').breadcrumbs = [
+            { label: 'Home', url: '/dashboard_lit.html' },
+            { label: 'Docs' },
+            { label: 'Run Structure' }
+        ];
+    </script>
+</body>
+
+</html>

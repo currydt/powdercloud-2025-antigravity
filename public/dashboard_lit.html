@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home :: PowderCloud Antigravity (Lit)</title>
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- Existing CSS for Pixel Perfection -->
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="/css/mainNew.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" id="theme" href="/resources/css/xtheme-gray.css" />
+
+    <!-- Highcharts -->
+    <script type="text/javascript" src="/js/jquery.min-v1.6.3.js"></script>
+    <script type="text/javascript" src="/js/highcharts.js"></script>
+
+    <!-- Lit Components -->
+    <script type="module" src="/js/lit/AppLayout.js"></script>
+    <script type="module" src="/js/lit/pages/DashboardPage.js"></script>
+</head>
+
+<body>
+    <app-layout id="layout">
+        <dashboard-page></dashboard-page>
+    </app-layout>
+
+    <script>
+        // Set breadcrumbs
+        const layout = document.getElementById('layout');
+        layout.breadcrumbs = [
+            { label: 'Home', url: '/management/' },
+            { label: 'Dashboard' }
+        ];
+    </script>
+</body>
+
+</html>

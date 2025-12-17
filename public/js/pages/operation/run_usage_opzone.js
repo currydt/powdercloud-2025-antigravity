@@ -1,0 +1,250 @@
+function Controller() {
+    this.projectRecord = null;
+
+    this.mainList = new pc.custom.ActivityList({
+        itemId: 'mainList'
+    });
+    this.mainDetail = new pc.custom.ActivityRunUsageOpZoneForm({
+        itemId: 'mainDetail'
+    });
+
+    this.mainContainer = new Ext.Panel({
+        renderTo: 'ext-loc',
+        plain: true,
+        width: '100%',
+        border: false,
+        layout: 'card',
+        activeItem: 0,
+        defaults: {
+            plain: true,
+            width: '100%'
+        },
+        items: [
+            this.mainList,
+            this.mainDetail
+        ],
+        listeners: {
+            scope: this,
+            render: function() {
+                this.init();
+            }
+        }
+    });
+}
+Controller.prototype.init = function() {
+    this.mainList.on('add', this.addActivity, this);
+    this.mainList.on('edit', this.editActivityEvent, this);
+    this.mainDetail.on('save', this.saveRuns, this);
+    this.mainDetail.on('continue', this.saveActivity, this);
+    this.mainDetail.on('cancel', this.cancelActivity, this);
+    this.mainDetail.projectCombo.show();
+}
+Controller.prototype.cancelActivity = function() {
+    this.mainContainer.getLayout().setActiveItem('mainList');
+    this.mainList.getStore().reload();
+}
+Controller.prototype.addActivity = function() {
+    this.record = new ActivityVO({
+        date_time_start: new Date(),
+	observer: party.key,
+        created_by_desc: party.name,
+        operation_desc: operation.name
+    });
+    this.editActivity();
+}
+Controller.prototype.editActivityEvent = function(record) {
+    this.record = record;
+    this.editActivity();
+}
+Controller.prototype.editActivity = function() {
+    if (this.mainDetail.storesToLoad.concat(['projects'])) {
+        Ext.each(this.mainDetail.storesToLoad.concat(['projects']), function(storeName) {
+            var store = Ext.StoreMgr.lookup(storeName);
+            if (store.getCount() == 0) {
+                Ext.StoreMgr.lookup(storeName).load();
+            }
+        }, this);
+    }
+    this.mainDetail.mainForm.getForm().setValues(newRecordForForm(this.record));
+    this.mainDetail.mainForm.fireEvent('setValue');
+    if (this.record.data.key) {
+        if (this.mainDetail.continueButton) {
+            // has continue step
+            this.mainDetail.formState('update');
+            //this.mainDetail.loadData();
+        }   else {
+            this.mainDetail.saveButton.enable();
+        }
+        // activity exists on server
+    } else {
+        if (this.mainDetail.continueButton) {
+            // has continue step
+            this.mainDetail.formState('create');
+        } else {
+            // doesn't have continue step
+            this.mainDetail.saveButton.enable();
+        }
+    }
+    this.mainDetail.mainForm.getForm().clearInvalid();
+    this.mainContainer.getLayout().setActiveItem('mainDetail');
+}
+Controller.prototype.saveRuns = function() {
+    this.saveActivity();
+    this.mainDetail.on('dataSaved', this.saveRunsComplete, this);
+    this.mainDetail.saveData();
+}
+Controller.prototype.saveRunsComplete = function() {
+    this.mainDetail.removeListener('dataSaved', this.saveRunsComplete, this);
+    this.cancelActivity();
+}
+Controller.prototype.saveActivity = function() {
+    this.mainDetail.continueButton.disable();
+    this.mainDetail.mainForm.getForm().submit({
+        url: this.mainDetail.mainForm.form_url,
+        scope: this,
+        waitMsg: 'Saving Data...',
+        params: this.mainDetail.mainForm.params,
+        submitEmptyText: false,
+        success: function(form, action) {
+            var key = Ext.decode(action.response.responseText).key;
+            this.mainDetail.mainForm.getForm().setValues({
+                key: key
+            });
+            var recordServerJSON = Ext.decode(action.response.responseText).record;
+            this.record = this.mainList.getStore().reader.extractData([recordServerJSON], true)[0];
+            this.mainDetail.continueButton.enable();
+	    if(this.mainDetail.continueButton.isVisible()){
+		this.editActivity();
+	    }	else {
+		// do nothing
+	    }
+        },
+        failure: function(form, action) {
+            this.mainDetail.continueButton.enable();
+            formFailureFunction();
+        }
+    });
+}
+Ext.onReady(function() {
+    Ext.QuickTips.init();
+    var controller = new Controller();
+});
+
+pc.custom.ActivityList = Ext.extend(Ext.grid.GridPanel, {
+    stripeRows: true,
+    height: 400,
+    width: '100%',
+    initComponent: function(){
+        this.tbar = new Ext.Toolbar({
+            items: [
+                '->',{
+                    text: 'Add',
+                    iconCls: 'add-icon',
+                    scope: this,
+                    handler: function() {
+                        this.fireEvent('add');
+                    }                      
+                }
+            ]
+        });
+        var action = new Ext.ux.grid.RowActions({
+            header:'',
+            width: 110,
+            keepSelection:true,
+            actions:[{
+                iconCls:'ui-icon ui-icon-wrench',
+                tooltip:'Edit',
+                callback:function(grid, records, action) {
+                     grid.fireEvent('edit', records);
+                }
+           },{
+                iconCls:'ui-icon ui-icon-trash',
+                tooltip:'Delete',
+                callback:function(grid, records, action) {
+                     Ext.MessageBox.confirm('Confirm', 'Are you sure you want delete the record?', function(btn){
+                         if(btn == "yes"){
+                             Ext.Ajax.request({
+                                 method: 'GET',
+                                 url: '/json/entity_delete/',
+                                 params:{
+                                     key: records.data.key,
+                                     entity: 'Activity'
+                                 },
+				 success: function(action, options) {
+				    tableStore.reload()                     
+				    deleteFunciton(action, options);
+				 }
+                             });
+                         }
+                     });
+                }
+           }]
+        });
+        
+        // create the data store
+        var tableStore = new Ext.data.Store({
+            reader: new Ext.data.JsonReader({
+                totalProperty: 'totalCount',
+                root: 'rows'
+            }, ActivityVO),
+            remoteSort: true,
+            autoLoad: true,
+            baseParams:{
+                entity: 'Activity',
+                type__ActivityType__lookup: 'runusageOpZone',
+                start:0,
+                limit:PAGING_LIMIT
+            },
+            //autoLoad: true,
+            proxy: new Ext.data.ScriptTagProxy({
+                url: '/json/entity_query_all_paging/'
+            })
+        });
+        var expander = new Ext.ux.grid.RowExpander({
+            tpl: new Ext.Template('<p><b>Comment:</b> {comments_internal}</p>')
+        });
+        Ext.applyIf(this, {
+            store: tableStore,
+            plugins:[action, expander],
+            columns: [
+                expander,
+                action,
+                {
+                    header   : 'Date and Time',
+                    width    : 120,
+                    sortable : true,
+                    dataIndex: 'date_time_start',
+                    renderer: formatDate
+                },{
+                    header   : 'Observer',
+                    width    : 140,
+                    sortable : false,
+                    dataIndex: 'observer_desc'
+                },{
+                    header   : 'Location',
+                    width    : 150,
+                    sortable : true,
+                    dataIndex: 'terrain_desc'
+                },{
+                    header   : 'Notable',
+                    width    : 68,
+                    sortable : false,
+                    dataIndex: 'notable'
+                },{
+                    header   : 'Name',
+                    width    : 150,
+                    sortable : false,
+                    dataIndex: 'name'
+                }
+            ],
+            bbar: new Ext.PagingToolbar({
+                pageSize:PAGING_LIMIT,
+                store: tableStore,
+                displayInfo: true,
+                displayMsg: 'Displaying records {0} - {1} of {2}',
+                emptyMsg: "No records to display"
+            })
+        });
+        pc.custom.ActivityList.superclass.initComponent.call(this);
+    }
+});

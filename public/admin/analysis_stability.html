@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stability Analysis</title>
+    <link href="/css/main.css" rel="stylesheet" />
+    <link href="/css/mainNew.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" id="theme" href="/resources/css/xtheme-gray.css" />
+
+    <!-- Legacy Dependencies for Charts -->
+    <script src="/js/jquery.min-v1.6.3.js"></script>
+    <script src="/js/highcharts.js"></script>
+
+    <!-- Lit Components -->
+    <script type="module" src="/js/lit/AppLayout.js"></script>
+    <script type="module" src="/js/lit/pages/AnalysisStabilityPage.js"></script>
+</head>
+
+<body>
+    <app-layout id="layout">
+        <analysis-stability-page></analysis-stability-page>
+    </app-layout>
+    <script>
+        document.getElementById('layout').breadcrumbs = [
+            { label: 'Home', url: '/admin/index.html' },
+            { label: 'Analysis', url: '#' },
+            { label: 'Stability Analysis', url: '/admin/analysis_stability.html' }
+        ];
+    </script>
+</body>
+
+</html>

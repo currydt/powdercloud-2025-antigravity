@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Analysis - PowderCloud</title>
+
+    <!-- Global CSS -->
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="/css/mainNew.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="/resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" id="theme" href="/resources/css/xtheme-gray.css" />
+
+    <!-- Lit Components -->
+    <script type="module" src="/js/lit/AppLayout.js"></script>
+    <script type="module" src="/js/lit/pages/BasicAnalysisPage.js"></script>
+</head>
+
+<body>
+    <app-layout id="layout">
+        <basic-analysis-page></basic-analysis-page>
+    </app-layout>
+
+    <script>
+        document.getElementById('layout').breadcrumbs = [
+            { label: 'Home', url: '/admin/index.html' },
+            { label: 'Analysis', url: '#' },
+            { label: 'Basic Analysis', url: '/admin/analysis_basic.html' }
+        ];
+    </script>
+</body>
+
+</html>

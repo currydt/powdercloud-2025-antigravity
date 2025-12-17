@@ -1,0 +1,10 @@
+/* CSS for index page of public site */
+#featured, #featured:focus{ position:relative; width:960px; height:445px; overflow: hidden; outline: none; }
+#featured_image, #featured_image:focus{ width:960px; height:360px; overflow: hidden; margin:0 auto; border: none; outline: none; }
+#featured_image img, #featured_image a img{ position:absolute; z-index: 2; visibility: hidden; }
+#featured #featured_image .current_img, #featured #featured_image .current_img img{ z-index: 3; visibility: visible; }
+#featured{ background:transparent url(/static/img/site/shadow.jpg) no-repeat scroll 0px 288px; }
+.js_active #featured #featured_image .current_img, .js_active #featured #featured_image .current_img img{ visibility: hidden; }
+BODY { background: #FFFFFF url( '/static/img/site/index-bg.png' ) repeat-x top right; height: 100%; }
+.dvSiteBody H3 { font-size: 1em; }
+.dvSiteBody P { font-size: 0.8em; }

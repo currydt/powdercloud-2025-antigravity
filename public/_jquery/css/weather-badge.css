@@ -1,0 +1,15 @@
+/*
+	(c) Copyright 2011, Powdercloud Software Inc, All rights reserved.
+
+	Override any of the below classes, *after* this file has been
+	included, to customise the weather badge.
+*/
+.pcBadgeBG { padding: 10px; font-family: verdana; }
+.pcBadgeDV { -webkit-border-radius: 10px; -moz-border-radius: 10px; border: 1px solid #333333; display: inline; float: left; width: 100px; margin-right: 20px; }
+.pcBadgeValue { -webkit-border-radius: 10px; -moz-border-radius: 10px; background-color: #f9f9f9; font-size: 2em; font-weight: bold; text-align: center; }
+.pcBadgeUnit { padding-bottom: 3px; background-color: #f9f9f9; font-size: 0.75em; text-align: center; }
+.pcBadgeLegend { -webkit-border-radius: 10px; -moz-border-radius: 10px; border-width: 1px 1px 1px 1px; background-color: #bbbbbb; color: #ffffff; padding: 3px 0 3px 0; font-weight: bold; font-size: 0.9em; text-align: center; }
+.pcBadgeFoot1 { color: #999999; padding: 3px 0 3px 0; font-size: 1em; text-align: center; }
+.pcBadgeFoot2 { color: #cccccc; padding: 3px 0 3px 0; font-size: 0.5em; text-align: center; }
+.pcBadgeFoot1 A, .pcBadgeFoot2 A { color: #cccccc; }
+.pcBadgeFoot1 A:hover, .pcBadgeFoot2 A:hover { color: #000000; }

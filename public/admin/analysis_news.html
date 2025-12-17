@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>News Analysis</title>
+    <link href="/css/main.css" rel="stylesheet" />
+    <link href="/css/mainNew.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/resources/css/ext-all.css" />
+    <script type="module" src="/js/lit/AppLayout.js"></script>
+    <script type="module" src="/js/lit/pages/AnalysisNewsPage.js"></script>
+</head>
+
+<body>
+    <app-layout id="layout">
+        <analysis-news-page></analysis-news-page>
+    </app-layout>
+    <script>
+        document.getElementById('layout').breadcrumbs = [
+            { label: 'Home', url: '/admin/index.html' },
+            { label: 'Analysis', url: '#' },
+            { label: 'News Analysis', url: '/admin/analysis_news.html' }
+        ];
+    </script>
+</body>
+
+</html>

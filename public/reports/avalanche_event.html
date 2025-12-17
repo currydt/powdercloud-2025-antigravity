@@ -1,0 +1,438 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <!-- PowderCloud v2011 Antigravity Shim -->
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+    <!-- JavaScript Includes -->
+    <script type="text/javascript" src="/js/jquery.min-v1.6.3.js"></script>
+    <script type="text/javascript" src="/js/jquery-ui-1.8.18.custom.min.js"></script>
+    <script type="text/javascript" src="/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/js/jquery.buttons.js"></script>
+    <script type="text/javascript" src="/js/daterangepicker.jQuery-min.js"></script>
+
+    <!-- PowderCloud Custom JS -->
+    <script type="text/javascript" src="/js/powdercloud.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/resources/css/ext-all.css" />
+    <link rel="stylesheet" type="text/css" id="theme" href="/resources/css/xtheme-gray.css" />
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="/css/mainNew.css" rel="stylesheet" type="text/css" />
+    <link href="/css/ui.daterangepicker.css" rel="stylesheet" type="text/css" />
+    <link href="/css/redmond/jquery-ui-1.7.1.custom.css" rel="stylesheet" type="text/css" />
+
+    <title>Avalanche Event Report :: PowderCloud Antigravity</title>
+
+    <script type="text/javascript">
+        function doLogout() {
+            if (confirm('Are you sure?')) window.location = "/logout/";
+        }
+        function doAdminOPRSwitch() {
+            alert('Switch Operation Mock');
+        }
+        function doMenu(id) {
+            if (id) {
+                $('#dvMenu' + id).click(function () {
+                    $('#dvMenuSub' + id).stop(true, true).fadeIn('fast');
+                });
+                $('#dvMenu' + id).focusout(function () {
+                    $('#dvMenuSub' + id).stop(true, true).fadeOut('fast');
+                });
+                $('#dvMenu' + id).hover(
+                    function () { $('#dvMenuSub' + id).stop(true, true).fadeIn('fast'); },
+                    function () { $('#dvMenuSub' + id).stop(true, true).fadeOut('fast'); }
+                );
+            }
+        }
+        $(function () {
+            doMenu(1);
+            doMenu(2);
+            doMenu(3);
+            doMenu(4);
+            doMenu(5);
+            doMenu(6);
+
+            // Filter Logic
+            $('#infiltdstart, #infiltdend').daterangepicker({
+                dateFormat: "yy-mm-dd",
+                arrows: true,
+                presets: { dateRange: 'Select date range' },
+                presetRanges: [{ text: "Today", dateStart: "Today", dateEnd: "Today" }, { text: "This Week", dateStart: "-7days", dateEnd: "Today" }, { text: "Last Month", dateStart: "-1month", dateEnd: "Today" }]
+            });
+
+            $('#dvFilter').hide();
+            $('#dvFilterHead').click(function () {
+                if ($("#imgFilter").attr("src") == "/static/img/arrow-right.gif") {
+                    $("#imgFilter").fadeOut(100).attr("src", "/static/img/arrow-down.gif").fadeIn();
+                    $('#dvFilter').fadeIn();
+                    $('#dvFilterHead').removeClass().addClass("dvFilterHeadOpen");
+                } else {
+                    $("#imgFilter").fadeOut(100).attr("src", "/static/img/arrow-right.gif").fadeIn();
+                    $('#dvFilterHead').removeClass("dvFilterHeadOpen");
+                    $('#dvFilter').fadeOut();
+                    $('#dvFilterHead').removeClass().addClass("dvFilterHeadClosed");
+                }
+            });
+
+            $("#dvFilterOptions").buttonset();
+            $("#mode-daterange-filter-button").click(function () {
+                // Mock Fetch Data
+                fetchData();
+            });
+
+            // Initial Fetch
+            fetchData();
+        });
+
+        function fetchData() {
+            // Mock fetch
+            $.ajax({
+                url: '/json/entity_query_all/',
+                data: { entity: 'Avalanche' },
+                dataType: 'json',
+                success: function (response) {
+                    renderTable(response.rows);
+                },
+                error: function () {
+                    $('#tableBody').html('<tr><td colspan="16">Error loading data</td></tr>');
+                }
+            });
+        }
+
+        function renderTable(data) {
+            var html = '';
+            if (data && data.length > 0) {
+                $.each(data, function (i, obs) {
+                    html += '<tr class="' + (i % 2 == 0 ? 'trOdd' : 'trEven') + '">';
+                    html += '<td>' + (obs.date_time_start || '') + '</td>';
+                    html += '<td>' + (obs.terrain ? obs.terrain.name_nick : '') + '</td>';
+                    html += '<td>' + (obs.multiple_number || '') + '</td>';
+                    html += '<td>' + (obs.failure_type ? obs.failure_type.code : '') + '</td>';
+                    html += '<td>' + (obs.destructive_size_max ? obs.destructive_size_max.code : '') + '</td>';
+                    html += '<td>' + (obs.trigger ? obs.trigger.code : '') + '</td>';
+                    html += '<td>' + (obs.incline_range_start || '') + '</td>';
+                    html += '<td>' + (obs.incline_range_end || '') + '</td>';
+                    html += '<td>' + (obs.aspect_start ? obs.aspect_start.code : '') + '</td>';
+                    html += '<td>' + (obs.aspect_end ? obs.aspect_end.code : '') + '</td>';
+                    html += '<td>' + (obs.elevation_min || '') + '</td>';
+                    html += '<td>' + (obs.elevation_max || '') + '</td>';
+                    html += '<td>' + (obs.slab_thickness_max || '') + '</td>';
+                    html += '<td>' + (obs.slab_width_max || '') + '</td>';
+                    html += '<td>' + (obs.path_run_length_min || '') + '</td>';
+                    html += '<td>' + (obs.failure_type ? obs.failure_type.code : '') + '</td>';
+                    html += '<td>' + (obs.failure_plane_age || '') + '</td>';
+                    html += '</tr>';
+                });
+            } else {
+                html = '<tr><td colspan="17">No data found</td></tr>';
+            }
+            $('#tableBody').html(html);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="dvBodyWrap">
+        <div id="dvHeader">
+            <div id="dvHeadNav">
+                <div id="dvHeadLogo">
+                    <a href="/"><img alt="Powdercloud" src="/img/logo.png" /></a><br />
+                    <p>Your Backcountry Network</p>
+                </div>
+                <div id="dvHeadNavUpper">
+                    <strong>Antigravity User</strong> | <a href="javascript:doLogout();">Logout</a>
+                    <div style="font-size: 0.8em; margin-top: 4px;">
+                        Antigravity Operation
+                        <a href="javascript:doAdminOPRSwitch();">Switch</a>
+                    </div>
+                </div>
+                <div id="dvHeadNavLower">
+                    <ul id="ulNav">
+                        <li class="liNav1 liNavFirst" id="dvMenu1">
+                            <a href="/dashboard_lit.html">
+                                <strong>Home</strong>
+                                <span>&nbsp;</span>
+                            </a>
+                        </li>
+                        <li class="liNav1" id="dvMenu2">
+                            <a href="/management/observation">
+                                <strong>Observations</strong>
+                                <span>Enter Data</span>
+                            </a>
+                            <div id="dvMenuSub2" class="dvMenuSub">
+                                <div class="col">
+                                    <h3>Avalanche Observations</h3>
+                                    <a href="/admin/obs_avalanche_narrative.html">Avalanche Narrative</a>
+                                    <a href="/admin/obs_avalanche_standard.html">Standard Avalanche Event</a>
+                                    <a href="/admin/obs_avalanche_multiple.html">Multiple Avalanche Event</a>
+                                    <a href="/admin/obs_avalanche_summary.html">Avalanche Summary</a>
+                                    <br>
+                                    <h3>Weather Observations</h3>
+                                    <a href="/admin/obs_weather_narrative.html">Weather Narrative</a>
+                                    <a href="/admin/obs_weather_study_plot.html">Standard Study Plot</a>
+                                    <a href="/admin/obs_weather_field.html">Field Weather Summary</a>
+                                </div>
+                                <div class="col">
+                                    <h3>Layers of Interest</h3>
+                                    <a href="/admin/obs_layer_narrative.html">Layer Narrative</a>
+                                    <a href="/admin/obs_layers.html">Layers</a>
+                                    <br>
+                                    <h3>Snowpack</h3>
+                                    <a href="/admin/obs_snowpack_structure.html">Snowpack Structure</a>
+                                    <a href="/admin/obs_snowpack_concerns.html">Concerns</a>
+                                    <a href="/admin/obs_snow_profile.html">Snow Profile</a>
+                                    <br>
+                                    <h3>Ratings</h3>
+                                    <a href="/admin/obs_danger_rating.html">Danger Rating</a>
+                                    <a href="/admin/obs_stability_rating.html">Stability Rating</a>
+                                </div>
+                                <div class="col">
+                                    <h3>Sighting</h3>
+                                    <a href="/admin/obs_sighting_narrative.html">Sighting Narrative</a>
+                                    <a href="/admin/obs_sighting_event.html">Sighting Event</a>
+                                </div>
+                                <div class="col">
+                                    <h3>Other</h3>
+                                    <a href="/admin/obs_news.html">News</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="liNav1" id="dvMenu3">
+                            <a href="/management/reports">
+                                <strong>Analysis</strong>
+                                <span>Review Data</span>
+                            </a>
+                            <div id="dvMenuSub3" class="dvMenuSub">
+                                <div class="col">
+                                    <h3>Community</h3>
+                                    <a href="/admin/analysis_community_summary.html">Community Summary</a>
+                                    <a href="/admin/analysis_public_report.html">Public Report</a>
+                                </div>
+                                <div class="col">
+                                    <h3>Analysis</h3>
+                                    <a href="/admin/analysis_weather.html">Weather Analysis</a>
+                                    <a href="/admin/analysis_avalanche.html">Avalanche Activity Analysis</a>
+                                    <a href="/admin/analysis_snowpack.html">Snowpack Structure Analysis</a>
+                                    <a href="/admin/analysis_snow_profile.html">Snow Profile Analysis</a>
+                                    <a href="/admin/analysis_concerns.html">Concerns Analysis</a>
+                                    <a href="/admin/analysis_sightings.html">Sightings Analysis</a>
+                                    <a href="/admin/analysis_danger.html">Danger Analysis</a>
+                                    <a href="/admin/analysis_stability.html">Stability Analysis</a>
+                                    <a href="/admin/analysis_news.html">News Analysis</a>
+                                </div>
+                                <div class="col">
+                                    <h3>Charts</h3>
+                                    <!-- Placeholder for charts -->
+                                </div>
+                            </div>
+                        </li>
+                        <li class="liNav1" id="dvMenu4">
+                            <a href="/management/incidents">
+                                <strong>Projects</strong>
+                                <span>Manage Activities</span>
+                            </a>
+                            <div id="dvMenuSub4" class="dvMenuSub">
+                                <div class="col">
+                                    <h3>Projects</h3>
+                                    <a href="/admin/project_list.html">Projects</a>
+                                </div>
+                                <div class="col">
+                                    <h3>Activities</h3>
+                                    <a href="/admin/activity_hazard_forecast.html">Avalanche Hazard Forecast</a>
+                                    <a href="/admin/activity_hazard_evaluation.html">Avalanche Hazard Evaluation</a>
+                                    <a href="/admin/activity_run_status.html">Run Status</a>
+                                    <a href="/admin/activity_run_usage.html">Run Usage</a>
+                                    <a href="/admin/activity_zone_status.html">Operating Zone Status</a>
+                                    <a href="/admin/activity_zone_usage.html">Operating Zone Usage</a>
+                                    <a href="/admin/activity_generic.html">Generic</a>
+                                </div>
+                                <div class="col">
+                                    <h3>Reports</h3>
+                                    <a href="/admin/report_infoex.html">InfoEx Report</a>
+                                    <a href="/admin/report_weather_plots.html">Weather Study Plots</a>
+                                    <a href="/admin/report_field_weather.html">Field Weather Summary</a>
+                                    <a href="/admin/report_avalanche_activity.html">Avalanche Activity</a>
+                                    <a href="/admin/report_snowpack.html">Snowpack Structure</a>
+                                    <a href="/admin/report_danger.html">Danger</a>
+                                    <a href="/admin/report_stability.html">Stability</a>
+                                    <a href="/admin/report_news.html">News</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="liNav1" id="dvMenu5">
+                            <a href="/management/admin">
+                                <strong>Profile</strong>
+                                <span>Administration</span>
+                            </a>
+                            <div id="dvMenuSub5" class="dvMenuSub">
+                                <div class="col">
+                                    <h3>Administration</h3>
+                                    <a href="/admin/admin_settings.html">Operation Settings</a>
+                                    <a href="/admin/admin_users.html">Operation Users</a>
+                                    <a href="/admin/admin_atlas.html">Operation Terrains Atlas</a>
+                                    <a href="/admin/admin_data_sharing.html">Operation Data Sharing</a>
+                                    <a href="/admin/user_profile.html">My Profile</a>
+                                </div>
+                                <div class="col">
+                                    <h3>Site Administration</h3>
+                                    <a href="/admin/operation_list.html">Operation List</a>
+                                    <a href="/admin/admin_app_editor.html">App Editor</a>
+                                    <a href="/admin/lookup_editor.html">Lookup Editor</a>
+                                    <a href="/admin/admin_role_editor.html">Role Editor</a>
+                                    <a href="/admin/admin_obs_type_editor.html">Observation Type Editor</a>
+                                </div>
+                                <div class="col">
+                                    <h3>Design System</h3>
+                                    <a href="/admin/design_system/overview.html">Overview</a>
+                                    <a href="/admin/design_system/architecture.html">Architecture</a>
+                                    <a href="/admin/docs/run_structure.html">Run Structure</a>
+                                    <a href="/admin/design_system/core.html">Core Components</a>
+                                    <a href="/admin/design_system/layout.html">Layout</a>
+                                    <a href="/admin/design_system/containers.html">Containers</a>
+                                    <a href="/admin/design_system/forms.html">Forms</a>
+                                    <a href="/admin/design_system/atoms.html">Atoms</a>
+                                    <a href="/admin/design_system/overlays.html">Overlays</a>
+                                    <a href="/admin/design_system/feedback.html">Feedback</a>
+                                    <a href="/admin/design_system/patterns.html">Patterns</a>
+                                    <a href="/admin/design_system/graphics.html">Graphical Elements</a>
+                                    <a href="/admin/design_system/validators.html">Validators</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="liNav1" id="dvMenu6">
+                            <a href="javascript:location.reload()">
+                                <strong>Login</strong>
+                                <span>Hard Reset</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div id="dvCrumbs">
+            <div>Home &gt; Reports &gt; Avalanche Event Report</div>
+        </div>
+
+        <div id="dvBody">
+            <div id="content">
+                <h1>Avalanche Event Report</h1>
+
+                <!-- Filter -->
+                <div class="dvFilterWrap">
+                    <div id="dvFilterHead" class="dvFilterHeadClosed">
+                        <img id="imgFilter" src="/static/img/arrow-right.gif" /> Filter
+                    </div>
+                    <div id="dvFilter">
+                        <form name="frmFilter">
+                            <div id="dvFilterOptions">
+                                Mode:<br />
+                                <input type="radio" id="idRadFilter1" name="flt_mode" value="c" /><label class="dis"
+                                    for="idRadFilter1">Community</label>
+                                <input type="radio" id="idRadFilter2" name="flt_mode" value="f" /><label class="dis"
+                                    for="idRadFilter2">Favourites</label>
+                                <input checked="checked" type="radio" id="idRadFilter3" name="flt_mode"
+                                    value="o" /><label class="dis" for="idRadFilter3">Operations</label>
+                            </div>
+                            <div>
+                                From:<br />
+                                <input type="text" class="frmTextInput w90" name="filtdstart_d" value=""
+                                    id="infiltdstart" />
+                            </div>
+                            <div>
+                                To:<br />
+                                <input type="text" class="frmTextInput w90" name="filtdend_d" value=""
+                                    id="infiltdend" />
+                            </div>
+                            <div style="float: right;">
+                                <br />
+                                <a href="#filter" id="mode-daterange-filter-button"
+                                    class="fg-button ui-state-default fg-button-icon-left ui-corner-all"><span
+                                        class="ui-icon ui-icon-refresh"></span>Update</a>
+                            </div>
+
+                            <br class="brC" />
+                        </form>
+                    </div>
+                </div>
+
+                <table class="tbl">
+                    <thead>
+                        <tr>
+                            <th rowspan="2" class="thSpaced" style="width: 12%;">Date</th>
+                            <th rowspan="2" class="thSpaced" style="width: 12%;">Location</th>
+                            <th rowspan="2">#</th>
+                            <th rowspan="2">Type</th>
+                            <th rowspan="2">Size</th>
+                            <th rowspan="2">Trigger</th>
+
+                            <th colspan="2">Incline</th>
+                            <th colspan="2">Aspect</th>
+                            <th colspan="2">Elevation</th>
+                            <th colspan="3">Slab</th>
+
+                            <th colspan="2">Failure</th>
+                        </tr>
+                        <tr>
+                            <th>Start</th>
+                            <th>End</th>
+
+                            <th>Start</th>
+                            <th>End</th>
+
+                            <th>Min</th>
+                            <th>Max</th>
+
+                            <th>Thickness</th>
+                            <th>Width</th>
+                            <th>Length</th>
+
+                            <th>Type</th>
+                            <th>Age</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Rows will be injected here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="dvFooterForce"></div>
+    </div>
+    <div id="dvFooterWrap">
+        <div id="dvFooter">
+            <div class="dvFooterCols">
+                <div class="dvFooterCol">
+                </div>
+                <div class="dvFooterCol">
+                </div>
+                <div class="dvFooterCol">
+                </div>
+                <div class="dvFooterCol">
+                </div>
+            </div>
+            <div class="dvFooterLegal">
+                <ul>
+                    <li class="header">About Us</li>
+                    <li><a href="/?r_cmd=1">PowderCloud Website</a></li>
+                    <li><a href="/about/contact-us/">Contact Us</a></li>
+                    <li><a href="#">Legal &amp; Privacy</a></li>
+                </ul>
+                <p style="margin-top: 30px; font-size: 0.8em;">
+                    &copy;Copyright 2004-2011
+                    <a href="http://www.powdercloud.com/" title="PowderCloud Software Inc. website">PowderCloud Software
+                        Inc.</a>.
+                    All Rights Reserved.
+                    v1.01.118.
+                </p>
+            </div>
+            <br style="clear: both;" />
+        </div>
+    </div>
+</body>
+
+</html>
