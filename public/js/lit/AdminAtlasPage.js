@@ -1,5 +1,5 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import './components/TerrainAtlasGrid.js';
+import './components/PowdercloudTerrainAtlasGrid.js';
 
 export class AdminAtlasPage extends LitElement {
     createRenderRoot() {
@@ -13,7 +13,7 @@ export class AdminAtlasPage extends LitElement {
             </h1>
             <p style="margin-bottom: 20px;">Manage operation terrain locations.</p>
             
-            <terrain-atlas-grid></terrain-atlas-grid>
+            <powdercloud-terrain-atlas-grid></powdercloud-terrain-atlas-grid>
         `;
     }
 }
