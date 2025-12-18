@@ -24,7 +24,7 @@ import './components/PowdercloudCard.js';
 import './components/PowdercloudContainer.js';
 import './components/PowdercloudGrid.js';
 import './components/AppStack.js';
-import './components/AppSpacer.js';
+import './components/PowdercloudSpacer.js';
 import './components/PowdercloudModal.js';
 import './components/AppToast.js';
 import './components/PowdercloudCombobox.js';
@@ -375,7 +375,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
         <div style="background: #eee; padding: 20px;">Column 3</div>
     </powdercloud-grid>
 
-    <app-spacer y="4"></app-spacer>
+    <powdercloud-spacer y="4"></powdercloud-spacer>
 
     <app-stack direction="row" gap="md" align="center">
         <powdercloud-button label="Save"></powdercloud-button>
@@ -979,7 +979,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                     <div style="background: #f3e5f5; padding: 20px; text-align: center; color: #4a148c;">Grid Item 3</div>
                                 </powdercloud-grid>
 
-                                <app-spacer y="2"></app-spacer>
+                                <powdercloud-spacer y="2"></powdercloud-spacer>
 
                                 <app-stack direction="row" gap="md" align="center" style="background: #e8f5e9; padding: 10px;">
                                     <span style="color: #1b5e20;"><strong>&lt;app-stack&gt;</strong> (Flexbox)</span>
