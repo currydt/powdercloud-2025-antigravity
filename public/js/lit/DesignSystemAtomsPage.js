@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/co
 import './components/PowdercloudContainer.js';
 import './components/ComponentDoc.js';
 import './components/PowdercloudButton.js';
-import './components/AppInput.js';
+import './components/PowdercloudInput.js';
 import './components/AppTextarea.js';
 import './components/AppSelect.js';
 import './components/PowdercloudCheckbox.js';
@@ -147,24 +147,24 @@ export class DesignSystemAtomsPage extends LitElement {
 
                     <!-- INPUT PLAYGROUND -->
                     <component-doc 
-                        title="<app-input>" 
+                        title="<powdercloud-input>" 
                         description="Interactive input generator."
-                        .code="${`<app-input
+                        .code="${`<powdercloud-input
     label="${this._inputLabel}"
     type="${this._inputType}"${this._inputRequired ? '\n    required' : ''}${this._inputDisabled ? '\n    disabled' : ''}${this._inputHelper ? `\n    helper="${this._inputHelper}"` : ''}${this._inputError ? `\n    error="${this._inputError}"` : ''}
-></app-input>`}">
+></powdercloud-input>`}">
                         
                         <div style="display: flex; gap: 40px; align-items: flex-start; margin-bottom: 20px;">
                             <!-- Live Preview -->
                             <div style="flex: 1; padding: 20px; background: #f8f9fa; border-radius: 8px; border: 1px dashed #ccc;">
-                                <app-input 
+                                <powdercloud-input 
                                     label="${this._inputLabel}" 
                                     type="${this._inputType}"
                                     helper="${this._inputHelper}"
                                     error="${this._inputError}"
                                     ?required="${this._inputRequired}"
                                     ?disabled="${this._inputDisabled}"
-                                ></app-input>
+                                ></powdercloud-input>
                             </div>
 
                             <!-- Controls -->

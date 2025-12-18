@@ -5,7 +5,7 @@ import './components/PowdercloudCard.js';
 import './components/PowdercloudFieldset.js';
 import './components/CollapsiblePanel.js';
 import './components/AppTabs.js';
-import './components/AppInput.js';
+import './components/PowdercloudInput.js';
 import './components/AppTextarea.js';
 
 export class DesignSystemContainersPage extends LitElement {
@@ -27,8 +27,8 @@ export class DesignSystemContainersPage extends LitElement {
 </powdercloud-card>`;
 
         const fieldsetCode = `<powdercloud-fieldset legend="User Details">
-    <app-input label="Name"></app-input>
-    <app-input label="Email"></app-input>
+    <powdercloud-input label="Name"></powdercloud-input>
+    <powdercloud-input label="Email"></powdercloud-input>
 </powdercloud-fieldset>`;
 
         const panelCode = `<collapsible-panel title="Panel Title" tagline="Optional Tagline">
@@ -84,8 +84,8 @@ export class DesignSystemContainersPage extends LitElement {
                         description="A semantic container for grouping form inputs."
                         .code="${fieldsetCode}">
                         <powdercloud-fieldset legend="User Information">
-                            <app-input label="Full Name"></app-input>
-                            <app-input label="Email Address"></app-input>
+                            <powdercloud-input label="Full Name"></powdercloud-input>
+                            <powdercloud-input label="Email Address"></powdercloud-input>
                         </powdercloud-fieldset>
                     </component-doc>
 

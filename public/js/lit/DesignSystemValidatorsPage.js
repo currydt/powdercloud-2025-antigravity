@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/PowdercloudContainer.js';
 import './components/ComponentDoc.js';
-import './components/AppInput.js';
+import './components/PowdercloudInput.js';
 import { Validators } from './components/Validators.js';
 
 export class DesignSystemValidatorsPage extends LitElement {
@@ -57,12 +57,12 @@ export class DesignSystemValidatorsPage extends LitElement {
                     <component-doc 
                         title="${v.name}" 
                         description="${v.description}"
-                        .code="${`<app-input label="Test ${v.name}" .validators="\${[Validators.${v.name}]}"></app-input>`}">
-                        <app-input 
+                        .code="${`<powdercloud-input label="Test ${v.name}" .validators="\${[Validators.${v.name}]}"></powdercloud-input>`}">
+                        <powdercloud-input 
                             label="Test ${v.name}" 
                             .validators="${[v.fn]}"
                             helper="Type to test validation"
-                        ></app-input>
+                        ></powdercloud-input>
                     </component-doc>
                 `)}
             </div>

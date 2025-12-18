@@ -9,7 +9,7 @@ import './components/MegaMenu.js';
 import './components/AppTabs.js';
 import './components/DashboardGrid.js';
 import './components/PowdercloudButton.js';
-import './components/AppInput.js';
+import './components/PowdercloudInput.js';
 import './components/AppTextarea.js';
 import './components/AppSelect.js';
 import './components/PowdercloudCheckbox.js';
@@ -141,12 +141,12 @@ export class ComponentsPage extends LitElement {
                     <component-doc 
                         title="${v.name}" 
                         description="${v.description}"
-                        .code="${`<app-input label="Test ${v.name}" .validators="\${[Validators.${v.name}]}"></app-input>`}">
-                        <app-input 
+                        .code="${`<powdercloud-input label="Test ${v.name}" .validators="\${[Validators.${v.name}]}"></powdercloud-input>`}">
+                        <powdercloud-input 
                             label="Test ${v.name}" 
                             .validators="${[v.fn]}"
                             helper="Type to test validation"
-                        ></app-input>
+                        ></powdercloud-input>
                     </component-doc>
                 `)}
             </div>
@@ -306,11 +306,11 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
 <powdercloud-button label="Large" size="large"></powdercloud-button>
 <powdercloud-button label="With Icon" icon="fa fa-save"></powdercloud-button>`;
 
-        const inputCode = `<app-input label="Standard Input"></app-input>
-<app-input label="Required Input" required></app-input>
-<app-input label="With Helper Text" helper="Help text"></app-input>
-<app-input label="Error State" error="Invalid value"></app-input>
-<app-input label="Disabled" disabled></app-input>`;
+        const inputCode = `<powdercloud-input label="Standard Input"></powdercloud-input>
+<powdercloud-input label="Required Input" required></powdercloud-input>
+<powdercloud-input label="With Helper Text" helper="Help text"></powdercloud-input>
+<powdercloud-input label="Error State" error="Invalid value"></powdercloud-input>
+<powdercloud-input label="Disabled" disabled></powdercloud-input>`;
 
         const textareaCode = `<app-textarea label="Comments" rows="4"></app-textarea>`;
 
@@ -401,23 +401,23 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
             <!-- Text Editing -->
             <div style="margin-bottom: 15px; font-weight: 600; color: #555;">Text Editing</div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                <app-input label="type='text' (Default)"></app-input>
-                <app-input label="type='password'" type="password" value="secret"></app-input>
-                <app-input label="type='email'" type="email" value="user@example.com"></app-input>
-                <app-input label="type='number'" type="number" value="42"></app-input>
-                <app-input label="type='search'" type="search" placeholder="Search..."></app-input>
-                <app-input label="type='tel'" type="tel" value="555-0199"></app-input>
-                <app-input label="type='url'" type="url" value="https://example.com"></app-input>
+                <powdercloud-input label="type='text' (Default)"></powdercloud-input>
+                <powdercloud-input label="type='password'" type="password" value="secret"></powdercloud-input>
+                <powdercloud-input label="type='email'" type="email" value="user@example.com"></powdercloud-input>
+                <powdercloud-input label="type='number'" type="number" value="42"></powdercloud-input>
+                <powdercloud-input label="type='search'" type="search" placeholder="Search..."></powdercloud-input>
+                <powdercloud-input label="type='tel'" type="tel" value="555-0199"></powdercloud-input>
+                <powdercloud-input label="type='url'" type="url" value="https://example.com"></powdercloud-input>
             </div>
 
             <!-- Date & Time -->
             <div style="margin: 20px 0 15px 0; font-weight: 600; color: #555;">Date & Time</div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                <app-input label="type='date'" type="date"></app-input>
-                <app-input label="type='datetime-local'" type="datetime-local"></app-input>
-                <app-input label="type='month'" type="month"></app-input>
-                <app-input label="type='time'" type="time"></app-input>
-                <app-input label="type='week'" type="week"></app-input>
+                <powdercloud-input label="type='date'" type="date"></powdercloud-input>
+                <powdercloud-input label="type='datetime-local'" type="datetime-local"></powdercloud-input>
+                <powdercloud-input label="type='month'" type="month"></powdercloud-input>
+                <powdercloud-input label="type='time'" type="time"></powdercloud-input>
+                <powdercloud-input label="type='week'" type="week"></powdercloud-input>
             </div>
 
             <!-- Boolean/Selection -->
@@ -517,8 +517,8 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
 <app-radio name="g1" label="Option B" value="b"></app-radio>`;
 
         const fieldsetCode = `<powdercloud-fieldset legend="User Details">
-    <app-input label="Name"></app-input>
-    <app-input label="Email"></app-input>
+    <powdercloud-input label="Name"></powdercloud-input>
+    <powdercloud-input label="Email"></powdercloud-input>
 </powdercloud-fieldset>`;
 
         return html`
@@ -1022,8 +1022,8 @@ PAGE SHELL (e.g., dashboard_lit.html)
                         description="A semantic container for grouping form inputs."
                         .code="${fieldsetCode}">
                         <powdercloud-fieldset legend="User Information">
-                            <app-input label="Full Name"></app-input>
-                            <app-input label="Email Address"></app-input>
+                            <powdercloud-input label="Full Name"></powdercloud-input>
+                            <powdercloud-input label="Email Address"></powdercloud-input>
                         </powdercloud-fieldset>
                     </component-doc>
 
@@ -1332,23 +1332,23 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                     <!-- Text Editing -->
                                     <div style="margin-bottom: 15px; font-weight: 600; color: #555;">Text Editing</div>
                                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                                        <app-input label="type='text' (Default)"></app-input>
-                                        <app-input label="type='password'" type="password" value="secret"></app-input>
-                                        <app-input label="type='email'" type="email" value="user@example.com"></app-input>
-                                        <app-input label="type='number'" type="number" value="42"></app-input>
-                                        <app-input label="type='search'" type="search" placeholder="Search..."></app-input>
-                                        <app-input label="type='tel'" type="tel" value="555-0199"></app-input>
-                                        <app-input label="type='url'" type="url" value="https://example.com"></app-input>
+                                        <powdercloud-input label="type='text' (Default)"></powdercloud-input>
+                                        <powdercloud-input label="type='password'" type="password" value="secret"></powdercloud-input>
+                                        <powdercloud-input label="type='email'" type="email" value="user@example.com"></powdercloud-input>
+                                        <powdercloud-input label="type='number'" type="number" value="42"></powdercloud-input>
+                                        <powdercloud-input label="type='search'" type="search" placeholder="Search..."></powdercloud-input>
+                                        <powdercloud-input label="type='tel'" type="tel" value="555-0199"></powdercloud-input>
+                                        <powdercloud-input label="type='url'" type="url" value="https://example.com"></powdercloud-input>
                                     </div>
 
                                     <!-- Date & Time -->
                                     <div style="margin: 20px 0 15px 0; font-weight: 600; color: #555;">Date & Time</div>
                                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                                        <app-input label="type='date'" type="date"></app-input>
-                                        <app-input label="type='datetime-local'" type="datetime-local"></app-input>
-                                        <app-input label="type='month'" type="month"></app-input>
-                                        <app-input label="type='time'" type="time"></app-input>
-                                        <app-input label="type='week'" type="week"></app-input>
+                                        <powdercloud-input label="type='date'" type="date"></powdercloud-input>
+                                        <powdercloud-input label="type='datetime-local'" type="datetime-local"></powdercloud-input>
+                                        <powdercloud-input label="type='month'" type="month"></powdercloud-input>
+                                        <powdercloud-input label="type='time'" type="time"></powdercloud-input>
+                                        <powdercloud-input label="type='week'" type="week"></powdercloud-input>
                                     </div>
 
                                     <!-- Boolean/Selection -->
@@ -1518,24 +1518,24 @@ PAGE SHELL (e.g., dashboard_lit.html)
 
                     <!-- INPUT PLAYGROUND -->
                     <component-doc 
-                        title="<app-input>" 
+                        title="<powdercloud-input>" 
                         description="Interactive input generator."
-                        .code="${`<app-input
+                        .code="${`<powdercloud-input
     label="${this._inputLabel}"
     type="${this._inputType}"${this._inputRequired ? '\n    required' : ''}${this._inputDisabled ? '\n    disabled' : ''}${this._inputHelper ? `\n    helper="${this._inputHelper}"` : ''}${this._inputError ? `\n    error="${this._inputError}"` : ''}
-></app-input>`}">
+></powdercloud-input>`}">
                         
                         <div style="display: flex; gap: 40px; align-items: flex-start; margin-bottom: 20px;">
                             <!-- Live Preview -->
                             <div style="flex: 1; padding: 20px; background: #f8f9fa; border-radius: 8px; border: 1px dashed #ccc;">
-                                <app-input 
+                                <powdercloud-input 
                                     label="${this._inputLabel}" 
                                     type="${this._inputType}"
                                     helper="${this._inputHelper}"
                                     error="${this._inputError}"
                                     ?required="${this._inputRequired}"
                                     ?disabled="${this._inputDisabled}"
-                                ></app-input>
+                                ></powdercloud-input>
                             </div>
 
                             <!-- Controls -->
@@ -1637,8 +1637,8 @@ PAGE SHELL (e.g., dashboard_lit.html)
                         .code="${fieldsetCode}">
                         <powdercloud-fieldset legend="Personal Information">
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                                <app-input label="First Name"></app-input>
-                                <app-input label="Last Name"></app-input>
+                                <powdercloud-input label="First Name"></powdercloud-input>
+                                <powdercloud-input label="Last Name"></powdercloud-input>
                             </div>
                             <app-textarea label="Bio" rows="2"></app-textarea>
                         </powdercloud-fieldset>

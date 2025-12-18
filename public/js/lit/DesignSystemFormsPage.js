@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/co
 import './components/PowdercloudContainer.js';
 import './components/ComponentDoc.js';
 import './components/PowdercloudFieldset.js';
-import './components/AppInput.js';
+import './components/PowdercloudInput.js';
 import './components/AppTextarea.js';
 import './components/AppSelect.js';
 import './components/PowdercloudCheckbox.js';
@@ -33,23 +33,23 @@ export class DesignSystemFormsPage extends LitElement {
             <!-- Text Editing -->
             <div style="margin-bottom: 15px; font-weight: 600; color: #555;">Text Editing</div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                <app-input label="type='text' (Default)"></app-input>
-                <app-input label="type='password'" type="password" value="secret"></app-input>
-                <app-input label="type='email'" type="email" value="user@example.com"></app-input>
-                <app-input label="type='number'" type="number" value="42"></app-input>
-                <app-input label="type='search'" type="search" placeholder="Search..."></app-input>
-                <app-input label="type='tel'" type="tel" value="555-0199"></app-input>
-                <app-input label="type='url'" type="url" value="https://example.com"></app-input>
+                <powdercloud-input label="type='text' (Default)"></powdercloud-input>
+                <powdercloud-input label="type='password'" type="password" value="secret"></powdercloud-input>
+                <powdercloud-input label="type='email'" type="email" value="user@example.com"></powdercloud-input>
+                <powdercloud-input label="type='number'" type="number" value="42"></powdercloud-input>
+                <powdercloud-input label="type='search'" type="search" placeholder="Search..."></powdercloud-input>
+                <powdercloud-input label="type='tel'" type="tel" value="555-0199"></powdercloud-input>
+                <powdercloud-input label="type='url'" type="url" value="https://example.com"></powdercloud-input>
             </div>
 
             <!-- Date & Time -->
             <div style="margin: 20px 0 15px 0; font-weight: 600; color: #555;">Date & Time</div>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                <app-input label="type='date'" type="date"></app-input>
-                <app-input label="type='datetime-local'" type="datetime-local"></app-input>
-                <app-input label="type='month'" type="month"></app-input>
-                <app-input label="type='time'" type="time"></app-input>
-                <app-input label="type='week'" type="week"></app-input>
+                <powdercloud-input label="type='date'" type="date"></powdercloud-input>
+                <powdercloud-input label="type='datetime-local'" type="datetime-local"></powdercloud-input>
+                <powdercloud-input label="type='month'" type="month"></powdercloud-input>
+                <powdercloud-input label="type='time'" type="time"></powdercloud-input>
+                <powdercloud-input label="type='week'" type="week"></powdercloud-input>
             </div>
 
             <!-- Boolean/Selection -->
@@ -175,23 +175,23 @@ export class DesignSystemFormsPage extends LitElement {
                                     <!-- Text Editing -->
                                     <div style="margin-bottom: 15px; font-weight: 600; color: #555;">Text Editing</div>
                                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                                        <app-input label="type='text' (Default)"></app-input>
-                                        <app-input label="type='password'" type="password" value="secret"></app-input>
-                                        <app-input label="type='email'" type="email" value="user@example.com"></app-input>
-                                        <app-input label="type='number'" type="number" value="42"></app-input>
-                                        <app-input label="type='search'" type="search" placeholder="Search..."></app-input>
-                                        <app-input label="type='tel'" type="tel" value="555-0199"></app-input>
-                                        <app-input label="type='url'" type="url" value="https://example.com"></app-input>
+                                        <powdercloud-input label="type='text' (Default)"></powdercloud-input>
+                                        <powdercloud-input label="type='password'" type="password" value="secret"></powdercloud-input>
+                                        <powdercloud-input label="type='email'" type="email" value="user@example.com"></powdercloud-input>
+                                        <powdercloud-input label="type='number'" type="number" value="42"></powdercloud-input>
+                                        <powdercloud-input label="type='search'" type="search" placeholder="Search..."></powdercloud-input>
+                                        <powdercloud-input label="type='tel'" type="tel" value="555-0199"></powdercloud-input>
+                                        <powdercloud-input label="type='url'" type="url" value="https://example.com"></powdercloud-input>
                                     </div>
 
                                     <!-- Date & Time -->
                                     <div style="margin: 20px 0 15px 0; font-weight: 600; color: #555;">Date & Time</div>
                                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                                        <app-input label="type='date'" type="date"></app-input>
-                                        <app-input label="type='datetime-local'" type="datetime-local"></app-input>
-                                        <app-input label="type='month'" type="month"></app-input>
-                                        <app-input label="type='time'" type="time"></app-input>
-                                        <app-input label="type='week'" type="week"></app-input>
+                                        <powdercloud-input label="type='date'" type="date"></powdercloud-input>
+                                        <powdercloud-input label="type='datetime-local'" type="datetime-local"></powdercloud-input>
+                                        <powdercloud-input label="type='month'" type="month"></powdercloud-input>
+                                        <powdercloud-input label="type='time'" type="time"></powdercloud-input>
+                                        <powdercloud-input label="type='week'" type="week"></powdercloud-input>
                                     </div>
 
                                     <!-- Boolean/Selection -->
