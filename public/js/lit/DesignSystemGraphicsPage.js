@@ -6,7 +6,7 @@ import './components/PowdercloudAvalancheRose.js';
 import './components/PowdercloudSnowProfileGraph.js';
 import './components/PowdercloudSeasonalChart.js';
 import './components/PowdercloudFailureTypesChart.js';
-import './components/TriggerTypesChart.js';
+import './components/PowdercloudTriggerTypesChart.js';
 import './components/PowdercloudSnowpackHeightChart.js';
 import './components/PowdercloudTemperatureRangeChart.js';
 import './components/WindSpeedChart.js';
@@ -87,10 +87,10 @@ export class DesignSystemGraphicsPage extends LitElement {
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
-                        title="<trigger-types-chart>" 
+                        title="<powdercloud-trigger-types-chart>" 
                         description="Bar chart showing distribution of avalanche triggers."
-                        .code="${`<trigger-types-chart style='height: 300px;'></trigger-types-chart>`}">
-                        <trigger-types-chart style="height: 300px;"></trigger-types-chart>
+                        .code="${`<powdercloud-trigger-types-chart style='height: 300px;'></powdercloud-trigger-types-chart>`}">
+                        <powdercloud-trigger-types-chart style="height: 300px;"></powdercloud-trigger-types-chart>
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 

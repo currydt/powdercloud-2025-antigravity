@@ -41,7 +41,7 @@ import './components/PowdercloudSeasonalChart.js';
 import './components/PowdercloudSkyConditionsChart.js';
 import './components/PowdercloudSnowpackHeightChart.js';
 import './components/PowdercloudTemperatureRangeChart.js';
-import './components/TriggerTypesChart.js';
+import './components/PowdercloudTriggerTypesChart.js';
 import './components/WindSpeedChart.js';
 import { Validators } from './components/PowdercloudValidators.js';
 
@@ -1262,10 +1262,10 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
-                        title="<trigger-types-chart>" 
+                        title="<powdercloud-trigger-types-chart>" 
                         description="Trigger Types Chart"
-                        .code="${`<trigger-types-chart></trigger-types-chart>`}">
-                        <trigger-types-chart></trigger-types-chart>
+                        .code="${`<powdercloud-trigger-types-chart></powdercloud-trigger-types-chart>`}">
+                        <powdercloud-trigger-types-chart></powdercloud-trigger-types-chart>
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
