@@ -5,7 +5,7 @@ import './components/PowdercloudButton.js';
 import './components/AppInput.js';
 import './components/AppTextarea.js';
 import './components/AppSelect.js';
-import './components/AppCheckbox.js';
+import './components/PowdercloudCheckbox.js';
 import './components/AppRadio.js';
 import './components/AppSwitch.js';
 import './components/AppChip.js';
@@ -55,8 +55,8 @@ export class DesignSystemAtomsPage extends LitElement {
     { label: 'Option 2', value: '2' }
 ]}"></app-select>`;
 
-        const checkCode = `<app-checkbox label="Subscribe"></app-checkbox>
-<app-checkbox label="Disabled" disabled></app-checkbox>`;
+        const checkCode = `<powdercloud-checkbox label="Subscribe"></powdercloud-checkbox>
+<powdercloud-checkbox label="Disabled" disabled></powdercloud-checkbox>`;
 
         const switchCode = `<app-switch label="Notifications"></app-switch>
 <app-switch label="Checked" checked></app-switch>
@@ -245,13 +245,13 @@ export class DesignSystemAtomsPage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<app-checkbox> & <app-radio>" 
+                        title="<powdercloud-checkbox> & <app-radio>" 
                         description="Selection controls."
                         .code="${checkCode}">
                         <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 10px;">
-                            <app-checkbox label="Checkbox 1"></app-checkbox>
-                            <app-checkbox label="Checkbox 2" checked></app-checkbox>
-                            <app-checkbox label="Disabled" disabled></app-checkbox>
+                            <powdercloud-checkbox label="Checkbox 1"></powdercloud-checkbox>
+                            <powdercloud-checkbox label="Checkbox 2" checked></powdercloud-checkbox>
+                            <powdercloud-checkbox label="Disabled" disabled></powdercloud-checkbox>
                         </div>
                         <div style="display: flex; gap: 20px; align-items: center;">
                             <app-radio name="demo_radio" label="Radio A" value="a" checked></app-radio>

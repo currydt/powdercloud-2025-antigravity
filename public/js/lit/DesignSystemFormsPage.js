@@ -5,7 +5,7 @@ import './components/AppFieldset.js';
 import './components/AppInput.js';
 import './components/AppTextarea.js';
 import './components/AppSelect.js';
-import './components/AppCheckbox.js';
+import './components/PowdercloudCheckbox.js';
 import './components/AppRadio.js';
 import './components/PowdercloudButton.js';
 
@@ -55,7 +55,7 @@ export class DesignSystemFormsPage extends LitElement {
             <!-- Boolean/Selection -->
             <div style="margin: 20px 0 15px 0; font-weight: 600; color: #555;">Boolean / Selection</div>
             <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                <app-checkbox label="type='checkbox'"></app-checkbox>
+                <powdercloud-checkbox label="type='checkbox'"></powdercloud-checkbox>
                 <app-radio name="tree_g" label="type='radio' 1"></app-radio>
                 <app-radio name="tree_g" label="type='radio' 2" checked></app-radio>
             </div>
@@ -197,7 +197,7 @@ export class DesignSystemFormsPage extends LitElement {
                                     <!-- Boolean/Selection -->
                                     <div style="margin: 20px 0 15px 0; font-weight: 600; color: #555;">Boolean / Selection</div>
                                     <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                                        <app-checkbox label="type='checkbox'"></app-checkbox>
+                                        <powdercloud-checkbox label="type='checkbox'"></powdercloud-checkbox>
                                         <app-radio name="tree_g" label="type='radio' 1"></app-radio>
                                         <app-radio name="tree_g" label="type='radio' 2" checked></app-radio>
                                     </div>

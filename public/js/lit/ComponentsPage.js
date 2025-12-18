@@ -12,7 +12,7 @@ import './components/PowdercloudButton.js';
 import './components/AppInput.js';
 import './components/AppTextarea.js';
 import './components/AppSelect.js';
-import './components/AppCheckbox.js';
+import './components/PowdercloudCheckbox.js';
 import './components/AppRadio.js';
 import './components/AppRadio.js';
 import './components/AppFieldset.js';
@@ -319,8 +319,8 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
     { label: 'Option 2', value: '2' }
 ]}"></app-select>`;
 
-        const checkCode = `<app-checkbox label="Subscribe"></app-checkbox>
-<app-checkbox label="Disabled" disabled></app-checkbox>`;
+        const checkCode = `<powdercloud-checkbox label="Subscribe"></powdercloud-checkbox>
+<powdercloud-checkbox label="Disabled" disabled></powdercloud-checkbox>`;
 
         const switchCode = `<app-switch label="Notifications"></app-switch>
 <app-switch label="Checked" checked></app-switch>
@@ -423,7 +423,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
             <!-- Boolean/Selection -->
             <div style="margin: 20px 0 15px 0; font-weight: 600; color: #555;">Boolean / Selection</div>
             <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                <app-checkbox label="type='checkbox'"></app-checkbox>
+                <powdercloud-checkbox label="type='checkbox'"></powdercloud-checkbox>
                 <app-radio name="tree_g" label="type='radio' 1"></app-radio>
                 <app-radio name="tree_g" label="type='radio' 2" checked></app-radio>
             </div>
@@ -1354,7 +1354,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                     <!-- Boolean/Selection -->
                                     <div style="margin: 20px 0 15px 0; font-weight: 600; color: #555;">Boolean / Selection</div>
                                     <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                                        <app-checkbox label="type='checkbox'"></app-checkbox>
+                                        <powdercloud-checkbox label="type='checkbox'"></powdercloud-checkbox>
                                         <app-radio name="tree_g" label="type='radio' 1"></app-radio>
                                         <app-radio name="tree_g" label="type='radio' 2" checked></app-radio>
                                     </div>
@@ -1616,13 +1616,13 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<app-checkbox> & <app-radio>" 
+                        title="<powdercloud-checkbox> & <app-radio>" 
                         description="Selection controls."
                         .code="${checkCode}">
                         <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 10px;">
-                            <app-checkbox label="Checkbox 1"></app-checkbox>
-                            <app-checkbox label="Checkbox 2" checked></app-checkbox>
-                            <app-checkbox label="Disabled" disabled></app-checkbox>
+                            <powdercloud-checkbox label="Checkbox 1"></powdercloud-checkbox>
+                            <powdercloud-checkbox label="Checkbox 2" checked></powdercloud-checkbox>
+                            <powdercloud-checkbox label="Disabled" disabled></powdercloud-checkbox>
                         </div>
                         <div style="display: flex; gap: 20px; align-items: center;">
                             <app-radio name="demo_radio" label="Radio A" value="a" checked></app-radio>
