@@ -7,7 +7,7 @@ import './components/AppTextarea.js';
 import './components/AppSelect.js';
 import './components/AppCheckbox.js';
 import './components/AppRadio.js';
-import './components/AppButton.js';
+import './components/PowdercloudButton.js';
 
 export class DesignSystemFormsPage extends LitElement {
     createRenderRoot() {
@@ -118,9 +118,9 @@ export class DesignSystemFormsPage extends LitElement {
         <!-- 5. Buttons -->
         <app-fieldset legend="button (Element)">
             <div style="display: flex; gap: 10px;">
-                <app-button label="type='button'"></app-button>
-                <app-button label="type='submit'" icon="fa fa-paper-plane"></app-button>
-                <app-button label="type='reset'" variant="outline"></app-button>
+                <powdercloud-button label="type='button'"></powdercloud-button>
+                <powdercloud-button label="type='submit'" icon="fa fa-paper-plane"></powdercloud-button>
+                <powdercloud-button label="type='reset'" variant="outline"></powdercloud-button>
             </div>
         </app-fieldset>
 
@@ -260,9 +260,9 @@ export class DesignSystemFormsPage extends LitElement {
                                 <!-- 5. Buttons -->
                                 <app-fieldset legend="button (Element)">
                                     <div style="display: flex; gap: 10px;">
-                                        <app-button label="type='button'"></app-button>
-                                        <app-button label="type='submit'" icon="fa fa-paper-plane"></app-button>
-                                        <app-button label="type='reset'" variant="outline"></app-button>
+                                        <powdercloud-button label="type='button'"></powdercloud-button>
+                                        <powdercloud-button label="type='submit'" icon="fa fa-paper-plane"></powdercloud-button>
+                                        <powdercloud-button label="type='reset'" variant="outline"></powdercloud-button>
                                     </div>
                                 </app-fieldset>
 

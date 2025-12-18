@@ -4,7 +4,7 @@ import './components/ComponentDoc.js';
 import './components/AppGrid.js';
 import './components/AppStack.js';
 import './components/AppSpacer.js';
-import './components/AppButton.js';
+import './components/PowdercloudButton.js';
 
 export class DesignSystemLayoutPage extends LitElement {
     createRenderRoot() {
@@ -22,8 +22,8 @@ export class DesignSystemLayoutPage extends LitElement {
     <app-spacer y="4"></app-spacer>
 
     <app-stack direction="row" gap="md" align="center">
-        <app-button label="Save"></app-button>
-        <app-button label="Cancel" variant="secondary"></app-button>
+        <powdercloud-button label="Save"></powdercloud-button>
+        <powdercloud-button label="Cancel" variant="secondary"></powdercloud-button>
     </app-stack>
 </app-container>`;
 
@@ -55,8 +55,8 @@ export class DesignSystemLayoutPage extends LitElement {
 
                                 <app-stack direction="row" gap="md" align="center" style="background: #e8f5e9; padding: 10px;">
                                     <span style="color: #1b5e20;"><strong>&lt;app-stack&gt;</strong> (Flexbox)</span>
-                                    <app-button label="Action 1" size="small"></app-button>
-                                    <app-button label="Action 2" size="small" variant="secondary"></app-button>
+                                    <powdercloud-button label="Action 1" size="small"></powdercloud-button>
+                                    <powdercloud-button label="Action 2" size="small" variant="secondary"></powdercloud-button>
                                 </app-stack>
                             </app-container>
                         </div>

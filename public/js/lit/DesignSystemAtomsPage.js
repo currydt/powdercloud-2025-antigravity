@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/AppContainer.js';
 import './components/ComponentDoc.js';
-import './components/AppButton.js';
+import './components/PowdercloudButton.js';
 import './components/AppInput.js';
 import './components/AppTextarea.js';
 import './components/AppSelect.js';
@@ -85,24 +85,24 @@ export class DesignSystemAtomsPage extends LitElement {
                     
                     <!-- BUTTON PLAYGROUND -->
                     <component-doc 
-                        title="<app-button>" 
+                        title="<powdercloud-button>" 
                         description="Interactive button generator."
-                        .code="${`<app-button
+                        .code="${`<powdercloud-button
     label="${this._btnLabel}"
     variant="${this._btnVariant}"
     size="${this._btnSize}"${this._btnDisabled ? '\n    disabled' : ''}${this._btnIcon ? `\n    icon="${this._btnIcon}"` : ''}
-></app-button>`}">
+></powdercloud-button>`}">
                         
                         <div style="display: flex; gap: 40px; align-items: flex-start; margin-bottom: 20px;">
                             <!-- Live Preview -->
                             <div style="flex: 1; display: flex; justify-content: center; align-items: center; min-height: 80px; background: #f8f9fa; border-radius: 8px; border: 1px dashed #ccc;">
-                                <app-button 
+                                <powdercloud-button 
                                     label="${this._btnLabel}" 
                                     variant="${this._btnVariant}" 
                                     size="${this._btnSize}" 
                                     ?disabled="${this._btnDisabled}"
                                     icon="${this._btnIcon}"
-                                ></app-button>
+                                ></powdercloud-button>
                             </div>
 
                             <!-- Controls -->

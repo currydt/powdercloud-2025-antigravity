@@ -8,7 +8,7 @@ import './components/Breadcrumbs.js';
 import './components/MegaMenu.js';
 import './components/AppTabs.js';
 import './components/DashboardGrid.js';
-import './components/AppButton.js';
+import './components/PowdercloudButton.js';
 import './components/AppInput.js';
 import './components/AppTextarea.js';
 import './components/AppSelect.js';
@@ -296,15 +296,15 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
     @action="\${(e) => console.log(e.detail)}"
 ></dashboard-grid>`;
 
-        const buttonCode = `<app-button label="Primary"></app-button>
-<app-button label="Secondary" variant="secondary"></app-button>
-<app-button label="Outline" variant="outline"></app-button>
-<app-button label="Text" variant="text"></app-button>
-<app-button label="Danger" variant="danger"></app-button>
-<app-button label="Disabled" disabled></app-button>
-<app-button label="Small" size="small"></app-button>
-<app-button label="Large" size="large"></app-button>
-<app-button label="With Icon" icon="fa fa-save"></app-button>`;
+        const buttonCode = `<powdercloud-button label="Primary"></powdercloud-button>
+<powdercloud-button label="Secondary" variant="secondary"></powdercloud-button>
+<powdercloud-button label="Outline" variant="outline"></powdercloud-button>
+<powdercloud-button label="Text" variant="text"></powdercloud-button>
+<powdercloud-button label="Danger" variant="danger"></powdercloud-button>
+<powdercloud-button label="Disabled" disabled></powdercloud-button>
+<powdercloud-button label="Small" size="small"></powdercloud-button>
+<powdercloud-button label="Large" size="large"></powdercloud-button>
+<powdercloud-button label="With Icon" icon="fa fa-save"></powdercloud-button>`;
 
         const inputCode = `<app-input label="Standard Input"></app-input>
 <app-input label="Required Input" required></app-input>
@@ -354,8 +354,8 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
         const modalCode = `<app-modal title="Example Modal" open>
     <p>Modal content goes here.</p>
     <div slot="footer">
-        <app-button label="Close" @click="\${() => this.modalOpen = false}"></app-button>
-        <app-button label="Save" variant="primary"></app-button>
+        <powdercloud-button label="Close" @click="\${() => this.modalOpen = false}"></powdercloud-button>
+        <powdercloud-button label="Save" variant="primary"></powdercloud-button>
     </div>
 </app-modal>`;
 
@@ -378,8 +378,8 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
     <app-spacer y="4"></app-spacer>
 
     <app-stack direction="row" gap="md" align="center">
-        <app-button label="Save"></app-button>
-        <app-button label="Cancel" variant="secondary"></app-button>
+        <powdercloud-button label="Save"></powdercloud-button>
+        <powdercloud-button label="Cancel" variant="secondary"></powdercloud-button>
     </app-stack>
 </app-container>`;
 
@@ -486,9 +486,9 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
         <!-- 5. Buttons -->
         <app-fieldset legend="button (Element)">
             <div style="display: flex; gap: 10px;">
-                <app-button label="type='button'"></app-button>
-                <app-button label="type='submit'" icon="fa fa-paper-plane"></app-button>
-                <app-button label="type='reset'" variant="outline"></app-button>
+                <powdercloud-button label="type='button'"></powdercloud-button>
+                <powdercloud-button label="type='submit'" icon="fa fa-paper-plane"></powdercloud-button>
+                <powdercloud-button label="type='reset'" variant="outline"></powdercloud-button>
             </div>
         </app-fieldset>
 
@@ -983,8 +983,8 @@ PAGE SHELL (e.g., dashboard_lit.html)
 
                                 <app-stack direction="row" gap="md" align="center" style="background: #e8f5e9; padding: 10px;">
                                     <span style="color: #1b5e20;"><strong>&lt;app-stack&gt;</strong> (Flexbox)</span>
-                                    <app-button label="Action 1" size="small"></app-button>
-                                    <app-button label="Action 2" size="small" variant="secondary"></app-button>
+                                    <powdercloud-button label="Action 1" size="small"></powdercloud-button>
+                                    <powdercloud-button label="Action 2" size="small" variant="secondary"></powdercloud-button>
                                 </app-stack>
                             </app-container>
                         </div>
@@ -1088,20 +1088,20 @@ PAGE SHELL (e.g., dashboard_lit.html)
                         title="<app-tooltip>" 
                         description="Contextual information on hover."
                         .code="${`<app-tooltip content='This is a tooltip'>
-    <app-button label='Hover Me'></app-button>
+    <powdercloud-button label='Hover Me'></powdercloud-button>
 </app-tooltip>`}">
                         <div style="display: flex; gap: 40px; padding: 20px;">
                             <app-tooltip content="Top Tooltip" position="top">
-                                <app-button label="Top"></app-button>
+                                <powdercloud-button label="Top"></powdercloud-button>
                             </app-tooltip>
                             <app-tooltip content="Right Tooltip" position="right">
-                                <app-button label="Right"></app-button>
+                                <powdercloud-button label="Right"></powdercloud-button>
                             </app-tooltip>
                             <app-tooltip content="Bottom Tooltip" position="bottom">
-                                <app-button label="Bottom"></app-button>
+                                <powdercloud-button label="Bottom"></powdercloud-button>
                             </app-tooltip>
                             <app-tooltip content="Left Tooltip" position="left">
-                                <app-button label="Left"></app-button>
+                                <powdercloud-button label="Left"></powdercloud-button>
                             </app-tooltip>
                         </div>
                     </component-doc>
@@ -1417,9 +1417,9 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                 <!-- 5. Buttons -->
                                 <app-fieldset legend="button (Element)">
                                     <div style="display: flex; gap: 10px;">
-                                        <app-button label="type='button'"></app-button>
-                                        <app-button label="type='submit'" icon="fa fa-paper-plane"></app-button>
-                                        <app-button label="type='reset'" variant="outline"></app-button>
+                                        <powdercloud-button label="type='button'"></powdercloud-button>
+                                        <powdercloud-button label="type='submit'" icon="fa fa-paper-plane"></powdercloud-button>
+                                        <powdercloud-button label="type='reset'" variant="outline"></powdercloud-button>
                                     </div>
                                 </app-fieldset>
 
@@ -1456,24 +1456,24 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     
                     <!-- BUTTON PLAYGROUND -->
                     <component-doc 
-                        title="<app-button>" 
+                        title="<powdercloud-button>" 
                         description="Interactive button generator."
-                        .code="${`<app-button
+                        .code="${`<powdercloud-button
     label="${this._btnLabel}"
     variant="${this._btnVariant}"
     size="${this._btnSize}"${this._btnDisabled ? '\n    disabled' : ''}${this._btnIcon ? `\n    icon="${this._btnIcon}"` : ''}
-></app-button>`}">
+></powdercloud-button>`}">
                         
                         <div style="display: flex; gap: 40px; align-items: flex-start; margin-bottom: 20px;">
                             <!-- Live Preview -->
                             <div style="flex: 1; display: flex; justify-content: center; align-items: center; min-height: 80px; background: #f8f9fa; border-radius: 8px; border: 1px dashed #ccc;">
-                                <app-button 
+                                <powdercloud-button 
                                     label="${this._btnLabel}" 
                                     variant="${this._btnVariant}" 
                                     size="${this._btnSize}" 
                                     ?disabled="${this._btnDisabled}"
                                     icon="${this._btnIcon}"
-                                ></app-button>
+                                ></powdercloud-button>
                             </div>
 
                             <!-- Controls -->
@@ -1716,12 +1716,12 @@ PAGE SHELL (e.g., dashboard_lit.html)
                         title="<app-modal>" 
                         description="Dialog box for critical actions or information."
                         .code="${modalCode}">
-                        <app-button label="Open Modal" @click="${() => this.shadowRoot.getElementById('demo-modal').open = true}"></app-button>
+                        <powdercloud-button label="Open Modal" @click="${() => this.shadowRoot.getElementById('demo-modal').open = true}"></powdercloud-button>
                         <app-modal id="demo-modal" title="Example Modal">
                             <p>This is a modal dialog. It overlays the page content.</p>
                             <div slot="footer">
-                                <app-button label="Close" @click="${() => this.shadowRoot.getElementById('demo-modal').open = false}"></app-button>
-                                <app-button label="Save" variant="primary" @click="${() => this.shadowRoot.getElementById('demo-modal').open = false}"></app-button>
+                                <powdercloud-button label="Close" @click="${() => this.shadowRoot.getElementById('demo-modal').open = false}"></powdercloud-button>
+                                <powdercloud-button label="Save" variant="primary" @click="${() => this.shadowRoot.getElementById('demo-modal').open = false}"></powdercloud-button>
                             </div>
                         </app-modal>
                     </component-doc>
@@ -1730,11 +1730,11 @@ PAGE SHELL (e.g., dashboard_lit.html)
                         title="<app-toast>" 
                         description="Temporary notification message."
                         .code="${toastCode}">
-                         <app-button label="Show Toast" @click="${() => {
+                         <powdercloud-button label="Show Toast" @click="${() => {
                 const toast = this.shadowRoot.getElementById('demo-toast');
                 toast.open = true;
                 setTimeout(() => toast.open = false, 3000);
-            }}"></app-button>
+            }}"></powdercloud-button>
                         <app-toast id="demo-toast" message="Operation Saved Successfully" variant="success"></app-toast>
                     </component-doc>
 

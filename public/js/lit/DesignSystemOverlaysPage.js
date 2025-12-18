@@ -3,7 +3,7 @@ import './components/AppContainer.js';
 import './components/ComponentDoc.js';
 import './components/AppModal.js';
 import './components/AppToast.js';
-import './components/AppButton.js';
+import './components/PowdercloudButton.js';
 import './components/AppCombobox.js';
 import './components/AppDateRange.js';
 import './components/AppFileUpload.js';
@@ -18,8 +18,8 @@ export class DesignSystemOverlaysPage extends LitElement {
         const modalCode = `<app-modal title="Example Modal" open>
     <p>Modal content goes here.</p>
     <div slot="footer">
-        <app-button label="Close" @click="\${() => this.modalOpen = false}"></app-button>
-        <app-button label="Save" variant="primary"></app-button>
+        <powdercloud-button label="Close" @click="\${() => this.modalOpen = false}"></powdercloud-button>
+        <powdercloud-button label="Save" variant="primary"></powdercloud-button>
     </div>
 </app-modal>`;
 
@@ -44,12 +44,12 @@ export class DesignSystemOverlaysPage extends LitElement {
                         title="<app-modal>" 
                         description="Dialog box for critical actions or information."
                         .code="${modalCode}">
-                        <app-button label="Open Modal" @click="${() => this.shadowRoot.getElementById('demo-modal').open = true}"></app-button>
+                        <powdercloud-button label="Open Modal" @click="${() => this.shadowRoot.getElementById('demo-modal').open = true}"></powdercloud-button>
                         <app-modal id="demo-modal" title="Example Modal">
                             <p>This is a modal dialog. It overlays the page content.</p>
                             <div slot="footer">
-                                <app-button label="Close" @click="${() => this.shadowRoot.getElementById('demo-modal').open = false}"></app-button>
-                                <app-button label="Save" variant="primary" @click="${() => this.shadowRoot.getElementById('demo-modal').open = false}"></app-button>
+                                <powdercloud-button label="Close" @click="${() => this.shadowRoot.getElementById('demo-modal').open = false}"></powdercloud-button>
+                                <powdercloud-button label="Save" variant="primary" @click="${() => this.shadowRoot.getElementById('demo-modal').open = false}"></powdercloud-button>
                             </div>
                         </app-modal>
                     </component-doc>
@@ -58,11 +58,11 @@ export class DesignSystemOverlaysPage extends LitElement {
                         title="<app-toast>" 
                         description="Temporary notification message."
                         .code="${toastCode}">
-                         <app-button label="Show Toast" @click="${() => {
+                         <powdercloud-button label="Show Toast" @click="${() => {
                 const toast = this.shadowRoot.getElementById('demo-toast');
                 toast.open = true;
                 setTimeout(() => toast.open = false, 3000);
-            }}"></app-button>
+            }}"></powdercloud-button>
                         <app-toast id="demo-toast" message="Operation Saved Successfully" variant="success"></app-toast>
                     </component-doc>
 

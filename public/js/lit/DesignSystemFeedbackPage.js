@@ -3,7 +3,7 @@ import './components/AppContainer.js';
 import './components/ComponentDoc.js';
 import './components/PowdercloudAvatar.js';
 import './components/AppTooltip.js';
-import './components/AppButton.js';
+import './components/PowdercloudButton.js';
 
 export class DesignSystemFeedbackPage extends LitElement {
     createRenderRoot() {
@@ -36,20 +36,20 @@ export class DesignSystemFeedbackPage extends LitElement {
                         title="<app-tooltip>" 
                         description="Contextual information on hover."
                         .code="${`<app-tooltip content='This is a tooltip'>
-    <app-button label='Hover Me'></app-button>
+    <powdercloud-button label='Hover Me'></powdercloud-button>
 </app-tooltip>`}">
                         <div style="display: flex; gap: 40px; padding: 20px;">
                             <app-tooltip content="Top Tooltip" position="top">
-                                <app-button label="Top"></app-button>
+                                <powdercloud-button label="Top"></powdercloud-button>
                             </app-tooltip>
                             <app-tooltip content="Right Tooltip" position="right">
-                                <app-button label="Right"></app-button>
+                                <powdercloud-button label="Right"></powdercloud-button>
                             </app-tooltip>
                             <app-tooltip content="Bottom Tooltip" position="bottom">
-                                <app-button label="Bottom"></app-button>
+                                <powdercloud-button label="Bottom"></powdercloud-button>
                             </app-tooltip>
                             <app-tooltip content="Left Tooltip" position="left">
-                                <app-button label="Left"></app-button>
+                                <powdercloud-button label="Left"></powdercloud-button>
                             </app-tooltip>
                         </div>
                     </component-doc>
