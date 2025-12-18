@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/co
 import './components/PowdercloudContainer.js';
 import './components/ComponentDoc.js';
 import './components/PowdercloudAlert.js';
-import './components/AppDisclaimer.js';
+import './components/PowdercloudDisclaimer.js';
 import './components/CollapsiblePanel.js';
 import './components/Breadcrumbs.js';
 import './components/AppFooter.js';
@@ -24,7 +24,7 @@ export class DesignSystemCorePage extends LitElement {
     This is an informational message.
 </powdercloud-alert>`;
 
-        const disclaimerCode = `<app-disclaimer></app-disclaimer>`;
+        const disclaimerCode = `<powdercloud-disclaimer></powdercloud-disclaimer>`;
 
         const panelCode = `<collapsible-panel title="Panel Title" tagline="Optional Tagline">
     <div style="padding: 15px;">
@@ -72,10 +72,10 @@ export class DesignSystemCorePage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<app-disclaimer>" 
+                        title="<powdercloud-disclaimer>" 
                         description="Standard legal/safety disclaimer footer."
                         .code="${disclaimerCode}">
-                        <app-disclaimer></app-disclaimer>
+                        <powdercloud-disclaimer></powdercloud-disclaimer>
                     </component-doc>
 
                     <component-doc 

@@ -2,7 +2,7 @@ import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/li
 import './components/CollapsiblePanel.js';
 
 import './components/PowdercloudAlert.js';
-import './components/AppDisclaimer.js';
+import './components/PowdercloudDisclaimer.js';
 import './components/ComponentDoc.js';
 import './components/Breadcrumbs.js';
 import './components/MegaMenu.js';
@@ -162,7 +162,7 @@ export class ComponentsPage extends LitElement {
     This is an informational message.
 </powdercloud-alert>`;
 
-        const disclaimerCode = `<app-disclaimer></app-disclaimer>`;
+        const disclaimerCode = `<powdercloud-disclaimer></powdercloud-disclaimer>`;
 
         const panelCode = `<collapsible-panel title="Panel Title" tagline="Optional Tagline">
     <div style="padding: 15px;">
@@ -887,10 +887,10 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<app-disclaimer>" 
+                        title="<powdercloud-disclaimer>" 
                         description="Standard legal/safety disclaimer footer."
                         .code="${disclaimerCode}">
-                        <app-disclaimer></app-disclaimer>
+                        <powdercloud-disclaimer></powdercloud-disclaimer>
                     </component-doc>
 
                     <component-doc 
