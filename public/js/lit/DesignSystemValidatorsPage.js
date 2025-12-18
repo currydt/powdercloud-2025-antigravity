@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/co
 import './components/PowdercloudContainer.js';
 import './components/PowdercloudComponentDoc.js';
 import './components/PowdercloudInput.js';
-import { Validators } from './components/Validators.js';
+import { Validators } from './components/PowdercloudValidators.js';
 
 export class DesignSystemValidatorsPage extends LitElement {
     createRenderRoot() {

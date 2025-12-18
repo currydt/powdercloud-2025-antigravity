@@ -43,7 +43,7 @@ import './components/SnowpackHeightChart.js';
 import './components/TemperatureRangeChart.js';
 import './components/TriggerTypesChart.js';
 import './components/WindSpeedChart.js';
-import { Validators } from './components/Validators.js';
+import { Validators } from './components/PowdercloudValidators.js';
 
 export class ComponentsPage extends LitElement {
     static properties = {
