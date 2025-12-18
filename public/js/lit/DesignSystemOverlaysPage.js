@@ -5,7 +5,7 @@ import './components/AppModal.js';
 import './components/AppToast.js';
 import './components/PowdercloudButton.js';
 import './components/PowdercloudCombobox.js';
-import './components/AppDateRange.js';
+import './components/PowdercloudDateRange.js';
 import './components/AppFileUpload.js';
 import './components/AppRichText.js';
 
@@ -30,7 +30,7 @@ export class DesignSystemOverlaysPage extends LitElement {
     { label: 'Bob', value: 'bob' }
 ]}"></powdercloud-combobox>`;
 
-        const dateRangeCode = `<app-date-range label="Filter by Date"></app-date-range>`;
+        const dateRangeCode = `<powdercloud-date-range label="Filter by Date"></powdercloud-date-range>`;
 
         return html`
             <powdercloud-container>
@@ -81,10 +81,10 @@ export class DesignSystemOverlaysPage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<app-date-range>" 
+                        title="<powdercloud-date-range>" 
                         description="Date range picker."
                         .code="${dateRangeCode}">
-                        <app-date-range label="Filter by Date"></app-date-range>
+                        <powdercloud-date-range label="Filter by Date"></powdercloud-date-range>
                     </component-doc>
 
                     <component-doc 

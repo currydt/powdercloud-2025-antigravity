@@ -28,7 +28,7 @@ import './components/AppSpacer.js';
 import './components/AppModal.js';
 import './components/AppToast.js';
 import './components/PowdercloudCombobox.js';
-import './components/AppDateRange.js';
+import './components/PowdercloudDateRange.js';
 import './components/PowdercloudAvatar.js';
 import './components/AppTooltip.js';
 import './components/AppFileUpload.js';
@@ -366,7 +366,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
     { label: 'Bob', value: 'bob' }
 ]}"></powdercloud-combobox>`;
 
-        const dateRangeCode = `<app-date-range label="Filter by Date"></app-date-range>`;
+        const dateRangeCode = `<powdercloud-date-range label="Filter by Date"></powdercloud-date-range>`;
 
         const layoutElementsCode = `<powdercloud-container>
     <app-grid cols="3" gap="lg">
@@ -1753,10 +1753,10 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<app-date-range>" 
+                        title="<powdercloud-date-range>" 
                         description="Date range picker."
                         .code="${dateRangeCode}">
-                        <app-date-range label="Filter by Date"></app-date-range>
+                        <powdercloud-date-range label="Filter by Date"></powdercloud-date-range>
                     </component-doc>
 
                     <component-doc 
