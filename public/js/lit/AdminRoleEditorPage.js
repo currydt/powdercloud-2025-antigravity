@@ -1,5 +1,5 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import './components/RoleListGrid.js';
+import './components/PowdercloudRoleListGrid.js';
 
 export class AdminRoleEditorPage extends LitElement {
     createRenderRoot() {
@@ -13,7 +13,7 @@ export class AdminRoleEditorPage extends LitElement {
             </h1>
             <p style="margin-bottom: 20px;">Manage system roles and permissions.</p>
             
-            <role-list-grid></role-list-grid>
+            <powdercloud-role-list-grid></powdercloud-role-list-grid>
         `;
     }
 }
