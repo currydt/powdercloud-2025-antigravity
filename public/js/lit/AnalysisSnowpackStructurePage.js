@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/FilterPanel.js';
-import './components/DashboardGrid.js';
+import './components/PowdercloudDashboardGrid.js';
 import './components/PowdercloudContainer.js';
 import './components/PowdercloudCard.js';
 
@@ -49,7 +49,7 @@ export class AnalysisSnowpackStructurePage extends LitElement {
 
                 <br />
 
-                <dashboard-grid
+                <powdercloud-dashboard-grid
                     title="Snowpack Structure Records"
                     .columns="${[
                 { header: 'Date', field: 'date', sortable: true },
@@ -60,7 +60,7 @@ export class AnalysisSnowpackStructurePage extends LitElement {
             ]}"
                     .data="${this._gridData}"
                     paginated
-                ></dashboard-grid>
+                ></powdercloud-dashboard-grid>
             </powdercloud-container>
         `;
     }

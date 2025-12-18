@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/FilterPanel.js';
 import './components/PowdercloudDashboardChart.js';
-import './components/DashboardGrid.js';
+import './components/PowdercloudDashboardGrid.js';
 import './components/PowdercloudContainer.js';
 import './components/PowdercloudGrid.js';
 import './components/PowdercloudCard.js';
@@ -187,7 +187,7 @@ export class AnalysisCommunitySummaryPage extends LitElement {
 
                 <powdercloud-tabs>
                     <app-tab label="Weather" active>
-                        <dashboard-grid
+                        <powdercloud-dashboard-grid
                             title="Weather Observations"
                             .columns="${[
                 { header: 'Date', field: 'date', sortable: true },
@@ -199,10 +199,10 @@ export class AnalysisCommunitySummaryPage extends LitElement {
             ]}"
                             .data="${this._weatherGridData}"
                             paginated
-                        ></dashboard-grid>
+                        ></powdercloud-dashboard-grid>
                     </app-tab>
                     <app-tab label="Avalanches">
-                        <dashboard-grid
+                        <powdercloud-dashboard-grid
                             title="Avalanche Observations"
                             .columns="${[
                 { header: 'Date', field: 'date', sortable: true },
@@ -214,7 +214,7 @@ export class AnalysisCommunitySummaryPage extends LitElement {
             ]}"
                             .data="${this._avalancheGridData}"
                             paginated
-                        ></dashboard-grid>
+                        ></powdercloud-dashboard-grid>
                     </app-tab>
                 </powdercloud-tabs>
 

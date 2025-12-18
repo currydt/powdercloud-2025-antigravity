@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/co
 import './components/PowdercloudContainer.js';
 import './components/PowdercloudComponentDoc.js';
 import './components/FilterPanel.js';
-import './components/DashboardGrid.js';
+import './components/PowdercloudDashboardGrid.js';
 
 export class DesignSystemPatternsPage extends LitElement {
     static properties = {
@@ -105,7 +105,7 @@ export class DesignSystemPatternsPage extends LitElement {
     @update="\${(e) => console.log(e.detail)}"
 ></filter-panel>`;
 
-        const gridCode = `<dashboard-grid
+        const gridCode = `<powdercloud-dashboard-grid
     title="${currentDataset.title}"
 ${gridProps}    .columns="\${${columnsSnippet}}"
     .data="\${${dataSnippet}}"
@@ -115,7 +115,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
         { label: 'Delete Item', event: 'delete', requiresSelection: true }
     ]}"
     @action="\${(e) => console.log(e.detail)}"
-></dashboard-grid>`;
+></powdercloud-dashboard-grid>`;
 
         return html`
             <powdercloud-container>
@@ -142,7 +142,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
-                        title="<dashboard-grid>" 
+                        title="<powdercloud-dashboard-grid>" 
                         description="Sortable, paginated data table with optional row selection."
                         .code="${gridCode}">
                         
@@ -210,7 +210,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
                             </div>
                         </div>
 
-                        <dashboard-grid
+                        <powdercloud-dashboard-grid
                             title="${currentDataset.title}"
                             ?isMock="${this._gridIsMock}"
                             ?sortable="${this._gridSortable}"
@@ -225,7 +225,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
                 { label: 'Delete Item', event: 'delete', requiresSelection: true }
             ]}"
                             @action="${(e) => alert(`Action Triggered: ${e.detail.action}\nRow Count: ${e.detail.rows ? e.detail.rows.length : 0}`)}"
-                        ></dashboard-grid>
+                        ></powdercloud-dashboard-grid>
                     </powdercloud-component-doc>
 
                 </div>

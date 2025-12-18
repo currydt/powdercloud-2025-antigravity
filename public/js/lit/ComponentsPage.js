@@ -7,7 +7,7 @@ import './components/PowdercloudComponentDoc.js';
 import './components/PowdercloudBreadcrumbs.js';
 import './components/MegaMenu.js';
 import './components/PowdercloudTabs.js';
-import './components/DashboardGrid.js';
+import './components/PowdercloudDashboardGrid.js';
 import './components/PowdercloudButton.js';
 import './components/PowdercloudInput.js';
 import './components/PowdercloudTextarea.js';
@@ -284,7 +284,7 @@ export class ComponentsPage extends LitElement {
     @update="\${(e) => console.log(e.detail)}"
 ></filter-panel>`;
 
-        const gridCode = `<dashboard-grid
+        const gridCode = `<powdercloud-dashboard-grid
     title="${currentDataset.title}"
 ${gridProps}    .columns="\${${columnsSnippet}}"
     .data="\${${dataSnippet}}"
@@ -294,7 +294,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
         { label: 'Delete Item', event: 'delete', requiresSelection: true }
     ]}"
     @action="\${(e) => console.log(e.detail)}"
-></dashboard-grid>`;
+></powdercloud-dashboard-grid>`;
 
         const buttonCode = `<powdercloud-button label="Primary"></powdercloud-button>
 <powdercloud-button label="Secondary" variant="secondary"></powdercloud-button>
@@ -1131,7 +1131,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
-                        title="<dashboard-grid>" 
+                        title="<powdercloud-dashboard-grid>" 
                         description="Sortable, paginated data table with optional row selection."
                         .code="${gridCode}">
                         
@@ -1199,7 +1199,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                             </div>
                         </div>
 
-                        <dashboard-grid
+                        <powdercloud-dashboard-grid
                             title="${currentDataset.title}"
                             ?isMock="${this._gridIsMock}"
                             ?sortable="${this._gridSortable}"
@@ -1214,7 +1214,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                 { label: 'Delete Item', event: 'delete', requiresSelection: true }
             ]}"
                             @action="${(e) => alert(`Action Triggered: ${e.detail.action}\nRow Count: ${e.detail.rows ? e.detail.rows.length : 0}`)}"
-                        ></dashboard-grid>
+                        ></powdercloud-dashboard-grid>
                     </powdercloud-component-doc>
 
                 </div>
