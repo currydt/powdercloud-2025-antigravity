@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/AppContainer.js';
 import './components/ComponentDoc.js';
-import './components/AppAlert.js';
+import './components/PowdercloudAlert.js';
 import './components/AppDisclaimer.js';
 import './components/CollapsiblePanel.js';
 import './components/Breadcrumbs.js';
@@ -16,13 +16,13 @@ export class DesignSystemCorePage extends LitElement {
     }
 
     render() {
-        const alertCode = `<app-alert level="warning" title="Warning Title">
+        const alertCode = `<powdercloud-alert level="warning" title="Warning Title">
     This is a warning message.
-</app-alert>
+</powdercloud-alert>
 
-<app-alert level="info" title="Info Title">
+<powdercloud-alert level="info" title="Info Title">
     This is an informational message.
-</app-alert>`;
+</powdercloud-alert>`;
 
         const disclaimerCode = `<app-disclaimer></app-disclaimer>`;
 
@@ -64,11 +64,11 @@ export class DesignSystemCorePage extends LitElement {
                 <div style="padding: 20px;">
                     
                     <component-doc 
-                        title="<app-alert>" 
+                        title="<powdercloud-alert>" 
                         description="Standardized alert box for warnings, errors, info, and success messages."
                         .code="${alertCode}">
-                        <app-alert level="warning" title="Warning Title">This is a warning message.</app-alert>
-                        <app-alert level="info" title="Info Title">This is an informational message.</app-alert>
+                        <powdercloud-alert level="warning" title="Warning Title">This is a warning message.</powdercloud-alert>
+                        <powdercloud-alert level="info" title="Info Title">This is an informational message.</powdercloud-alert>
                     </component-doc>
 
                     <component-doc 

@@ -1,7 +1,7 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/CollapsiblePanel.js';
 
-import './components/AppAlert.js';
+import './components/PowdercloudAlert.js';
 import './components/AppDisclaimer.js';
 import './components/ComponentDoc.js';
 import './components/Breadcrumbs.js';
@@ -154,13 +154,13 @@ export class ComponentsPage extends LitElement {
     }
 
     render() {
-        const alertCode = `<app-alert level="warning" title="Warning Title">
+        const alertCode = `<powdercloud-alert level="warning" title="Warning Title">
     This is a warning message.
-</app-alert>
+</powdercloud-alert>
 
-<app-alert level="info" title="Info Title">
+<powdercloud-alert level="info" title="Info Title">
     This is an informational message.
-</app-alert>`;
+</powdercloud-alert>`;
 
         const disclaimerCode = `<app-disclaimer></app-disclaimer>`;
 
@@ -821,7 +821,7 @@ ROOT
                         <h3 style="color: #2c3e50; font-size: 1.4em; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 15px;">
                             Caveats & Limitations
                         </h3>
-                        <app-alert level="warning" title="Critical Design Constraints">
+                        <powdercloud-alert level="warning" title="Critical Design Constraints">
                             <ul style="padding-left: 20px; margin: 0;">
                                 <li style="margin-bottom: 5px;">
                                     <strong>Global Style Pollution:</strong> 
@@ -839,7 +839,7 @@ ROOT
                                     <code>width: 100%</code> explicitly set on containers to prevent "squishing" (as seen in Dashboard Grids).
                                 </li>
                             </ul>
-                        </app-alert>
+                        </powdercloud-alert>
                     </div>
 
                     <div>
@@ -879,11 +879,11 @@ PAGE SHELL (e.g., dashboard_lit.html)
                 <div style="padding: 20px;">
                     
                     <component-doc 
-                        title="<app-alert>" 
+                        title="<powdercloud-alert>" 
                         description="Standardized alert box for warnings, errors, info, and success messages."
                         .code="${alertCode}">
-                        <app-alert level="warning" title="Warning Title">This is a warning message.</app-alert>
-                        <app-alert level="info" title="Info Title">This is an informational message.</app-alert>
+                        <powdercloud-alert level="warning" title="Warning Title">This is a warning message.</powdercloud-alert>
+                        <powdercloud-alert level="info" title="Info Title">This is an informational message.</powdercloud-alert>
                     </component-doc>
 
                     <component-doc 

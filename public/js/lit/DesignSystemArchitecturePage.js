@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/AppContainer.js';
 import './components/AppCard.js';
-import './components/AppAlert.js';
+import './components/PowdercloudAlert.js';
 
 export class DesignSystemArchitecturePage extends LitElement {
     createRenderRoot() {
@@ -124,7 +124,7 @@ export class DesignSystemArchitecturePage extends LitElement {
                         <h3 style="color: #2c3e50; font-size: 1.4em; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 15px;">
                             Caveats & Limitations
                         </h3>
-                        <app-alert level="warning" title="Critical Design Constraints">
+                        <powdercloud-alert level="warning" title="Critical Design Constraints">
                             <ul style="padding-left: 20px; margin: 0;">
                                 <li style="margin-bottom: 5px;">
                                     <strong>Global Style Pollution:</strong> 
@@ -142,7 +142,7 @@ export class DesignSystemArchitecturePage extends LitElement {
                                     <code>width: 100%</code> explicitly set on containers to prevent "squishing" (as seen in Dashboard Grids).
                                 </li>
                             </ul>
-                        </app-alert>
+                        </powdercloud-alert>
                     </div>
 
                     <div>
