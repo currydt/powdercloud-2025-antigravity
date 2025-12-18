@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/PowdercloudContainer.js';
-import './components/ComponentDoc.js';
+import './components/PowdercloudComponentDoc.js';
 import './components/PowdercloudCard.js';
 import './components/PowdercloudFieldset.js';
 import './components/PowdercloudCollapsiblePanel.js';
@@ -60,7 +60,7 @@ export class DesignSystemContainersPage extends LitElement {
                 
                 <div style="padding: 20px;">
                     
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-card>" 
                         description="The primary container for grouping related content."
                         .code="${cardCode}">
@@ -77,9 +77,9 @@ export class DesignSystemContainersPage extends LitElement {
                                 <p>Cards can feature hero images to highlight content.</p>
                             </powdercloud-card>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-fieldset>" 
                         description="A semantic container for grouping form inputs."
                         .code="${fieldsetCode}">
@@ -87,9 +87,9 @@ export class DesignSystemContainersPage extends LitElement {
                             <powdercloud-input label="Full Name"></powdercloud-input>
                             <powdercloud-input label="Email Address"></powdercloud-input>
                         </powdercloud-fieldset>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-collapsible-panel>" 
                         description="An expandable container for managing screen real estate."
                         .code="${panelCode}">
@@ -98,9 +98,9 @@ export class DesignSystemContainersPage extends LitElement {
                                 Panels are great for hiding advanced settings or large sections of content.
                             </div>
                         </powdercloud-collapsible-panel>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-tabs>" 
                         description="Material Design style tabs for switching between content views."
                         .code="${tabsCode}">
@@ -124,7 +124,7 @@ export class DesignSystemContainersPage extends LitElement {
                                 </div>
                             </app-tab>
                         </powdercloud-tabs>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                 </div>
             </powdercloud-container>

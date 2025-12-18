@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/PowdercloudContainer.js';
-import './components/ComponentDoc.js';
+import './components/PowdercloudComponentDoc.js';
 import './components/PowdercloudButton.js';
 import './components/PowdercloudInput.js';
 import './components/PowdercloudTextarea.js';
@@ -84,7 +84,7 @@ export class DesignSystemAtomsPage extends LitElement {
                 <div style="padding: 20px;">
                     
                     <!-- BUTTON PLAYGROUND -->
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-button>" 
                         description="Interactive button generator."
                         .code="${`<powdercloud-button
@@ -143,10 +143,10 @@ export class DesignSystemAtomsPage extends LitElement {
                                 </label>
                             </div>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                     <!-- INPUT PLAYGROUND -->
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-input>" 
                         description="Interactive input generator."
                         .code="${`<powdercloud-input
@@ -206,17 +206,17 @@ export class DesignSystemAtomsPage extends LitElement {
                                 </label>
                             </div>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                     <!-- Other Static Examples (Textarea, Select, etc.) -->
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-textarea>" 
                         description="Multi-line text input."
                         .code="${textareaCode}">
                         <powdercloud-textarea label="Comments" placeholder="Enter your comments here..." rows="3"></powdercloud-textarea>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-select>" 
                         description="Dropdown menu with optgroup support."
                         .code="${selectCode}">
@@ -242,9 +242,9 @@ export class DesignSystemAtomsPage extends LitElement {
                 }
             ]}"></powdercloud-select>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-checkbox> & <powdercloud-radio>" 
                         description="Selection controls."
                         .code="${checkCode}">
@@ -258,9 +258,9 @@ export class DesignSystemAtomsPage extends LitElement {
                             <powdercloud-radio name="demo_radio" label="Radio B" value="b"></powdercloud-radio>
                             <powdercloud-radio name="demo_radio" label="Disabled" disabled></powdercloud-radio>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-switch>" 
                         description="Toggle switch for binary states."
                         .code="${switchCode}">
@@ -269,9 +269,9 @@ export class DesignSystemAtomsPage extends LitElement {
                             <powdercloud-switch label="Checked" checked></powdercloud-switch>
                             <powdercloud-switch label="Disabled" disabled></powdercloud-switch>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-chip>" 
                         description="Compact elements for tags and filters."
                         .code="${chipCode}">
@@ -282,9 +282,9 @@ export class DesignSystemAtomsPage extends LitElement {
                             <powdercloud-chip label="With Icon" icon="fa fa-star"></powdercloud-chip>
                             <powdercloud-chip label="Removable" removable @remove="${(e) => alert('Removed ' + e.detail.label)}"></powdercloud-chip>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-progress>" 
                         description="Loading indicators."
                         .code="${progressCode}">
@@ -301,9 +301,9 @@ export class DesignSystemAtomsPage extends LitElement {
                                 </div>
                             </div>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-divider>" 
                         description="Separators for content."
                         .code="${dividerCode}">
@@ -318,7 +318,7 @@ export class DesignSystemAtomsPage extends LitElement {
                                 <span>Right</span>
                             </div>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                 </div>
             </powdercloud-container>

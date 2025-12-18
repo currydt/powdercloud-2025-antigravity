@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/PowdercloudContainer.js';
-import './components/ComponentDoc.js';
+import './components/PowdercloudComponentDoc.js';
 import './components/PowdercloudAvatar.js';
 import './components/PowdercloudTooltip.js';
 import './components/PowdercloudButton.js';
@@ -19,7 +19,7 @@ export class DesignSystemFeedbackPage extends LitElement {
                 
                 <div style="padding: 20px;">
                     
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-avatar>" 
                         description="User profile image or initials."
                         .code="${`<powdercloud-avatar src='https://via.placeholder.com/150' size='md'></powdercloud-avatar>
@@ -30,9 +30,9 @@ export class DesignSystemFeedbackPage extends LitElement {
                             <powdercloud-avatar src="https://via.placeholder.com/150" size="lg"></powdercloud-avatar>
                             <powdercloud-avatar initials="JD" size="md" shape="square"></powdercloud-avatar>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-tooltip>" 
                         description="Contextual information on hover."
                         .code="${`<powdercloud-tooltip content='This is a tooltip'>
@@ -52,7 +52,7 @@ export class DesignSystemFeedbackPage extends LitElement {
                                 <powdercloud-button label="Left"></powdercloud-button>
                             </powdercloud-tooltip>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                 </div>
             </powdercloud-container>

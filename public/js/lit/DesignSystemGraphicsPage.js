@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/PowdercloudContainer.js';
-import './components/ComponentDoc.js';
+import './components/PowdercloudComponentDoc.js';
 import './components/DashboardChart.js';
 import './components/PowdercloudAvalancheRose.js';
 import './components/SnowProfileGraph.js';
@@ -26,21 +26,21 @@ export class DesignSystemGraphicsPage extends LitElement {
                 
                 <div style="padding: 20px;">
                     
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-avalanche-rose>" 
                         description="SVG Rose diagram for avalanche observations."
                         .code="${`<powdercloud-avalanche-rose></powdercloud-avalanche-rose>`}">
                         <div style="height: 400px; width: 100%; max-width: 600px;">
                             <powdercloud-avalanche-rose></powdercloud-avalanche-rose>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<seasonal-chart>" 
                         description="Seasonal overview chart."
                         .code="${`<seasonal-chart style='height: 300px;'></seasonal-chart>`}">
                         <seasonal-chart style="height: 300px;"></seasonal-chart>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                     <style>
                         seasonal-chart, snowpack-height-chart, temperature-range-chart, 
@@ -51,56 +51,56 @@ export class DesignSystemGraphicsPage extends LitElement {
                         }
                     </style>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<snowpack-height-chart>" 
                         description="Column chart comparing total snow height (HS) and new snow (HN24)."
                         .code="${`<snowpack-height-chart style='height: 300px;'></snowpack-height-chart>`}">
                         <snowpack-height-chart style="height: 300px;"></snowpack-height-chart>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<temperature-range-chart>" 
                         description="Line chart showing daily maximum and minimum temperatures."
                         .code="${`<temperature-range-chart style='height: 300px;'></temperature-range-chart>`}">
                         <temperature-range-chart style="height: 300px;"></temperature-range-chart>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<wind-speed-chart>" 
                         description="Line chart tracking wind speed categories."
                         .code="${`<wind-speed-chart style='height: 300px;'></wind-speed-chart>`}">
                         <wind-speed-chart style="height: 300px;"></wind-speed-chart>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<sky-conditions-chart>" 
                         description="Line chart tracking sky coverage."
                         .code="${`<sky-conditions-chart style='height: 300px;'></sky-conditions-chart>`}">
                         <sky-conditions-chart style="height: 300px;"></sky-conditions-chart>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<failure-types-chart>" 
                         description="Bar chart showing distribution of avalanche failure types."
                         .code="${`<failure-types-chart style='height: 300px;'></failure-types-chart>`}">
                         <failure-types-chart style="height: 300px;"></failure-types-chart>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<trigger-types-chart>" 
                         description="Bar chart showing distribution of avalanche triggers."
                         .code="${`<trigger-types-chart style='height: 300px;'></trigger-types-chart>`}">
                         <trigger-types-chart style="height: 300px;"></trigger-types-chart>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<snow-profile-graph>" 
                         description="Interactive snow profile diagram."
                         .code="${`<snow-profile-graph></snow-profile-graph>`}">
                         <div style="height: 600px; width: 100%; max-width: 800px;">
                             <snow-profile-graph></snow-profile-graph>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                 </div>
             </powdercloud-container>

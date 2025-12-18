@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/PowdercloudContainer.js';
-import './components/ComponentDoc.js';
+import './components/PowdercloudComponentDoc.js';
 import './components/PowdercloudAlert.js';
 import './components/PowdercloudDisclaimer.js';
 import './components/PowdercloudCollapsiblePanel.js';
@@ -63,22 +63,22 @@ export class DesignSystemCorePage extends LitElement {
                 
                 <div style="padding: 20px;">
                     
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-alert>" 
                         description="Standardized alert box for warnings, errors, info, and success messages."
                         .code="${alertCode}">
                         <powdercloud-alert level="warning" title="Warning Title">This is a warning message.</powdercloud-alert>
                         <powdercloud-alert level="info" title="Info Title">This is an informational message.</powdercloud-alert>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-disclaimer>" 
                         description="Standard legal/safety disclaimer footer."
                         .code="${disclaimerCode}">
                         <powdercloud-disclaimer></powdercloud-disclaimer>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-collapsible-panel>" 
                         description="Expandable container for organizing content sections."
                         .code="${panelCode}">
@@ -87,9 +87,9 @@ export class DesignSystemCorePage extends LitElement {
                                 Panel Content Goes Here...
                             </div>
                         </powdercloud-collapsible-panel>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-breadcrumbs>" 
                         description="Navigation trail showing current page location."
                         .code="${breadcrumbsCode}">
@@ -98,34 +98,34 @@ export class DesignSystemCorePage extends LitElement {
                 { label: 'Admin', href: '#' },
                 { label: 'Components', active: true }
             ]}"></powdercloud-breadcrumbs>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-footer>" 
                         description="Global application footer with copyright and links."
                         .code="${footerCode}">
                         <powdercloud-footer></powdercloud-footer>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-header>" 
                         description="Global top navigation bar. (See top of page for live instance)"
                         .code="${headerCode}">
                         <div style="padding: 20px; background: #eee; text-align: center; color: #666; font-style: italic;">
                             Global Header Component (Fixed Position)
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-layout>" 
                         description="Main page wrapper that handles header, footer, and content area."
                         .code="${layoutCode}">
                         <div style="padding: 20px; background: #eee; text-align: center; color: #666; font-style: italic;">
                             Page Layout Wrapper (See Page Architecture)
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<mega-menu>" 
                         description="Dropdown menu component used within AppHeader."
                         .code="${menuCode}">
@@ -138,7 +138,7 @@ export class DesignSystemCorePage extends LitElement {
                                 ></mega-menu>
                             </ul>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                 </div>
             </powdercloud-container>

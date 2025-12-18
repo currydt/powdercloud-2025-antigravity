@@ -3,7 +3,7 @@ import './components/PowdercloudCollapsiblePanel.js';
 
 import './components/PowdercloudAlert.js';
 import './components/PowdercloudDisclaimer.js';
-import './components/ComponentDoc.js';
+import './components/PowdercloudComponentDoc.js';
 import './components/PowdercloudBreadcrumbs.js';
 import './components/MegaMenu.js';
 import './components/PowdercloudTabs.js';
@@ -138,7 +138,7 @@ export class ComponentsPage extends LitElement {
         return html`
             <div style="display: grid; grid-template-columns: 1fr; gap: 20px;">
                 ${validatorList.map(v => html`
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="${v.name}" 
                         description="${v.description}"
                         .code="${`<powdercloud-input label="Test ${v.name}" .validators="\${[Validators.${v.name}]}"></powdercloud-input>`}">
@@ -147,7 +147,7 @@ export class ComponentsPage extends LitElement {
                             .validators="${[v.fn]}"
                             helper="Type to test validation"
                         ></powdercloud-input>
-                    </component-doc>
+                    </powdercloud-component-doc>
                 `)}
             </div>
         `;
@@ -878,22 +878,22 @@ PAGE SHELL (e.g., dashboard_lit.html)
             <powdercloud-collapsible-panel title="Core Components" tagline="Usage Examples & Code Snippets" .open="${false}">
                 <div style="padding: 20px;">
                     
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-alert>" 
                         description="Standardized alert box for warnings, errors, info, and success messages."
                         .code="${alertCode}">
                         <powdercloud-alert level="warning" title="Warning Title">This is a warning message.</powdercloud-alert>
                         <powdercloud-alert level="info" title="Info Title">This is an informational message.</powdercloud-alert>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-disclaimer>" 
                         description="Standard legal/safety disclaimer footer."
                         .code="${disclaimerCode}">
                         <powdercloud-disclaimer></powdercloud-disclaimer>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-collapsible-panel>" 
                         description="Expandable container for organizing content sections."
                         .code="${panelCode}">
@@ -902,9 +902,9 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                 Panel Content Goes Here...
                             </div>
                         </powdercloud-collapsible-panel>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-breadcrumbs>" 
                         description="Navigation trail showing current page location."
                         .code="${breadcrumbsCode}">
@@ -913,34 +913,34 @@ PAGE SHELL (e.g., dashboard_lit.html)
                 { label: 'Admin', href: '#' },
                 { label: 'Components', active: true }
             ]}"></powdercloud-breadcrumbs>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-footer>" 
                         description="Global application footer with copyright and links."
                         .code="${footerCode}">
                         <powdercloud-footer></powdercloud-footer>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-header>" 
                         description="Global top navigation bar. (See top of page for live instance)"
                         .code="${headerCode}">
                         <div style="padding: 20px; background: #eee; text-align: center; color: #666; font-style: italic;">
                             Global Header Component (Fixed Position)
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-layout>" 
                         description="Main page wrapper that handles header, footer, and content area."
                         .code="${layoutCode}">
                         <div style="padding: 20px; background: #eee; text-align: center; color: #666; font-style: italic;">
                             Page Layout Wrapper (See Page Architecture)
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<mega-menu>" 
                         description="Dropdown menu component used within AppHeader."
                         .code="${menuCode}">
@@ -953,7 +953,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                 ></mega-menu>
                             </ul>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                 </div>
             </powdercloud-collapsible-panel>
@@ -962,7 +962,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
 
             <powdercloud-collapsible-panel title="Layout Elements" tagline="Grid, Stack, Container & Spacing" .open="${false}">
                 <div style="padding: 20px;">
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="Layout System" 
                         description="Core components for structuring page content without custom CSS."
                         .code="${layoutElementsCode}">
@@ -989,7 +989,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                             </powdercloud-container>
                         </div>
 
-                    </component-doc>
+                    </powdercloud-component-doc>
                 </div>
             </powdercloud-collapsible-panel>
 
@@ -998,7 +998,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
             <powdercloud-collapsible-panel title="Containers" tagline="Cards, Panels & Fieldsets" .open="${false}">
                 <div style="padding: 20px;">
                     
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-card>" 
                         description="The primary container for grouping related content."
                         .code="${cardCode}">
@@ -1015,9 +1015,9 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                 <p>Cards can feature hero images to highlight content.</p>
                             </powdercloud-card>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-fieldset>" 
                         description="A semantic container for grouping form inputs."
                         .code="${fieldsetCode}">
@@ -1025,9 +1025,9 @@ PAGE SHELL (e.g., dashboard_lit.html)
                             <powdercloud-input label="Full Name"></powdercloud-input>
                             <powdercloud-input label="Email Address"></powdercloud-input>
                         </powdercloud-fieldset>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-collapsible-panel>" 
                         description="An expandable container for managing screen real estate."
                         .code="${panelCode}">
@@ -1036,9 +1036,9 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                 Panels are great for hiding advanced settings or large sections of content.
                             </div>
                         </powdercloud-collapsible-panel>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-tabs>" 
                         description="Material Design style tabs for switching between content views."
                         .code="${tabsCode}">
@@ -1062,7 +1062,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                 </div>
                             </app-tab>
                         </powdercloud-tabs>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
 
 
@@ -1071,7 +1071,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
             <powdercloud-collapsible-panel title="Feedback & Display" tagline="Avatars, Tooltips & More" .open="${false}">
                 <div style="padding: 20px;">
                     
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-avatar>" 
                         description="User profile image or initials."
                         .code="${`<powdercloud-avatar src='https://via.placeholder.com/150' size='md'></powdercloud-avatar>
@@ -1082,9 +1082,9 @@ PAGE SHELL (e.g., dashboard_lit.html)
                             <powdercloud-avatar src="https://via.placeholder.com/150" size="lg"></powdercloud-avatar>
                             <powdercloud-avatar initials="JD" size="md" shape="square"></powdercloud-avatar>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-tooltip>" 
                         description="Contextual information on hover."
                         .code="${`<powdercloud-tooltip content='This is a tooltip'>
@@ -1104,7 +1104,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                 <powdercloud-button label="Left"></powdercloud-button>
                             </powdercloud-tooltip>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                 </div>
             </powdercloud-collapsible-panel>
@@ -1114,7 +1114,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
             <powdercloud-collapsible-panel title="Data Patterns" tagline="Grids & Lists" .open="${false}">
                 <div style="padding: 20px;">
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<filter-panel>" 
                         description="Collapsible filter bar with mode selection and date range."
                         .code="${filterCode}">
@@ -1128,9 +1128,9 @@ PAGE SHELL (e.g., dashboard_lit.html)
                             showDateRange
                             @update="${(e) => alert('Update: ' + JSON.stringify(e.detail))}"
                         ></filter-panel>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<dashboard-grid>" 
                         description="Sortable, paginated data table with optional row selection."
                         .code="${gridCode}">
@@ -1215,7 +1215,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
             ]}"
                             @action="${(e) => alert(`Action Triggered: ${e.detail.action}\nRow Count: ${e.detail.rows ? e.detail.rows.length : 0}`)}"
                         ></dashboard-grid>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                 </div>
             </powdercloud-collapsible-panel>
@@ -1225,57 +1225,57 @@ PAGE SHELL (e.g., dashboard_lit.html)
             <powdercloud-collapsible-panel title="Data Visualization" tagline="Charts & Diagrams" .open="${true}">
                 <div style="padding: 20px;">
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<temperature-range-chart>" 
                         description="Temperature Range Chart"
                         .code="${`<temperature-range-chart></temperature-range-chart>`}">
                         <temperature-range-chart></temperature-range-chart>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                     <!--
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<seasonal-chart>" 
                         description="Seasonal Chart"
                         .code="${`<seasonal-chart></seasonal-chart>`}">
                         <seasonal-chart></seasonal-chart>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<failure-types-chart>" 
                         description="Failure Types Chart"
                         .code="${`<failure-types-chart></failure-types-chart>`}">
                         <failure-types-chart></failure-types-chart>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<sky-conditions-chart>" 
                         description="Sky Conditions Chart"
                         .code="${`<sky-conditions-chart></sky-conditions-chart>`}">
                         <sky-conditions-chart></sky-conditions-chart>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<snowpack-height-chart>" 
                         description="Snowpack Height Chart"
                         .code="${`<snowpack-height-chart></snowpack-height-chart>`}">
                         <snowpack-height-chart></snowpack-height-chart>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<trigger-types-chart>" 
                         description="Trigger Types Chart"
                         .code="${`<trigger-types-chart></trigger-types-chart>`}">
                         <trigger-types-chart></trigger-types-chart>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<wind-speed-chart>" 
                         description="Wind Speed Chart"
                         .code="${`<wind-speed-chart></wind-speed-chart>`}">
                         <wind-speed-chart></wind-speed-chart>
-                    </component-doc>
+                    </powdercloud-component-doc>
                     
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<dashboard-chart>" 
                         description="Highcharts wrapper for data visualization."
                         .code="${`<dashboard-chart
@@ -1290,16 +1290,16 @@ PAGE SHELL (e.g., dashboard_lit.html)
                             .series="${[{ name: 'Data', data: [1, 3, 2, 4] }]}"
                             .categories="${['A', 'B', 'C', 'D']}"
                         ></dashboard-chart>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-avalanche-rose>" 
                         description="SVG Rose diagram for avalanche observations."
                         .code="${`<powdercloud-avalanche-rose></powdercloud-avalanche-rose>`}">
                         <div style="height: 400px; width: 100%; max-width: 600px;">
                             <powdercloud-avalanche-rose></powdercloud-avalanche-rose>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
                     -->
 
                 </div>
@@ -1310,7 +1310,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
             <powdercloud-collapsible-panel title="Form Component" tagline="Comprehensive Element Tree" .open="${false}">
                 <div style="padding: 20px; background-color: #f4f6f8;">
                     
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="Form Element Tree" 
                         description="A vertical showcase of all standard HTML form elements and their variants."
                         .code="${sampleFormCode}">
@@ -1444,7 +1444,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                             </form>
                         </div>
 
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                 </div>
             </powdercloud-collapsible-panel>
@@ -1455,7 +1455,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                 <div style="padding: 20px;">
                     
                     <!-- BUTTON PLAYGROUND -->
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-button>" 
                         description="Interactive button generator."
                         .code="${`<powdercloud-button
@@ -1514,10 +1514,10 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                 </label>
                             </div>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                     <!-- INPUT PLAYGROUND -->
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-input>" 
                         description="Interactive input generator."
                         .code="${`<powdercloud-input
@@ -1577,17 +1577,17 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                 </label>
                             </div>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                     <!-- Other Static Examples (Textarea, Select, etc.) -->
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-textarea>" 
                         description="Multi-line text input."
                         .code="${textareaCode}">
                         <powdercloud-textarea label="Comments" placeholder="Enter your comments here..." rows="3"></powdercloud-textarea>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-select>" 
                         description="Dropdown menu with optgroup support."
                         .code="${selectCode}">
@@ -1613,9 +1613,9 @@ PAGE SHELL (e.g., dashboard_lit.html)
                 }
             ]}"></powdercloud-select>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-checkbox> & <powdercloud-radio>" 
                         description="Selection controls."
                         .code="${checkCode}">
@@ -1629,9 +1629,9 @@ PAGE SHELL (e.g., dashboard_lit.html)
                             <powdercloud-radio name="demo_radio" label="Radio B" value="b"></powdercloud-radio>
                             <powdercloud-radio name="demo_radio" label="Disabled" disabled></powdercloud-radio>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-fieldset>" 
                         description="Grouping container for form elements."
                         .code="${fieldsetCode}">
@@ -1642,9 +1642,9 @@ PAGE SHELL (e.g., dashboard_lit.html)
                             </div>
                             <powdercloud-textarea label="Bio" rows="2"></powdercloud-textarea>
                         </powdercloud-fieldset>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-switch>" 
                         description="Toggle switch for binary states."
                         .code="${switchCode}">
@@ -1653,9 +1653,9 @@ PAGE SHELL (e.g., dashboard_lit.html)
                             <powdercloud-switch label="Checked" checked></powdercloud-switch>
                             <powdercloud-switch label="Disabled" disabled></powdercloud-switch>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-chip>" 
                         description="Compact elements for tags and filters."
                         .code="${chipCode}">
@@ -1666,9 +1666,9 @@ PAGE SHELL (e.g., dashboard_lit.html)
                             <powdercloud-chip label="With Icon" icon="fa fa-star"></powdercloud-chip>
                             <powdercloud-chip label="Removable" removable @remove="${(e) => alert('Removed ' + e.detail.label)}"></powdercloud-chip>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-progress>" 
                         description="Loading indicators."
                         .code="${progressCode}">
@@ -1685,9 +1685,9 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                 </div>
                             </div>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-divider>" 
                         description="Separators for content."
                         .code="${dividerCode}">
@@ -1702,7 +1702,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                 <span>Right</span>
                             </div>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                 </div>
             </powdercloud-collapsible-panel>
@@ -1712,7 +1712,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
             <powdercloud-collapsible-panel title="Overlays & Complex Inputs" tagline="Modals, Toasts & Pickers" .open="${false}">
                 <div style="padding: 20px;">
                     
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-modal>" 
                         description="Dialog box for critical actions or information."
                         .code="${modalCode}">
@@ -1724,9 +1724,9 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                 <powdercloud-button label="Save" variant="primary" @click="${() => this.shadowRoot.getElementById('demo-modal').open = false}"></powdercloud-button>
                             </div>
                         </powdercloud-modal>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-toast>" 
                         description="Temporary notification message."
                         .code="${toastCode}">
@@ -1736,9 +1736,9 @@ PAGE SHELL (e.g., dashboard_lit.html)
                 setTimeout(() => toast.open = false, 3000);
             }}"></powdercloud-button>
                         <powdercloud-toast id="demo-toast" message="Operation Saved Successfully" variant="success"></powdercloud-toast>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-combobox>" 
                         description="Select with search/filtering capabilities."
                         .code="${comboboxCode}">
@@ -1750,28 +1750,28 @@ PAGE SHELL (e.g., dashboard_lit.html)
                 { label: 'Dave', value: 'dave' }
             ]}"></powdercloud-combobox>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-date-range>" 
                         description="Date range picker."
                         .code="${dateRangeCode}">
                         <powdercloud-date-range label="Filter by Date"></powdercloud-date-range>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-file-upload>" 
                         description="File upload component."
                          .code="${`<powdercloud-file-upload label='Upload Evidence'></powdercloud-file-upload>`}">
                         <powdercloud-file-upload label="Upload Evidence"></powdercloud-file-upload>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                     <component-doc 
+                     <powdercloud-component-doc 
                         title="<powdercloud-rich-text>" 
                         description="Rich text editor."
                          .code="${`<powdercloud-rich-text label='Description'></powdercloud-rich-text>`}">
                         <powdercloud-rich-text label="Description"></powdercloud-rich-text>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                 </div>
             </powdercloud-collapsible-panel>

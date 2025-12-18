@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/PowdercloudContainer.js';
-import './components/ComponentDoc.js';
+import './components/PowdercloudComponentDoc.js';
 import './components/PowdercloudFieldset.js';
 import './components/PowdercloudInput.js';
 import './components/PowdercloudTextarea.js';
@@ -153,7 +153,7 @@ export class DesignSystemFormsPage extends LitElement {
                 
                 <div style="padding: 20px; background-color: #f4f6f8;">
                     
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="Form Element Tree" 
                         description="A vertical showcase of all standard HTML form elements and their variants."
                         .code="${sampleFormCode}">
@@ -287,7 +287,7 @@ export class DesignSystemFormsPage extends LitElement {
                             </form>
                         </div>
 
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                 </div>
             </powdercloud-container>

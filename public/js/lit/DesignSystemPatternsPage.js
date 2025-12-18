@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/PowdercloudContainer.js';
-import './components/ComponentDoc.js';
+import './components/PowdercloudComponentDoc.js';
 import './components/FilterPanel.js';
 import './components/DashboardGrid.js';
 
@@ -125,7 +125,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
                 
                 <div style="padding: 20px;">
                     
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<filter-panel>" 
                         description="Collapsible filter bar with mode selection and date range."
                         .code="${filterCode}">
@@ -139,9 +139,9 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
                             showDateRange
                             @update="${(e) => alert('Update: ' + JSON.stringify(e.detail))}"
                         ></filter-panel>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<dashboard-grid>" 
                         description="Sortable, paginated data table with optional row selection."
                         .code="${gridCode}">
@@ -226,7 +226,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
             ]}"
                             @action="${(e) => alert(`Action Triggered: ${e.detail.action}\nRow Count: ${e.detail.rows ? e.detail.rows.length : 0}`)}"
                         ></dashboard-grid>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                 </div>
             </powdercloud-container>

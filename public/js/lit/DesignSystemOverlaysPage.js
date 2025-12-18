@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/PowdercloudContainer.js';
-import './components/ComponentDoc.js';
+import './components/PowdercloudComponentDoc.js';
 import './components/PowdercloudModal.js';
 import './components/PowdercloudToast.js';
 import './components/PowdercloudButton.js';
@@ -40,7 +40,7 @@ export class DesignSystemOverlaysPage extends LitElement {
                 
                 <div style="padding: 20px;">
                     
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-modal>" 
                         description="Dialog box for critical actions or information."
                         .code="${modalCode}">
@@ -52,9 +52,9 @@ export class DesignSystemOverlaysPage extends LitElement {
                                 <powdercloud-button label="Save" variant="primary" @click="${() => this.shadowRoot.getElementById('demo-modal').open = false}"></powdercloud-button>
                             </div>
                         </powdercloud-modal>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-toast>" 
                         description="Temporary notification message."
                         .code="${toastCode}">
@@ -64,9 +64,9 @@ export class DesignSystemOverlaysPage extends LitElement {
                 setTimeout(() => toast.open = false, 3000);
             }}"></powdercloud-button>
                         <powdercloud-toast id="demo-toast" message="Operation Saved Successfully" variant="success"></powdercloud-toast>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-combobox>" 
                         description="Select with search/filtering capabilities."
                         .code="${comboboxCode}">
@@ -78,28 +78,28 @@ export class DesignSystemOverlaysPage extends LitElement {
                 { label: 'Dave', value: 'dave' }
             ]}"></powdercloud-combobox>
                         </div>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-date-range>" 
                         description="Date range picker."
                         .code="${dateRangeCode}">
                         <powdercloud-date-range label="Filter by Date"></powdercloud-date-range>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="<powdercloud-file-upload>" 
                         description="File upload component."
                          .code="${`<powdercloud-file-upload label='Upload Evidence'></powdercloud-file-upload>`}">
                         <powdercloud-file-upload label="Upload Evidence"></powdercloud-file-upload>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
-                     <component-doc 
+                     <powdercloud-component-doc 
                         title="<powdercloud-rich-text>" 
                         description="Rich text editor."
                          .code="${`<powdercloud-rich-text label='Description'></powdercloud-rich-text>`}">
                         <powdercloud-rich-text label="Description"></powdercloud-rich-text>
-                    </component-doc>
+                    </powdercloud-component-doc>
 
                 </div>
             </powdercloud-container>

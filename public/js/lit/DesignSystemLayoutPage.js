@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/PowdercloudContainer.js';
-import './components/ComponentDoc.js';
+import './components/PowdercloudComponentDoc.js';
 import './components/PowdercloudGrid.js';
 import './components/PowdercloudStack.js';
 import './components/PowdercloudSpacer.js';
@@ -34,7 +34,7 @@ export class DesignSystemLayoutPage extends LitElement {
                 </h1>
                 
                 <div style="padding: 20px;">
-                    <component-doc 
+                    <powdercloud-component-doc 
                         title="Layout System" 
                         description="Core components for structuring page content without custom CSS."
                         .code="${layoutElementsCode}">
@@ -61,7 +61,7 @@ export class DesignSystemLayoutPage extends LitElement {
                             </powdercloud-container>
                         </div>
 
-                    </component-doc>
+                    </powdercloud-component-doc>
                 </div>
             </powdercloud-container>
         `;
