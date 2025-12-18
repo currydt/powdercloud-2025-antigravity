@@ -12,7 +12,7 @@ import './components/PowdercloudTemperatureRangeChart.js';
 import './components/WindSpeedChart.js';
 
 // Grids
-import './components/WeatherGrid.js';
+import './components/PowdercloudWeatherGrid.js';
 import './components/PowdercloudAvalancheGrid.js';
 import './components/PowdercloudSnowpackGrid.js';
 import './components/PowdercloudStabilityGrid.js';
@@ -106,7 +106,7 @@ export class DashboardPage extends LitElement {
             <!-- Grids Section -->
             <powdercloud-collapsible-panel title="Weather Observations"
                 tagline="The following table displays weather observations in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
-                <weather-grid></weather-grid>
+                <powdercloud-weather-grid></powdercloud-weather-grid>
             </powdercloud-collapsible-panel>
 
             <br />

@@ -1,5 +1,5 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import './components/WeatherGrid.js';
+import './components/PowdercloudWeatherGrid.js';
 
 export class ObservationMasterPage extends LitElement {
     createRenderRoot() {
@@ -14,7 +14,7 @@ export class ObservationMasterPage extends LitElement {
             <p style="margin-bottom: 20px;">View and manage all observations.</p>
 
             <div style="border: 1px solid #ccc; padding: 10px; background: #fff;">
-                <weather-grid></weather-grid>
+                <powdercloud-weather-grid></powdercloud-weather-grid>
             </div>
         `;
     }
