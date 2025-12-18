@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/co
 import './components/PowdercloudContainer.js';
 import './components/ComponentDoc.js';
 import './components/PowdercloudModal.js';
-import './components/AppToast.js';
+import './components/PowdercloudToast.js';
 import './components/PowdercloudButton.js';
 import './components/PowdercloudCombobox.js';
 import './components/PowdercloudDateRange.js';
@@ -23,7 +23,7 @@ export class DesignSystemOverlaysPage extends LitElement {
     </div>
 </powdercloud-modal>`;
 
-        const toastCode = `<app-toast message="Operation Saved" variant="success" open></app-toast>`;
+        const toastCode = `<powdercloud-toast message="Operation Saved" variant="success" open></powdercloud-toast>`;
 
         const comboboxCode = `<powdercloud-combobox label="Select User" .options="\${[
     { label: 'Alice', value: 'alice' },
@@ -55,7 +55,7 @@ export class DesignSystemOverlaysPage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<app-toast>" 
+                        title="<powdercloud-toast>" 
                         description="Temporary notification message."
                         .code="${toastCode}">
                          <powdercloud-button label="Show Toast" @click="${() => {
@@ -63,7 +63,7 @@ export class DesignSystemOverlaysPage extends LitElement {
                 toast.open = true;
                 setTimeout(() => toast.open = false, 3000);
             }}"></powdercloud-button>
-                        <app-toast id="demo-toast" message="Operation Saved Successfully" variant="success"></app-toast>
+                        <powdercloud-toast id="demo-toast" message="Operation Saved Successfully" variant="success"></powdercloud-toast>
                     </component-doc>
 
                     <component-doc 

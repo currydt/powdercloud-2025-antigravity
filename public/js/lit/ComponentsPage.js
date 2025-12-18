@@ -26,7 +26,7 @@ import './components/PowdercloudGrid.js';
 import './components/PowdercloudStack.js';
 import './components/PowdercloudSpacer.js';
 import './components/PowdercloudModal.js';
-import './components/AppToast.js';
+import './components/PowdercloudToast.js';
 import './components/PowdercloudCombobox.js';
 import './components/PowdercloudDateRange.js';
 import './components/PowdercloudAvatar.js';
@@ -359,7 +359,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
     </div>
 </powdercloud-modal>`;
 
-        const toastCode = `<app-toast message="Operation Saved" variant="success" open></app-toast>`;
+        const toastCode = `<powdercloud-toast message="Operation Saved" variant="success" open></powdercloud-toast>`;
 
         const comboboxCode = `<powdercloud-combobox label="Select User" .options="\${[
     { label: 'Alice', value: 'alice' },
@@ -1727,7 +1727,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<app-toast>" 
+                        title="<powdercloud-toast>" 
                         description="Temporary notification message."
                         .code="${toastCode}">
                          <powdercloud-button label="Show Toast" @click="${() => {
@@ -1735,7 +1735,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                 toast.open = true;
                 setTimeout(() => toast.open = false, 3000);
             }}"></powdercloud-button>
-                        <app-toast id="demo-toast" message="Operation Saved Successfully" variant="success"></app-toast>
+                        <powdercloud-toast id="demo-toast" message="Operation Saved Successfully" variant="success"></powdercloud-toast>
                     </component-doc>
 
                     <component-doc 
