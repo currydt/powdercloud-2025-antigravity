@@ -1,5 +1,5 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import './components/DateSelector.js';
+import './components/PowdercloudDateSelector.js';
 import './components/PowdercloudCollapsiblePanel.js';
 import './components/PowdercloudAvalancheRose.js';
 
@@ -63,7 +63,7 @@ export class DashboardPage extends LitElement {
             </h1>
             <p style="margin-bottom: 15px;">The following dashboard displays the current status of the operation.</p>
 
-            <date-selector></date-selector>
+            <powdercloud-date-selector></powdercloud-date-selector>
 
             <!-- Charts Section -->
             <powdercloud-collapsible-panel title="Charts"
