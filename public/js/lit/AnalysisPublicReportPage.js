@@ -6,7 +6,7 @@ import './components/PowdercloudContainer.js';
 import './components/PowdercloudGrid.js';
 import './components/PowdercloudCard.js';
 import './components/AvalancheRose.js';
-import './components/AppTabs.js';
+import './components/PowdercloudTabs.js';
 
 export class AnalysisPublicReportPage extends LitElement {
     static properties = {
@@ -177,7 +177,7 @@ export class AnalysisPublicReportPage extends LitElement {
 
                 <br />
 
-                <app-tabs>
+                <powdercloud-tabs>
                     <app-tab label="Weather" active>
                         <dashboard-grid
                             title="Weather Observations"
@@ -237,7 +237,7 @@ export class AnalysisPublicReportPage extends LitElement {
                             paginated
                         ></dashboard-grid>
                     </app-tab>
-                </app-tabs>
+                </powdercloud-tabs>
 
             </powdercloud-container>
         `;

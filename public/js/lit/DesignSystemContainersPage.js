@@ -4,7 +4,7 @@ import './components/ComponentDoc.js';
 import './components/PowdercloudCard.js';
 import './components/PowdercloudFieldset.js';
 import './components/CollapsiblePanel.js';
-import './components/AppTabs.js';
+import './components/PowdercloudTabs.js';
 import './components/PowdercloudInput.js';
 import './components/AppTextarea.js';
 
@@ -37,7 +37,7 @@ export class DesignSystemContainersPage extends LitElement {
     </div>
 </collapsible-panel>`;
 
-        const tabsCode = `<app-tabs>
+        const tabsCode = `<powdercloud-tabs>
     <app-tab label="First Tab" active>
         <h3>First Tab Content</h3>
         <p>This is the content of the first tab.</p>
@@ -50,7 +50,7 @@ export class DesignSystemContainersPage extends LitElement {
         <h3>Third Tab Content</h3>
         <p>This is the content of the third tab.</p>
     </app-tab>
-</app-tabs>`;
+</powdercloud-tabs>`;
 
         return html`
             <powdercloud-container>
@@ -101,10 +101,10 @@ export class DesignSystemContainersPage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<app-tabs>" 
+                        title="<powdercloud-tabs>" 
                         description="Material Design style tabs for switching between content views."
                         .code="${tabsCode}">
-                        <app-tabs>
+                        <powdercloud-tabs>
                             <app-tab label="First Tab" active>
                                 <div style="padding: 20px; background: #f9f9f9; border: 1px solid #eee; border-top: none;">
                                     <h3 style="margin-top: 0; color: #5399a5;">First Tab Content</h3>
@@ -123,7 +123,7 @@ export class DesignSystemContainersPage extends LitElement {
                                     <p>Tabs support any HTML content inside them.</p>
                                 </div>
                             </app-tab>
-                        </app-tabs>
+                        </powdercloud-tabs>
                     </component-doc>
 
                 </div>

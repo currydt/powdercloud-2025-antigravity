@@ -6,7 +6,7 @@ import './components/PowdercloudDisclaimer.js';
 import './components/ComponentDoc.js';
 import './components/Breadcrumbs.js';
 import './components/MegaMenu.js';
-import './components/AppTabs.js';
+import './components/PowdercloudTabs.js';
 import './components/DashboardGrid.js';
 import './components/PowdercloudButton.js';
 import './components/PowdercloudInput.js';
@@ -193,7 +193,7 @@ export class ComponentsPage extends LitElement {
     .menuData="\${[...]}">
 </mega-menu>`;
 
-        const tabsCode = `<app-tabs>
+        const tabsCode = `<powdercloud-tabs>
     <app-tab label="First Tab" active>
         <h3>First Tab Content</h3>
         <p>This is the content of the first tab.</p>
@@ -206,7 +206,7 @@ export class ComponentsPage extends LitElement {
         <h3>Third Tab Content</h3>
         <p>This is the content of the third tab.</p>
     </app-tab>
-</app-tabs>`;
+</powdercloud-tabs>`;
 
         const datasets = {
             operations: {
@@ -1039,10 +1039,10 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<app-tabs>" 
+                        title="<powdercloud-tabs>" 
                         description="Material Design style tabs for switching between content views."
                         .code="${tabsCode}">
-                        <app-tabs>
+                        <powdercloud-tabs>
                             <app-tab label="First Tab" active>
                                 <div style="padding: 20px; background: #f9f9f9; border: 1px solid #eee; border-top: none;">
                                     <h3 style="margin-top: 0; color: #5399a5;">First Tab Content</h3>
@@ -1061,7 +1061,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                     <p>Tabs support any HTML content inside them.</p>
                                 </div>
                             </app-tab>
-                        </app-tabs>
+                        </powdercloud-tabs>
                     </component-doc>
 
 
