@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/co
 import './components/PowdercloudContainer.js';
 import './components/ComponentDoc.js';
 import './components/PowdercloudAvatar.js';
-import './components/AppTooltip.js';
+import './components/PowdercloudTooltip.js';
 import './components/PowdercloudButton.js';
 
 export class DesignSystemFeedbackPage extends LitElement {
@@ -33,24 +33,24 @@ export class DesignSystemFeedbackPage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<app-tooltip>" 
+                        title="<powdercloud-tooltip>" 
                         description="Contextual information on hover."
-                        .code="${`<app-tooltip content='This is a tooltip'>
+                        .code="${`<powdercloud-tooltip content='This is a tooltip'>
     <powdercloud-button label='Hover Me'></powdercloud-button>
-</app-tooltip>`}">
+</powdercloud-tooltip>`}">
                         <div style="display: flex; gap: 40px; padding: 20px;">
-                            <app-tooltip content="Top Tooltip" position="top">
+                            <powdercloud-tooltip content="Top Tooltip" position="top">
                                 <powdercloud-button label="Top"></powdercloud-button>
-                            </app-tooltip>
-                            <app-tooltip content="Right Tooltip" position="right">
+                            </powdercloud-tooltip>
+                            <powdercloud-tooltip content="Right Tooltip" position="right">
                                 <powdercloud-button label="Right"></powdercloud-button>
-                            </app-tooltip>
-                            <app-tooltip content="Bottom Tooltip" position="bottom">
+                            </powdercloud-tooltip>
+                            <powdercloud-tooltip content="Bottom Tooltip" position="bottom">
                                 <powdercloud-button label="Bottom"></powdercloud-button>
-                            </app-tooltip>
-                            <app-tooltip content="Left Tooltip" position="left">
+                            </powdercloud-tooltip>
+                            <powdercloud-tooltip content="Left Tooltip" position="left">
                                 <powdercloud-button label="Left"></powdercloud-button>
-                            </app-tooltip>
+                            </powdercloud-tooltip>
                         </div>
                     </component-doc>
 
