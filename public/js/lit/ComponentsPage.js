@@ -11,7 +11,7 @@ import './components/DashboardGrid.js';
 import './components/PowdercloudButton.js';
 import './components/PowdercloudInput.js';
 import './components/AppTextarea.js';
-import './components/AppSelect.js';
+import './components/PowdercloudSelect.js';
 import './components/PowdercloudCheckbox.js';
 import './components/PowdercloudRadio.js';
 import './components/PowdercloudRadio.js';
@@ -314,10 +314,10 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
 
         const textareaCode = `<app-textarea label="Comments" rows="4"></app-textarea>`;
 
-        const selectCode = `<app-select label="Choose Option" .options="\${[
+        const selectCode = `<powdercloud-select label="Choose Option" .options="\${[
     { label: 'Option 1', value: '1' },
     { label: 'Option 2', value: '2' }
-]}"></app-select>`;
+]}"></powdercloud-select>`;
 
         const checkCode = `<powdercloud-checkbox label="Subscribe"></powdercloud-checkbox>
 <powdercloud-checkbox label="Disabled" disabled></powdercloud-checkbox>`;
@@ -466,10 +466,10 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
         <!-- 4. Selection Menus -->
         <powdercloud-fieldset legend="select & datalist">
             <div style="display: flex; flex-direction: column; gap: 15px;">
-                <app-select label="select (with optgroup)" .options="\${[
+                <powdercloud-select label="select (with optgroup)" .options="\${[
                     { label: 'Group 1', options: [{label: 'Option 1.1', value: '1.1'}, {label: 'Option 1.2', value: '1.2'}] },
                     { label: 'Group 2', options: [{label: 'Option 2.1', value: '2.1'}] }
-                ]}"></app-select>
+                ]}"></powdercloud-select>
 
                 <div>
                     <label style="display: block; font-size: 12px; color: #666; margin-bottom: 4px;">datalist (Suggestions)</label>
@@ -1397,10 +1397,10 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                 <!-- 4. Selection Menus -->
                                 <powdercloud-fieldset legend="select & datalist">
                                     <div style="display: flex; flex-direction: column; gap: 15px;">
-                                        <app-select label="select (with optgroup)" .options="${[
+                                        <powdercloud-select label="select (with optgroup)" .options="${[
                 { label: 'Group 1', options: [{ label: 'Option 1.1', value: '1.1' }, { label: 'Option 1.2', value: '1.2' }] },
                 { label: 'Group 2', options: [{ label: 'Option 2.1', value: '2.1' }] }
-            ]}"></app-select>
+            ]}"></powdercloud-select>
 
                                         <div>
                                             <label style="display: block; font-size: 12px; color: #666; margin-bottom: 4px;">datalist (Suggestions)</label>
@@ -1588,17 +1588,17 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<app-select>" 
+                        title="<powdercloud-select>" 
                         description="Dropdown menu with optgroup support."
                         .code="${selectCode}">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <app-select label="Simple Select" .options="${[
+                            <powdercloud-select label="Simple Select" .options="${[
                 { label: 'Option 1', value: '1' },
                 { label: 'Option 2', value: '2' },
                 { label: 'Option 3', value: '3' }
-            ]}"></app-select>
+            ]}"></powdercloud-select>
                             
-                            <app-select label="Grouped Select" .options="${[
+                            <powdercloud-select label="Grouped Select" .options="${[
                 {
                     group: true, label: 'Fruits', options: [
                         { label: 'Apple', value: 'apple' },
@@ -1611,7 +1611,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                         { label: 'Potato', value: 'potato' }
                     ]
                 }
-            ]}"></app-select>
+            ]}"></powdercloud-select>
                         </div>
                     </component-doc>
 

@@ -4,7 +4,7 @@ import './components/ComponentDoc.js';
 import './components/PowdercloudFieldset.js';
 import './components/PowdercloudInput.js';
 import './components/AppTextarea.js';
-import './components/AppSelect.js';
+import './components/PowdercloudSelect.js';
 import './components/PowdercloudCheckbox.js';
 import './components/PowdercloudRadio.js';
 import './components/PowdercloudButton.js';
@@ -98,10 +98,10 @@ export class DesignSystemFormsPage extends LitElement {
         <!-- 4. Selection Menus -->
         <powdercloud-fieldset legend="select & datalist">
             <div style="display: flex; flex-direction: column; gap: 15px;">
-                <app-select label="select (with optgroup)" .options="\${[
+                <powdercloud-select label="select (with optgroup)" .options="\${[
                     { label: 'Group 1', options: [{label: 'Option 1.1', value: '1.1'}, {label: 'Option 1.2', value: '1.2'}] },
                     { label: 'Group 2', options: [{label: 'Option 2.1', value: '2.1'}] }
-                ]}"></app-select>
+                ]}"></powdercloud-select>
 
                 <div>
                     <label style="display: block; font-size: 12px; color: #666; margin-bottom: 4px;">datalist (Suggestions)</label>
@@ -240,10 +240,10 @@ export class DesignSystemFormsPage extends LitElement {
                                 <!-- 4. Selection Menus -->
                                 <powdercloud-fieldset legend="select & datalist">
                                     <div style="display: flex; flex-direction: column; gap: 15px;">
-                                        <app-select label="select (with optgroup)" .options="${[
+                                        <powdercloud-select label="select (with optgroup)" .options="${[
                 { label: 'Group 1', options: [{ label: 'Option 1.1', value: '1.1' }, { label: 'Option 1.2', value: '1.2' }] },
                 { label: 'Group 2', options: [{ label: 'Option 2.1', value: '2.1' }] }
-            ]}"></app-select>
+            ]}"></powdercloud-select>
 
                                         <div>
                                             <label style="display: block; font-size: 12px; color: #666; margin-bottom: 4px;">datalist (Suggestions)</label>

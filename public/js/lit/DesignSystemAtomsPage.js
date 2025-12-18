@@ -4,7 +4,7 @@ import './components/ComponentDoc.js';
 import './components/PowdercloudButton.js';
 import './components/PowdercloudInput.js';
 import './components/AppTextarea.js';
-import './components/AppSelect.js';
+import './components/PowdercloudSelect.js';
 import './components/PowdercloudCheckbox.js';
 import './components/PowdercloudRadio.js';
 import './components/AppSwitch.js';
@@ -50,10 +50,10 @@ export class DesignSystemAtomsPage extends LitElement {
     render() {
         const textareaCode = `<app-textarea label="Comments" rows="4"></app-textarea>`;
 
-        const selectCode = `<app-select label="Choose Option" .options="\${[
+        const selectCode = `<powdercloud-select label="Choose Option" .options="\${[
     { label: 'Option 1', value: '1' },
     { label: 'Option 2', value: '2' }
-]}"></app-select>`;
+]}"></powdercloud-select>`;
 
         const checkCode = `<powdercloud-checkbox label="Subscribe"></powdercloud-checkbox>
 <powdercloud-checkbox label="Disabled" disabled></powdercloud-checkbox>`;
@@ -217,17 +217,17 @@ export class DesignSystemAtomsPage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<app-select>" 
+                        title="<powdercloud-select>" 
                         description="Dropdown menu with optgroup support."
                         .code="${selectCode}">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <app-select label="Simple Select" .options="${[
+                            <powdercloud-select label="Simple Select" .options="${[
                 { label: 'Option 1', value: '1' },
                 { label: 'Option 2', value: '2' },
                 { label: 'Option 3', value: '3' }
-            ]}"></app-select>
+            ]}"></powdercloud-select>
                             
-                            <app-select label="Grouped Select" .options="${[
+                            <powdercloud-select label="Grouped Select" .options="${[
                 {
                     group: true, label: 'Fruits', options: [
                         { label: 'Apple', value: 'apple' },
@@ -240,7 +240,7 @@ export class DesignSystemAtomsPage extends LitElement {
                         { label: 'Potato', value: 'potato' }
                     ]
                 }
-            ]}"></app-select>
+            ]}"></powdercloud-select>
                         </div>
                     </component-doc>
 
