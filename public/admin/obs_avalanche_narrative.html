@@ -13,13 +13,13 @@
     <link rel="stylesheet" type="text/css" id="theme" href="/resources/css/xtheme-gray.css" />
 
     <!-- Lit Components -->
-    <script type="module" src="/js/lit/AppLayout.js"></script>
-    <script type="module" src="/js/lit/pages/ObservationAvalancheNarrativePage.js"></script>
+    <script type="module" src="/js/lit/components/PowdercloudLayout.js"></script>
+    <script type="module" src="/js/lit/ObservationAvalancheNarrativePage.js"></script>
 </head>
 <body>
-    <app-layout id="layout">
+    <powdercloud-layout id="layout">
         <observation-avalanche-narrative-page></observation-avalanche-narrative-page>
-    </app-layout>
+    </powdercloud-layout>
 
     <script>
         document.getElementById('layout').breadcrumbs = [

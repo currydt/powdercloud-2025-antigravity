@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,20 +14,21 @@
     <link rel="stylesheet" type="text/css" id="theme" href="/resources/css/xtheme-gray.css" />
 
     <!-- Lit Components -->
-    <script type="module" src="/js/lit/AppLayout.js"></script>
-    <script type="module" src="/js/lit/pages/ReportAvalancheActivityPage.js"></script>
+    <!-- Lit Components -->
+    <script type="module" src="/js/lit/ReportAvalancheActivityPage.js"></script>
 </head>
-<body>
-    <app-layout id="layout">
-        <report-avalanche-activity-page></report-avalanche-activity-page>
-    </app-layout>
 
-    <script>
-        document.getElementById('layout').breadcrumbs = [
-            { label: 'Home', url: '/dashboard_lit.html' },
-            { label: 'Projects' },
-            { label: 'Avalanche Activity Report' }
-        ];
-    </script>
+<body>
+    <report-avalanche-activity-page></report-avalanche-activity-page>
 </body>
+
+<script>
+    document.getElementById('layout').breadcrumbs = [
+        { label: 'Home', url: '/dashboard_lit.html' },
+        { label: 'Projects' },
+        { label: 'Avalanche Activity Report' }
+    ];
+</script>
+</body>
+
 </html>

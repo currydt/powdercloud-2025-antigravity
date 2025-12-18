@@ -1,12 +1,13 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import './AppHeader.js';
-import './AppFooter.js';
-import './AppDisclaimer.js';
-import './Breadcrumbs.js';
+import './PowdercloudHeader.js';
+import './PowdercloudFooter.js';
+import './PowdercloudDisclaimer.js'; // Still imported but not seemingly used in template?
+import './PowdercloudBreadcrumbs.js';
 
 export class PowdercloudLayout extends LitElement {
     static properties = {
-        breadcrumbs: { type: Array }
+        breadcrumbs: { type: Array },
+        pageTitle: { type: String } // Adding pageTitle based on usage saw in Analysis pages
     };
 
     constructor() {
@@ -26,7 +27,7 @@ export class PowdercloudLayout extends LitElement {
 
             <style>
                 /* Sticky Header */
-                app-header {
+                powdercloud-header {
                     position: sticky;
                     top: 0;
                     z-index: 1000;
@@ -35,7 +36,7 @@ export class PowdercloudLayout extends LitElement {
                 }
 
                 /* Sticky Breadcrumbs */
-                app-breadcrumbs {
+                powdercloud-breadcrumbs {
                     position: sticky;
                     top: 60px; /* Adjust based on header height */
                     z-index: 999;
@@ -53,13 +54,20 @@ export class PowdercloudLayout extends LitElement {
 
                 #dvBody {
                     flex: 1;
+                    padding: 20px;
                 }
             </style>
 
             <div id="dvBodyWrap">
-                <app-header></app-header>
+                <powdercloud-header></powdercloud-header>
                 
-                <app-breadcrumbs .path="${this.breadcrumbs}"></app-breadcrumbs>
+                ${this.pageTitle ? html`
+                    <div style="background: #f5f5f5; padding: 10px 20px; border-bottom: 1px solid #e0e0e0;">
+                        <h1 style="margin: 0; font-size: 1.5rem; color: #333;">${this.pageTitle}</h1>
+                    </div>
+                ` : ''}
+
+                <!-- <powdercloud-breadcrumbs .path="\${this.breadcrumbs}"></powdercloud-breadcrumbs> -->
 
                 <div id="dvBody">
                     <div id="content">
@@ -71,7 +79,7 @@ export class PowdercloudLayout extends LitElement {
             </div>
             
             <div id="dvFooterWrap">
-                <app-footer></app-footer>
+                <powdercloud-footer></powdercloud-footer>
             </div>
         `;
     }

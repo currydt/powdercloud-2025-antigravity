@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
+import './components/PowdercloudLayout.js';
 import './components/PowdercloudFilterPanel.js';
 import './components/PowdercloudDashboardGrid.js';
 import './components/PowdercloudContainer.js';
@@ -11,57 +12,85 @@ export class AnalysisSnowpackStructurePage extends LitElement {
 
     constructor() {
         super();
-        this._gridData = this._generateMockGridData();
+        this._gridData = [];
     }
 
     createRenderRoot() {
         return this; // Light DOM
     }
 
-    _generateMockGridData() {
-        return [
-            { date: '2025-11-29 08:00', operation: 'Whistler', location: 'Bowl 1', notable: 'Yes', subject: 'Weak Layer Found' },
-            { date: '2025-11-28 09:30', operation: 'Whistler', location: 'Ridge 2', notable: 'No', subject: 'Stable' },
-            { date: '2025-11-27 14:00', operation: 'Blackcomb', location: 'Glacier', notable: 'Yes', subject: 'Persistent Slab' }
-        ];
+    connectedCallback() {
+        super.connectedCallback();
+        this._fetchData();
+    }
+
+    async _fetchData() {
+        try {
+            // Fetch 'Observation' entity, subtype 'snowpack_layer' (likely), limit 100
+            const response = await fetch('/json/entity_query_all/?entity=Observation&subtype=snowpack_layer&limit=100');
+            const json = await response.json();
+
+            if (json && json.success && Array.isArray(json.rows)) {
+                this._processData(json.rows);
+            } else {
+                console.error('Failed to load snowpack structure data:', json);
+            }
+        } catch (e) {
+            console.error('Network error loading snowpack structure data:', e);
+        }
+    }
+
+    _processData(rows) {
+        this._gridData = rows.map(row => {
+            return {
+                id: row.id,
+                date: row.date_time_start ? new Date(row.date_time_start).toLocaleString() : '',
+                operation: row.operation_name || 'My Operation',
+                location: row.terrain_desc || row.location || 'Unknown',
+                subject: row.comments || '-',
+                grain_type: row.grain_type || '-',
+                grain_size: row.grain_size ? row.grain_size + 'mm' : '-'
+            };
+        });
     }
 
     render() {
         return html`
-            <powdercloud-container>
-                <h1 style="color: #5399a5; font-size: 1.9em; margin: 0 0 20px 0; padding: 0; font-weight: normal; font-family: Arial, sans-serif; text-transform: uppercase;">
-                    Snowpack Structure Analysis
-                </h1>
+            <powdercloud-layout pageTitle="Snowpack Structure Analysis">
+                <powdercloud-container>
+                    
+                    <powdercloud-filter-panel 
+                        .modes="${[{ label: 'Snowpack Structure', value: 'snowpack_structure' }]}"
+                        selectedMode="snowpack_structure"
+                        showDateRange
+                    ></powdercloud-filter-panel>
 
-                <powdercloud-filter-panel 
-                    .modes="${[{ label: 'Snowpack Structure', value: 'snowpack_structure' }]}"
-                    selectedMode="snowpack_structure"
-                    showDateRange
-                ></powdercloud-filter-panel>
+                    <br />
 
-                <br />
+                    <powdercloud-card title="Map Overlay" collapsible>
+                        <div style="height: 400px; display: flex; align-items: center; justify-content: center; background: #eee; color: #666;">
+                            Map View Placeholder
+                        </div>
+                    </powdercloud-card>
 
-                <powdercloud-card title="Map Overlay" collapsible>
-                    <div style="height: 400px; display: flex; align-items: center; justify-content: center; background: #eee; color: #666;">
-                        Map View Placeholder
-                    </div>
-                </powdercloud-card>
+                    <br />
 
-                <br />
-
-                <powdercloud-dashboard-grid
-                    title="Snowpack Structure Records"
-                    .columns="${[
+                    <powdercloud-dashboard-grid
+                        title="Snowpack Structure Records"
+                        .columns="${[
                 { header: 'Date', field: 'date', sortable: true },
                 { header: 'Operation', field: 'operation', sortable: true },
                 { header: 'Location', field: 'location', sortable: true },
-                { header: 'Notable', field: 'notable' },
-                { header: 'Description', field: 'subject' }
+                // { header: 'Notable', field: 'notable' }, // Usually calculated or boolean
+                { header: 'Description', field: 'subject' },
+                { header: 'Grain Type', field: 'grain_type' },
+                { header: 'Size', field: 'grain_size' }
             ]}"
-                    .data="${this._gridData}"
-                    paginated
-                ></powdercloud-dashboard-grid>
-            </powdercloud-container>
+                        .data="${this._gridData}"
+                        paginated
+                    ></powdercloud-dashboard-grid>
+                </powdercloud-container>
+            </powdercloud-layout>
         `;
     }
 }

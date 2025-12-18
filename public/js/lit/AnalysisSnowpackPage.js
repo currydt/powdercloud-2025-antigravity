@@ -1,8 +1,10 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
+import './components/PowdercloudLayout.js';
 import './components/PowdercloudFilterPanel.js';
 import './components/PowdercloudDashboardGrid.js';
 import './components/PowdercloudContainer.js';
 import './components/PowdercloudCard.js';
+import './components/PowdercloudGoogleMap.js';
 import './components/PowdercloudAvalancheRose.js';
 
 export class AnalysisSnowpackPage extends LitElement {
@@ -12,55 +14,90 @@ export class AnalysisSnowpackPage extends LitElement {
 
     constructor() {
         super();
-        this._gridData = this._generateMockGridData();
+        this._gridData = [];
     }
 
     createRenderRoot() {
         return this; // Light DOM
     }
 
-    _generateMockGridData() {
-        return [
-            { date: '2025-11-29 08:00', operation: 'Whistler', location: 'Bowl 1', type: 'CT', quality: 'Q1', height: '30', result: 'CTM 12 (Q1)' },
-            { date: '2025-11-28 09:30', operation: 'Whistler', location: 'Ridge 2', type: 'ECT', quality: 'Q2', height: '45', result: 'ECTP 22' },
-            { date: '2025-11-27 14:00', operation: 'Blackcomb', location: 'Glacier', type: 'RB', quality: 'Q1', height: '25', result: 'RB 4' }
-        ];
+    connectedCallback() {
+        super.connectedCallback();
+        this._fetchData();
+    }
+
+    async _fetchData() {
+        try {
+            // Fetch 'Observation' entity, subtype 'snowpack_test', limit 100
+            const response = await fetch('/json/entity_query_all/?entity=Observation&subtype=snowpack_test&limit=100');
+            const json = await response.json();
+
+            if (json && json.success && Array.isArray(json.rows)) {
+                this._processData(json.rows);
+            } else {
+                console.error('Failed to load snowpack data:', json);
+            }
+        } catch (e) {
+            console.error('Network error loading snowpack data:', e);
+        }
+    }
+
+    _processData(rows) {
+        this._gridData = rows.map(row => {
+            return {
+                id: row.id,
+                date: row.date_time_start ? new Date(row.date_time_start).toLocaleString() : '',
+                operation: row.operation_name || 'My Operation',
+                location: row.terrain_desc || row.location || 'Unknown',
+                type: row.fracture_character || row.test_type || '-',
+                quality: row.shear_quality || '-',
+                height: row.depth || '-',
+                result: row.test_result || row.comments || '-'
+            };
+        });
     }
 
     render() {
         return html`
-            <powdercloud-container>
-                <h1 style="color: #5399a5; font-size: 1.9em; margin: 0 0 20px 0; padding: 0; font-weight: normal; font-family: Arial, sans-serif; text-transform: uppercase;">
-                    Snowpack Analysis
-                </h1>
+            <powdercloud-layout pageTitle="Snowpack Analysis">
+                <powdercloud-container>
+                    
+                    <powdercloud-filter-panel 
+                        .modes="${[{ label: 'Snowpack Test', value: 'snowpack_test' }]}"
+                        selectedMode="snowpack_test"
+                        showDateRange
+                    ></powdercloud-filter-panel>
 
-                <powdercloud-filter-panel 
-                    .modes="${[{ label: 'Snowpack Test', value: 'snowpack_test' }]}"
-                    selectedMode="snowpack_test"
-                    showDateRange
-                ></powdercloud-filter-panel>
+                    <br />
 
-                <br />
+                    <powdercloud-card title="Map Overlay" collapsible>
+                        <div style="height: 400px; width: 100%;">
+                            <!-- Assuming API key is handled globally or via config, or we pass a placeholder/demo key if available -->
+                            <powdercloud-google-map 
+                                .lat="${50.1163}" 
+                                .lng="${-122.9574}" 
+                                .zoom="${11}"
+                                .markers="${[
+                { lat: 50.1163, lng: -122.9574, title: 'Whistler', color: '#EA4335' },
+                { lat: 50.1100, lng: -122.9400, title: 'Blackcomb', color: '#4285F4' }
+            ]}"
+                            ></powdercloud-google-map>
+                        </div>
+                    </powdercloud-card>
 
-                <powdercloud-card title="Map Overlay" collapsible>
-                    <div style="height: 400px; display: flex; align-items: center; justify-content: center; background: #eee; color: #666;">
-                        Map View Placeholder
-                    </div>
-                </powdercloud-card>
+                    <br />
 
-                <br />
+                    <powdercloud-card title="Rose Overlay" collapsible collapsed>
+                        <div style="height: 400px;">
+                            <powdercloud-avalanche-rose></powdercloud-avalanche-rose>
+                        </div>
+                    </powdercloud-card>
 
-                <powdercloud-card title="Rose Overlay" collapsible collapsed>
-                    <div style="height: 400px;">
-                        <powdercloud-avalanche-rose></powdercloud-avalanche-rose>
-                    </div>
-                </powdercloud-card>
+                    <br />
 
-                <br />
-
-                <powdercloud-dashboard-grid
-                    title="Snowpack Test Records"
-                    .columns="${[
+                    <powdercloud-dashboard-grid
+                        title="Snowpack Test Records"
+                        .columns="${[
                 { header: 'Date', field: 'date', sortable: true },
                 { header: 'Operation', field: 'operation', sortable: true },
                 { header: 'Location', field: 'location', sortable: true },
@@ -69,10 +106,11 @@ export class AnalysisSnowpackPage extends LitElement {
                 { header: 'Height', field: 'height' },
                 { header: 'Result', field: 'result' }
             ]}"
-                    .data="${this._gridData}"
-                    paginated
-                ></powdercloud-dashboard-grid>
-            </powdercloud-container>
+                        .data="${this._gridData}"
+                        paginated
+                    ></powdercloud-dashboard-grid>
+                </powdercloud-container>
+            </powdercloud-layout>
         `;
     }
 }

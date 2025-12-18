@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
+import './components/PowdercloudLayout.js';
 import './components/PowdercloudFilterPanel.js';
 import './components/PowdercloudDashboardChart.js';
 import './components/PowdercloudDashboardGrid.js';
@@ -14,57 +15,118 @@ export class AnalysisStabilityPage extends LitElement {
 
     constructor() {
         super();
-        this._stabilityChartData = this._generateMockStabilityData();
-        this._gridData = this._generateMockGridData();
+        this._stabilityChartData = { alpine: [], treeline: [], belowTreeline: [] };
+        this._gridData = [];
     }
 
     createRenderRoot() {
         return this; // Light DOM
     }
 
-    _generateMockStabilityData() {
-        const alpine = [];
-        const treeline = [];
-        const belowTreeline = [];
-        const now = new Date();
-        for (let i = 14; i >= 0; i--) {
-            const date = new Date(now);
-            date.setDate(date.getDate() - i);
-            alpine.push([date.getTime(), Math.floor(Math.random() * 5) + 1]); // 1-5
-            treeline.push([date.getTime(), Math.floor(Math.random() * 4) + 2]); // 2-5
-            belowTreeline.push([date.getTime(), Math.floor(Math.random() * 3) + 3]); // 3-5
-        }
-        return { alpine, treeline, belowTreeline };
+    connectedCallback() {
+        super.connectedCallback();
+        this._fetchData();
     }
 
-    _generateMockGridData() {
-        return [
-            { date: '2025-11-29', operation: 'Whistler', location: 'Peak', alpine: 'Poor', treeline: 'Fair', below: 'Good', trend: 'Steady' },
-            { date: '2025-11-28', operation: 'Blackcomb', location: 'Glacier', alpine: 'Fair', treeline: 'Good', below: 'V. Good', trend: 'Improving' },
-            { date: '2025-11-27', operation: 'Whistler', location: 'Bowl', alpine: 'Poor', treeline: 'Poor', below: 'Fair', trend: 'Declining' }
-        ];
+    async _fetchData() {
+        try {
+            // Fetch 'Observation' entity, subtype 'snowpack_stability' (guessing subtype), limit 100
+            const response = await fetch('/json/entity_query_all/?entity=Observation&subtype=snowpack_stability&limit=100');
+            const json = await response.json();
+
+            if (json && json.success && Array.isArray(json.rows)) {
+                this._processData(json.rows);
+            } else {
+                // Fallback to try 'stability' if subtype name is different
+                console.warn('Failed to load stability data, retrying with subtype=stability...');
+                const retryParams = new URLSearchParams({ entity: 'Observation', subtype: 'stability', limit: 100 });
+                const retryResp = await fetch(`/json/entity_query_all/?${retryParams}`);
+                const retryJson = await retryResp.json();
+
+                if (retryJson && retryJson.success && Array.isArray(retryJson.rows)) {
+                    this._processData(retryJson.rows);
+                } else {
+                    console.error('Failed to load stability analysis data:', json);
+                }
+            }
+        } catch (e) {
+            console.error('Network error loading stability analysis data:', e);
+        }
+    }
+
+    _processData(rows) {
+        // Prepare Chart Data
+        const alpine = [], treeline = [], below = [];
+
+        // Helper to convert rate string to number 1-5 (Similar to Danger but 'Very Poor' -> 'Very Good')
+        const rateToNum = (r) => {
+            if (!r) return 0;
+            const rL = r.toLowerCase();
+            if (rL.includes('very poor')) return 1;
+            if (rL.includes('poor')) return 2;
+            if (rL.includes('fair')) return 3;
+            if (rL.includes('very good')) return 5;
+            if (rL.includes('good')) return 4;
+
+            // Fallback: try parsing number
+            const n = parseInt(r);
+            return isNaN(n) ? 0 : n;
+        };
+
+        const gridData = rows.map(row => {
+            const dateStr = row.date_time_start ? new Date(row.date_time_start).toLocaleString() : '';
+            const timestamp = row.date_time_start ? new Date(row.date_time_start).getTime() : 0;
+
+            // Populate Chart
+            if (timestamp) {
+                // Assuming field names like 'stability_alp', 'stability_tln' etc.
+                const rA = row.stability_alp || '0';
+                const rT = row.stability_tln || '0';
+                const rB = row.stability_btl || '0';
+
+                alpine.push([timestamp, rateToNum(rA)]);
+                treeline.push([timestamp, rateToNum(rT)]);
+                below.push([timestamp, rateToNum(rB)]);
+            }
+
+            return {
+                id: row.id,
+                date: dateStr,
+                operation: row.operation_name || 'My Operation',
+                location: row.terrain_desc || row.location || 'Overview',
+                alpine: row.stability_alp || '-',
+                treeline: row.stability_tln || '-',
+                below: row.stability_btl || '-',
+                trend: row.stability_trend || '-'
+            };
+        });
+
+        this._stabilityChartData = {
+            alpine: alpine.sort((a, b) => a[0] - b[0]),
+            treeline: treeline.sort((a, b) => a[0] - b[0]),
+            belowTreeline: below.sort((a, b) => a[0] - b[0])
+        };
+        this._gridData = gridData;
     }
 
     render() {
         return html`
-            <powdercloud-container>
-                <h1 style="color: #5399a5; font-size: 1.9em; margin: 0 0 20px 0; padding: 0; font-weight: normal; font-family: Arial, sans-serif; text-transform: uppercase;">
-                    Stability Analysis
-                </h1>
+            <powdercloud-layout pageTitle="Stability Analysis">
+                <powdercloud-container>
+                    
+                    <powdercloud-filter-panel 
+                        .modes="${[{ label: 'Stability', value: 'stability' }]}"
+                        selectedMode="stability"
+                        showDateRange
+                    ></powdercloud-filter-panel>
 
-                <powdercloud-filter-panel 
-                    .modes="${[{ label: 'Stability', value: 'stability' }]}"
-                    selectedMode="stability"
-                    showDateRange
-                ></powdercloud-filter-panel>
+                    <br />
 
-                <br />
-
-                <powdercloud-card title="Stability Ratings Overview">
-                    <powdercloud-dashboard-chart
-                        title="Stability Ratings Over Time"
-                        type="line"
-                        .options="${{
+                    <powdercloud-card title="Stability Ratings Overview">
+                        <powdercloud-dashboard-chart
+                            title="Stability Ratings Over Time"
+                            type="line"
+                            .options="${{
                 xAxis: { type: 'datetime' },
                 yAxis: {
                     title: { text: 'Stability Level' },
@@ -77,14 +139,14 @@ export class AnalysisStabilityPage extends LitElement {
                     { name: 'Below Treeline', data: this._stabilityChartData.belowTreeline, color: '#00FF00' }
                 ]
             }}"
-                    ></powdercloud-dashboard-chart>
-                </powdercloud-card>
+                        ></powdercloud-dashboard-chart>
+                    </powdercloud-card>
 
-                <br />
+                    <br />
 
-                <powdercloud-dashboard-grid
-                    title="Stability Records"
-                    .columns="${[
+                    <powdercloud-dashboard-grid
+                        title="Stability Records"
+                        .columns="${[
                 { header: 'Date', field: 'date', sortable: true },
                 { header: 'Operation', field: 'operation', sortable: true },
                 { header: 'Location', field: 'location', sortable: true },
@@ -93,10 +155,11 @@ export class AnalysisStabilityPage extends LitElement {
                 { header: 'Below TL', field: 'below' },
                 { header: 'Trend', field: 'trend' }
             ]}"
-                    .data="${this._gridData}"
-                    paginated
-                ></powdercloud-dashboard-grid>
-            </powdercloud-container>
+                        .data="${this._gridData}"
+                        paginated
+                    ></powdercloud-dashboard-grid>
+                </powdercloud-container>
+            </powdercloud-layout>
         `;
     }
 }

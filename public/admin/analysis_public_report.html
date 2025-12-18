@@ -18,22 +18,14 @@
     <script src="/js/highcharts.js"></script>
 
     <!-- Lit Components -->
-    <script type="module" src="/js/lit/AppLayout.js"></script>
-    <script type="module" src="/js/lit/pages/AnalysisPublicReportPage.js"></script>
+    <script type="module" src="/js/lit/AnalysisPublicReportPage.js"></script>
 </head>
 
 <body>
     <app-layout id="layout">
         <analysis-public-report-page></analysis-public-report-page>
     </app-layout>
-
-    <script>
-        document.getElementById('layout').breadcrumbs = [
-            { label: 'Home', url: '/dashboard_lit.html' },
-            { label: 'Analysis' },
-            { label: 'Public Report' }
-        ];
-    </script>
+</body>
 </body>
 
 </html>

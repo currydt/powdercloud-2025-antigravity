@@ -11,7 +11,9 @@ import './components/PowdercloudTextarea.js';
 import './components/PowdercloudCheckbox.js';
 import './components/PowdercloudDateSelector.js';
 
-export class ObservationAvalancheSummaryPage extends LitElement {
+// Reference: public/observation/avalanche_event_standard.html and public/js/pages/observation/avalanche_event_standard.js
+
+export class ObservationAvalancheStandardPage extends LitElement {
     static properties = {
         view: { type: String }, // 'list' or 'form'
         selectedItem: { type: Object }
@@ -43,13 +45,13 @@ export class ObservationAvalancheSummaryPage extends LitElement {
     }
 
     _handleSave() {
-        alert('Save logic implementation pending API integration.');
+        alert('Save logic will be implemented here via -api class.');
         this.view = 'list';
     }
 
     render() {
         return html`
-            <powdercloud-layout pageTitle="Avalanche Summary">
+            <powdercloud-layout pageTitle="Standard Avalanche Event">
                 <powdercloud-container>
                     ${this.view === 'list' ? this._renderList() : this._renderForm()}
                 </powdercloud-container>
@@ -59,22 +61,23 @@ export class ObservationAvalancheSummaryPage extends LitElement {
 
     _renderList() {
         const columns = [
-            { header: 'Date', field: 'date', width: '15%' },
-            { header: 'Location', field: 'location', width: '20%' },
-            { header: 'Observer', field: 'observer', width: '15%' },
-            { header: 'Notable', field: 'notable', width: '10%' },
-            { header: 'Subject', field: 'subject', width: '30%' }
+            { header: 'Date and Time', field: 'date_time_start', width: '15%' },
+            { header: 'Observer', field: 'observer_desc', width: '15%' },
+            { header: 'Location', field: 'terrain_desc', width: '20%' },
+            { header: 'Size', field: 'size', width: '10%' },
+            { header: 'Trigger', field: 'trigger', width: '10%' },
+            { header: 'Description', field: 'subject', width: '30%' }
         ];
 
         const mockData = [
-            { date: '2023-12-18 08:00', location: 'Alpine Zone', observer: 'Patrol', notable: 'Yes', subject: 'Widespread natural cycle' },
-            { date: '2023-12-17 16:00', location: 'Tree Zone', observer: 'Forecaster', notable: 'No', subject: 'Minor sluffing' }
+            { date_time_start: '2023-12-18 08:30', observer_desc: 'Patrol', terrain_desc: 'West Bowl', size: '2', trigger: 'Na', subject: 'Natural release after storm' },
+            { date_time_start: '2023-12-17 14:00', observer_desc: 'Guide', terrain_desc: 'North Face', size: '1', trigger: 'Sc', subject: 'Skier accidental' }
         ];
 
         return html`
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                <h2>Avalanche Summaries</h2>
-                <powdercloud-button @click="${this._handleNew}">+ New Summary</powdercloud-button>
+                <h2>Avalanche Events</h2>
+                <powdercloud-button @click="${this._handleNew}">+ Add Event</powdercloud-button>
             </div>
             
             <powdercloud-card>
@@ -93,58 +96,58 @@ export class ObservationAvalancheSummaryPage extends LitElement {
                 <powdercloud-button variant="secondary" @click="${this._handleCancel}">Back to List</powdercloud-button>
             </div>
 
-            <powdercloud-card title="Avalanche Summary Entry">
+            <powdercloud-card title="Avalanche Event Entry">
                 
                 <powdercloud-fieldset legend="Operational Header">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <powdercloud-input label="Operation" value="Antigravity Operation" disabled></powdercloud-input>
                         <powdercloud-input label="Data Recorder" value="Current User" disabled></powdercloud-input>
                         <powdercloud-select label="Observer" .options="${['Me', 'Patrol', 'Public']}"></powdercloud-select>
-                        <powdercloud-checkbox label="Notable Observation"></powdercloud-checkbox>
-                        <div style="grid-column: span 2;">
-                            <powdercloud-input label="Description / Subject" placeholder="Summary subject..."></powdercloud-input>
+                        <div style="align-self: flex-end; padding-bottom: 10px;">
+                            <powdercloud-checkbox label="Notable Observation"></powdercloud-checkbox>
                         </div>
                     </div>
                 </powdercloud-fieldset>
 
                 <powdercloud-fieldset legend="Scope">
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                         <powdercloud-date-selector label="Date and Time"></powdercloud-date-selector>
-                        <powdercloud-select label="Location (Region/Zone)" .options="${['Alpine Zone', 'Treeline Zone', 'Below TL']}"></powdercloud-select>
+                        <powdercloud-date-selector label="Date and Time"></powdercloud-date-selector>
+                        <powdercloud-select label="Location" .options="${['Bowl 1', 'Ridge 2', 'Glacier']}"></powdercloud-select>
                     </div>
                 </powdercloud-fieldset>
 
-                <powdercloud-fieldset legend="Details">
+                <powdercloud-fieldset legend="Path Characteristics">
                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
-                        <powdercloud-input label="Percent Observed" type="number"></powdercloud-input>
-                        <powdercloud-select label="Distribution" .options="${['Isolated', 'Specific', 'Widespread']}"></powdercloud-select>
-                        <powdercloud-date-selector label="Occurrence Time"></powdercloud-date-selector>
-
                         <powdercloud-select label="Aspect" .options="${['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW']}"></powdercloud-select>
-                        <powdercloud-input label="Incline" type="number"></powdercloud-input>
+                        <powdercloud-input label="Incline (deg)" type="number"></powdercloud-input>
                         <powdercloud-input label="Elevation (m)" type="number"></powdercloud-input>
-                        
-                        <powdercloud-select label="Destructive Size" .options="${['1', '2', '3', '4', '5']}"></powdercloud-select>
-                         <powdercloud-select label="Trigger" .options="${['Natural', 'Human', 'Explosive']}"></powdercloud-select>
-                         <powdercloud-select label="Failure Type" .options="${['New Snow', 'Old Snow', 'Ground']}"></powdercloud-select>
                     </div>
                 </powdercloud-fieldset>
-                
-                <powdercloud-fieldset legend="Properties">
-                   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
+
+                 <powdercloud-fieldset legend="Trigger & Event Characteristics">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <powdercloud-select label="Destructive Size" .options="${['1', '2', '3', '4', '5']}"></powdercloud-select>
+                        <powdercloud-select label="Relative Size" .options="${['R1', 'R2', 'R3', 'R4', 'R5']}"></powdercloud-select>
+                        <powdercloud-select label="Trigger" .options="${['Natural', 'Skier', 'Explosive', 'Remote']}"></powdercloud-select>
+                         <powdercloud-select label="Bed Surface" .options="${['New Snow', 'Old Snow', 'Ground']}"></powdercloud-select>
+                    </div>
+                </powdercloud-fieldset>
+
+                <powdercloud-fieldset legend="Slab & Runout">
+                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px;">
                         <powdercloud-input label="Slab Thickness (cm)" type="number"></powdercloud-input>
                         <powdercloud-input label="Slab Width (m)" type="number"></powdercloud-input>
-                        <powdercloud-input label="Path Run Length (m)" type="number"></powdercloud-input>
-                   </div>
+                        <powdercloud-input label="Vertical Fall (m)" type="number"></powdercloud-input>
+                     </div>
                 </powdercloud-fieldset>
 
-                 <powdercloud-fieldset legend="Notes">
-                    <powdercloud-textarea label="Internal Comments" rows="3"></powdercloud-textarea>
+                <powdercloud-fieldset legend="Comments">
+                    <powdercloud-textarea label="Description / Narrative" rows="4"></powdercloud-textarea>
                 </powdercloud-fieldset>
 
                 <div style="margin-top: 30px; display: flex; justify-content: flex-end; gap: 10px;">
                     <powdercloud-button variant="secondary" @click="${this._handleCancel}">Cancel</powdercloud-button>
-                    <powdercloud-button variant="primary" @click="${this._handleSave}">Save Summary</powdercloud-button>
+                    <powdercloud-button variant="primary" @click="${this._handleSave}">Save Event</powdercloud-button>
                 </div>
 
             </powdercloud-card>
@@ -152,4 +155,4 @@ export class ObservationAvalancheSummaryPage extends LitElement {
     }
 }
 
-customElements.define('observation-avalanche-summary-page', ObservationAvalancheSummaryPage);
+customElements.define('observation-avalanche-standard-page', ObservationAvalancheStandardPage);

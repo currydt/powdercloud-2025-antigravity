@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,13 +14,14 @@
     <link rel="stylesheet" type="text/css" id="theme" href="/resources/css/xtheme-gray.css" />
 
     <!-- Lit Components -->
-    <script type="module" src="/js/lit/AppLayout.js"></script>
-    <script type="module" src="/js/lit/pages/ObservationWeatherNarrativePage.js"></script>
+    <script type="module" src="/js/lit/components/PowdercloudLayout.js"></script>
+    <script type="module" src="/js/lit/ObservationWeatherNarrativePage.js"></script>
 </head>
+
 <body>
-    <app-layout id="layout">
+    <powdercloud-layout id="layout">
         <observation-weather-narrative-page></observation-weather-narrative-page>
-    </app-layout>
+    </powdercloud-layout>
 
     <script>
         document.getElementById('layout').breadcrumbs = [
@@ -29,4 +31,5 @@
         ];
     </script>
 </body>
+
 </html>

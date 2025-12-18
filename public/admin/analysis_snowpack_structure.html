@@ -14,22 +14,14 @@
     <link rel="stylesheet" type="text/css" id="theme" href="/resources/css/xtheme-gray.css" />
 
     <!-- Lit Components -->
-    <script type="module" src="/js/lit/AppLayout.js"></script>
-    <script type="module" src="/js/lit/pages/AnalysisSnowpackStructurePage.js"></script>
+    <script type="module" src="/js/lit/AnalysisSnowpackStructurePage.js"></script>
 </head>
 
 <body>
     <app-layout id="layout">
         <analysis-snowpack-structure-page></analysis-snowpack-structure-page>
     </app-layout>
-
-    <script>
-        document.getElementById('layout').breadcrumbs = [
-            { label: 'Home', url: '/dashboard_lit.html' },
-            { label: 'Analysis' },
-            { label: 'Snowpack Structure' }
-        ];
-    </script>
+</body>
 </body>
 
 </html>

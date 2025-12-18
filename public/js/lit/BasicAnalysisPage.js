@@ -1,4 +1,8 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
+import './components/PowdercloudLayout.js';
+import './components/PowdercloudContainer.js';
+import './components/PowdercloudGrid.js';
+import './components/PowdercloudCard.js';
 
 export class BasicAnalysisPage extends LitElement {
     static properties = {
@@ -41,43 +45,44 @@ export class BasicAnalysisPage extends LitElement {
 
     render() {
         return html`
-            <h1 style="color: #5399a5; font-size: 1.9em; margin: 0 0 5px 0; padding: 0; font-weight: normal; font-family: Arial, sans-serif; text-transform: uppercase;">
-                Basic Analysis
-            </h1>
-            <p style="margin-bottom: 20px;">Overview of key metrics and statistics for your operation.</p>
+            <powdercloud-layout pageTitle="Basic Analysis">
+                <powdercloud-container>
+                    <p style="margin-bottom: 20px;">Overview of key metrics and statistics for your operation.</p>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-bottom: 30px;">
-                <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; border-left: 4px solid #5399a5;">
-                    <h3 style="margin: 0 0 10px 0; color: #333;">Total Observations</h3>
-                    <p style="font-size: 2em; font-weight: bold; margin: 0; color: #5399a5;">
-                        ${this._stats ? this._stats.totalObservations : '...'}
-                    </p>
-                </div>
+                    <powdercloud-grid cols="4" gap="lg" style="margin-bottom: 30px;">
+                        <powdercloud-card>
+                            <h3 style="margin: 0 0 10px 0; color: #333;">Total Observations</h3>
+                            <p style="font-size: 2em; font-weight: bold; margin: 0; color: #5399a5;">
+                                ${this._stats ? this._stats.totalObservations : '...'}
+                            </p>
+                        </powdercloud-card>
 
-                <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; border-left: 4px solid #5399a5;">
-                    <h3 style="margin: 0 0 10px 0; color: #333;">Total Terrain</h3>
-                    <p style="font-size: 2em; font-weight: bold; margin: 0; color: #5399a5;">
-                        ${this._stats ? this._stats.totalTerrain : '...'}
-                    </p>
-                </div>
+                        <powdercloud-card>
+                            <h3 style="margin: 0 0 10px 0; color: #333;">Total Terrain</h3>
+                            <p style="font-size: 2em; font-weight: bold; margin: 0; color: #5399a5;">
+                                ${this._stats ? this._stats.totalTerrain : '...'}
+                            </p>
+                        </powdercloud-card>
 
-                <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; border-left: 4px solid #5399a5;">
-                    <h3 style="margin: 0 0 10px 0; color: #333;">Active Operations</h3>
-                    <p style="font-size: 2em; font-weight: bold; margin: 0; color: #5399a5;">
-                        ${this._stats ? '...' : '...'}
-                    </p>
-                </div>
+                        <powdercloud-card>
+                            <h3 style="margin: 0 0 10px 0; color: #333;">Active Operations</h3>
+                            <p style="font-size: 2em; font-weight: bold; margin: 0; color: #5399a5;">
+                                N/A
+                            </p>
+                        </powdercloud-card>
 
-                <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; border-left: 4px solid #5399a5;">
-                    <h3 style="margin: 0 0 10px 0; color: #333;">Active Users</h3>
-                    <p style="font-size: 2em; font-weight: bold; margin: 0; color: #5399a5;">
-                        ${this._stats ? '...' : '...'}
-                    </p>
-                </div>
-            </div>
+                        <powdercloud-card>
+                            <h3 style="margin: 0 0 10px 0; color: #333;">Active Users</h3>
+                            <p style="font-size: 2em; font-weight: bold; margin: 0; color: #5399a5;">
+                                N/A
+                            </p>
+                        </powdercloud-card>
+                    </powdercloud-grid>
 
-            <h2 style="color: #5399a5; margin-top: 30px;">Recent Activity</h2>
-            <p>Recent observations and data entry activity will be displayed here.</p>
+                    <h2 style="color: #5399a5; margin-top: 30px;">Recent Activity</h2>
+                    <p>Recent observations and data entry activity will be displayed here.</p>
+                </powdercloud-container>
+            </powdercloud-layout>
         `;
     }
 }

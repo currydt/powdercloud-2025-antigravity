@@ -203,6 +203,24 @@ export class PowdercloudFilterPanel extends LitElement {
                             </div>
                         ` : ''}
 
+                        ${this.selectedMode === 'operation' ? html`
+                            <div class="filter-group">
+                                <span class="filter-label">Operation Association:</span>
+                                <select style="padding: 5px; border: 1px solid #ccc; border-radius: 3px; font-size: 12px; width: 180px;">
+                                    <option value="" disabled selected>Select Association...</option>
+                                    <optgroup label="Community">
+                                        <option value="sorcerer">Sorcerer Lodge</option>
+                                        <option value="burnie">Burnie Glacier Chalet</option>
+                                        <option value="selkirk">Selkirk Tangiers</option>
+                                    </optgroup>
+                                    <optgroup label="Neighbors">
+                                        <option value="rev_mtn">Revelstoke Mountain Resort</option>
+                                        <option value="khmr">Kicking Horse</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        ` : ''}
+
                         <div class="update-btn-container">
                             <app-button label="Update" icon="fa fa-refresh" size="small" @click="${this._handleUpdate}"></app-button>
                         </div>

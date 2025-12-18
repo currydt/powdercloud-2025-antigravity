@@ -18,22 +18,13 @@
     <script src="/js/highcharts.js"></script>
 
     <!-- Lit Components -->
-    <script type="module" src="/js/lit/AppLayout.js"></script>
-    <script type="module" src="/js/lit/pages/AnalysisAvalancheActivityPage.js"></script>
+    <script type="module" src="/js/lit/AnalysisAvalancheActivityPage.js"></script>
 </head>
 
 <body>
-    <app-layout id="layout">
-        <analysis-avalanche-activity-page></analysis-avalanche-activity-page>
-    </app-layout>
-
-    <script>
-        document.getElementById('layout').breadcrumbs = [
-            { label: 'Home', url: '/dashboard_lit.html' },
-            { label: 'Analysis' },
-            { label: 'Avalanche Activity Analysis' }
-        ];
-    </script>
+    <analysis-avalanche-activity-page></analysis-avalanche-activity-page>
 </body>
+
+
 
 </html>

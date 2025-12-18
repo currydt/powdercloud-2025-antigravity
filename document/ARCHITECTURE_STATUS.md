@@ -45,6 +45,34 @@ The application uses an RPC-style shim to support ExtJS legacy patterns.
 - **Phase 3:** Directory structure flattened.
 - **Phase 4:** **ALL** usage in `public/js/lit/*.js` updated to use `powdercloud-*` tags and `./components/` imports.
 
-## 5. Next Steps
-- Restart `powdercrowd-api` to resolve 404 errors on the Dashboard.
+## 5. UI Refactoring Status (In Progress)
+The following legacy ExtJS pages have been refactored to use Lit components with placeholder data:
+
+### Observations
+- **Avalanche Narrative:** `ObservationAvalancheNarrativePage.js` (List & Form views)
+- **Avalanche Standard Event:** `ObservationAvalancheStandardPage.js` (List & Form views)
+- **Avalanche Summary:** `ObservationAvalancheSummaryPage.js` (List & Form views)
+- **Weather Narrative:** `ObservationWeatherNarrativePage.js` (List & Form views)
+- **Snow Profile:** `ObservationSnowProfilePage.js` (Form, List, and interactive `PowdercloudSnowProfileChart`)
+
+### Analysis
+- **Danger Analysis:** `AnalysisDangerPage.js` (Charts & Grid)
+- **Snowpack Analysis:** `AnalysisSnowpackPage.js` (Map Overlay, Rose, Grid)
+
+**New Components Created:**
+- `PowdercloudGoogleMap.js` (Wrapper for Google Maps API)
+- `PowdercloudSnowProfileChart.js` (Lit wrapper for SVG Snow Profile)
+- `PowdercloudSvgSnowprofile.js` (SVG Rendering Engine)
+
+### Reports
+- **Avalanche Event Report:** `ReportAvalancheEventPage.js` (Filter Bar & Report Grid, connected to API/Mock)
+
+### Admin / Projects
+- **Project List:** `ProjectListPage.js` (Data Grid)
+
+**New Components Created:**
+- `PowdercloudGoogleMap.js` (Wrapper for Google Maps API)
+
+## 6. Next Steps
+- Implement backend data fetching using the API/SDK directly within `server.js` endpoints.
 - Delete legacy `App*.js` files when confident (optional cleanup).

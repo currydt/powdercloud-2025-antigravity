@@ -14,22 +14,12 @@
     <link rel="stylesheet" type="text/css" id="theme" href="/resources/css/xtheme-gray.css" />
 
     <!-- Lit Components -->
-    <script type="module" src="/js/lit/AppLayout.js"></script>
-    <script type="module" src="/js/lit/pages/AnalysisSnowProfilePage.js"></script>
+    <!-- Lit Components -->
+    <script type="module" src="/js/lit/AnalysisSnowProfilePage.js"></script>
 </head>
 
 <body>
-    <app-layout id="layout">
-        <analysis-snow-profile-page></analysis-snow-profile-page>
-    </app-layout>
-
-    <script>
-        document.getElementById('layout').breadcrumbs = [
-            { label: 'Home', url: '/dashboard_lit.html' },
-            { label: 'Analysis' },
-            { label: 'Snow Profile' }
-        ];
-    </script>
+    <analysis-snow-profile-page></analysis-snow-profile-page>
 </body>
 
 </html>

@@ -15,21 +15,11 @@
     <script src="/js/highcharts.js"></script>
 
     <!-- Lit Components -->
-    <script type="module" src="/js/lit/AppLayout.js"></script>
-    <script type="module" src="/js/lit/pages/AnalysisWeatherPage.js"></script>
+    <script type="module" src="/js/lit/AnalysisWeatherPage.js"></script>
 </head>
 
 <body>
-    <app-layout id="layout">
-        <analysis-weather-page></analysis-weather-page>
-    </app-layout>
-    <script>
-        document.getElementById('layout').breadcrumbs = [
-            { label: 'Home', url: '/admin/index.html' },
-            { label: 'Analysis', url: '#' },
-            { label: 'Weather Analysis', url: '/admin/analysis_weather.html' }
-        ];
-    </script>
+    <analysis-weather-page></analysis-weather-page>
 </body>
 
 </html>

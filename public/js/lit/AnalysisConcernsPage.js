@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
+import './components/PowdercloudLayout.js';
 import './components/PowdercloudFilterPanel.js';
 import './components/PowdercloudDashboardChart.js';
 import './components/PowdercloudDashboardGrid.js';
@@ -16,31 +17,97 @@ export class AnalysisConcernsPage extends LitElement {
 
     constructor() {
         super();
-        this._alpineData = this._generateMockHazardData();
-        this._treelineData = this._generateMockHazardData();
-        this._belowTreelineData = this._generateMockHazardData();
-        this._gridData = this._generateMockGridData();
+        this._alpineData = [];
+        this._treelineData = [];
+        this._belowTreelineData = [];
+        this._gridData = [];
     }
 
     createRenderRoot() {
         return this; // Light DOM
     }
 
-    _generateMockHazardData() {
-        const data = [];
-        for (let i = 0; i < 20; i++) {
-            // Size (1-5), Likelihood (1-9)
-            data.push([1 + Math.random() * 4, 1 + Math.random() * 8]);
-        }
-        return data;
+    connectedCallback() {
+        super.connectedCallback();
+        this._fetchData();
     }
 
-    _generateMockGridData() {
-        return [
-            { date: '2025-11-29', operation: 'Whistler', location: 'Peak', alpine_size: '2.5', alpine_like: 'L', treeline_size: '2.0', treeline_like: 'P' },
-            { date: '2025-11-29', operation: 'Blackcomb', location: 'Glacier', alpine_size: '3.0', alpine_like: 'P', treeline_size: '1.5', treeline_like: 'U' },
-            { date: '2025-11-28', operation: 'Whistler', location: 'Bowl', alpine_size: '2.0', alpine_like: 'L', treeline_size: '1.0', treeline_like: 'VU' }
-        ];
+    async _fetchData() {
+        try {
+            // Fetch 'Observation' entity, subtype 'hazard_assessment' (likely), limit 100
+            const response = await fetch('/json/entity_query_all/?entity=Observation&subtype=hazard_assessment&limit=100');
+            const json = await response.json();
+
+            if (json && json.success && Array.isArray(json.rows)) {
+                this._processData(json.rows);
+            } else {
+                console.error('Failed to load concerns data:', json);
+            }
+        } catch (e) {
+            console.error('Network error loading concerns data:', e);
+        }
+    }
+
+    _processData(rows) {
+        const alpine = [], treeline = [], below = [];
+
+        // Helper to map Likelihood enum to numeric for scatter
+        // Assuming values like 'Unlikely', 'Possible', 'Likely', 'Very Likely', 'Certain' etc. 
+        // Or 1-9 scale directly? Let's assume text and map it, or use raw if numeric.
+        // For now, simple mock parsing logic:
+        const parseLike = (val) => {
+            if (!val) return 0;
+            const v = val.toLowerCase();
+            if (v.includes('unlikely')) return 2;
+            if (v.includes('possible')) return 4;
+            if (v.includes('likely')) return 6;
+            if (v.includes('certain')) return 8;
+            const n = parseFloat(val);
+            return isNaN(n) ? 0 : n;
+        };
+
+        const parseSize = (val) => {
+            const n = parseFloat(val);
+            return isNaN(n) ? 0 : n;
+        };
+
+        const gridData = rows.map(row => {
+            const dateStr = row.date_time_start ? new Date(row.date_time_start).toLocaleString() : '';
+
+            /* Assuming fields: 
+               alp_size, alp_like 
+               tln_size, tln_like
+               btl_size, btl_like 
+            */
+            const aS = parseSize(row.alp_max_size);
+            const aL = parseLike(row.alp_likelihood);
+            if (aS > 0 && aL > 0) alpine.push([aS, aL]);
+
+            const tS = parseSize(row.tln_max_size);
+            const tL = parseLike(row.tln_likelihood);
+            if (tS > 0 && tL > 0) treeline.push([tS, tL]);
+
+            const bS = parseSize(row.btl_max_size);
+            const bL = parseLike(row.btl_likelihood);
+            if (bS > 0 && bL > 0) below.push([bS, bL]);
+
+            return {
+                id: row.id,
+                date: dateStr,
+                operation: row.operation_name || 'My Operation',
+                location: row.terrain_desc || row.location || 'Unknown',
+                alpine_size: row.alp_max_size || '-',
+                alpine_like: row.alp_likelihood || '-',
+                treeline_size: row.tln_max_size || '-',
+                treeline_like: row.tln_likelihood || '-',
+                // below fields not in grid cols but processed for chart
+            };
+        });
+
+        this._alpineData = alpine;
+        this._treelineData = treeline;
+        this._belowTreelineData = below;
+        this._gridData = gridData;
     }
 
     render() {
@@ -57,59 +124,57 @@ export class AnalysisConcernsPage extends LitElement {
         };
 
         return html`
-            <powdercloud-container>
-                <h1 style="color: #5399a5; font-size: 1.9em; margin: 0 0 20px 0; padding: 0; font-weight: normal; font-family: Arial, sans-serif; text-transform: uppercase;">
-                    Concerns Analysis
-                </h1>
+            <powdercloud-layout pageTitle="Concerns Analysis">
+                <powdercloud-container>
+                    
+                    <powdercloud-filter-panel 
+                        .modes="${[{ label: 'Concerns', value: 'concerns' }]}"
+                        selectedMode="concerns"
+                        showDateRange
+                    ></powdercloud-filter-panel>
 
-                <powdercloud-filter-panel 
-                    .modes="${[{ label: 'Concerns', value: 'concerns' }]}"
-                    selectedMode="concerns"
-                    showDateRange
-                ></powdercloud-filter-panel>
+                    <br />
 
-                <br />
-
-                <powdercloud-grid cols="3" gap="lg">
-                    <powdercloud-card title="Alpine Hazard">
-                        <powdercloud-dashboard-chart
-                            title="Alpine"
-                            type="scatter"
-                            .options="${{
+                    <powdercloud-grid cols="3" gap="lg">
+                        <powdercloud-card title="Alpine Hazard">
+                            <powdercloud-dashboard-chart
+                                title="Alpine"
+                                type="scatter"
+                                .options="${{
                 ...scatterOptions,
                 series: [{ name: 'Alpine', data: this._alpineData, color: 'rgba(223, 83, 83, .5)' }]
             }}"
-                        ></powdercloud-dashboard-chart>
-                    </powdercloud-card>
+                            ></powdercloud-dashboard-chart>
+                        </powdercloud-card>
 
-                    <powdercloud-card title="Treeline Hazard">
-                        <powdercloud-dashboard-chart
-                            title="Treeline"
-                            type="scatter"
-                            .options="${{
+                        <powdercloud-card title="Treeline Hazard">
+                            <powdercloud-dashboard-chart
+                                title="Treeline"
+                                type="scatter"
+                                .options="${{
                 ...scatterOptions,
                 series: [{ name: 'Treeline', data: this._treelineData, color: 'rgba(119, 152, 191, .5)' }]
             }}"
-                        ></powdercloud-dashboard-chart>
-                    </powdercloud-card>
+                            ></powdercloud-dashboard-chart>
+                        </powdercloud-card>
 
-                    <powdercloud-card title="Below Treeline Hazard">
-                        <powdercloud-dashboard-chart
-                            title="Below Treeline"
-                            type="scatter"
-                            .options="${{
+                        <powdercloud-card title="Below Treeline Hazard">
+                            <powdercloud-dashboard-chart
+                                title="Below Treeline"
+                                type="scatter"
+                                .options="${{
                 ...scatterOptions,
                 series: [{ name: 'Below TL', data: this._belowTreelineData, color: 'rgba(144, 237, 125, .5)' }]
             }}"
-                        ></powdercloud-dashboard-chart>
-                    </powdercloud-card>
-                </powdercloud-grid>
+                            ></powdercloud-dashboard-chart>
+                        </powdercloud-card>
+                    </powdercloud-grid>
 
-                <br />
+                    <br />
 
-                <powdercloud-dashboard-grid
-                    title="Concerns Records"
-                    .columns="${[
+                    <powdercloud-dashboard-grid
+                        title="Concerns Records"
+                        .columns="${[
                 { header: 'Date', field: 'date', sortable: true },
                 { header: 'Operation', field: 'operation', sortable: true },
                 { header: 'Location', field: 'location', sortable: true },
@@ -118,10 +183,11 @@ export class AnalysisConcernsPage extends LitElement {
                 { header: 'TL Size', field: 'treeline_size' },
                 { header: 'TL Likelihood', field: 'treeline_like' }
             ]}"
-                    .data="${this._gridData}"
-                    paginated
-                ></powdercloud-dashboard-grid>
-            </powdercloud-container>
+                        .data="${this._gridData}"
+                        paginated
+                    ></powdercloud-dashboard-grid>
+                </powdercloud-container>
+            </powdercloud-layout>
         `;
     }
 }

@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
+import './components/PowdercloudLayout.js';
 import './components/PowdercloudFilterPanel.js';
 import './components/PowdercloudDashboardGrid.js';
 import './components/PowdercloudContainer.js';
@@ -11,49 +12,82 @@ export class AnalysisNewsPage extends LitElement {
 
     constructor() {
         super();
-        this._gridData = this._generateMockGridData();
+        this._gridData = [];
     }
 
     createRenderRoot() {
         return this; // Light DOM
     }
 
-    _generateMockGridData() {
-        return [
-            { date: '2025-11-29', operation: 'Whistler', location: 'Base', notable: 'Yes', description: 'Heavy snowfall warning in effect.' },
-            { date: '2025-11-28', operation: 'Blackcomb', location: 'Peak', notable: 'No', description: 'Routine maintenance on lift.' },
-            { date: '2025-11-27', operation: 'Whistler', location: 'Village', notable: 'Yes', description: 'Community event scheduled for Saturday.' }
-        ];
+    connectedCallback() {
+        super.connectedCallback();
+        this._fetchData();
+    }
+
+    async _fetchData() {
+        try {
+            // Fetch 'Observation' entity, subtype 'news' (or 'news_item')
+            const response = await fetch('/json/entity_query_all/?entity=Observation&subtype=news_item&limit=100');
+            const json = await response.json();
+
+            if (json && json.success && Array.isArray(json.rows)) {
+                this._processData(json.rows);
+            } else {
+                // Try 'news' fallback
+                const retryParams = new URLSearchParams({ entity: 'Observation', subtype: 'news', limit: 100 });
+                const retryResp = await fetch(`/json/entity_query_all/?${retryParams}`);
+                const retryJson = await retryResp.json();
+
+                if (retryJson && retryJson.success && Array.isArray(retryJson.rows)) {
+                    this._processData(retryJson.rows);
+                } else {
+                    console.error('Failed to load news data:', json);
+                }
+            }
+        } catch (e) {
+            console.error('Network error loading news data:', e);
+        }
+    }
+
+    _processData(rows) {
+        this._gridData = rows.map(row => {
+            return {
+                id: row.id,
+                date: row.date_time_start ? new Date(row.date_time_start).toLocaleString() : '',
+                operation: row.operation_name || 'My Operation',
+                location: row.terrain_desc || row.location || 'Unknown',
+                description: row.comments || row.news_story || row.description || '-'
+            };
+        });
     }
 
     render() {
         return html`
-            <powdercloud-container>
-                <h1 style="color: #5399a5; font-size: 1.9em; margin: 0 0 20px 0; padding: 0; font-weight: normal; font-family: Arial, sans-serif; text-transform: uppercase;">
-                    News Analysis
-                </h1>
+            <powdercloud-layout pageTitle="News Analysis">
+                <powdercloud-container>
+                    
+                    <powdercloud-filter-panel 
+                        .modes="${[{ label: 'News', value: 'news' }]}"
+                        selectedMode="news"
+                        showDateRange
+                    ></powdercloud-filter-panel>
 
-                <powdercloud-filter-panel 
-                    .modes="${[{ label: 'News', value: 'news' }]}"
-                    selectedMode="news"
-                    showDateRange
-                ></powdercloud-filter-panel>
+                    <br />
 
-                <br />
-
-                <powdercloud-dashboard-grid
-                    title="News Records"
-                    .columns="${[
+                    <powdercloud-dashboard-grid
+                        title="News Records"
+                        .columns="${[
                 { header: 'Date', field: 'date', sortable: true },
                 { header: 'Operation', field: 'operation', sortable: true },
                 { header: 'Location', field: 'location', sortable: true },
-                { header: 'Notable', field: 'notable' },
+                // { header: 'Notable', field: 'notable' }, // Usually not standard
                 { header: 'Description', field: 'description', width: '50%' }
             ]}"
-                    .data="${this._gridData}"
-                    paginated
-                ></powdercloud-dashboard-grid>
-            </powdercloud-container>
+                        .data="${this._gridData}"
+                        paginated
+                    ></powdercloud-dashboard-grid>
+                </powdercloud-container>
+            </powdercloud-layout>
         `;
     }
 }

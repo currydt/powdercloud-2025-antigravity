@@ -13,21 +13,13 @@
     <script src="/js/highcharts.js"></script>
 
     <!-- Lit Components -->
-    <script type="module" src="/js/lit/AppLayout.js"></script>
-    <script type="module" src="/js/lit/pages/AnalysisDangerPage.js"></script>
+    <!-- Lit Components -->
+    <script type="module" src="/js/lit/AnalysisDangerPage.js"></script>
 </head>
 
 <body>
-    <app-layout id="layout">
-        <analysis-danger-page></analysis-danger-page>
-    </app-layout>
-    <script>
-        document.getElementById('layout').breadcrumbs = [
-            { label: 'Home', url: '/admin/index.html' },
-            { label: 'Analysis', url: '#' },
-            { label: 'Danger Analysis', url: '/admin/analysis_danger.html' }
-        ];
-    </script>
+    <analysis-danger-page></analysis-danger-page>
+
 </body>
 
 </html>

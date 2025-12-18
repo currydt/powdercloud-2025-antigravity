@@ -1,4 +1,7 @@
-import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
+import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
+import './components/PowdercloudLayout.js';
+import './components/PowdercloudContainer.js';
+import './components/PowdercloudCard.js';
 
 export class ReportAvalancheActivityPage extends LitElement {
     createRenderRoot() {
@@ -7,10 +10,15 @@ export class ReportAvalancheActivityPage extends LitElement {
 
     render() {
         return html`
-            <h1 style="color: #5399a5; font-size: 1.9em; margin: 0 0 5px 0; padding: 0; font-weight: normal; font-family: Arial, sans-serif; text-transform: uppercase;">
-                Avalanche Activity Report
-            </h1>
-            <p>Stub page for Avalanche Activity Report.</p>
+            <powdercloud-layout pageTitle="Avalanche Activity Report">
+                <powdercloud-container>
+                    <powdercloud-card>
+                         <h2 style="margin-top: 0; color: #5399a5;">Avalanche Activity Analysis</h2>
+                         <p>This report view is currently under development. To see the Avalanche Event Report data, please visit the <a href="/reports/avalanche_event.html">Avalanche Event Report</a>.</p>
+                         <p style="color: grey; font-style: italic;">(This stub replaces the legacy ExtJS PivotGrid implementation)</p>
+                    </powdercloud-card>
+                </powdercloud-container>
+            </powdercloud-layout>
         `;
     }
 }

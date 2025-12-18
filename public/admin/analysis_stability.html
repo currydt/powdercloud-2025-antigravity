@@ -13,21 +13,11 @@
     <script src="/js/highcharts.js"></script>
 
     <!-- Lit Components -->
-    <script type="module" src="/js/lit/AppLayout.js"></script>
-    <script type="module" src="/js/lit/pages/AnalysisStabilityPage.js"></script>
+    <script type="module" src="/js/lit/AnalysisStabilityPage.js"></script>
 </head>
 
 <body>
-    <app-layout id="layout">
-        <analysis-stability-page></analysis-stability-page>
-    </app-layout>
-    <script>
-        document.getElementById('layout').breadcrumbs = [
-            { label: 'Home', url: '/admin/index.html' },
-            { label: 'Analysis', url: '#' },
-            { label: 'Stability Analysis', url: '/admin/analysis_stability.html' }
-        ];
-    </script>
+    <analysis-stability-page></analysis-stability-page>
 </body>
 
 </html>

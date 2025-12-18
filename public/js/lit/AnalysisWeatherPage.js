@@ -18,72 +18,90 @@ export class AnalysisWeatherPage extends LitElement {
 
     constructor() {
         super();
-        this._hsHn24Data = this._generateMockHsHn24Data();
-        this._tempData = this._generateMockTempData();
-        this._windData = this._generateMockWindData();
-        this._skyData = this._generateMockSkyData();
-        this._gridData = this._generateMockGridData();
+        this._hsHn24Data = { hs: [], hn24: [] };
+        this._tempData = { max: [], min: [] };
+        this._windData = [];
+        this._skyData = [];
+        this._gridData = [];
     }
 
     createRenderRoot() {
         return this; // Light DOM
     }
 
-    _generateMockHsHn24Data() {
-        const hs = [];
-        const hn24 = [];
-        const now = new Date();
-        for (let i = 14; i >= 0; i--) {
-            const date = new Date(now);
-            date.setDate(date.getDate() - i);
-            hs.push([date.getTime(), 150 + Math.random() * 50]);
-            hn24.push([date.getTime(), Math.random() * 20]);
-        }
-        return { hs, hn24 };
+    connectedCallback() {
+        super.connectedCallback();
+        this._fetchData();
     }
 
-    _generateMockTempData() {
-        const max = [];
-        const min = [];
-        const now = new Date();
-        for (let i = 14; i >= 0; i--) {
-            const date = new Date(now);
-            date.setDate(date.getDate() - i);
-            const base = -5 - Math.random() * 10;
-            max.push([date.getTime(), base + 5]);
-            min.push([date.getTime(), base - 5]);
+    async _fetchData() {
+        try {
+            // Fetch 'Observation' entity, subtype 'weather_standard' (or 'weather_basic'), limit 100
+            const response = await fetch('/json/entity_query_all/?entity=Observation&subtype=weather_standard&limit=100');
+            const json = await response.json();
+
+            if (json && json.success && Array.isArray(json.rows)) {
+                this._processData(json.rows);
+            } else {
+                console.error('Failed to load weather data:', json);
+            }
+        } catch (e) {
+            console.error('Network error loading weather data:', e);
         }
-        return { max, min };
     }
 
-    _generateMockWindData() {
-        const data = [];
-        const now = new Date();
-        for (let i = 14; i >= 0; i--) {
-            const date = new Date(now);
-            date.setDate(date.getDate() - i);
-            data.push([date.getTime(), Math.floor(Math.random() * 6)]);
-        }
-        return data;
-    }
+    _processData(rows) {
+        // Prepare chart arrays
+        const hsData = [], hn24Data = [];
+        const tMaxData = [], tMinData = [];
+        const windData = [], skyData = [];
 
-    _generateMockSkyData() {
-        const data = [];
-        const now = new Date();
-        for (let i = 14; i >= 0; i--) {
-            const date = new Date(now);
-            date.setDate(date.getDate() - i);
-            data.push([date.getTime(), Math.floor(Math.random() * 6)]); // 0-5 for X, OVC, BKN, SCT, FEW, CLR
-        }
-        return data;
-    }
+        // Prepare grid data
+        const gridData = rows.map(row => {
+            const dateStr = row.date_time_start ? new Date(row.date_time_start).toLocaleString() : '';
+            const timestamp = row.date_time_start ? new Date(row.date_time_start).getTime() : 0;
 
-    _generateMockGridData() {
-        return [
-            { date: '2025-11-29', location: 'Study Plot 1', temp: '-5.0', wind: 'L', sky: 'OVC', precip: 'S-1', hs: '180', hn24: '10' },
-            { date: '2025-11-28', location: 'Study Plot 1', temp: '-8.0', wind: 'M', sky: 'BKN', precip: 'Nil', hs: '170', hn24: '0' },
-            { date: '2025-11-27', location: 'Study Plot 1', temp: '-10.0', wind: 'C', sky: 'CLR', precip: 'Nil', hs: '170', hn24: '0' }
-        ];
+            // Populate Chart Data (if valid numbers)
+            if (timestamp) {
+                // HS/HN24
+                const hs = parseFloat(row.snowpack_depth);
+                if (!isNaN(hs)) hsData.push([timestamp, hs]);
+
+                // Temp
+                const airTemp = parseFloat(row.air_temp);
+                // Note: Standard weather usually has one air temp or max/min. Using mock fallback logic for min/max if not discrete.
+                if (!isNaN(airTemp)) {
+                    tMaxData.push([timestamp, airTemp]);
+                    tMinData.push([timestamp, airTemp - 5]); // Fallback mock spread
+                }
+
+                // Wind (Mock mapping for now as string -> number is tricky without lookup)
+                // row.wind_speed_avg might be 'L', 'M' etc.
+                windData.push([timestamp, 2]); // DUMMY default
+
+                // Sky
+                // row.sky_condition might be 'OVC'
+                skyData.push([timestamp, 2]); // DUMMY default
+            }
+
+            return {
+                date: dateStr,
+                location: row.terrain_desc || 'Unknown',
+                temp: row.air_temp || '-',
+                wind: row.wind_speed_avg || '-',
+                sky: row.sky_condition || '-',
+                precip: row.precipitation_type || '-',
+                hs: row.snowpack_depth || '-',
+                hn24: '-' // Not always in standard set, maybe add to fieldset
+            };
+        });
+
+        // Update state
+        this._hsHn24Data = { hs: hsData.sort((a, b) => a[0] - b[0]), hn24: hn24Data.sort((a, b) => a[0] - b[0]) };
+        this._tempData = { max: tMaxData.sort((a, b) => a[0] - b[0]), min: tMinData.sort((a, b) => a[0] - b[0]) };
+        this._windData = windData.sort((a, b) => a[0] - b[0]);
+        this._skyData = skyData.sort((a, b) => a[0] - b[0]);
+        this._gridData = gridData;
     }
 
     render() {
@@ -164,8 +182,8 @@ export class AnalysisWeatherPage extends LitElement {
                         ></powdercloud-dashboard-chart>
                     </powdercloud-card>
 
-                    <powdercloud-card title="Avalanche Rose (Weather)">
-                        <div style="height: 300px;">
+                    <powdercloud-card title="Avalanche Rose (Weather)" style="grid-column: span 2;">
+                        <div style="height: 400px; display: flex; justify-content: center; align-items: center;">
                             <powdercloud-avalanche-rose></powdercloud-avalanche-rose>
                         </div>
                     </powdercloud-card>

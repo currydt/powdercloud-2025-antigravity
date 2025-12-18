@@ -1,4 +1,5 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
+import './components/PowdercloudLayout.js';
 import './components/PowdercloudFilterPanel.js';
 import './components/PowdercloudDashboardGrid.js';
 import './components/PowdercloudContainer.js';
@@ -12,63 +13,90 @@ export class AnalysisSnowProfilePage extends LitElement {
 
     constructor() {
         super();
-        this._gridData = this._generateMockGridData();
+        this._gridData = [];
     }
 
     createRenderRoot() {
         return this; // Light DOM
     }
 
-    _generateMockGridData() {
-        return [
-            { date: '2025-11-29 08:00', operation: 'Whistler', location: 'Bowl 1', type: 'Full', aspect: 'N', elevation: '1800', hs: '210', notable: 'Yes', subject: 'Weekly Profile' },
-            { date: '2025-11-28 09:30', operation: 'Whistler', location: 'Ridge 2', type: 'Test', aspect: 'NE', elevation: '1950', hs: '190', notable: 'No', subject: 'Quick Pit' },
-            { date: '2025-11-27 14:00', operation: 'Blackcomb', location: 'Glacier', type: 'Full', aspect: 'N', elevation: '2200', hs: '240', notable: 'Yes', subject: 'Deep Instability' }
-        ];
+    connectedCallback() {
+        super.connectedCallback();
+        this._fetchData();
+    }
+
+    async _fetchData() {
+        try {
+            // Fetch 'Observation' entity, subtype 'snow_profile_standard' (likely), limit 100
+            const response = await fetch('/json/entity_query_all/?entity=Observation&subtype=snow_profile_standard&limit=100');
+            const json = await response.json();
+
+            if (json && json.success && Array.isArray(json.rows)) {
+                this._processData(json.rows);
+            } else {
+                console.error('Failed to load snow profile data:', json);
+            }
+        } catch (e) {
+            console.error('Network error loading snow profile data:', e);
+        }
+    }
+
+    _processData(rows) {
+        this._gridData = rows.map(row => {
+            return {
+                id: row.id,
+                date: row.date_time_start ? new Date(row.date_time_start).toLocaleString() : '',
+                operation: row.operation_name || 'My Operation',
+                location: row.terrain_desc || row.location || 'Unknown',
+                type: row.profile_type || '-',
+                aspect: row.aspect || '-',
+                elevation: row.elevation ? row.elevation + 'm' : '-',
+                hs: row.snowpack_depth ? row.snowpack_depth + 'cm' : '-',
+                subject: row.comments || '-'
+            };
+        });
     }
 
     render() {
         return html`
-            <powdercloud-container>
-                <h1 style="color: #5399a5; font-size: 1.9em; margin: 0 0 20px 0; padding: 0; font-weight: normal; font-family: Arial, sans-serif; text-transform: uppercase;">
-                    Snow Profile Analysis
-                </h1>
+            <powdercloud-layout pageTitle="Snow Profile Analysis">
+                <powdercloud-container>
+                    
+                    <powdercloud-filter-panel 
+                        .modes="${[{ label: 'Snow Profile', value: 'snow_profile' }]}"
+                        selectedMode="snow_profile"
+                        showDateRange
+                    ></powdercloud-filter-panel>
 
-                <powdercloud-filter-panel 
-                    .modes="${[{ label: 'Snow Profile', value: 'snow_profile' }]}"
-                    selectedMode="snow_profile"
-                    showDateRange
-                ></powdercloud-filter-panel>
+                    <br />
 
-                <br />
+                    <powdercloud-card title="Snow Profile Chart" collapsible>
+                        <div style="height: 400px; display: flex; align-items: center; justify-content: center; background: #f9f9f9; border: 1px dashed #ccc; color: #666;">
+                            Snow Profile Visualization Coming Soon (SVG/Canvas Implementation)
+                        </div>
+                    </powdercloud-card>
 
-                <powdercloud-card title="Snow Profile Chart" collapsible>
-                    <div style="height: 400px; display: flex; align-items: center; justify-content: center; background: #f9f9f9; border: 1px dashed #ccc; color: #666;">
-                        Snow Profile Visualization Coming Soon (SVG/Canvas Implementation)
-                    </div>
-                </powdercloud-card>
+                    <br />
 
-                <br />
+                    <powdercloud-card title="Map Overlay" collapsible>
+                        <div style="height: 400px; display: flex; align-items: center; justify-content: center; background: #eee; color: #666;">
+                            Map View Placeholder
+                        </div>
+                    </powdercloud-card>
 
-                <powdercloud-card title="Map Overlay" collapsible>
-                    <div style="height: 400px; display: flex; align-items: center; justify-content: center; background: #eee; color: #666;">
-                        Map View Placeholder
-                    </div>
-                </powdercloud-card>
+                    <br />
 
-                <br />
+                    <powdercloud-card title="Rose Overlay" collapsible collapsed>
+                        <div style="height: 400px; display: flex; justify-content: center; align-items: center;">
+                            <powdercloud-avalanche-rose></powdercloud-avalanche-rose>
+                        </div>
+                    </powdercloud-card>
 
-                <powdercloud-card title="Rose Overlay" collapsible collapsed>
-                    <div style="height: 400px;">
-                        <powdercloud-avalanche-rose></powdercloud-avalanche-rose>
-                    </div>
-                </powdercloud-card>
+                    <br />
 
-                <br />
-
-                <powdercloud-dashboard-grid
-                    title="Snow Profile Records"
-                    .columns="${[
+                    <powdercloud-dashboard-grid
+                        title="Snow Profile Records"
+                        .columns="${[
                 { header: 'Date', field: 'date', sortable: true },
                 { header: 'Operation', field: 'operation', sortable: true },
                 { header: 'Location', field: 'location', sortable: true },
@@ -76,13 +104,14 @@ export class AnalysisSnowProfilePage extends LitElement {
                 { header: 'Aspect', field: 'aspect' },
                 { header: 'Elev', field: 'elevation' },
                 { header: 'HS', field: 'hs' },
-                { header: 'Notable', field: 'notable' },
+                // { header: 'Notable', field: 'notable' }, // Not a standard field usually
                 { header: 'Subject', field: 'subject' }
             ]}"
-                    .data="${this._gridData}"
-                    paginated
-                ></powdercloud-dashboard-grid>
-            </powdercloud-container>
+                        .data="${this._gridData}"
+                        paginated
+                    ></powdercloud-dashboard-grid>
+                </powdercloud-container>
+            </powdercloud-layout>
         `;
     }
 }

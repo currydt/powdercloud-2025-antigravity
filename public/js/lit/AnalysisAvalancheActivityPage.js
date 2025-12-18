@@ -6,6 +6,8 @@ import './components/PowdercloudContainer.js';
 import './components/PowdercloudGrid.js';
 import './components/PowdercloudCard.js';
 
+import './components/PowdercloudLayout.js';
+
 export class AnalysisAvalancheActivityPage extends LitElement {
     static properties = {
         _chartData: { state: true },
@@ -16,44 +18,97 @@ export class AnalysisAvalancheActivityPage extends LitElement {
 
     constructor() {
         super();
-        this._chartData = this._generateMockTimeData();
-        this._failureTypeData = [5, 12, 3, 8, 2, 0, 1]; // S, L, LS, C, CS, I, IS
-        this._triggerTypeData = [10, 5, 2, 1, 0, 0, 0, 0, 0, 0]; // N, X, S, B, C, M, V, H, O, U
-        this._gridData = this._generateMockGridData();
+        this._chartData = [];
+        this._failureTypeData = [];
+        this._triggerTypeData = [];
+        this._gridData = [];
     }
 
     createRenderRoot() {
         return this; // Light DOM
     }
 
-    _generateMockTimeData() {
-        const data = [];
-        const now = new Date();
-        for (let i = 30; i >= 0; i--) {
-            const date = new Date(now);
-            date.setDate(date.getDate() - i);
-            // Random count between 0 and 10
-            data.push([date.getTime(), Math.floor(Math.random() * 10)]);
-        }
-        return data;
+    connectedCallback() {
+        super.connectedCallback();
+        this._fetchData();
     }
 
-    _generateMockGridData() {
-        return [
-            { id: 1, date: '2025-11-29 14:30', operation: 'Whistler', location: 'Bowl 1', type: 'Slab', size: '2.5', trigger: 'Skier' },
-            { id: 2, date: '2025-11-29 10:15', operation: 'Blackcomb', location: 'Chute 3', type: 'Loose', size: '1.0', trigger: 'Natural' },
-            { id: 3, date: '2025-11-28 16:45', operation: 'Whistler', location: 'Ridge', type: 'Slab', size: '1.5', trigger: 'Explosive' },
-            { id: 4, date: '2025-11-28 09:00', operation: 'Blackcomb', location: 'Glacier', type: 'Slab', size: '2.0', trigger: 'Natural' },
-            { id: 5, date: '2025-11-27 11:20', operation: 'Whistler', location: 'Trees', type: 'Loose', size: '1.0', trigger: 'Skier' }
-        ];
+    async _fetchData() {
+        try {
+            // Fetch 'Observation' entity, subtype 'avalanche_event', limit 100
+            const response = await fetch('/json/entity_query_all/?entity=Observation&subtype=avalanche_event&limit=100');
+            const json = await response.json();
+
+            if (json && json.success && Array.isArray(json.rows)) {
+                this._processData(json.rows);
+            } else {
+                console.error('Failed to load avalanche analysis data:', json);
+            }
+        } catch (e) {
+            console.error('Network error loading avalanche analysis data:', e);
+        }
     }
+
+    _processData(rows) {
+        // 1. Time Series Data (Count per day)
+        // Group by Date (YYYY-MM-DD)
+        const countsByDate = {};
+        rows.forEach(row => {
+            if (row.date_time_start) {
+                const date = new Date(row.date_time_start);
+                date.setHours(0, 0, 0, 0);
+                const time = date.getTime();
+                countsByDate[time] = (countsByDate[time] || 0) + 1;
+            }
+        });
+        // Convert to array [timestamp, count] and sort
+        const chartData = Object.entries(countsByDate)
+            .map(([ts, count]) => [parseInt(ts), count])
+            .sort((a, b) => a[0] - b[0]);
+
+        // 2. Failure Types
+        // Map 'weak_layer_crystal_type' or similar
+        const failMap = { 'S': 0, 'L': 0, 'LS': 0, 'C': 0, 'CS': 0, 'I': 0, 'IS': 0 };
+        const failKeys = Object.keys(failMap);
+
+        // 3. Trigger Types
+        // Map 'trigger_type'
+        const trigMap = { 'N': 0, 'X': 0, 'S': 0, 'B': 0, 'C': 0, 'M': 0, 'V': 0, 'H': 0, 'O': 0, 'U': 0 };
+        const trigKeys = Object.keys(trigMap);
+
+        // 4. Grid Data
+        const gridData = rows.map(row => {
+            // Aggregate check
+            const fail = row.weak_layer_crystal_type || '';
+            /* Rudimentary mock check for matching keys or just incrementing if found in text */
+            if (failKeys.includes(fail)) failMap[fail]++;
+
+            const trig = row.trigger_type || '';
+            if (trigKeys.includes(trig)) trigMap[trig]++;
+
+            return {
+                id: row.id,
+                date: row.date_time_start ? new Date(row.date_time_start).toLocaleString() : '',
+                operation: row.operation_name || 'My Operation', // Mock if missing
+                location: row.terrain_desc || row.location || 'Unknown',
+                type: row.avalanche_type || '-',
+                size: row.size_r || row.size_d || '-',
+                trigger: trig
+            };
+        });
+
+        this._chartData = chartData;
+        this._failureTypeData = failKeys.map(k => failMap[k]);
+        this._triggerTypeData = trigKeys.map(k => trigMap[k]);
+        this._gridData = gridData;
+    }
+
+
 
     render() {
         return html`
-            <powdercloud-container>
-                <h1 style="color: #5399a5; font-size: 1.9em; margin: 0 0 20px 0; padding: 0; font-weight: normal; font-family: Arial, sans-serif; text-transform: uppercase;">
-                    Avalanche Activity Analysis
-                </h1>
+            <powdercloud-layout pageTitle="Avalanche Activity Analysis">
+                <powdercloud-container>
 
                 <powdercloud-filter-panel 
                     .modes="${[{ label: 'Operation', value: 'operation' }]}"
@@ -119,6 +174,7 @@ export class AnalysisAvalancheActivityPage extends LitElement {
                     paginated
                 ></powdercloud-dashboard-grid>
             </powdercloud-container>
+        </powdercloud-layout>
         `;
     }
 }

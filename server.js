@@ -1,6 +1,6 @@
 const express = require('express');
 const { initializeApp } = require('firebase/app');
-const { getFirestore, collection, getDocs, query, where, limit } = require('firebase/firestore');
+const { getFirestore, collection, getDocs, query, where, limit, connectFirestoreEmulator } = require('firebase/firestore');
 const cors = require('cors');
 
 const app = express();
@@ -28,6 +28,15 @@ const firebaseConfig = {
 
 const firebaseApp = initializeApp(firebaseConfig);
 const db = getFirestore(firebaseApp);
+
+// Connect to Emulator in Development
+// Assuming emulator is running on default 8080
+try {
+    console.log("[FIREBASE] Using Cloud Firestore (Emulator connection commented out)");
+    // connectFirestoreEmulator(db, "127.0.0.1", 8080);
+} catch (e) {
+    console.warn('[FIREBASE] Failed to connect to emulator (already connected?):', e);
+}
 
 // --- HELPER: FORMAT RESPONSE FOR EXTJS ---
 // ExtJS expects: { success: true, totalCount: N, rows: [...] }
@@ -256,13 +265,117 @@ app.get('/json/entity_query_all/', async (req, res) => {
         };
         const collectionName = collectionMap[entityName] || entityName;
 
-        const q = query(collection(db, collectionName));
+        // Subtypes Map (Old 'ObservationType' -> New 'subtype' field in 'Observations')
+        // In the legacy system, ObservationType had keys like 'avalanche_full', 'weather_standard', etc.
+        // In Firestore 'Observations', we assume there is a 'subtype' field.
+        const subtypeParam = req.query.subtype;
+
+        // Fieldset Definitions (approximating legacy Django sets)
+        const FIELDSETS = {
+            'Observation': {
+                'avalanche_basic': ['id', 'key', 'date_time_start', 'observer_desc', 'terrain_desc', 'subject'],
+                'avalanche_full': ['id', 'key', 'date_time_start', 'observer_desc', 'terrain_desc', 'subject', 'avalanche_type', 'trigger_type', 'size_r', 'size_d', 'aspect', 'elevation', 'width', 'vertical', 'slab_thickness', 'weak_layer_crystal_type', 'weak_layer_hardness'],
+                'weather_basic': ['id', 'key', 'date_time_start', 'observer_desc', 'terrain_desc', 'sky_condition', 'precipitation_type', 'wind_speed_avg', 'wind_dir_avg'],
+                'weather_standard': ['id', 'key', 'date_time_start', 'observer_desc', 'terrain_desc', 'sky_condition', 'precipitation_type', 'air_temp', 'snow_temp_20'],
+                'snow_profile': ['id', 'key', 'date_time_start', 'observer_desc', 'terrain_desc', 'snowpack_depth', 'foot_penetration']
+            }
+        };
+
+        let q;
+        // If entity is Observation and subtype is provided, filter by it
+        if (entityName === 'Observation' && subtypeParam) {
+            console.log(`[ENTITY] Filtering Observations by subtype: ${subtypeParam}`);
+            q = query(collection(db, collectionName), where('subtype', '==', subtypeParam));
+        } else {
+            q = query(collection(db, collectionName));
+        }
+
+
         const snapshot = await getDocs(q);
-        const data = snapshot.docs.map(doc => ({
-            id: doc.id,
-            key: doc.id, // ExtJS often expects a 'key' field
-            ...doc.data()
-        }));
+        let dataDocs = snapshot.docs.map(doc => ({ id: doc.id, key: doc.id, ...doc.data() }));
+
+        // FALLBACK: MOCK DATA IF FIRESTORE IS EMPTY
+        if (dataDocs.length === 0 && entityName === 'Observation') {
+            console.log(`[ENTITY] Firestore returned 0 results. Generating MOCK data for ${subtypeParam || 'generic'}...`);
+
+            // Generate mock items based on subtype
+            const mockItems = [];
+            const count = 5;
+            for (let i = 1; i <= count; i++) {
+                const isAva = subtypeParam ? subtypeParam.includes('avalanche') : true; // Default to avalanche-ish
+                mockItems.push({
+                    id: `mock_obs_${i}`,
+                    key: `mock_obs_${i}`,
+                    subtype: subtypeParam || 'avalanche_event', // Ensure it matches filter
+                    date_time_start: new Date().toISOString(),
+                    observer_desc: `Observer ${i}`,
+                    terrain_desc: `Ridge ${i}`,
+                    subject: `Mock Observation ${i}`,
+                    // Avalanche specific fields
+                    avalanche_type: 'SS',
+                    trigger_type: 'N',
+                    size_r: '2',
+                    size_d: '2.5',
+                    aspect: 'NE',
+                    elevation: '2200',
+                    width: '50',
+                    vertical: '100',
+                    slab_thickness: '40',
+                    weak_layer_crystal_type: 'SH',
+                    weak_layer_hardness: 'F',
+                    // Weather specific fields
+                    sky_condition: 'OVC',
+                    precipitation_type: 'SN',
+                    air_temp: -5.0,
+                    wind_speed_avg: 15,
+                    wind_dir_avg: 'SW',
+                    // Snow Profile fields
+                    snowpack_depth: 250,
+                    foot_penetration: 30,
+                    // Extra fields that should be FILTERED OUT if fieldset is applied
+                    security_token: 'SECRET_TOKEN_DO_NOT_SEND',
+                    legacy_id: 999999
+                });
+            }
+            dataDocs = mockItems;
+        }
+
+        const fieldsetParam = req.query.fieldset;
+        let validFields = null;
+
+        // Determine if we need to filter fields
+        if (fieldsetParam && FIELDSETS[entityName] && FIELDSETS[entityName][fieldsetParam]) {
+            validFields = FIELDSETS[entityName][fieldsetParam];
+            console.log(`[ENTITY] Applying fieldset '${fieldsetParam}' for ${entityName}:`, validFields);
+        }
+
+        const data = dataDocs.map(doc => {
+            const rawData = {
+                ...doc // Doc is already an object in our new flow
+            };
+
+            // If no fieldset, return everything
+            if (!validFields) {
+                return rawData;
+            }
+
+            // Filter fields
+            const filteredData = {};
+            validFields.forEach(field => {
+                if (rawData.hasOwnProperty(field)) {
+                    filteredData[field] = rawData[field];
+                } else {
+                    // Start with generic fallback or check if mapped
+                    // For now, simple direct mapping
+                    filteredData[field] = null;
+                }
+            });
+            // Ensure ID/Key always exist if not in list
+            filteredData.id = rawData.id;
+            filteredData.key = rawData.key;
+
+            return filteredData;
+        });
 
         console.log(`[ENTITY] Found ${data.length} items for ${entityName}`);
         sendExtJSResponse(res, data, callback);

@@ -6,21 +6,14 @@
     <link href="/css/main.css" rel="stylesheet" />
     <link href="/css/mainNew.css" rel="stylesheet" />
     <link rel="stylesheet" href="/resources/css/ext-all.css" />
-    <script type="module" src="/js/lit/AppLayout.js"></script>
-    <script type="module" src="/js/lit/pages/AnalysisSnowpackPage.js"></script>
+    <link rel="stylesheet" type="text/css" id="theme" href="/resources/css/xtheme-gray.css" />
+
+    <!-- Lit Components -->
+    <script type="module" src="/js/lit/AnalysisSnowpackPage.js"></script>
 </head>
 
 <body>
-    <app-layout id="layout">
-        <analysis-snowpack-page></analysis-snowpack-page>
-    </app-layout>
-    <script>
-        document.getElementById('layout').breadcrumbs = [
-            { label: 'Home', url: '/admin/index.html' },
-            { label: 'Analysis', url: '#' },
-            { label: 'Snowpack Analysis', url: '/admin/analysis_snowpack.html' }
-        ];
-    </script>
+    <analysis-snowpack-page></analysis-snowpack-page>
 </body>
 
 </html>

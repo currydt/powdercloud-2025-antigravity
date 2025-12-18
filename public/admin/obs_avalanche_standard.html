@@ -14,22 +14,11 @@
     <link rel="stylesheet" type="text/css" id="theme" href="/resources/css/xtheme-gray.css" />
 
     <!-- Lit Components -->
-    <script type="module" src="/js/lit/AppLayout.js"></script>
-    <script type="module" src="/js/lit/pages/AvalancheEventStandardPage.js"></script>
+    <script type="module" src="/js/lit/ObservationAvalancheStandardPage.js"></script>
 </head>
 
 <body>
-    <app-layout id="layout">
-        <avalanche-event-standard-page></avalanche-event-standard-page>
-    </app-layout>
-
-    <script>
-        document.getElementById('layout').breadcrumbs = [
-            { label: 'Home', url: '/dashboard_lit.html' },
-            { label: 'Observations' },
-            { label: 'Avalanche Event (Standard)' }
-        ];
-    </script>
+    <observation-avalanche-standard-page></observation-avalanche-standard-page>
 </body>
 
 </html>

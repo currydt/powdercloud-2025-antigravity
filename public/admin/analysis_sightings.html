@@ -14,22 +14,14 @@
     <link rel="stylesheet" type="text/css" id="theme" href="/resources/css/xtheme-gray.css" />
 
     <!-- Lit Components -->
-    <script type="module" src="/js/lit/AppLayout.js"></script>
-    <script type="module" src="/js/lit/pages/AnalysisSightingsPage.js"></script>
+    <script type="module" src="/js/lit/AnalysisSightingsPage.js"></script>
 </head>
 
 <body>
     <app-layout id="layout">
         <analysis-sightings-page></analysis-sightings-page>
     </app-layout>
-
-    <script>
-        document.getElementById('layout').breadcrumbs = [
-            { label: 'Home', url: '/dashboard_lit.html' },
-            { label: 'Analysis' },
-            { label: 'Sightings Analysis' }
-        ];
-    </script>
+</body>
 </body>
 
 </html>
