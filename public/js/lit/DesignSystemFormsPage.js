@@ -6,7 +6,7 @@ import './components/PowdercloudInput.js';
 import './components/AppTextarea.js';
 import './components/AppSelect.js';
 import './components/PowdercloudCheckbox.js';
-import './components/AppRadio.js';
+import './components/PowdercloudRadio.js';
 import './components/PowdercloudButton.js';
 
 export class DesignSystemFormsPage extends LitElement {
@@ -56,8 +56,8 @@ export class DesignSystemFormsPage extends LitElement {
             <div style="margin: 20px 0 15px 0; font-weight: 600; color: #555;">Boolean / Selection</div>
             <div style="display: flex; gap: 20px; flex-wrap: wrap;">
                 <powdercloud-checkbox label="type='checkbox'"></powdercloud-checkbox>
-                <app-radio name="tree_g" label="type='radio' 1"></app-radio>
-                <app-radio name="tree_g" label="type='radio' 2" checked></app-radio>
+                <powdercloud-radio name="tree_g" label="type='radio' 1"></powdercloud-radio>
+                <powdercloud-radio name="tree_g" label="type='radio' 2" checked></powdercloud-radio>
             </div>
 
             <!-- File / Data / Other -->
@@ -198,8 +198,8 @@ export class DesignSystemFormsPage extends LitElement {
                                     <div style="margin: 20px 0 15px 0; font-weight: 600; color: #555;">Boolean / Selection</div>
                                     <div style="display: flex; gap: 20px; flex-wrap: wrap;">
                                         <powdercloud-checkbox label="type='checkbox'"></powdercloud-checkbox>
-                                        <app-radio name="tree_g" label="type='radio' 1"></app-radio>
-                                        <app-radio name="tree_g" label="type='radio' 2" checked></app-radio>
+                                        <powdercloud-radio name="tree_g" label="type='radio' 1"></powdercloud-radio>
+                                        <powdercloud-radio name="tree_g" label="type='radio' 2" checked></powdercloud-radio>
                                     </div>
 
                                     <!-- File / Data / Other -->

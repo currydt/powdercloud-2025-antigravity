@@ -13,8 +13,8 @@ import './components/PowdercloudInput.js';
 import './components/AppTextarea.js';
 import './components/AppSelect.js';
 import './components/PowdercloudCheckbox.js';
-import './components/AppRadio.js';
-import './components/AppRadio.js';
+import './components/PowdercloudRadio.js';
+import './components/PowdercloudRadio.js';
 import './components/PowdercloudFieldset.js';
 import './components/AppSwitch.js';
 import './components/PowdercloudChip.js';
@@ -424,8 +424,8 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
             <div style="margin: 20px 0 15px 0; font-weight: 600; color: #555;">Boolean / Selection</div>
             <div style="display: flex; gap: 20px; flex-wrap: wrap;">
                 <powdercloud-checkbox label="type='checkbox'"></powdercloud-checkbox>
-                <app-radio name="tree_g" label="type='radio' 1"></app-radio>
-                <app-radio name="tree_g" label="type='radio' 2" checked></app-radio>
+                <powdercloud-radio name="tree_g" label="type='radio' 1"></powdercloud-radio>
+                <powdercloud-radio name="tree_g" label="type='radio' 2" checked></powdercloud-radio>
             </div>
 
             <!-- File / Data / Other -->
@@ -513,8 +513,8 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
     </form>
 </div>`;
 
-        const radioCode = `<app-radio name="g1" label="Option A" value="a"></app-radio>
-<app-radio name="g1" label="Option B" value="b"></app-radio>`;
+        const radioCode = `<powdercloud-radio name="g1" label="Option A" value="a"></powdercloud-radio>
+<powdercloud-radio name="g1" label="Option B" value="b"></powdercloud-radio>`;
 
         const fieldsetCode = `<powdercloud-fieldset legend="User Details">
     <powdercloud-input label="Name"></powdercloud-input>
@@ -1355,8 +1355,8 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                     <div style="margin: 20px 0 15px 0; font-weight: 600; color: #555;">Boolean / Selection</div>
                                     <div style="display: flex; gap: 20px; flex-wrap: wrap;">
                                         <powdercloud-checkbox label="type='checkbox'"></powdercloud-checkbox>
-                                        <app-radio name="tree_g" label="type='radio' 1"></app-radio>
-                                        <app-radio name="tree_g" label="type='radio' 2" checked></app-radio>
+                                        <powdercloud-radio name="tree_g" label="type='radio' 1"></powdercloud-radio>
+                                        <powdercloud-radio name="tree_g" label="type='radio' 2" checked></powdercloud-radio>
                                     </div>
 
                                     <!-- File / Data / Other -->
@@ -1616,7 +1616,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<powdercloud-checkbox> & <app-radio>" 
+                        title="<powdercloud-checkbox> & <powdercloud-radio>" 
                         description="Selection controls."
                         .code="${checkCode}">
                         <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 10px;">
@@ -1625,9 +1625,9 @@ PAGE SHELL (e.g., dashboard_lit.html)
                             <powdercloud-checkbox label="Disabled" disabled></powdercloud-checkbox>
                         </div>
                         <div style="display: flex; gap: 20px; align-items: center;">
-                            <app-radio name="demo_radio" label="Radio A" value="a" checked></app-radio>
-                            <app-radio name="demo_radio" label="Radio B" value="b"></app-radio>
-                            <app-radio name="demo_radio" label="Disabled" disabled></app-radio>
+                            <powdercloud-radio name="demo_radio" label="Radio A" value="a" checked></powdercloud-radio>
+                            <powdercloud-radio name="demo_radio" label="Radio B" value="b"></powdercloud-radio>
+                            <powdercloud-radio name="demo_radio" label="Disabled" disabled></powdercloud-radio>
                         </div>
                     </component-doc>
 

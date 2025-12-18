@@ -6,7 +6,7 @@ import './components/PowdercloudInput.js';
 import './components/AppTextarea.js';
 import './components/AppSelect.js';
 import './components/PowdercloudCheckbox.js';
-import './components/AppRadio.js';
+import './components/PowdercloudRadio.js';
 import './components/AppSwitch.js';
 import './components/PowdercloudChip.js';
 import './components/PowdercloudProgress.js';
@@ -245,7 +245,7 @@ export class DesignSystemAtomsPage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<powdercloud-checkbox> & <app-radio>" 
+                        title="<powdercloud-checkbox> & <powdercloud-radio>" 
                         description="Selection controls."
                         .code="${checkCode}">
                         <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 10px;">
@@ -254,9 +254,9 @@ export class DesignSystemAtomsPage extends LitElement {
                             <powdercloud-checkbox label="Disabled" disabled></powdercloud-checkbox>
                         </div>
                         <div style="display: flex; gap: 20px; align-items: center;">
-                            <app-radio name="demo_radio" label="Radio A" value="a" checked></app-radio>
-                            <app-radio name="demo_radio" label="Radio B" value="b"></app-radio>
-                            <app-radio name="demo_radio" label="Disabled" disabled></app-radio>
+                            <powdercloud-radio name="demo_radio" label="Radio A" value="a" checked></powdercloud-radio>
+                            <powdercloud-radio name="demo_radio" label="Radio B" value="b"></powdercloud-radio>
+                            <powdercloud-radio name="demo_radio" label="Disabled" disabled></powdercloud-radio>
                         </div>
                     </component-doc>
 
