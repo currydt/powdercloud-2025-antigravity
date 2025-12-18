@@ -3,7 +3,7 @@ import './components/FilterPanel.js';
 import './components/DashboardChart.js';
 import './components/DashboardGrid.js';
 import './components/PowdercloudContainer.js';
-import './components/AppGrid.js';
+import './components/PowdercloudGrid.js';
 import './components/PowdercloudCard.js';
 
 export class AnalysisConcernsPage extends LitElement {
@@ -70,7 +70,7 @@ export class AnalysisConcernsPage extends LitElement {
 
                 <br />
 
-                <app-grid cols="3" gap="lg">
+                <powdercloud-grid cols="3" gap="lg">
                     <powdercloud-card title="Alpine Hazard">
                         <dashboard-chart
                             title="Alpine"
@@ -103,7 +103,7 @@ export class AnalysisConcernsPage extends LitElement {
             }}"
                         ></dashboard-chart>
                     </powdercloud-card>
-                </app-grid>
+                </powdercloud-grid>
 
                 <br />
 

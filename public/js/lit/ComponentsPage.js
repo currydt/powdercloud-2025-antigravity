@@ -22,7 +22,7 @@ import './components/AppProgress.js';
 import './components/PowdercloudDivider.js';
 import './components/PowdercloudCard.js';
 import './components/PowdercloudContainer.js';
-import './components/AppGrid.js';
+import './components/PowdercloudGrid.js';
 import './components/AppStack.js';
 import './components/AppSpacer.js';
 import './components/AppModal.js';
@@ -369,11 +369,11 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
         const dateRangeCode = `<powdercloud-date-range label="Filter by Date"></powdercloud-date-range>`;
 
         const layoutElementsCode = `<powdercloud-container>
-    <app-grid cols="3" gap="lg">
+    <powdercloud-grid cols="3" gap="lg">
         <div style="background: #eee; padding: 20px;">Column 1</div>
         <div style="background: #eee; padding: 20px;">Column 2</div>
         <div style="background: #eee; padding: 20px;">Column 3</div>
-    </app-grid>
+    </powdercloud-grid>
 
     <app-spacer y="4"></app-spacer>
 
@@ -973,11 +973,11 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                     <strong>&lt;app-container&gt;</strong> (Centers content)
                                 </div>
 
-                                <app-grid cols="3" gap="md" cols-md="2" cols-default="1">
+                                <powdercloud-grid cols="3" gap="md" cols-md="2" cols-default="1">
                                     <div style="background: #f3e5f5; padding: 20px; text-align: center; color: #4a148c;">Grid Item 1</div>
                                     <div style="background: #f3e5f5; padding: 20px; text-align: center; color: #4a148c;">Grid Item 2</div>
                                     <div style="background: #f3e5f5; padding: 20px; text-align: center; color: #4a148c;">Grid Item 3</div>
-                                </app-grid>
+                                </powdercloud-grid>
 
                                 <app-spacer y="2"></app-spacer>
 

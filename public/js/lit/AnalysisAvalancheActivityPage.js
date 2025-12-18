@@ -3,7 +3,7 @@ import './components/FilterPanel.js';
 import './components/DashboardChart.js';
 import './components/DashboardGrid.js';
 import './components/PowdercloudContainer.js';
-import './components/AppGrid.js';
+import './components/PowdercloudGrid.js';
 import './components/PowdercloudCard.js';
 
 export class AnalysisAvalancheActivityPage extends LitElement {
@@ -77,7 +77,7 @@ export class AnalysisAvalancheActivityPage extends LitElement {
 
                 <br />
 
-                <app-grid cols="2" gap="lg">
+                <powdercloud-grid cols="2" gap="lg">
                     <powdercloud-card title="Failure Types">
                         <dashboard-chart
                             title="Failure Types"
@@ -101,7 +101,7 @@ export class AnalysisAvalancheActivityPage extends LitElement {
             }}"
                         ></dashboard-chart>
                     </powdercloud-card>
-                </app-grid>
+                </powdercloud-grid>
 
                 <br />
 

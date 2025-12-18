@@ -3,7 +3,7 @@ import './components/FilterPanel.js';
 import './components/DashboardChart.js';
 import './components/DashboardGrid.js';
 import './components/PowdercloudContainer.js';
-import './components/AppGrid.js';
+import './components/PowdercloudGrid.js';
 import './components/PowdercloudCard.js';
 
 export class AnalysisDangerPage extends LitElement {

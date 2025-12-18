@@ -3,7 +3,7 @@ import './components/FilterPanel.js';
 import './components/DashboardChart.js';
 import './components/DashboardGrid.js';
 import './components/PowdercloudContainer.js';
-import './components/AppGrid.js';
+import './components/PowdercloudGrid.js';
 import './components/PowdercloudCard.js';
 import './components/AvalancheRose.js';
 
@@ -101,7 +101,7 @@ export class AnalysisWeatherPage extends LitElement {
 
                 <br />
 
-                <app-grid cols="2" gap="lg">
+                <powdercloud-grid cols="2" gap="lg">
                     <powdercloud-card title="HS & HN24">
                         <dashboard-chart
                             title="Snow Height"
@@ -169,7 +169,7 @@ export class AnalysisWeatherPage extends LitElement {
                             <avalanche-rose></avalanche-rose>
                         </div>
                     </powdercloud-card>
-                </app-grid>
+                </powdercloud-grid>
 
                 <br />
 
