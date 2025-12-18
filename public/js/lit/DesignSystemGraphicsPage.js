@@ -10,7 +10,7 @@ import './components/TriggerTypesChart.js';
 import './components/SnowpackHeightChart.js';
 import './components/TemperatureRangeChart.js';
 import './components/WindSpeedChart.js';
-import './components/SkyConditionsChart.js';
+import './components/PowdercloudSkyConditionsChart.js';
 
 export class DesignSystemGraphicsPage extends LitElement {
     createRenderRoot() {
@@ -73,10 +73,10 @@ export class DesignSystemGraphicsPage extends LitElement {
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
-                        title="<sky-conditions-chart>" 
+                        title="<powdercloud-sky-conditions-chart>" 
                         description="Line chart tracking sky coverage."
-                        .code="${`<sky-conditions-chart style='height: 300px;'></sky-conditions-chart>`}">
-                        <sky-conditions-chart style="height: 300px;"></sky-conditions-chart>
+                        .code="${`<powdercloud-sky-conditions-chart style='height: 300px;'></powdercloud-sky-conditions-chart>`}">
+                        <powdercloud-sky-conditions-chart style="height: 300px;"></powdercloud-sky-conditions-chart>
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 

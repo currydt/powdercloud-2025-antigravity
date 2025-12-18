@@ -38,7 +38,7 @@ import './components/PowdercloudAvalancheRose.js';
 import './components/PowdercloudDashboardChart.js';
 import './components/PowdercloudFailureTypesChart.js';
 import './components/PowdercloudSeasonalChart.js';
-import './components/SkyConditionsChart.js';
+import './components/PowdercloudSkyConditionsChart.js';
 import './components/SnowpackHeightChart.js';
 import './components/TemperatureRangeChart.js';
 import './components/TriggerTypesChart.js';
@@ -1248,10 +1248,10 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
-                        title="<sky-conditions-chart>" 
+                        title="<powdercloud-sky-conditions-chart>" 
                         description="Sky Conditions Chart"
-                        .code="${`<sky-conditions-chart></sky-conditions-chart>`}">
-                        <sky-conditions-chart></sky-conditions-chart>
+                        .code="${`<powdercloud-sky-conditions-chart></powdercloud-sky-conditions-chart>`}">
+                        <powdercloud-sky-conditions-chart></powdercloud-sky-conditions-chart>
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
