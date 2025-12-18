@@ -5,7 +5,7 @@ import './components/PowdercloudAlert.js';
 import './components/PowdercloudDisclaimer.js';
 import './components/PowdercloudComponentDoc.js';
 import './components/PowdercloudBreadcrumbs.js';
-import './components/MegaMenu.js';
+import './components/PowdercloudMegaMenu.js';
 import './components/PowdercloudTabs.js';
 import './components/PowdercloudDashboardGrid.js';
 import './components/PowdercloudButton.js';
@@ -187,11 +187,11 @@ export class ComponentsPage extends LitElement {
     </main>
 </powdercloud-layout>`;
 
-        const menuCode = `<mega-menu 
+        const menuCode = `<powdercloud-mega-menu 
     title="Menu Title" 
     subtitle="Subtitle" 
     .menuData="\${[...]}">
-</mega-menu>`;
+</powdercloud-mega-menu>`;
 
         const tabsCode = `<powdercloud-tabs>
     <app-tab label="First Tab" active>
@@ -941,16 +941,16 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
-                        title="<mega-menu>" 
+                        title="<powdercloud-mega-menu>" 
                         description="Dropdown menu component used within AppHeader."
                         .code="${menuCode}">
                         <div style="position: relative; height: 50px;">
                             <ul style="list-style: none; padding: 0; margin: 0;">
-                                <mega-menu 
+                                <powdercloud-mega-menu 
                                     title="Demo Menu" 
                                     subtitle="Hover Me" 
                                     .menuData="${[[{ title: 'Group 1', links: [{ label: 'Link 1', url: '#' }] }]]}"
-                                ></mega-menu>
+                                ></powdercloud-mega-menu>
                             </ul>
                         </div>
                     </powdercloud-component-doc>

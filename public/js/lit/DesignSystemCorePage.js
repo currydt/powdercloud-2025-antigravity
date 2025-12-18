@@ -8,7 +8,7 @@ import './components/PowdercloudBreadcrumbs.js';
 import './components/PowdercloudFooter.js';
 import './components/PowdercloudHeader.js';
 import './components/PowdercloudLayout.js';
-import './components/MegaMenu.js';
+import './components/PowdercloudMegaMenu.js';
 
 export class DesignSystemCorePage extends LitElement {
     createRenderRoot() {
@@ -49,11 +49,11 @@ export class DesignSystemCorePage extends LitElement {
     </main>
 </powdercloud-layout>`;
 
-        const menuCode = `<mega-menu 
+        const menuCode = `<powdercloud-mega-menu 
     title="Menu Title" 
     subtitle="Subtitle" 
     .menuData="\${[...]}">
-</mega-menu>`;
+</powdercloud-mega-menu>`;
 
         return html`
             <powdercloud-container>
@@ -126,16 +126,16 @@ export class DesignSystemCorePage extends LitElement {
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
-                        title="<mega-menu>" 
+                        title="<powdercloud-mega-menu>" 
                         description="Dropdown menu component used within AppHeader."
                         .code="${menuCode}">
                         <div style="position: relative; height: 50px;">
                             <ul style="list-style: none; padding: 0; margin: 0;">
-                                <mega-menu 
+                                <powdercloud-mega-menu 
                                     title="Demo Menu" 
                                     subtitle="Hover Me" 
                                     .menuData="${[[{ title: 'Group 1', links: [{ label: 'Link 1', url: '#' }] }]]}"
-                                ></mega-menu>
+                                ></powdercloud-mega-menu>
                             </ul>
                         </div>
                     </powdercloud-component-doc>
