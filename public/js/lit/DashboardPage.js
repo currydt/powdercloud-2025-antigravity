@@ -14,7 +14,7 @@ import './components/WindSpeedChart.js';
 // Grids
 import './components/WeatherGrid.js';
 import './components/PowdercloudAvalancheGrid.js';
-import './components/SnowpackGrid.js';
+import './components/PowdercloudSnowpackGrid.js';
 import './components/StabilityGrid.js';
 import './components/PowdercloudNewsGrid.js';
 
@@ -120,7 +120,7 @@ export class DashboardPage extends LitElement {
 
             <powdercloud-collapsible-panel title="Snowpack Structure"
                 tagline="The following table displays snowpack structure in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
-                <snowpack-grid></snowpack-grid>
+                <powdercloud-snowpack-grid></powdercloud-snowpack-grid>
             </powdercloud-collapsible-panel>
 
             <br />
