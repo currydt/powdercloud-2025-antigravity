@@ -1,5 +1,5 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import './components/PartyListGrid.js';
+import './components/PowdercloudPartyListGrid.js';
 
 export class AdminUsersPage extends LitElement {
     createRenderRoot() {
@@ -13,7 +13,7 @@ export class AdminUsersPage extends LitElement {
             </h1>
             <p style="margin-bottom: 20px;">Manage users and their access.</p>
             
-            <party-list-grid></party-list-grid>
+            <powdercloud-party-list-grid></powdercloud-party-list-grid>
         `;
     }
 }
