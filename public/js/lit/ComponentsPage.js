@@ -32,7 +32,7 @@ import './components/PowdercloudDateRange.js';
 import './components/PowdercloudAvatar.js';
 import './components/AppTooltip.js';
 import './components/PowdercloudFileUpload.js';
-import './components/AppRichText.js';
+import './components/PowdercloudRichText.js';
 import './components/FilterPanel.js';
 import './components/AvalancheRose.js';
 import './components/DashboardChart.js';
@@ -1767,10 +1767,10 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                      <component-doc 
-                        title="<app-rich-text>" 
+                        title="<powdercloud-rich-text>" 
                         description="Rich text editor."
-                         .code="${`<app-rich-text label='Description'></app-rich-text>`}">
-                        <app-rich-text label="Description"></app-rich-text>
+                         .code="${`<powdercloud-rich-text label='Description'></powdercloud-rich-text>`}">
+                        <powdercloud-rich-text label="Description"></powdercloud-rich-text>
                     </component-doc>
 
                 </div>

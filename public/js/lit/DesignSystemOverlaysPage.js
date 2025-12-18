@@ -7,7 +7,7 @@ import './components/PowdercloudButton.js';
 import './components/PowdercloudCombobox.js';
 import './components/PowdercloudDateRange.js';
 import './components/PowdercloudFileUpload.js';
-import './components/AppRichText.js';
+import './components/PowdercloudRichText.js';
 
 export class DesignSystemOverlaysPage extends LitElement {
     createRenderRoot() {
@@ -95,10 +95,10 @@ export class DesignSystemOverlaysPage extends LitElement {
                     </component-doc>
 
                      <component-doc 
-                        title="<app-rich-text>" 
+                        title="<powdercloud-rich-text>" 
                         description="Rich text editor."
-                         .code="${`<app-rich-text label='Description'></app-rich-text>`}">
-                        <app-rich-text label="Description"></app-rich-text>
+                         .code="${`<powdercloud-rich-text label='Description'></powdercloud-rich-text>`}">
+                        <powdercloud-rich-text label="Description"></powdercloud-rich-text>
                     </component-doc>
 
                 </div>
