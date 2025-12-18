@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/co
 import './components/PowdercloudContainer.js';
 import './components/ComponentDoc.js';
 import './components/PowdercloudGrid.js';
-import './components/AppStack.js';
+import './components/PowdercloudStack.js';
 import './components/PowdercloudSpacer.js';
 import './components/PowdercloudButton.js';
 
@@ -21,10 +21,10 @@ export class DesignSystemLayoutPage extends LitElement {
 
     <powdercloud-spacer y="4"></powdercloud-spacer>
 
-    <app-stack direction="row" gap="md" align="center">
+    <powdercloud-stack direction="row" gap="md" align="center">
         <powdercloud-button label="Save"></powdercloud-button>
         <powdercloud-button label="Cancel" variant="secondary"></powdercloud-button>
-    </app-stack>
+    </powdercloud-stack>
 </powdercloud-container>`;
 
         return html`
@@ -53,11 +53,11 @@ export class DesignSystemLayoutPage extends LitElement {
 
                                 <powdercloud-spacer y="2"></powdercloud-spacer>
 
-                                <app-stack direction="row" gap="md" align="center" style="background: #e8f5e9; padding: 10px;">
+                                <powdercloud-stack direction="row" gap="md" align="center" style="background: #e8f5e9; padding: 10px;">
                                     <span style="color: #1b5e20;"><strong>&lt;app-stack&gt;</strong> (Flexbox)</span>
                                     <powdercloud-button label="Action 1" size="small"></powdercloud-button>
                                     <powdercloud-button label="Action 2" size="small" variant="secondary"></powdercloud-button>
-                                </app-stack>
+                                </powdercloud-stack>
                             </powdercloud-container>
                         </div>
 
