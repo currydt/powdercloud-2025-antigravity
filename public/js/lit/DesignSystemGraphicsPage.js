@@ -3,7 +3,7 @@ import './components/PowdercloudContainer.js';
 import './components/PowdercloudComponentDoc.js';
 import './components/PowdercloudDashboardChart.js';
 import './components/PowdercloudAvalancheRose.js';
-import './components/SnowProfileGraph.js';
+import './components/PowdercloudSnowProfileGraph.js';
 import './components/SeasonalChart.js';
 import './components/FailureTypesChart.js';
 import './components/TriggerTypesChart.js';
@@ -94,11 +94,11 @@ export class DesignSystemGraphicsPage extends LitElement {
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
-                        title="<snow-profile-graph>" 
+                        title="<powdercloud-snow-profile-graph>" 
                         description="Interactive snow profile diagram."
-                        .code="${`<snow-profile-graph></snow-profile-graph>`}">
+                        .code="${`<powdercloud-snow-profile-graph></powdercloud-snow-profile-graph>`}">
                         <div style="height: 600px; width: 100%; max-width: 800px;">
-                            <snow-profile-graph></snow-profile-graph>
+                            <powdercloud-snow-profile-graph></powdercloud-snow-profile-graph>
                         </div>
                     </powdercloud-component-doc>
 
