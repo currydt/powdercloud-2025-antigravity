@@ -25,7 +25,7 @@ import './components/PowdercloudContainer.js';
 import './components/PowdercloudGrid.js';
 import './components/AppStack.js';
 import './components/AppSpacer.js';
-import './components/AppModal.js';
+import './components/PowdercloudModal.js';
 import './components/AppToast.js';
 import './components/PowdercloudCombobox.js';
 import './components/PowdercloudDateRange.js';
@@ -351,13 +351,13 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
     </div>
 </powdercloud-card>`;
 
-        const modalCode = `<app-modal title="Example Modal" open>
+        const modalCode = `<powdercloud-modal title="Example Modal" open>
     <p>Modal content goes here.</p>
     <div slot="footer">
         <powdercloud-button label="Close" @click="\${() => this.modalOpen = false}"></powdercloud-button>
         <powdercloud-button label="Save" variant="primary"></powdercloud-button>
     </div>
-</app-modal>`;
+</powdercloud-modal>`;
 
         const toastCode = `<app-toast message="Operation Saved" variant="success" open></app-toast>`;
 
@@ -1713,17 +1713,17 @@ PAGE SHELL (e.g., dashboard_lit.html)
                 <div style="padding: 20px;">
                     
                     <component-doc 
-                        title="<app-modal>" 
+                        title="<powdercloud-modal>" 
                         description="Dialog box for critical actions or information."
                         .code="${modalCode}">
                         <powdercloud-button label="Open Modal" @click="${() => this.shadowRoot.getElementById('demo-modal').open = true}"></powdercloud-button>
-                        <app-modal id="demo-modal" title="Example Modal">
+                        <powdercloud-modal id="demo-modal" title="Example Modal">
                             <p>This is a modal dialog. It overlays the page content.</p>
                             <div slot="footer">
                                 <powdercloud-button label="Close" @click="${() => this.shadowRoot.getElementById('demo-modal').open = false}"></powdercloud-button>
                                 <powdercloud-button label="Save" variant="primary" @click="${() => this.shadowRoot.getElementById('demo-modal').open = false}"></powdercloud-button>
                             </div>
-                        </app-modal>
+                        </powdercloud-modal>
                     </component-doc>
 
                     <component-doc 

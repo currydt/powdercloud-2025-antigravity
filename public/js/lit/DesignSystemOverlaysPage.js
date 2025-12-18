@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/PowdercloudContainer.js';
 import './components/ComponentDoc.js';
-import './components/AppModal.js';
+import './components/PowdercloudModal.js';
 import './components/AppToast.js';
 import './components/PowdercloudButton.js';
 import './components/PowdercloudCombobox.js';
@@ -15,13 +15,13 @@ export class DesignSystemOverlaysPage extends LitElement {
     }
 
     render() {
-        const modalCode = `<app-modal title="Example Modal" open>
+        const modalCode = `<powdercloud-modal title="Example Modal" open>
     <p>Modal content goes here.</p>
     <div slot="footer">
         <powdercloud-button label="Close" @click="\${() => this.modalOpen = false}"></powdercloud-button>
         <powdercloud-button label="Save" variant="primary"></powdercloud-button>
     </div>
-</app-modal>`;
+</powdercloud-modal>`;
 
         const toastCode = `<app-toast message="Operation Saved" variant="success" open></app-toast>`;
 
@@ -41,17 +41,17 @@ export class DesignSystemOverlaysPage extends LitElement {
                 <div style="padding: 20px;">
                     
                     <component-doc 
-                        title="<app-modal>" 
+                        title="<powdercloud-modal>" 
                         description="Dialog box for critical actions or information."
                         .code="${modalCode}">
                         <powdercloud-button label="Open Modal" @click="${() => this.shadowRoot.getElementById('demo-modal').open = true}"></powdercloud-button>
-                        <app-modal id="demo-modal" title="Example Modal">
+                        <powdercloud-modal id="demo-modal" title="Example Modal">
                             <p>This is a modal dialog. It overlays the page content.</p>
                             <div slot="footer">
                                 <powdercloud-button label="Close" @click="${() => this.shadowRoot.getElementById('demo-modal').open = false}"></powdercloud-button>
                                 <powdercloud-button label="Save" variant="primary" @click="${() => this.shadowRoot.getElementById('demo-modal').open = false}"></powdercloud-button>
                             </div>
-                        </app-modal>
+                        </powdercloud-modal>
                     </component-doc>
 
                     <component-doc 
