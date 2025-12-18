@@ -21,7 +21,7 @@ import './components/PowdercloudChip.js';
 import './components/AppProgress.js';
 import './components/AppDivider.js';
 import './components/PowdercloudCard.js';
-import './components/AppContainer.js';
+import './components/PowdercloudContainer.js';
 import './components/AppGrid.js';
 import './components/AppStack.js';
 import './components/AppSpacer.js';
@@ -368,7 +368,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
 
         const dateRangeCode = `<app-date-range label="Filter by Date"></app-date-range>`;
 
-        const layoutElementsCode = `<app-container>
+        const layoutElementsCode = `<powdercloud-container>
     <app-grid cols="3" gap="lg">
         <div style="background: #eee; padding: 20px;">Column 1</div>
         <div style="background: #eee; padding: 20px;">Column 2</div>
@@ -381,7 +381,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
         <powdercloud-button label="Save"></powdercloud-button>
         <powdercloud-button label="Cancel" variant="secondary"></powdercloud-button>
     </app-stack>
-</app-container>`;
+</powdercloud-container>`;
 
         const sampleFormCode = `
 <div style="max-width: 800px; margin: 0 auto; background: #fff; border: 1px solid #ccc; font-family: 'Segoe UI', sans-serif;">
@@ -968,7 +968,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                         .code="${layoutElementsCode}">
                         
                         <div style="border: 1px dashed #ccc; padding: 10px;">
-                            <app-container>
+                            <powdercloud-container>
                                 <div style="background: #e3f2fd; padding: 10px; margin-bottom: 10px; text-align: center; color: #0d47a1;">
                                     <strong>&lt;app-container&gt;</strong> (Centers content)
                                 </div>
@@ -986,7 +986,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                     <powdercloud-button label="Action 1" size="small"></powdercloud-button>
                                     <powdercloud-button label="Action 2" size="small" variant="secondary"></powdercloud-button>
                                 </app-stack>
-                            </app-container>
+                            </powdercloud-container>
                         </div>
 
                     </component-doc>

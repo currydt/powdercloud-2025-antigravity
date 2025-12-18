@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import './components/AppContainer.js';
+import './components/PowdercloudContainer.js';
 import './components/ComponentDoc.js';
 import './components/PowdercloudButton.js';
 import './components/AppInput.js';
@@ -76,7 +76,7 @@ export class DesignSystemAtomsPage extends LitElement {
 <p>Item 2</p>`;
 
         return html`
-            <app-container>
+            <powdercloud-container>
                 <h1 style="color: #5399a5; font-size: 1.9em; margin: 0 0 20px 0; padding: 0; font-weight: normal; font-family: Arial, sans-serif; text-transform: uppercase;">
                     Atomic Elements
                 </h1>
@@ -321,7 +321,7 @@ export class DesignSystemAtomsPage extends LitElement {
                     </component-doc>
 
                 </div>
-            </app-container>
+            </powdercloud-container>
         `;
     }
 }

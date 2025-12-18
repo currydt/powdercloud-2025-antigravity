@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import './components/AppContainer.js';
+import './components/PowdercloudContainer.js';
 import './components/PowdercloudCard.js';
 import './components/PowdercloudCombobox.js';
 
@@ -96,7 +96,7 @@ export class WeatherStudyPlotStandardPage extends LitElement {
 
     render() {
         return html`
-            <app-container>
+            <powdercloud-container>
                 <h1 style="color: #5399a5; font-size: 1.9em; margin: 0 0 20px 0; padding: 0; font-weight: normal; font-family: Arial, sans-serif; text-transform: uppercase;">
                     Weather Study Plot (Standard)
                 </h1>
@@ -245,7 +245,7 @@ export class WeatherStudyPlotStandardPage extends LitElement {
                 <div style="margin-top: 20px; text-align: right;">
                     <button style="background: #5399a5; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 1em;">Save Observation</button>
                 </div>
-            </app-container>
+            </powdercloud-container>
         `;
     }
 }

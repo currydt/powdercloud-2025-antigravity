@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import './components/AppContainer.js';
+import './components/PowdercloudContainer.js';
 import './components/ComponentDoc.js';
 import './components/AppGrid.js';
 import './components/AppStack.js';
@@ -12,7 +12,7 @@ export class DesignSystemLayoutPage extends LitElement {
     }
 
     render() {
-        const layoutElementsCode = `<app-container>
+        const layoutElementsCode = `<powdercloud-container>
     <app-grid cols="3" gap="lg">
         <div style="background: #eee; padding: 20px;">Column 1</div>
         <div style="background: #eee; padding: 20px;">Column 2</div>
@@ -25,10 +25,10 @@ export class DesignSystemLayoutPage extends LitElement {
         <powdercloud-button label="Save"></powdercloud-button>
         <powdercloud-button label="Cancel" variant="secondary"></powdercloud-button>
     </app-stack>
-</app-container>`;
+</powdercloud-container>`;
 
         return html`
-            <app-container>
+            <powdercloud-container>
                 <h1 style="color: #5399a5; font-size: 1.9em; margin: 0 0 20px 0; padding: 0; font-weight: normal; font-family: Arial, sans-serif; text-transform: uppercase;">
                     Layout Elements
                 </h1>
@@ -40,7 +40,7 @@ export class DesignSystemLayoutPage extends LitElement {
                         .code="${layoutElementsCode}">
                         
                         <div style="border: 1px dashed #ccc; padding: 10px;">
-                            <app-container>
+                            <powdercloud-container>
                                 <div style="background: #e3f2fd; padding: 10px; margin-bottom: 10px; text-align: center; color: #0d47a1;">
                                     <strong>&lt;app-container&gt;</strong> (Centers content)
                                 </div>
@@ -58,12 +58,12 @@ export class DesignSystemLayoutPage extends LitElement {
                                     <powdercloud-button label="Action 1" size="small"></powdercloud-button>
                                     <powdercloud-button label="Action 2" size="small" variant="secondary"></powdercloud-button>
                                 </app-stack>
-                            </app-container>
+                            </powdercloud-container>
                         </div>
 
                     </component-doc>
                 </div>
-            </app-container>
+            </powdercloud-container>
         `;
     }
 }
