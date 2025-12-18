@@ -17,7 +17,7 @@ import './components/AppRadio.js';
 import './components/AppRadio.js';
 import './components/AppFieldset.js';
 import './components/AppSwitch.js';
-import './components/AppChip.js';
+import './components/PowdercloudChip.js';
 import './components/AppProgress.js';
 import './components/AppDivider.js';
 import './components/PowdercloudCard.js';
@@ -326,10 +326,10 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
 <app-switch label="Checked" checked></app-switch>
 <app-switch label="Disabled" disabled></app-switch>`;
 
-        const chipCode = `<app-chip label="Basic Chip"></app-chip>
-<app-chip label="Primary" variant="primary"></app-chip>
-<app-chip label="With Icon" icon="fa fa-star"></app-chip>
-<app-chip label="Removable" removable @remove="\${(e) => alert('Removed ' + e.detail.label)}"></app-chip>`;
+        const chipCode = `<powdercloud-chip label="Basic Chip"></powdercloud-chip>
+<powdercloud-chip label="Primary" variant="primary"></powdercloud-chip>
+<powdercloud-chip label="With Icon" icon="fa fa-star"></powdercloud-chip>
+<powdercloud-chip label="Removable" removable @remove="\${(e) => alert('Removed ' + e.detail.label)}"></powdercloud-chip>`;
 
         const progressCode = `<app-progress label="Loading Data..." type="linear"></app-progress>
 <app-progress label="Uploading (75%)" type="linear" value="75"></app-progress>
@@ -1656,15 +1656,15 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<app-chip>" 
+                        title="<powdercloud-chip>" 
                         description="Compact elements for tags and filters."
                         .code="${chipCode}">
                         <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-                            <app-chip label="Basic Chip"></app-chip>
-                            <app-chip label="Primary" variant="primary"></app-chip>
-                            <app-chip label="Outline" variant="outline"></app-chip>
-                            <app-chip label="With Icon" icon="fa fa-star"></app-chip>
-                            <app-chip label="Removable" removable @remove="${(e) => alert('Removed ' + e.detail.label)}"></app-chip>
+                            <powdercloud-chip label="Basic Chip"></powdercloud-chip>
+                            <powdercloud-chip label="Primary" variant="primary"></powdercloud-chip>
+                            <powdercloud-chip label="Outline" variant="outline"></powdercloud-chip>
+                            <powdercloud-chip label="With Icon" icon="fa fa-star"></powdercloud-chip>
+                            <powdercloud-chip label="Removable" removable @remove="${(e) => alert('Removed ' + e.detail.label)}"></powdercloud-chip>
                         </div>
                     </component-doc>
 
