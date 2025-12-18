@@ -16,7 +16,7 @@ import './components/PowdercloudCheckbox.js';
 import './components/PowdercloudRadio.js';
 import './components/PowdercloudRadio.js';
 import './components/PowdercloudFieldset.js';
-import './components/AppSwitch.js';
+import './components/PowdercloudSwitch.js';
 import './components/PowdercloudChip.js';
 import './components/PowdercloudProgress.js';
 import './components/PowdercloudDivider.js';
@@ -322,9 +322,9 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
         const checkCode = `<powdercloud-checkbox label="Subscribe"></powdercloud-checkbox>
 <powdercloud-checkbox label="Disabled" disabled></powdercloud-checkbox>`;
 
-        const switchCode = `<app-switch label="Notifications"></app-switch>
-<app-switch label="Checked" checked></app-switch>
-<app-switch label="Disabled" disabled></app-switch>`;
+        const switchCode = `<powdercloud-switch label="Notifications"></powdercloud-switch>
+<powdercloud-switch label="Checked" checked></powdercloud-switch>
+<powdercloud-switch label="Disabled" disabled></powdercloud-switch>`;
 
         const chipCode = `<powdercloud-chip label="Basic Chip"></powdercloud-chip>
 <powdercloud-chip label="Primary" variant="primary"></powdercloud-chip>
@@ -1645,13 +1645,13 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<app-switch>" 
+                        title="<powdercloud-switch>" 
                         description="Toggle switch for binary states."
                         .code="${switchCode}">
                         <div style="display: flex; gap: 20px; align-items: center;">
-                            <app-switch label="Notifications"></app-switch>
-                            <app-switch label="Checked" checked></app-switch>
-                            <app-switch label="Disabled" disabled></app-switch>
+                            <powdercloud-switch label="Notifications"></powdercloud-switch>
+                            <powdercloud-switch label="Checked" checked></powdercloud-switch>
+                            <powdercloud-switch label="Disabled" disabled></powdercloud-switch>
                         </div>
                     </component-doc>
 
