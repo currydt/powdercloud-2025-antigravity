@@ -13,7 +13,7 @@ import './components/WindSpeedChart.js';
 
 // Grids
 import './components/WeatherGrid.js';
-import './components/AvalancheGrid.js';
+import './components/PowdercloudAvalancheGrid.js';
 import './components/SnowpackGrid.js';
 import './components/StabilityGrid.js';
 import './components/NewsGrid.js';
@@ -113,7 +113,7 @@ export class DashboardPage extends LitElement {
 
             <powdercloud-collapsible-panel title="Avalanche Activity"
                 tagline="The following table displays avalanche activity in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
-                <avalanche-grid></avalanche-grid>
+                <powdercloud-avalanche-grid></powdercloud-avalanche-grid>
             </powdercloud-collapsible-panel>
 
             <br />
