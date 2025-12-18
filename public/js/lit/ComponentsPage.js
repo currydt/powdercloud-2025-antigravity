@@ -1,5 +1,5 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import './components/CollapsiblePanel.js';
+import './components/PowdercloudCollapsiblePanel.js';
 
 import './components/PowdercloudAlert.js';
 import './components/PowdercloudDisclaimer.js';
@@ -164,11 +164,11 @@ export class ComponentsPage extends LitElement {
 
         const disclaimerCode = `<powdercloud-disclaimer></powdercloud-disclaimer>`;
 
-        const panelCode = `<collapsible-panel title="Panel Title" tagline="Optional Tagline">
+        const panelCode = `<powdercloud-collapsible-panel title="Panel Title" tagline="Optional Tagline">
     <div style="padding: 15px;">
         Panel Content Goes Here...
     </div>
-</collapsible-panel>`;
+</powdercloud-collapsible-panel>`;
 
         const breadcrumbsCode = `<powdercloud-breadcrumbs .items="\${[
     { label: "Home", href: "/" },
@@ -527,7 +527,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
             </h1>
             <p style="margin-bottom: 20px;">Development library of available UI components.</p>
 
-            <collapsible-panel title="Overview" tagline="Site Architecture & Design Tree" .open="${false}">
+            <powdercloud-collapsible-panel title="Overview" tagline="Site Architecture & Design Tree" .open="${false}">
                 <div style="padding: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333;">
                     
                     <div style="margin-bottom: 30px;">
@@ -699,11 +699,11 @@ ROOT
                         </div>
                     </div>
                 </div>
-            </collapsible-panel>
+            </powdercloud-collapsible-panel>
             
             <br />
 
-            <collapsible-panel title="Framework Architecture" tagline="Component Hierarchy & Structure" .open="${false}">
+            <powdercloud-collapsible-panel title="Framework Architecture" tagline="Component Hierarchy & Structure" .open="${false}">
                 <div style="padding: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333;">
                     
                     <p style="font-size: 1.1em; line-height: 1.6; color: #444; margin-bottom: 20px;">
@@ -795,11 +795,11 @@ ROOT
                     </div>
 
                 </div>
-            </collapsible-panel>
+            </powdercloud-collapsible-panel>
 
             <br />
 
-            <collapsible-panel title="Page Architecture" tagline="Component Hierarchy & Design Constraints" .open="${false}">
+            <powdercloud-collapsible-panel title="Page Architecture" tagline="Component Hierarchy & Design Constraints" .open="${false}">
                 <div style="padding: 20px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333;">
                     
                     <div style="margin-bottom: 30px;">
@@ -871,11 +871,11 @@ PAGE SHELL (e.g., dashboard_lit.html)
                         </div>
                     </div>
                 </div>
-            </collapsible-panel>
+            </powdercloud-collapsible-panel>
 
             <br />
 
-            <collapsible-panel title="Core Components" tagline="Usage Examples & Code Snippets" .open="${false}">
+            <powdercloud-collapsible-panel title="Core Components" tagline="Usage Examples & Code Snippets" .open="${false}">
                 <div style="padding: 20px;">
                     
                     <component-doc 
@@ -894,14 +894,14 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<collapsible-panel>" 
+                        title="<powdercloud-collapsible-panel>" 
                         description="Expandable container for organizing content sections."
                         .code="${panelCode}">
-                        <collapsible-panel title="Panel Title" tagline="Optional Tagline">
+                        <powdercloud-collapsible-panel title="Panel Title" tagline="Optional Tagline">
                             <div style="padding: 15px;">
                                 Panel Content Goes Here...
                             </div>
-                        </collapsible-panel>
+                        </powdercloud-collapsible-panel>
                     </component-doc>
 
                     <component-doc 
@@ -956,11 +956,11 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                 </div>
-            </collapsible-panel>
+            </powdercloud-collapsible-panel>
 
             <br />
 
-            <collapsible-panel title="Layout Elements" tagline="Grid, Stack, Container & Spacing" .open="${false}">
+            <powdercloud-collapsible-panel title="Layout Elements" tagline="Grid, Stack, Container & Spacing" .open="${false}">
                 <div style="padding: 20px;">
                     <component-doc 
                         title="Layout System" 
@@ -991,11 +991,11 @@ PAGE SHELL (e.g., dashboard_lit.html)
 
                     </component-doc>
                 </div>
-            </collapsible-panel>
+            </powdercloud-collapsible-panel>
 
             <br />
 
-            <collapsible-panel title="Containers" tagline="Cards, Panels & Fieldsets" .open="${false}">
+            <powdercloud-collapsible-panel title="Containers" tagline="Cards, Panels & Fieldsets" .open="${false}">
                 <div style="padding: 20px;">
                     
                     <component-doc 
@@ -1028,14 +1028,14 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<collapsible-panel>" 
+                        title="<powdercloud-collapsible-panel>" 
                         description="An expandable container for managing screen real estate."
                         .code="${panelCode}">
-                        <collapsible-panel title="Admin Panel" tagline="Click to toggle" .open="${true}">
+                        <powdercloud-collapsible-panel title="Admin Panel" tagline="Click to toggle" .open="${true}">
                             <div style="padding: 15px;">
                                 Panels are great for hiding advanced settings or large sections of content.
                             </div>
-                        </collapsible-panel>
+                        </powdercloud-collapsible-panel>
                     </component-doc>
 
                     <component-doc 
@@ -1068,7 +1068,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
 
             <br />
 
-            <collapsible-panel title="Feedback & Display" tagline="Avatars, Tooltips & More" .open="${false}">
+            <powdercloud-collapsible-panel title="Feedback & Display" tagline="Avatars, Tooltips & More" .open="${false}">
                 <div style="padding: 20px;">
                     
                     <component-doc 
@@ -1107,11 +1107,11 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                 </div>
-            </collapsible-panel>
+            </powdercloud-collapsible-panel>
 
             <br />
 
-            <collapsible-panel title="Data Patterns" tagline="Grids & Lists" .open="${false}">
+            <powdercloud-collapsible-panel title="Data Patterns" tagline="Grids & Lists" .open="${false}">
                 <div style="padding: 20px;">
 
                     <component-doc 
@@ -1218,11 +1218,11 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                 </div>
-            </collapsible-panel>
+            </powdercloud-collapsible-panel>
 
             <br />
 
-            <collapsible-panel title="Data Visualization" tagline="Charts & Diagrams" .open="${true}">
+            <powdercloud-collapsible-panel title="Data Visualization" tagline="Charts & Diagrams" .open="${true}">
                 <div style="padding: 20px;">
 
                     <component-doc 
@@ -1303,11 +1303,11 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     -->
 
                 </div>
-            </collapsible-panel>
+            </powdercloud-collapsible-panel>
 
             <br />
 
-            <collapsible-panel title="Form Component" tagline="Comprehensive Element Tree" .open="${false}">
+            <powdercloud-collapsible-panel title="Form Component" tagline="Comprehensive Element Tree" .open="${false}">
                 <div style="padding: 20px; background-color: #f4f6f8;">
                     
                     <component-doc 
@@ -1447,11 +1447,11 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                 </div>
-            </collapsible-panel>
+            </powdercloud-collapsible-panel>
 
             <br />
 
-            <collapsible-panel title="Atomic Elements" tagline="Inputs, Buttons & Controls" .open="${false}">
+            <powdercloud-collapsible-panel title="Atomic Elements" tagline="Inputs, Buttons & Controls" .open="${false}">
                 <div style="padding: 20px;">
                     
                     <!-- BUTTON PLAYGROUND -->
@@ -1705,11 +1705,11 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                 </div>
-            </collapsible-panel>
+            </powdercloud-collapsible-panel>
 
             <br />
 
-            <collapsible-panel title="Overlays & Complex Inputs" tagline="Modals, Toasts & Pickers" .open="${false}">
+            <powdercloud-collapsible-panel title="Overlays & Complex Inputs" tagline="Modals, Toasts & Pickers" .open="${false}">
                 <div style="padding: 20px;">
                     
                     <component-doc 
@@ -1774,13 +1774,13 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                 </div>
-            </collapsible-panel>
+            </powdercloud-collapsible-panel>
 
-            <collapsible-panel title="Validators" tagline="Business Logic & Rules" .open="${false}">
+            <powdercloud-collapsible-panel title="Validators" tagline="Business Logic & Rules" .open="${false}">
                 <div style="padding: 20px;">
                     ${this._renderValidatorDocs()}
                 </div>
-            </collapsible-panel>
+            </powdercloud-collapsible-panel>
 
             <br />
 

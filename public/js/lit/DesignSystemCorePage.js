@@ -3,7 +3,7 @@ import './components/PowdercloudContainer.js';
 import './components/ComponentDoc.js';
 import './components/PowdercloudAlert.js';
 import './components/PowdercloudDisclaimer.js';
-import './components/CollapsiblePanel.js';
+import './components/PowdercloudCollapsiblePanel.js';
 import './components/PowdercloudBreadcrumbs.js';
 import './components/PowdercloudFooter.js';
 import './components/PowdercloudHeader.js';
@@ -26,11 +26,11 @@ export class DesignSystemCorePage extends LitElement {
 
         const disclaimerCode = `<powdercloud-disclaimer></powdercloud-disclaimer>`;
 
-        const panelCode = `<collapsible-panel title="Panel Title" tagline="Optional Tagline">
+        const panelCode = `<powdercloud-collapsible-panel title="Panel Title" tagline="Optional Tagline">
     <div style="padding: 15px;">
         Panel Content Goes Here...
     </div>
-</collapsible-panel>`;
+</powdercloud-collapsible-panel>`;
 
         const breadcrumbsCode = `<powdercloud-breadcrumbs .items="\${[
     { label: "Home", href: "/" },
@@ -79,14 +79,14 @@ export class DesignSystemCorePage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<collapsible-panel>" 
+                        title="<powdercloud-collapsible-panel>" 
                         description="Expandable container for organizing content sections."
                         .code="${panelCode}">
-                        <collapsible-panel title="Panel Title" tagline="Optional Tagline">
+                        <powdercloud-collapsible-panel title="Panel Title" tagline="Optional Tagline">
                             <div style="padding: 15px;">
                                 Panel Content Goes Here...
                             </div>
-                        </collapsible-panel>
+                        </powdercloud-collapsible-panel>
                     </component-doc>
 
                     <component-doc 

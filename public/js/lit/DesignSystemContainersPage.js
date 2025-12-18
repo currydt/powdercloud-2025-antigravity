@@ -3,7 +3,7 @@ import './components/PowdercloudContainer.js';
 import './components/ComponentDoc.js';
 import './components/PowdercloudCard.js';
 import './components/PowdercloudFieldset.js';
-import './components/CollapsiblePanel.js';
+import './components/PowdercloudCollapsiblePanel.js';
 import './components/PowdercloudTabs.js';
 import './components/PowdercloudInput.js';
 import './components/PowdercloudTextarea.js';
@@ -31,11 +31,11 @@ export class DesignSystemContainersPage extends LitElement {
     <powdercloud-input label="Email"></powdercloud-input>
 </powdercloud-fieldset>`;
 
-        const panelCode = `<collapsible-panel title="Panel Title" tagline="Optional Tagline">
+        const panelCode = `<powdercloud-collapsible-panel title="Panel Title" tagline="Optional Tagline">
     <div style="padding: 15px;">
         Panel Content Goes Here...
     </div>
-</collapsible-panel>`;
+</powdercloud-collapsible-panel>`;
 
         const tabsCode = `<powdercloud-tabs>
     <app-tab label="First Tab" active>
@@ -90,14 +90,14 @@ export class DesignSystemContainersPage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<collapsible-panel>" 
+                        title="<powdercloud-collapsible-panel>" 
                         description="An expandable container for managing screen real estate."
                         .code="${panelCode}">
-                        <collapsible-panel title="Admin Panel" tagline="Click to toggle" .open="${true}">
+                        <powdercloud-collapsible-panel title="Admin Panel" tagline="Click to toggle" .open="${true}">
                             <div style="padding: 15px;">
                                 Panels are great for hiding advanced settings or large sections of content.
                             </div>
-                        </collapsible-panel>
+                        </powdercloud-collapsible-panel>
                     </component-doc>
 
                     <component-doc 

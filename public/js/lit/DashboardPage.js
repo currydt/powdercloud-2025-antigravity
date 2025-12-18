@@ -1,6 +1,6 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/DateSelector.js';
-import './components/CollapsiblePanel.js';
+import './components/PowdercloudCollapsiblePanel.js';
 import './components/PowdercloudAvalancheRose.js';
 
 // Charts
@@ -66,7 +66,7 @@ export class DashboardPage extends LitElement {
             <date-selector></date-selector>
 
             <!-- Charts Section -->
-            <collapsible-panel title="Charts"
+            <powdercloud-collapsible-panel title="Charts"
                 tagline="The following is a presentation of data for the past seven days, from the selected date. You can manage the date range, by adjusting the selected end date.">
                 
                 <!-- Row 1: Seasonal Chart -->
@@ -99,43 +99,43 @@ export class DashboardPage extends LitElement {
                         <wind-speed-chart></wind-speed-chart>
                     </div>
                 </div>
-            </collapsible-panel>
+            </powdercloud-collapsible-panel>
 
             <br />
 
             <!-- Grids Section -->
-            <collapsible-panel title="Weather Observations"
+            <powdercloud-collapsible-panel title="Weather Observations"
                 tagline="The following table displays weather observations in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
                 <weather-grid></weather-grid>
-            </collapsible-panel>
+            </powdercloud-collapsible-panel>
 
             <br />
 
-            <collapsible-panel title="Avalanche Activity"
+            <powdercloud-collapsible-panel title="Avalanche Activity"
                 tagline="The following table displays avalanche activity in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
                 <avalanche-grid></avalanche-grid>
-            </collapsible-panel>
+            </powdercloud-collapsible-panel>
 
             <br />
 
-            <collapsible-panel title="Snowpack Structure"
+            <powdercloud-collapsible-panel title="Snowpack Structure"
                 tagline="The following table displays snowpack structure in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
                 <snowpack-grid></snowpack-grid>
-            </collapsible-panel>
+            </powdercloud-collapsible-panel>
 
             <br />
 
-            <collapsible-panel title="Stability Ratings"
+            <powdercloud-collapsible-panel title="Stability Ratings"
                 tagline="The following table displays stability ratings in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
                 <stability-grid></stability-grid>
-            </collapsible-panel>
+            </powdercloud-collapsible-panel>
 
             <br />
 
-            <collapsible-panel title="News & Updates"
+            <powdercloud-collapsible-panel title="News & Updates"
                 tagline="The following table displays news and updates in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
                 <news-grid></news-grid>
-            </collapsible-panel>
+            </powdercloud-collapsible-panel>
         `;
     }
 }
