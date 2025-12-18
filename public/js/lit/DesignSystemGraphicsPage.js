@@ -8,7 +8,7 @@ import './components/PowdercloudSeasonalChart.js';
 import './components/PowdercloudFailureTypesChart.js';
 import './components/TriggerTypesChart.js';
 import './components/PowdercloudSnowpackHeightChart.js';
-import './components/TemperatureRangeChart.js';
+import './components/PowdercloudTemperatureRangeChart.js';
 import './components/WindSpeedChart.js';
 import './components/PowdercloudSkyConditionsChart.js';
 
@@ -59,10 +59,10 @@ export class DesignSystemGraphicsPage extends LitElement {
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
-                        title="<temperature-range-chart>" 
+                        title="<powdercloud-temperature-range-chart>" 
                         description="Line chart showing daily maximum and minimum temperatures."
-                        .code="${`<temperature-range-chart style='height: 300px;'></temperature-range-chart>`}">
-                        <temperature-range-chart style="height: 300px;"></temperature-range-chart>
+                        .code="${`<powdercloud-temperature-range-chart style='height: 300px;'></powdercloud-temperature-range-chart>`}">
+                        <powdercloud-temperature-range-chart style="height: 300px;"></powdercloud-temperature-range-chart>
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 

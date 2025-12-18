@@ -40,7 +40,7 @@ import './components/PowdercloudFailureTypesChart.js';
 import './components/PowdercloudSeasonalChart.js';
 import './components/PowdercloudSkyConditionsChart.js';
 import './components/PowdercloudSnowpackHeightChart.js';
-import './components/TemperatureRangeChart.js';
+import './components/PowdercloudTemperatureRangeChart.js';
 import './components/TriggerTypesChart.js';
 import './components/WindSpeedChart.js';
 import { Validators } from './components/PowdercloudValidators.js';
@@ -1226,10 +1226,10 @@ PAGE SHELL (e.g., dashboard_lit.html)
                 <div style="padding: 20px;">
 
                     <powdercloud-component-doc 
-                        title="<temperature-range-chart>" 
+                        title="<powdercloud-temperature-range-chart>" 
                         description="Temperature Range Chart"
-                        .code="${`<temperature-range-chart></temperature-range-chart>`}">
-                        <temperature-range-chart></temperature-range-chart>
+                        .code="${`<powdercloud-temperature-range-chart></powdercloud-temperature-range-chart>`}">
+                        <powdercloud-temperature-range-chart></powdercloud-temperature-range-chart>
                     </powdercloud-component-doc>
 
                     <!--
