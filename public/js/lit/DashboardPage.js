@@ -16,7 +16,7 @@ import './components/WeatherGrid.js';
 import './components/PowdercloudAvalancheGrid.js';
 import './components/SnowpackGrid.js';
 import './components/StabilityGrid.js';
-import './components/NewsGrid.js';
+import './components/PowdercloudNewsGrid.js';
 
 export class DashboardPage extends LitElement {
     createRenderRoot() {
@@ -134,7 +134,7 @@ export class DashboardPage extends LitElement {
 
             <powdercloud-collapsible-panel title="News & Updates"
                 tagline="The following table displays news and updates in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
-                <news-grid></news-grid>
+                <powdercloud-news-grid></powdercloud-news-grid>
             </powdercloud-collapsible-panel>
         `;
     }
