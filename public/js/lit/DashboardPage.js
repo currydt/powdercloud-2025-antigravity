@@ -7,7 +7,7 @@ import './components/PowdercloudAvalancheRose.js';
 import './components/PowdercloudSeasonalChart.js';
 import './components/PowdercloudFailureTypesChart.js';
 import './components/TriggerTypesChart.js';
-import './components/SnowpackHeightChart.js';
+import './components/PowdercloudSnowpackHeightChart.js';
 import './components/TemperatureRangeChart.js';
 import './components/WindSpeedChart.js';
 
@@ -90,7 +90,7 @@ export class DashboardPage extends LitElement {
                 <!-- Row 3: HS, Temp, Wind -->
                 <div class="chart-row three-col">
                     <div class="chart-container">
-                        <snowpack-height-chart></snowpack-height-chart>
+                        <powdercloud-snowpack-height-chart></powdercloud-snowpack-height-chart>
                     </div>
                     <div class="chart-container">
                         <temperature-range-chart></temperature-range-chart>

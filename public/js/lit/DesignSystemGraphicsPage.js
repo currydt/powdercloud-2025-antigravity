@@ -7,7 +7,7 @@ import './components/PowdercloudSnowProfileGraph.js';
 import './components/PowdercloudSeasonalChart.js';
 import './components/PowdercloudFailureTypesChart.js';
 import './components/TriggerTypesChart.js';
-import './components/SnowpackHeightChart.js';
+import './components/PowdercloudSnowpackHeightChart.js';
 import './components/TemperatureRangeChart.js';
 import './components/WindSpeedChart.js';
 import './components/PowdercloudSkyConditionsChart.js';
@@ -52,10 +52,10 @@ export class DesignSystemGraphicsPage extends LitElement {
                     </style>
 
                     <powdercloud-component-doc 
-                        title="<snowpack-height-chart>" 
+                        title="<powdercloud-snowpack-height-chart>" 
                         description="Column chart comparing total snow height (HS) and new snow (HN24)."
-                        .code="${`<snowpack-height-chart style='height: 300px;'></snowpack-height-chart>`}">
-                        <snowpack-height-chart style="height: 300px;"></snowpack-height-chart>
+                        .code="${`<powdercloud-snowpack-height-chart style='height: 300px;'></powdercloud-snowpack-height-chart>`}">
+                        <powdercloud-snowpack-height-chart style="height: 300px;"></powdercloud-snowpack-height-chart>
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 

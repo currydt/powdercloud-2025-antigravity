@@ -39,7 +39,7 @@ import './components/PowdercloudDashboardChart.js';
 import './components/PowdercloudFailureTypesChart.js';
 import './components/PowdercloudSeasonalChart.js';
 import './components/PowdercloudSkyConditionsChart.js';
-import './components/SnowpackHeightChart.js';
+import './components/PowdercloudSnowpackHeightChart.js';
 import './components/TemperatureRangeChart.js';
 import './components/TriggerTypesChart.js';
 import './components/WindSpeedChart.js';
@@ -1255,10 +1255,10 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
-                        title="<snowpack-height-chart>" 
+                        title="<powdercloud-snowpack-height-chart>" 
                         description="Snowpack Height Chart"
-                        .code="${`<snowpack-height-chart></snowpack-height-chart>`}">
-                        <snowpack-height-chart></snowpack-height-chart>
+                        .code="${`<powdercloud-snowpack-height-chart></powdercloud-snowpack-height-chart>`}">
+                        <powdercloud-snowpack-height-chart></powdercloud-snowpack-height-chart>
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
