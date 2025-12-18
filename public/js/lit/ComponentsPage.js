@@ -15,7 +15,7 @@ import './components/AppSelect.js';
 import './components/PowdercloudCheckbox.js';
 import './components/AppRadio.js';
 import './components/AppRadio.js';
-import './components/AppFieldset.js';
+import './components/PowdercloudFieldset.js';
 import './components/AppSwitch.js';
 import './components/PowdercloudChip.js';
 import './components/AppProgress.js';
@@ -389,14 +389,14 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
     <form style="padding: 20px; display: flex; flex-direction: column; gap: 25px;">
 
         <!-- 1. The Containers -->
-        <app-fieldset legend="fieldset (Grouping)">
+        <powdercloud-fieldset legend="fieldset (Grouping)">
             <div style="padding: 10px; color: #666; font-style: italic;">
                 Contains related elements. The title above is the &lt;legend&gt;.
             </div>
-        </app-fieldset>
+        </powdercloud-fieldset>
 
         <!-- 2. The Inputs -->
-        <app-fieldset legend="input (The Void Element)">
+        <powdercloud-fieldset legend="input (The Void Element)">
             
             <!-- Text Editing -->
             <div style="margin-bottom: 15px; font-weight: 600; color: #555;">Text Editing</div>
@@ -456,15 +456,15 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
                 <input type="submit" value="type='submit'">
                 <input type="reset" value="type='reset'">
             </div>
-        </app-fieldset>
+        </powdercloud-fieldset>
 
         <!-- 3. Other Text Controls -->
-        <app-fieldset legend="textarea">
+        <powdercloud-fieldset legend="textarea">
             <app-textarea label="Multi-line text input" rows="3"></app-textarea>
-        </app-fieldset>
+        </powdercloud-fieldset>
 
         <!-- 4. Selection Menus -->
-        <app-fieldset legend="select & datalist">
+        <powdercloud-fieldset legend="select & datalist">
             <div style="display: flex; flex-direction: column; gap: 15px;">
                 <app-select label="select (with optgroup)" .options="\${[
                     { label: 'Group 1', options: [{label: 'Option 1.1', value: '1.1'}, {label: 'Option 1.2', value: '1.2'}] },
@@ -481,19 +481,19 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
                     </datalist>
                 </div>
             </div>
-        </app-fieldset>
+        </powdercloud-fieldset>
 
         <!-- 5. Buttons -->
-        <app-fieldset legend="button (Element)">
+        <powdercloud-fieldset legend="button (Element)">
             <div style="display: flex; gap: 10px;">
                 <powdercloud-button label="type='button'"></powdercloud-button>
                 <powdercloud-button label="type='submit'" icon="fa fa-paper-plane"></powdercloud-button>
                 <powdercloud-button label="type='reset'" variant="outline"></powdercloud-button>
             </div>
-        </app-fieldset>
+        </powdercloud-fieldset>
 
         <!-- 6. Output & Feedback -->
-        <app-fieldset legend="Output & Feedback">
+        <powdercloud-fieldset legend="Output & Feedback">
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items: center;">
                 <div>
                     <label style="display: block; font-weight: bold; margin-bottom: 5px;">output</label>
@@ -508,7 +508,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
                     <meter value="0.6" style="width: 100%;"></meter>
                 </div>
             </div>
-        </app-fieldset>
+        </powdercloud-fieldset>
 
     </form>
 </div>`;
@@ -516,10 +516,10 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
         const radioCode = `<app-radio name="g1" label="Option A" value="a"></app-radio>
 <app-radio name="g1" label="Option B" value="b"></app-radio>`;
 
-        const fieldsetCode = `<app-fieldset legend="User Details">
+        const fieldsetCode = `<powdercloud-fieldset legend="User Details">
     <app-input label="Name"></app-input>
     <app-input label="Email"></app-input>
-</app-fieldset>`;
+</powdercloud-fieldset>`;
 
         return html`
             <h1 style="color: #5399a5; font-size: 1.9em; margin: 0 0 5px 0; padding: 0; font-weight: normal; font-family: Arial, sans-serif; text-transform: uppercase;">
@@ -1018,13 +1018,13 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<app-fieldset>" 
+                        title="<powdercloud-fieldset>" 
                         description="A semantic container for grouping form inputs."
                         .code="${fieldsetCode}">
-                        <app-fieldset legend="User Information">
+                        <powdercloud-fieldset legend="User Information">
                             <app-input label="Full Name"></app-input>
                             <app-input label="Email Address"></app-input>
-                        </app-fieldset>
+                        </powdercloud-fieldset>
                     </component-doc>
 
                     <component-doc 
@@ -1320,14 +1320,14 @@ PAGE SHELL (e.g., dashboard_lit.html)
                             <form style="padding: 20px; display: flex; flex-direction: column; gap: 25px;">
 
                                 <!-- 1. The Containers -->
-                                <app-fieldset legend="fieldset (Grouping)">
+                                <powdercloud-fieldset legend="fieldset (Grouping)">
                                     <div style="padding: 10px; color: #666; font-style: italic;">
                                         Contains related elements. The title above is the &lt;legend&gt;.
                                     </div>
-                                </app-fieldset>
+                                </powdercloud-fieldset>
 
                                 <!-- 2. The Inputs -->
-                                <app-fieldset legend="input (The Void Element)">
+                                <powdercloud-fieldset legend="input (The Void Element)">
                                     
                                     <!-- Text Editing -->
                                     <div style="margin-bottom: 15px; font-weight: 600; color: #555;">Text Editing</div>
@@ -1387,15 +1387,15 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                         <input type="submit" value="type='submit'" style="padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; font-weight: 500; text-transform: uppercase; background-color: #5399a5; color: white;">
                                         <input type="reset" value="type='reset'" style="padding: 8px 16px; border: 1px solid #5399a5; border-radius: 4px; cursor: pointer; font-weight: 500; text-transform: uppercase; background-color: transparent; color: #5399a5;">
                                     </div>
-                                </app-fieldset>
+                                </powdercloud-fieldset>
 
                                 <!-- 3. Other Text Controls -->
-                                <app-fieldset legend="textarea">
+                                <powdercloud-fieldset legend="textarea">
                                     <app-textarea label="Multi-line text input" rows="3"></app-textarea>
-                                </app-fieldset>
+                                </powdercloud-fieldset>
 
                                 <!-- 4. Selection Menus -->
-                                <app-fieldset legend="select & datalist">
+                                <powdercloud-fieldset legend="select & datalist">
                                     <div style="display: flex; flex-direction: column; gap: 15px;">
                                         <app-select label="select (with optgroup)" .options="${[
                 { label: 'Group 1', options: [{ label: 'Option 1.1', value: '1.1' }, { label: 'Option 1.2', value: '1.2' }] },
@@ -1412,19 +1412,19 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                             </datalist>
                                         </div>
                                     </div>
-                                </app-fieldset>
+                                </powdercloud-fieldset>
 
                                 <!-- 5. Buttons -->
-                                <app-fieldset legend="button (Element)">
+                                <powdercloud-fieldset legend="button (Element)">
                                     <div style="display: flex; gap: 10px;">
                                         <powdercloud-button label="type='button'"></powdercloud-button>
                                         <powdercloud-button label="type='submit'" icon="fa fa-paper-plane"></powdercloud-button>
                                         <powdercloud-button label="type='reset'" variant="outline"></powdercloud-button>
                                     </div>
-                                </app-fieldset>
+                                </powdercloud-fieldset>
 
                                 <!-- 6. Output & Feedback -->
-                                <app-fieldset legend="Output & Feedback">
+                                <powdercloud-fieldset legend="Output & Feedback">
                                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items: center;">
                                         <div>
                                             <label style="display: block; font-weight: bold; margin-bottom: 5px;">output</label>
@@ -1439,7 +1439,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                             <meter value="0.6" style="width: 100%;"></meter>
                                         </div>
                                     </div>
-                                </app-fieldset>
+                                </powdercloud-fieldset>
 
                             </form>
                         </div>
@@ -1632,16 +1632,16 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<app-fieldset>" 
+                        title="<powdercloud-fieldset>" 
                         description="Grouping container for form elements."
                         .code="${fieldsetCode}">
-                        <app-fieldset legend="Personal Information">
+                        <powdercloud-fieldset legend="Personal Information">
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                                 <app-input label="First Name"></app-input>
                                 <app-input label="Last Name"></app-input>
                             </div>
                             <app-textarea label="Bio" rows="2"></app-textarea>
-                        </app-fieldset>
+                        </powdercloud-fieldset>
                     </component-doc>
 
                     <component-doc 

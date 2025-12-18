@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/PowdercloudContainer.js';
 import './components/ComponentDoc.js';
-import './components/AppFieldset.js';
+import './components/PowdercloudFieldset.js';
 import './components/AppInput.js';
 import './components/AppTextarea.js';
 import './components/AppSelect.js';
@@ -21,14 +21,14 @@ export class DesignSystemFormsPage extends LitElement {
     <form style="padding: 20px; display: flex; flex-direction: column; gap: 25px;">
 
         <!-- 1. The Containers -->
-        <app-fieldset legend="fieldset (Grouping)">
+        <powdercloud-fieldset legend="fieldset (Grouping)">
             <div style="padding: 10px; color: #666; font-style: italic;">
                 Contains related elements. The title above is the &lt;legend&gt;.
             </div>
-        </app-fieldset>
+        </powdercloud-fieldset>
 
         <!-- 2. The Inputs -->
-        <app-fieldset legend="input (The Void Element)">
+        <powdercloud-fieldset legend="input (The Void Element)">
             
             <!-- Text Editing -->
             <div style="margin-bottom: 15px; font-weight: 600; color: #555;">Text Editing</div>
@@ -88,15 +88,15 @@ export class DesignSystemFormsPage extends LitElement {
                 <input type="submit" value="type='submit'" style="padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; font-weight: 500; text-transform: uppercase; background-color: #5399a5; color: white;">
                 <input type="reset" value="type='reset'" style="padding: 8px 16px; border: 1px solid #5399a5; border-radius: 4px; cursor: pointer; font-weight: 500; text-transform: uppercase; background-color: transparent; color: #5399a5;">
             </div>
-        </app-fieldset>
+        </powdercloud-fieldset>
 
         <!-- 3. Other Text Controls -->
-        <app-fieldset legend="textarea">
+        <powdercloud-fieldset legend="textarea">
             <app-textarea label="Multi-line text input" rows="3"></app-textarea>
-        </app-fieldset>
+        </powdercloud-fieldset>
 
         <!-- 4. Selection Menus -->
-        <app-fieldset legend="select & datalist">
+        <powdercloud-fieldset legend="select & datalist">
             <div style="display: flex; flex-direction: column; gap: 15px;">
                 <app-select label="select (with optgroup)" .options="\${[
                     { label: 'Group 1', options: [{label: 'Option 1.1', value: '1.1'}, {label: 'Option 1.2', value: '1.2'}] },
@@ -113,19 +113,19 @@ export class DesignSystemFormsPage extends LitElement {
                     </datalist>
                 </div>
             </div>
-        </app-fieldset>
+        </powdercloud-fieldset>
 
         <!-- 5. Buttons -->
-        <app-fieldset legend="button (Element)">
+        <powdercloud-fieldset legend="button (Element)">
             <div style="display: flex; gap: 10px;">
                 <powdercloud-button label="type='button'"></powdercloud-button>
                 <powdercloud-button label="type='submit'" icon="fa fa-paper-plane"></powdercloud-button>
                 <powdercloud-button label="type='reset'" variant="outline"></powdercloud-button>
             </div>
-        </app-fieldset>
+        </powdercloud-fieldset>
 
         <!-- 6. Output & Feedback -->
-        <app-fieldset legend="Output & Feedback">
+        <powdercloud-fieldset legend="Output & Feedback">
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items: center;">
                 <div>
                     <label style="display: block; font-weight: bold; margin-bottom: 5px;">output</label>
@@ -140,7 +140,7 @@ export class DesignSystemFormsPage extends LitElement {
                     <meter value="0.6" style="width: 100%;"></meter>
                 </div>
             </div>
-        </app-fieldset>
+        </powdercloud-fieldset>
 
     </form>
 </div>`;
@@ -163,14 +163,14 @@ export class DesignSystemFormsPage extends LitElement {
                             <form style="padding: 20px; display: flex; flex-direction: column; gap: 25px;">
 
                                 <!-- 1. The Containers -->
-                                <app-fieldset legend="fieldset (Grouping)">
+                                <powdercloud-fieldset legend="fieldset (Grouping)">
                                     <div style="padding: 10px; color: #666; font-style: italic;">
                                         Contains related elements. The title above is the &lt;legend&gt;.
                                     </div>
-                                </app-fieldset>
+                                </powdercloud-fieldset>
 
                                 <!-- 2. The Inputs -->
-                                <app-fieldset legend="input (The Void Element)">
+                                <powdercloud-fieldset legend="input (The Void Element)">
                                     
                                     <!-- Text Editing -->
                                     <div style="margin-bottom: 15px; font-weight: 600; color: #555;">Text Editing</div>
@@ -230,15 +230,15 @@ export class DesignSystemFormsPage extends LitElement {
                                         <input type="submit" value="type='submit'" style="padding: 8px 16px; border: none; border-radius: 4px; cursor: pointer; font-weight: 500; text-transform: uppercase; background-color: #5399a5; color: white;">
                                         <input type="reset" value="type='reset'" style="padding: 8px 16px; border: 1px solid #5399a5; border-radius: 4px; cursor: pointer; font-weight: 500; text-transform: uppercase; background-color: transparent; color: #5399a5;">
                                     </div>
-                                </app-fieldset>
+                                </powdercloud-fieldset>
 
                                 <!-- 3. Other Text Controls -->
-                                <app-fieldset legend="textarea">
+                                <powdercloud-fieldset legend="textarea">
                                     <app-textarea label="Multi-line text input" rows="3"></app-textarea>
-                                </app-fieldset>
+                                </powdercloud-fieldset>
 
                                 <!-- 4. Selection Menus -->
-                                <app-fieldset legend="select & datalist">
+                                <powdercloud-fieldset legend="select & datalist">
                                     <div style="display: flex; flex-direction: column; gap: 15px;">
                                         <app-select label="select (with optgroup)" .options="${[
                 { label: 'Group 1', options: [{ label: 'Option 1.1', value: '1.1' }, { label: 'Option 1.2', value: '1.2' }] },
@@ -255,19 +255,19 @@ export class DesignSystemFormsPage extends LitElement {
                                             </datalist>
                                         </div>
                                     </div>
-                                </app-fieldset>
+                                </powdercloud-fieldset>
 
                                 <!-- 5. Buttons -->
-                                <app-fieldset legend="button (Element)">
+                                <powdercloud-fieldset legend="button (Element)">
                                     <div style="display: flex; gap: 10px;">
                                         <powdercloud-button label="type='button'"></powdercloud-button>
                                         <powdercloud-button label="type='submit'" icon="fa fa-paper-plane"></powdercloud-button>
                                         <powdercloud-button label="type='reset'" variant="outline"></powdercloud-button>
                                     </div>
-                                </app-fieldset>
+                                </powdercloud-fieldset>
 
                                 <!-- 6. Output & Feedback -->
-                                <app-fieldset legend="Output & Feedback">
+                                <powdercloud-fieldset legend="Output & Feedback">
                                     <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; align-items: center;">
                                         <div>
                                             <label style="display: block; font-weight: bold; margin-bottom: 5px;">output</label>
@@ -282,7 +282,7 @@ export class DesignSystemFormsPage extends LitElement {
                                             <meter value="0.6" style="width: 100%;"></meter>
                                         </div>
                                     </div>
-                                </app-fieldset>
+                                </powdercloud-fieldset>
 
                             </form>
                         </div>

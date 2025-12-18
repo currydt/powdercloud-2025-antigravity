@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/co
 import './components/PowdercloudContainer.js';
 import './components/ComponentDoc.js';
 import './components/PowdercloudCard.js';
-import './components/AppFieldset.js';
+import './components/PowdercloudFieldset.js';
 import './components/CollapsiblePanel.js';
 import './components/AppTabs.js';
 import './components/AppInput.js';
@@ -26,10 +26,10 @@ export class DesignSystemContainersPage extends LitElement {
     </div>
 </powdercloud-card>`;
 
-        const fieldsetCode = `<app-fieldset legend="User Details">
+        const fieldsetCode = `<powdercloud-fieldset legend="User Details">
     <app-input label="Name"></app-input>
     <app-input label="Email"></app-input>
-</app-fieldset>`;
+</powdercloud-fieldset>`;
 
         const panelCode = `<collapsible-panel title="Panel Title" tagline="Optional Tagline">
     <div style="padding: 15px;">
@@ -80,13 +80,13 @@ export class DesignSystemContainersPage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<app-fieldset>" 
+                        title="<powdercloud-fieldset>" 
                         description="A semantic container for grouping form inputs."
                         .code="${fieldsetCode}">
-                        <app-fieldset legend="User Information">
+                        <powdercloud-fieldset legend="User Information">
                             <app-input label="Full Name"></app-input>
                             <app-input label="Email Address"></app-input>
-                        </app-fieldset>
+                        </powdercloud-fieldset>
                     </component-doc>
 
                     <component-doc 
