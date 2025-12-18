@@ -15,7 +15,7 @@ import './components/WindSpeedChart.js';
 import './components/WeatherGrid.js';
 import './components/PowdercloudAvalancheGrid.js';
 import './components/PowdercloudSnowpackGrid.js';
-import './components/StabilityGrid.js';
+import './components/PowdercloudStabilityGrid.js';
 import './components/PowdercloudNewsGrid.js';
 
 export class DashboardPage extends LitElement {
@@ -127,7 +127,7 @@ export class DashboardPage extends LitElement {
 
             <powdercloud-collapsible-panel title="Stability Ratings"
                 tagline="The following table displays stability ratings in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
-                <stability-grid></stability-grid>
+                <powdercloud-stability-grid></powdercloud-stability-grid>
             </powdercloud-collapsible-panel>
 
             <br />

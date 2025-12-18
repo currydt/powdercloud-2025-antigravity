@@ -1,5 +1,5 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import './components/StabilityGrid.js';
+import './components/PowdercloudStabilityGrid.js';
 
 export class ObservationStabilityRatingPage extends LitElement {
     createRenderRoot() {
@@ -13,7 +13,7 @@ export class ObservationStabilityRatingPage extends LitElement {
             </h1>
             <p style="margin-bottom: 20px;">Manage stability and danger ratings.</p>
             
-            <stability-grid></stability-grid>
+            <powdercloud-stability-grid></powdercloud-stability-grid>
         `;
     }
 }
