@@ -4,7 +4,7 @@ import './components/ComponentDoc.js';
 import './components/PowdercloudAlert.js';
 import './components/PowdercloudDisclaimer.js';
 import './components/CollapsiblePanel.js';
-import './components/Breadcrumbs.js';
+import './components/PowdercloudBreadcrumbs.js';
 import './components/PowdercloudFooter.js';
 import './components/PowdercloudHeader.js';
 import './components/PowdercloudLayout.js';
@@ -32,18 +32,18 @@ export class DesignSystemCorePage extends LitElement {
     </div>
 </collapsible-panel>`;
 
-        const breadcrumbsCode = `<app-breadcrumbs .items="\${[
+        const breadcrumbsCode = `<powdercloud-breadcrumbs .items="\${[
     { label: "Home", href: "/" },
     { label: "Section", href: "/section" },
     { label: "Current Page", active: true }
-]}"></app-breadcrumbs>`;
+]}"></powdercloud-breadcrumbs>`;
 
         const footerCode = `<powdercloud-footer></powdercloud-footer>`;
 
         const headerCode = `<powdercloud-header></powdercloud-header>`;
 
         const layoutCode = `<powdercloud-layout>
-    <app-breadcrumbs slot="breadcrumbs" ...></app-breadcrumbs>
+    <powdercloud-breadcrumbs slot="breadcrumbs" ...></powdercloud-breadcrumbs>
     <main>
         Page Content...
     </main>
@@ -90,14 +90,14 @@ export class DesignSystemCorePage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<app-breadcrumbs>" 
+                        title="<powdercloud-breadcrumbs>" 
                         description="Navigation trail showing current page location."
                         .code="${breadcrumbsCode}">
-                        <app-breadcrumbs .items="${[
+                        <powdercloud-breadcrumbs .items="${[
                 { label: 'Home', href: '#' },
                 { label: 'Admin', href: '#' },
                 { label: 'Components', active: true }
-            ]}"></app-breadcrumbs>
+            ]}"></powdercloud-breadcrumbs>
                     </component-doc>
 
                     <component-doc 
