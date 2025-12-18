@@ -9,7 +9,7 @@ import './components/PowdercloudFailureTypesChart.js';
 import './components/PowdercloudTriggerTypesChart.js';
 import './components/PowdercloudSnowpackHeightChart.js';
 import './components/PowdercloudTemperatureRangeChart.js';
-import './components/WindSpeedChart.js';
+import './components/PowdercloudWindSpeedChart.js';
 
 // Grids
 import './components/PowdercloudWeatherGrid.js';
@@ -96,7 +96,7 @@ export class DashboardPage extends LitElement {
                         <powdercloud-temperature-range-chart></powdercloud-temperature-range-chart>
                     </div>
                     <div class="chart-container">
-                        <wind-speed-chart></wind-speed-chart>
+                        <powdercloud-wind-speed-chart></powdercloud-wind-speed-chart>
                     </div>
                 </div>
             </powdercloud-collapsible-panel>

@@ -42,7 +42,7 @@ import './components/PowdercloudSkyConditionsChart.js';
 import './components/PowdercloudSnowpackHeightChart.js';
 import './components/PowdercloudTemperatureRangeChart.js';
 import './components/PowdercloudTriggerTypesChart.js';
-import './components/WindSpeedChart.js';
+import './components/PowdercloudWindSpeedChart.js';
 import { Validators } from './components/PowdercloudValidators.js';
 
 export class ComponentsPage extends LitElement {
@@ -1269,10 +1269,10 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
-                        title="<wind-speed-chart>" 
+                        title="<powdercloud-wind-speed-chart>" 
                         description="Wind Speed Chart"
-                        .code="${`<wind-speed-chart></wind-speed-chart>`}">
-                        <wind-speed-chart></wind-speed-chart>
+                        .code="${`<powdercloud-wind-speed-chart></powdercloud-wind-speed-chart>`}">
+                        <powdercloud-wind-speed-chart></powdercloud-wind-speed-chart>
                     </powdercloud-component-doc>
                     
                     <powdercloud-component-doc 

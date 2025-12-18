@@ -9,7 +9,7 @@ import './components/PowdercloudFailureTypesChart.js';
 import './components/PowdercloudTriggerTypesChart.js';
 import './components/PowdercloudSnowpackHeightChart.js';
 import './components/PowdercloudTemperatureRangeChart.js';
-import './components/WindSpeedChart.js';
+import './components/PowdercloudWindSpeedChart.js';
 import './components/PowdercloudSkyConditionsChart.js';
 
 export class DesignSystemGraphicsPage extends LitElement {
@@ -66,10 +66,10 @@ export class DesignSystemGraphicsPage extends LitElement {
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
-                        title="<wind-speed-chart>" 
+                        title="<powdercloud-wind-speed-chart>" 
                         description="Line chart tracking wind speed categories."
-                        .code="${`<wind-speed-chart style='height: 300px;'></wind-speed-chart>`}">
-                        <wind-speed-chart style="height: 300px;"></wind-speed-chart>
+                        .code="${`<powdercloud-wind-speed-chart style='height: 300px;'></powdercloud-wind-speed-chart>`}">
+                        <powdercloud-wind-speed-chart style="height: 300px;"></powdercloud-wind-speed-chart>
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
