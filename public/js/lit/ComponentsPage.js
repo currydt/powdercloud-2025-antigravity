@@ -31,7 +31,7 @@ import './components/PowdercloudCombobox.js';
 import './components/PowdercloudDateRange.js';
 import './components/PowdercloudAvatar.js';
 import './components/AppTooltip.js';
-import './components/AppFileUpload.js';
+import './components/PowdercloudFileUpload.js';
 import './components/AppRichText.js';
 import './components/FilterPanel.js';
 import './components/AvalancheRose.js';
@@ -1760,10 +1760,10 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<app-file-upload>" 
+                        title="<powdercloud-file-upload>" 
                         description="File upload component."
-                         .code="${`<app-file-upload label='Upload Evidence'></app-file-upload>`}">
-                        <app-file-upload label="Upload Evidence"></app-file-upload>
+                         .code="${`<powdercloud-file-upload label='Upload Evidence'></powdercloud-file-upload>`}">
+                        <powdercloud-file-upload label="Upload Evidence"></powdercloud-file-upload>
                     </component-doc>
 
                      <component-doc 

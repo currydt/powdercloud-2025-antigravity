@@ -6,7 +6,7 @@ import './components/AppToast.js';
 import './components/PowdercloudButton.js';
 import './components/PowdercloudCombobox.js';
 import './components/PowdercloudDateRange.js';
-import './components/AppFileUpload.js';
+import './components/PowdercloudFileUpload.js';
 import './components/AppRichText.js';
 
 export class DesignSystemOverlaysPage extends LitElement {
@@ -88,10 +88,10 @@ export class DesignSystemOverlaysPage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<app-file-upload>" 
+                        title="<powdercloud-file-upload>" 
                         description="File upload component."
-                         .code="${`<app-file-upload label='Upload Evidence'></app-file-upload>`}">
-                        <app-file-upload label="Upload Evidence"></app-file-upload>
+                         .code="${`<powdercloud-file-upload label='Upload Evidence'></powdercloud-file-upload>`}">
+                        <powdercloud-file-upload label="Upload Evidence"></powdercloud-file-upload>
                     </component-doc>
 
                      <component-doc 
