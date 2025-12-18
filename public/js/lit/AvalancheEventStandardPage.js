@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/AppContainer.js';
 import './components/PowdercloudCard.js';
-import './components/AppCombobox.js';
+import './components/PowdercloudCombobox.js';
 
 export class AvalancheEventStandardPage extends LitElement {
     static properties = {
@@ -96,7 +96,7 @@ export class AvalancheEventStandardPage extends LitElement {
                             <label style="display: block; font-weight: bold; margin-bottom: 5px;">Data Recorder</label>
                             <div style="padding: 8px; background: #f0f0f0; border: 1px solid #ccc;">${this._formData.recorder}</div>
                         </div>
-                        <app-combobox label="Observer" .items="${this._observers}"></app-combobox>
+                        <powdercloud-combobox label="Observer" .items="${this._observers}"></powdercloud-combobox>
                         <div style="display: flex; align-items: center; gap: 10px; margin-top: 25px;">
                             <input type="checkbox" id="notable" />
                             <label for="notable">Notable</label>
@@ -116,7 +116,7 @@ export class AvalancheEventStandardPage extends LitElement {
                             <label style="display: block; font-weight: bold; margin-bottom: 5px;">Date and Time</label>
                             <input type="datetime-local" value="${this._formData.date}" style="width: 100%; padding: 8px; box-sizing: border-box;" />
                         </div>
-                        <app-combobox label="Location" .items="${this._locations}"></app-combobox>
+                        <powdercloud-combobox label="Location" .items="${this._locations}"></powdercloud-combobox>
                     </div>
                 </powdercloud-card>
 
@@ -137,7 +137,7 @@ export class AvalancheEventStandardPage extends LitElement {
 
                     <h3 style="border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 15px;">Path Characteristics</h3>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
-                        <app-combobox label="Aspect" .items="${this._aspects}"></app-combobox>
+                        <powdercloud-combobox label="Aspect" .items="${this._aspects}"></powdercloud-combobox>
                         <div style="display: flex; gap: 10px; align-items: flex-end;">
                             <div style="flex: 1;">
                                 <label style="display: block; font-weight: bold; margin-bottom: 5px;">Incline</label>
@@ -160,11 +160,11 @@ export class AvalancheEventStandardPage extends LitElement {
 
                     <h3 style="border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 15px;">Trigger and Event Characteristics</h3>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                        <app-combobox label="Destructive Size (Max)" .items="${this._destructiveSizes}"></app-combobox>
-                        <app-combobox label="Relative Size (Max)" .items="${this._relativeSizes}"></app-combobox>
-                        <app-combobox label="Trigger" .items="${this._triggers}"></app-combobox>
-                        <app-combobox label="Bed Surface" .items="${this._bedSurfaces}"></app-combobox>
-                        <app-combobox label="Failure Type" .items="${this._failureTypes}"></app-combobox>
+                        <powdercloud-combobox label="Destructive Size (Max)" .items="${this._destructiveSizes}"></powdercloud-combobox>
+                        <powdercloud-combobox label="Relative Size (Max)" .items="${this._relativeSizes}"></powdercloud-combobox>
+                        <powdercloud-combobox label="Trigger" .items="${this._triggers}"></powdercloud-combobox>
+                        <powdercloud-combobox label="Bed Surface" .items="${this._bedSurfaces}"></powdercloud-combobox>
+                        <powdercloud-combobox label="Failure Type" .items="${this._failureTypes}"></powdercloud-combobox>
                         <div>
                             <label style="display: block; font-weight: bold; margin-bottom: 5px;">Failure Plane Age</label>
                             <input type="date" style="width: 100%; padding: 8px; box-sizing: border-box;" />

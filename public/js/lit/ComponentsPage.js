@@ -27,7 +27,7 @@ import './components/AppStack.js';
 import './components/AppSpacer.js';
 import './components/AppModal.js';
 import './components/AppToast.js';
-import './components/AppCombobox.js';
+import './components/PowdercloudCombobox.js';
 import './components/AppDateRange.js';
 import './components/PowdercloudAvatar.js';
 import './components/AppTooltip.js';
@@ -361,10 +361,10 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
 
         const toastCode = `<app-toast message="Operation Saved" variant="success" open></app-toast>`;
 
-        const comboboxCode = `<app-combobox label="Select User" .options="\${[
+        const comboboxCode = `<powdercloud-combobox label="Select User" .options="\${[
     { label: 'Alice', value: 'alice' },
     { label: 'Bob', value: 'bob' }
-]}"></app-combobox>`;
+]}"></powdercloud-combobox>`;
 
         const dateRangeCode = `<app-date-range label="Filter by Date"></app-date-range>`;
 
@@ -1739,16 +1739,16 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<app-combobox>" 
+                        title="<powdercloud-combobox>" 
                         description="Select with search/filtering capabilities."
                         .code="${comboboxCode}">
                         <div style="height: 250px;"> <!-- Spacer for dropdown -->
-                            <app-combobox label="Select User" .options="${[
+                            <powdercloud-combobox label="Select User" .options="${[
                 { label: 'Alice', value: 'alice' },
                 { label: 'Bob', value: 'bob' },
                 { label: 'Charlie', value: 'charlie' },
                 { label: 'Dave', value: 'dave' }
-            ]}"></app-combobox>
+            ]}"></powdercloud-combobox>
                         </div>
                     </component-doc>
 

@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/AppContainer.js';
 import './components/PowdercloudCard.js';
-import './components/AppCombobox.js';
+import './components/PowdercloudCombobox.js';
 
 export class WeatherStudyPlotStandardPage extends LitElement {
     static properties = {
@@ -111,7 +111,7 @@ export class WeatherStudyPlotStandardPage extends LitElement {
                             <label style="display: block; font-weight: bold; margin-bottom: 5px;">Data Recorder</label>
                             <div style="padding: 8px; background: #f0f0f0; border: 1px solid #ccc;">${this._formData.recorder}</div>
                         </div>
-                        <app-combobox label="Observer" .items="${this._observers}"></app-combobox>
+                        <powdercloud-combobox label="Observer" .items="${this._observers}"></powdercloud-combobox>
                         <div style="display: flex; align-items: center; gap: 10px; margin-top: 25px;">
                             <input type="checkbox" id="notable" />
                             <label for="notable">Notable</label>
@@ -131,7 +131,7 @@ export class WeatherStudyPlotStandardPage extends LitElement {
                             <label style="display: block; font-weight: bold; margin-bottom: 5px;">Date and Time</label>
                             <input type="datetime-local" value="${this._formData.date}" style="width: 100%; padding: 8px; box-sizing: border-box;" />
                         </div>
-                        <app-combobox label="Location" .items="${this._locations}"></app-combobox>
+                        <powdercloud-combobox label="Location" .items="${this._locations}"></powdercloud-combobox>
                     </div>
                 </powdercloud-card>
 
@@ -139,12 +139,12 @@ export class WeatherStudyPlotStandardPage extends LitElement {
 
                 <powdercloud-card title="Details" collapsible>
                     <div style="margin-bottom: 20px;">
-                        <app-combobox label="Measurement Type" .items="${this._measurementTypes}"></app-combobox>
+                        <powdercloud-combobox label="Measurement Type" .items="${this._measurementTypes}"></powdercloud-combobox>
                     </div>
 
                     <h3 style="border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 15px;">Weather Conditions</h3>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
-                        <app-combobox label="Sky Conditions" .items="${this._skyConditions}"></app-combobox>
+                        <powdercloud-combobox label="Sky Conditions" .items="${this._skyConditions}"></powdercloud-combobox>
                         <div style="display: flex; align-items: center; gap: 10px; margin-top: 25px;">
                             <input type="checkbox" id="thin_cloud" />
                             <label for="thin_cloud">Thin Cloud</label>
@@ -157,7 +157,7 @@ export class WeatherStudyPlotStandardPage extends LitElement {
                             <input type="text" placeholder="Comments" style="flex: 1;" />
                         </div>
 
-                        <app-combobox label="Precipitation Type" .items="${this._precipTypes}"></app-combobox>
+                        <powdercloud-combobox label="Precipitation Type" .items="${this._precipTypes}"></powdercloud-combobox>
                         <div>
                             <label style="display: block; font-weight: bold; margin-bottom: 5px;">Rate (mm/hr)</label>
                             <input type="number" style="width: 100%; padding: 8px; box-sizing: border-box;" />
@@ -182,7 +182,7 @@ export class WeatherStudyPlotStandardPage extends LitElement {
                             <label style="display: block; font-weight: bold; margin-bottom: 5px;">Thermograph</label>
                             <input type="number" style="width: 100%; padding: 8px; box-sizing: border-box;" />
                         </div>
-                        <app-combobox label="Trend" .items="${this._tempTrends}"></app-combobox>
+                        <powdercloud-combobox label="Trend" .items="${this._tempTrends}"></powdercloud-combobox>
                     </div>
 
                     <h3 style="border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 15px;">Snow Characteristics</h3>
@@ -217,7 +217,7 @@ export class WeatherStudyPlotStandardPage extends LitElement {
                             </div>
                         </div>
 
-                        <app-combobox label="Grain Form" .items="${this._grainForms}"></app-combobox>
+                        <powdercloud-combobox label="Grain Form" .items="${this._grainForms}"></powdercloud-combobox>
                         <div>
                             <label style="display: block; font-weight: bold; margin-bottom: 5px;">Size (mm)</label>
                             <input type="number" style="width: 100%; padding: 8px; box-sizing: border-box;" />
@@ -235,10 +235,10 @@ export class WeatherStudyPlotStandardPage extends LitElement {
 
                     <h3 style="border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 15px;">Wind</h3>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                        <app-combobox label="Speed" .items="${this._windSpeeds}"></app-combobox>
-                        <app-combobox label="Direction" .items="${this._windDirections}"></app-combobox>
-                        <app-combobox label="Blowing Snow Extent" .items="${this._blowingSnowExtents}"></app-combobox>
-                        <app-combobox label="Blowing Snow Direction" .items="${this._windDirections}"></app-combobox>
+                        <powdercloud-combobox label="Speed" .items="${this._windSpeeds}"></powdercloud-combobox>
+                        <powdercloud-combobox label="Direction" .items="${this._windDirections}"></powdercloud-combobox>
+                        <powdercloud-combobox label="Blowing Snow Extent" .items="${this._blowingSnowExtents}"></powdercloud-combobox>
+                        <powdercloud-combobox label="Blowing Snow Direction" .items="${this._windDirections}"></powdercloud-combobox>
                     </div>
                 </powdercloud-card>
 

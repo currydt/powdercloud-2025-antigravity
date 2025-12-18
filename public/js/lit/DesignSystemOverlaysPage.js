@@ -4,7 +4,7 @@ import './components/ComponentDoc.js';
 import './components/AppModal.js';
 import './components/AppToast.js';
 import './components/PowdercloudButton.js';
-import './components/AppCombobox.js';
+import './components/PowdercloudCombobox.js';
 import './components/AppDateRange.js';
 import './components/AppFileUpload.js';
 import './components/AppRichText.js';
@@ -25,10 +25,10 @@ export class DesignSystemOverlaysPage extends LitElement {
 
         const toastCode = `<app-toast message="Operation Saved" variant="success" open></app-toast>`;
 
-        const comboboxCode = `<app-combobox label="Select User" .options="\${[
+        const comboboxCode = `<powdercloud-combobox label="Select User" .options="\${[
     { label: 'Alice', value: 'alice' },
     { label: 'Bob', value: 'bob' }
-]}"></app-combobox>`;
+]}"></powdercloud-combobox>`;
 
         const dateRangeCode = `<app-date-range label="Filter by Date"></app-date-range>`;
 
@@ -67,16 +67,16 @@ export class DesignSystemOverlaysPage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<app-combobox>" 
+                        title="<powdercloud-combobox>" 
                         description="Select with search/filtering capabilities."
                         .code="${comboboxCode}">
                         <div style="height: 250px;"> <!-- Spacer for dropdown -->
-                            <app-combobox label="Select User" .options="${[
+                            <powdercloud-combobox label="Select User" .options="${[
                 { label: 'Alice', value: 'alice' },
                 { label: 'Bob', value: 'bob' },
                 { label: 'Charlie', value: 'charlie' },
                 { label: 'Dave', value: 'dave' }
-            ]}"></app-combobox>
+            ]}"></powdercloud-combobox>
                         </div>
                     </component-doc>
 
