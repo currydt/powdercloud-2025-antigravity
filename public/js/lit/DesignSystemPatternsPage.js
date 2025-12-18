@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/PowdercloudContainer.js';
 import './components/PowdercloudComponentDoc.js';
-import './components/FilterPanel.js';
+import './components/PowdercloudFilterPanel.js';
 import './components/PowdercloudDashboardGrid.js';
 
 export class DesignSystemPatternsPage extends LitElement {
@@ -94,7 +94,7 @@ export class DesignSystemPatternsPage extends LitElement {
         const dataSnippet = this._gridIsMock ? JSON.stringify(currentDataset.data, null, 4) : '[]';
         const columnsSnippet = JSON.stringify(currentDataset.columns, null, 4);
 
-        const filterCode = `<filter-panel 
+        const filterCode = `<powdercloud-filter-panel 
     .modes="\${[
         { label: 'My Community', value: 'community' },
         { label: 'My Favourites', value: 'favourites' },
@@ -103,7 +103,7 @@ export class DesignSystemPatternsPage extends LitElement {
     selectedMode="operation"
     showDateRange
     @update="\${(e) => console.log(e.detail)}"
-></filter-panel>`;
+></powdercloud-filter-panel>`;
 
         const gridCode = `<powdercloud-dashboard-grid
     title="${currentDataset.title}"
@@ -126,10 +126,10 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
                 <div style="padding: 20px;">
                     
                     <powdercloud-component-doc 
-                        title="<filter-panel>" 
+                        title="<powdercloud-filter-panel>" 
                         description="Collapsible filter bar with mode selection and date range."
                         .code="${filterCode}">
-                        <filter-panel 
+                        <powdercloud-filter-panel 
                             .modes="${[
                 { label: 'My Community', value: 'community' },
                 { label: 'My Favourites', value: 'favourites' },
@@ -138,7 +138,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
                             selectedMode="operation"
                             showDateRange
                             @update="${(e) => alert('Update: ' + JSON.stringify(e.detail))}"
-                        ></filter-panel>
+                        ></powdercloud-filter-panel>
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 

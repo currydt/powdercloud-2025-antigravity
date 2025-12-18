@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import './components/FilterPanel.js';
+import './components/PowdercloudFilterPanel.js';
 import './components/PowdercloudDashboardChart.js';
 import './components/PowdercloudDashboardGrid.js';
 import './components/PowdercloudContainer.js';
@@ -52,11 +52,11 @@ export class AnalysisDangerPage extends LitElement {
                     Danger Analysis
                 </h1>
 
-                <filter-panel 
+                <powdercloud-filter-panel 
                     .modes="${[{ label: 'Danger', value: 'danger' }]}"
                     selectedMode="danger"
                     showDateRange
-                ></filter-panel>
+                ></powdercloud-filter-panel>
 
                 <br />
 

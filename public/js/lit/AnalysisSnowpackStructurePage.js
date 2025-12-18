@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import './components/FilterPanel.js';
+import './components/PowdercloudFilterPanel.js';
 import './components/PowdercloudDashboardGrid.js';
 import './components/PowdercloudContainer.js';
 import './components/PowdercloudCard.js';
@@ -33,11 +33,11 @@ export class AnalysisSnowpackStructurePage extends LitElement {
                     Snowpack Structure Analysis
                 </h1>
 
-                <filter-panel 
+                <powdercloud-filter-panel 
                     .modes="${[{ label: 'Snowpack Structure', value: 'snowpack_structure' }]}"
                     selectedMode="snowpack_structure"
                     showDateRange
-                ></filter-panel>
+                ></powdercloud-filter-panel>
 
                 <br />
 
