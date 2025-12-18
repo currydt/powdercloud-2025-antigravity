@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/FilterPanel.js';
-import './components/DashboardChart.js';
+import './components/PowdercloudDashboardChart.js';
 import './components/DashboardGrid.js';
 import './components/PowdercloudContainer.js';
 import './components/PowdercloudGrid.js';
@@ -61,7 +61,7 @@ export class AnalysisStabilityPage extends LitElement {
                 <br />
 
                 <powdercloud-card title="Stability Ratings Overview">
-                    <dashboard-chart
+                    <powdercloud-dashboard-chart
                         title="Stability Ratings Over Time"
                         type="line"
                         .options="${{
@@ -77,7 +77,7 @@ export class AnalysisStabilityPage extends LitElement {
                     { name: 'Below Treeline', data: this._stabilityChartData.belowTreeline, color: '#00FF00' }
                 ]
             }}"
-                    ></dashboard-chart>
+                    ></powdercloud-dashboard-chart>
                 </powdercloud-card>
 
                 <br />

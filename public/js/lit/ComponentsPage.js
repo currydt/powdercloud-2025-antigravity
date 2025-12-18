@@ -35,7 +35,7 @@ import './components/PowdercloudFileUpload.js';
 import './components/PowdercloudRichText.js';
 import './components/FilterPanel.js';
 import './components/PowdercloudAvalancheRose.js';
-import './components/DashboardChart.js';
+import './components/PowdercloudDashboardChart.js';
 import './components/FailureTypesChart.js';
 import './components/SeasonalChart.js';
 import './components/SkyConditionsChart.js';
@@ -1276,20 +1276,20 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </powdercloud-component-doc>
                     
                     <powdercloud-component-doc 
-                        title="<dashboard-chart>" 
+                        title="<powdercloud-dashboard-chart>" 
                         description="Highcharts wrapper for data visualization."
-                        .code="${`<dashboard-chart
+                        .code="${`<powdercloud-dashboard-chart
     title="Example Chart"
     type="column"
     .series="\${[{ name: 'Data', data: [1, 3, 2, 4] }]}"
     .categories="\${['A', 'B', 'C', 'D']}"
-></dashboard-chart>`}">
-                        <dashboard-chart
+></powdercloud-dashboard-chart>`}">
+                        <powdercloud-dashboard-chart
                             title="Example Chart"
                             type="column"
                             .series="${[{ name: 'Data', data: [1, 3, 2, 4] }]}"
                             .categories="${['A', 'B', 'C', 'D']}"
-                        ></dashboard-chart>
+                        ></powdercloud-dashboard-chart>
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 

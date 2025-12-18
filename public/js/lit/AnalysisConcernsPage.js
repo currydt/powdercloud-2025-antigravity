@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/FilterPanel.js';
-import './components/DashboardChart.js';
+import './components/PowdercloudDashboardChart.js';
 import './components/DashboardGrid.js';
 import './components/PowdercloudContainer.js';
 import './components/PowdercloudGrid.js';
@@ -72,36 +72,36 @@ export class AnalysisConcernsPage extends LitElement {
 
                 <powdercloud-grid cols="3" gap="lg">
                     <powdercloud-card title="Alpine Hazard">
-                        <dashboard-chart
+                        <powdercloud-dashboard-chart
                             title="Alpine"
                             type="scatter"
                             .options="${{
                 ...scatterOptions,
                 series: [{ name: 'Alpine', data: this._alpineData, color: 'rgba(223, 83, 83, .5)' }]
             }}"
-                        ></dashboard-chart>
+                        ></powdercloud-dashboard-chart>
                     </powdercloud-card>
 
                     <powdercloud-card title="Treeline Hazard">
-                        <dashboard-chart
+                        <powdercloud-dashboard-chart
                             title="Treeline"
                             type="scatter"
                             .options="${{
                 ...scatterOptions,
                 series: [{ name: 'Treeline', data: this._treelineData, color: 'rgba(119, 152, 191, .5)' }]
             }}"
-                        ></dashboard-chart>
+                        ></powdercloud-dashboard-chart>
                     </powdercloud-card>
 
                     <powdercloud-card title="Below Treeline Hazard">
-                        <dashboard-chart
+                        <powdercloud-dashboard-chart
                             title="Below Treeline"
                             type="scatter"
                             .options="${{
                 ...scatterOptions,
                 series: [{ name: 'Below TL', data: this._belowTreelineData, color: 'rgba(144, 237, 125, .5)' }]
             }}"
-                        ></dashboard-chart>
+                        ></powdercloud-dashboard-chart>
                     </powdercloud-card>
                 </powdercloud-grid>
 

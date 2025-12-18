@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/FilterPanel.js';
-import './components/DashboardChart.js';
+import './components/PowdercloudDashboardChart.js';
 import './components/DashboardGrid.js';
 import './components/PowdercloudContainer.js';
 import './components/PowdercloudGrid.js';
@@ -64,7 +64,7 @@ export class AnalysisAvalancheActivityPage extends LitElement {
                 <br />
 
                 <powdercloud-card title="Avalanche Activity Overview">
-                    <dashboard-chart
+                    <powdercloud-dashboard-chart
                         title="Number of Avalanches"
                         type="column"
                         .options="${{
@@ -72,14 +72,14 @@ export class AnalysisAvalancheActivityPage extends LitElement {
                 yAxis: { title: { text: 'Count' } },
                 series: [{ name: 'Avalanches', data: this._chartData, color: '#4572A7' }]
             }}"
-                    ></dashboard-chart>
+                    ></powdercloud-dashboard-chart>
                 </powdercloud-card>
 
                 <br />
 
                 <powdercloud-grid cols="2" gap="lg">
                     <powdercloud-card title="Failure Types">
-                        <dashboard-chart
+                        <powdercloud-dashboard-chart
                             title="Failure Types"
                             type="bar"
                             .options="${{
@@ -87,11 +87,11 @@ export class AnalysisAvalancheActivityPage extends LitElement {
                 yAxis: { title: { text: null } },
                 series: [{ name: 'Count', data: this._failureTypeData, color: '#AA4643' }]
             }}"
-                        ></dashboard-chart>
+                        ></powdercloud-dashboard-chart>
                     </powdercloud-card>
 
                     <powdercloud-card title="Trigger Types">
-                        <dashboard-chart
+                        <powdercloud-dashboard-chart
                             title="Trigger Types"
                             type="bar"
                             .options="${{
@@ -99,7 +99,7 @@ export class AnalysisAvalancheActivityPage extends LitElement {
                 yAxis: { title: { text: null } },
                 series: [{ name: 'Count', data: this._triggerTypeData, color: '#89A54E' }]
             }}"
-                        ></dashboard-chart>
+                        ></powdercloud-dashboard-chart>
                     </powdercloud-card>
                 </powdercloud-grid>
 

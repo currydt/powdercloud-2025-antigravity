@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/PowdercloudContainer.js';
 import './components/PowdercloudComponentDoc.js';
-import './components/DashboardChart.js';
+import './components/PowdercloudDashboardChart.js';
 import './components/PowdercloudAvalancheRose.js';
 import './components/SnowProfileGraph.js';
 import './components/SeasonalChart.js';

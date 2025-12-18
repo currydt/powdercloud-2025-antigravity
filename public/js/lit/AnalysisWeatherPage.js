@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/FilterPanel.js';
-import './components/DashboardChart.js';
+import './components/PowdercloudDashboardChart.js';
 import './components/DashboardGrid.js';
 import './components/PowdercloudContainer.js';
 import './components/PowdercloudGrid.js';
@@ -103,7 +103,7 @@ export class AnalysisWeatherPage extends LitElement {
 
                 <powdercloud-grid cols="2" gap="lg">
                     <powdercloud-card title="HS & HN24">
-                        <dashboard-chart
+                        <powdercloud-dashboard-chart
                             title="Snow Height"
                             type="column"
                             .options="${{
@@ -114,11 +114,11 @@ export class AnalysisWeatherPage extends LitElement {
                     { name: 'HN24', data: this._hsHn24Data.hn24, color: '#89A54E' }
                 ]
             }}"
-                        ></dashboard-chart>
+                        ></powdercloud-dashboard-chart>
                     </powdercloud-card>
 
                     <powdercloud-card title="Temperature Range">
-                        <dashboard-chart
+                        <powdercloud-dashboard-chart
                             title="Temperature"
                             type="line"
                             .options="${{
@@ -129,11 +129,11 @@ export class AnalysisWeatherPage extends LitElement {
                     { name: 'Min', data: this._tempData.min, color: '#89A54E' }
                 ]
             }}"
-                        ></dashboard-chart>
+                        ></powdercloud-dashboard-chart>
                     </powdercloud-card>
 
                     <powdercloud-card title="Wind Speed">
-                        <dashboard-chart
+                        <powdercloud-dashboard-chart
                             title="Wind Speed"
                             type="line"
                             .options="${{
@@ -145,11 +145,11 @@ export class AnalysisWeatherPage extends LitElement {
                 },
                 series: [{ name: 'Wind', data: this._windData, color: '#4572A7' }]
             }}"
-                        ></dashboard-chart>
+                        ></powdercloud-dashboard-chart>
                     </powdercloud-card>
 
                     <powdercloud-card title="Sky Conditions">
-                        <dashboard-chart
+                        <powdercloud-dashboard-chart
                             title="Sky Conditions"
                             type="line"
                             .options="${{
@@ -161,7 +161,7 @@ export class AnalysisWeatherPage extends LitElement {
                 },
                 series: [{ name: 'Sky', data: this._skyData, color: '#4572A7' }]
             }}"
-                        ></dashboard-chart>
+                        ></powdercloud-dashboard-chart>
                     </powdercloud-card>
 
                     <powdercloud-card title="Avalanche Rose (Weather)">
