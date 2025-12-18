@@ -5,7 +5,7 @@ import './components/PowdercloudAlert.js';
 import './components/PowdercloudDisclaimer.js';
 import './components/CollapsiblePanel.js';
 import './components/Breadcrumbs.js';
-import './components/AppFooter.js';
+import './components/PowdercloudFooter.js';
 import './components/AppHeader.js';
 import './components/AppLayout.js';
 import './components/MegaMenu.js';
@@ -38,7 +38,7 @@ export class DesignSystemCorePage extends LitElement {
     { label: "Current Page", active: true }
 ]}"></app-breadcrumbs>`;
 
-        const footerCode = `<app-footer></app-footer>`;
+        const footerCode = `<powdercloud-footer></powdercloud-footer>`;
 
         const headerCode = `<app-header></app-header>`;
 
@@ -101,10 +101,10 @@ export class DesignSystemCorePage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<app-footer>" 
+                        title="<powdercloud-footer>" 
                         description="Global application footer with copyright and links."
                         .code="${footerCode}">
-                        <app-footer></app-footer>
+                        <powdercloud-footer></powdercloud-footer>
                     </component-doc>
 
                     <component-doc 

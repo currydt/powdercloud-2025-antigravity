@@ -176,7 +176,7 @@ export class ComponentsPage extends LitElement {
     { label: "Current Page", active: true }
 ]}"></app-breadcrumbs>`;
 
-        const footerCode = `<app-footer></app-footer>`;
+        const footerCode = `<powdercloud-footer></powdercloud-footer>`;
 
         const headerCode = `<app-header></app-header>`;
 
@@ -916,10 +916,10 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<app-footer>" 
+                        title="<powdercloud-footer>" 
                         description="Global application footer with copyright and links."
                         .code="${footerCode}">
-                        <app-footer></app-footer>
+                        <powdercloud-footer></powdercloud-footer>
                     </component-doc>
 
                     <component-doc 
