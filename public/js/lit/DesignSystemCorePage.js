@@ -7,7 +7,7 @@ import './components/CollapsiblePanel.js';
 import './components/Breadcrumbs.js';
 import './components/PowdercloudFooter.js';
 import './components/PowdercloudHeader.js';
-import './components/AppLayout.js';
+import './components/PowdercloudLayout.js';
 import './components/MegaMenu.js';
 
 export class DesignSystemCorePage extends LitElement {
@@ -42,12 +42,12 @@ export class DesignSystemCorePage extends LitElement {
 
         const headerCode = `<powdercloud-header></powdercloud-header>`;
 
-        const layoutCode = `<app-layout>
+        const layoutCode = `<powdercloud-layout>
     <app-breadcrumbs slot="breadcrumbs" ...></app-breadcrumbs>
     <main>
         Page Content...
     </main>
-</app-layout>`;
+</powdercloud-layout>`;
 
         const menuCode = `<mega-menu 
     title="Menu Title" 
@@ -117,7 +117,7 @@ export class DesignSystemCorePage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<app-layout>" 
+                        title="<powdercloud-layout>" 
                         description="Main page wrapper that handles header, footer, and content area."
                         .code="${layoutCode}">
                         <div style="padding: 20px; background: #eee; text-align: center; color: #666; font-style: italic;">

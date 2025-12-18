@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import './components/AppLayout.js';
+import './components/PowdercloudLayout.js';
 
 export class RunStructurePage extends LitElement {
     static styles = css`
@@ -81,7 +81,7 @@ export class RunStructurePage extends LitElement {
 
     render() {
         return html`
-            <app-layout>
+            <powdercloud-layout>
                 <div class="container">
                     <h1>Run Structure & Developer Setup</h1>
                     <p>Overview of the local development environment, ports, and project structure.</p>
@@ -200,7 +200,7 @@ powdercrowd-project (Monorepo Root)
                         </pre>
                     </div>
                 </div>
-            </app-layout>
+            </powdercloud-layout>
         `;
     }
 }

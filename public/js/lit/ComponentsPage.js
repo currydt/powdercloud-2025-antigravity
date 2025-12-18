@@ -180,12 +180,12 @@ export class ComponentsPage extends LitElement {
 
         const headerCode = `<powdercloud-header></powdercloud-header>`;
 
-        const layoutCode = `<app-layout>
+        const layoutCode = `<powdercloud-layout>
     <app-breadcrumbs slot="breadcrumbs" ...></app-breadcrumbs>
     <main>
         Page Content...
     </main>
-</app-layout>`;
+</powdercloud-layout>`;
 
         const menuCode = `<mega-menu 
     title="Menu Title" 
@@ -932,7 +932,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<app-layout>" 
+                        title="<powdercloud-layout>" 
                         description="Main page wrapper that handles header, footer, and content area."
                         .code="${layoutCode}">
                         <div style="padding: 20px; background: #eee; text-align: center; color: #666; font-style: italic;">
