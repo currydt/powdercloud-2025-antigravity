@@ -9,7 +9,7 @@ import './components/PowdercloudCheckbox.js';
 import './components/AppRadio.js';
 import './components/AppSwitch.js';
 import './components/PowdercloudChip.js';
-import './components/AppProgress.js';
+import './components/PowdercloudProgress.js';
 import './components/PowdercloudDivider.js';
 
 export class DesignSystemAtomsPage extends LitElement {
@@ -67,9 +67,9 @@ export class DesignSystemAtomsPage extends LitElement {
 <powdercloud-chip label="With Icon" icon="fa fa-star"></powdercloud-chip>
 <powdercloud-chip label="Removable" removable @remove="\${(e) => alert('Removed ' + e.detail.label)}"></powdercloud-chip>`;
 
-        const progressCode = `<app-progress label="Loading Data..." type="linear"></app-progress>
-<app-progress label="Uploading (75%)" type="linear" value="75"></app-progress>
-<app-progress type="circular"></app-progress>`;
+        const progressCode = `<powdercloud-progress label="Loading Data..." type="linear"></powdercloud-progress>
+<powdercloud-progress label="Uploading (75%)" type="linear" value="75"></powdercloud-progress>
+<powdercloud-progress type="circular"></powdercloud-progress>`;
 
         const dividerCode = `<p>Item 1</p>
 <powdercloud-divider></powdercloud-divider>
@@ -285,19 +285,19 @@ export class DesignSystemAtomsPage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<app-progress>" 
+                        title="<powdercloud-progress>" 
                         description="Loading indicators."
                         .code="${progressCode}">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
                             <div>
                                 <h4>Linear</h4>
-                                <app-progress label="Indeterminate" type="linear"></app-progress>
-                                <app-progress label="Determinate (75%)" type="linear" value="75"></app-progress>
+                                <powdercloud-progress label="Indeterminate" type="linear"></powdercloud-progress>
+                                <powdercloud-progress label="Determinate (75%)" type="linear" value="75"></powdercloud-progress>
                             </div>
                             <div>
                                 <h4>Circular</h4>
                                 <div style="display: flex; gap: 20px; align-items: center;">
-                                    <app-progress type="circular"></app-progress>
+                                    <powdercloud-progress type="circular"></powdercloud-progress>
                                 </div>
                             </div>
                         </div>
