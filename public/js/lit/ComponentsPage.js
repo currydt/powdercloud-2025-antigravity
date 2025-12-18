@@ -178,7 +178,7 @@ export class ComponentsPage extends LitElement {
 
         const footerCode = `<powdercloud-footer></powdercloud-footer>`;
 
-        const headerCode = `<app-header></app-header>`;
+        const headerCode = `<powdercloud-header></powdercloud-header>`;
 
         const layoutCode = `<app-layout>
     <app-breadcrumbs slot="breadcrumbs" ...></app-breadcrumbs>
@@ -923,7 +923,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<app-header>" 
+                        title="<powdercloud-header>" 
                         description="Global top navigation bar. (See top of page for live instance)"
                         .code="${headerCode}">
                         <div style="padding: 20px; background: #eee; text-align: center; color: #666; font-style: italic;">

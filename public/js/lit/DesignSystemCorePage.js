@@ -6,7 +6,7 @@ import './components/PowdercloudDisclaimer.js';
 import './components/CollapsiblePanel.js';
 import './components/Breadcrumbs.js';
 import './components/PowdercloudFooter.js';
-import './components/AppHeader.js';
+import './components/PowdercloudHeader.js';
 import './components/AppLayout.js';
 import './components/MegaMenu.js';
 
@@ -40,7 +40,7 @@ export class DesignSystemCorePage extends LitElement {
 
         const footerCode = `<powdercloud-footer></powdercloud-footer>`;
 
-        const headerCode = `<app-header></app-header>`;
+        const headerCode = `<powdercloud-header></powdercloud-header>`;
 
         const layoutCode = `<app-layout>
     <app-breadcrumbs slot="breadcrumbs" ...></app-breadcrumbs>
@@ -108,7 +108,7 @@ export class DesignSystemCorePage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<app-header>" 
+                        title="<powdercloud-header>" 
                         description="Global top navigation bar. (See top of page for live instance)"
                         .code="${headerCode}">
                         <div style="padding: 20px; background: #eee; text-align: center; color: #666; font-style: italic;">
