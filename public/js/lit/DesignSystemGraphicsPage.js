@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/co
 import './components/PowdercloudContainer.js';
 import './components/ComponentDoc.js';
 import './components/DashboardChart.js';
-import './components/AvalancheRose.js';
+import './components/PowdercloudAvalancheRose.js';
 import './components/SnowProfileGraph.js';
 import './components/SeasonalChart.js';
 import './components/FailureTypesChart.js';
@@ -27,11 +27,11 @@ export class DesignSystemGraphicsPage extends LitElement {
                 <div style="padding: 20px;">
                     
                     <component-doc 
-                        title="<avalanche-rose>" 
+                        title="<powdercloud-avalanche-rose>" 
                         description="SVG Rose diagram for avalanche observations."
-                        .code="${`<avalanche-rose></avalanche-rose>`}">
+                        .code="${`<powdercloud-avalanche-rose></powdercloud-avalanche-rose>`}">
                         <div style="height: 400px; width: 100%; max-width: 600px;">
-                            <avalanche-rose></avalanche-rose>
+                            <powdercloud-avalanche-rose></powdercloud-avalanche-rose>
                         </div>
                     </component-doc>
 

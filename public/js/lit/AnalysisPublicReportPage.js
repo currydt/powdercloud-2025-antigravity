@@ -5,7 +5,7 @@ import './components/DashboardGrid.js';
 import './components/PowdercloudContainer.js';
 import './components/PowdercloudGrid.js';
 import './components/PowdercloudCard.js';
-import './components/AvalancheRose.js';
+import './components/PowdercloudAvalancheRose.js';
 import './components/PowdercloudTabs.js';
 
 export class AnalysisPublicReportPage extends LitElement {
@@ -170,7 +170,7 @@ export class AnalysisPublicReportPage extends LitElement {
 
                     <powdercloud-card title="Avalanche Rose">
                         <div style="height: 300px;">
-                            <avalanche-rose></avalanche-rose>
+                            <powdercloud-avalanche-rose></powdercloud-avalanche-rose>
                         </div>
                     </powdercloud-card>
                 </powdercloud-grid>

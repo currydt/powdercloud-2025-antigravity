@@ -1,7 +1,7 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/DateSelector.js';
 import './components/CollapsiblePanel.js';
-import './components/AvalancheRose.js';
+import './components/PowdercloudAvalancheRose.js';
 
 // Charts
 import './components/SeasonalChart.js';
@@ -77,7 +77,7 @@ export class DashboardPage extends LitElement {
                 <!-- Row 2: Rose, Failure, Trigger -->
                 <div class="chart-row three-col">
                     <div class="chart-container">
-                        <avalanche-rose></avalanche-rose>
+                        <powdercloud-avalanche-rose></powdercloud-avalanche-rose>
                     </div>
                     <div class="chart-container">
                         <failure-types-chart></failure-types-chart>

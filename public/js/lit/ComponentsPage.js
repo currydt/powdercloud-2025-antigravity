@@ -34,7 +34,7 @@ import './components/PowdercloudTooltip.js';
 import './components/PowdercloudFileUpload.js';
 import './components/PowdercloudRichText.js';
 import './components/FilterPanel.js';
-import './components/AvalancheRose.js';
+import './components/PowdercloudAvalancheRose.js';
 import './components/DashboardChart.js';
 import './components/FailureTypesChart.js';
 import './components/SeasonalChart.js';
@@ -1293,11 +1293,11 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<avalanche-rose>" 
+                        title="<powdercloud-avalanche-rose>" 
                         description="SVG Rose diagram for avalanche observations."
-                        .code="${`<avalanche-rose></avalanche-rose>`}">
+                        .code="${`<powdercloud-avalanche-rose></powdercloud-avalanche-rose>`}">
                         <div style="height: 400px; width: 100%; max-width: 600px;">
-                            <avalanche-rose></avalanche-rose>
+                            <powdercloud-avalanche-rose></powdercloud-avalanche-rose>
                         </div>
                     </component-doc>
                     -->

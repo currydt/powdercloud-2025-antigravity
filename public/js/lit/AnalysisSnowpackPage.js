@@ -3,7 +3,7 @@ import './components/FilterPanel.js';
 import './components/DashboardGrid.js';
 import './components/PowdercloudContainer.js';
 import './components/PowdercloudCard.js';
-import './components/AvalancheRose.js';
+import './components/PowdercloudAvalancheRose.js';
 
 export class AnalysisSnowpackPage extends LitElement {
     static properties = {
@@ -52,7 +52,7 @@ export class AnalysisSnowpackPage extends LitElement {
 
                 <powdercloud-card title="Rose Overlay" collapsible collapsed>
                     <div style="height: 400px;">
-                        <avalanche-rose></avalanche-rose>
+                        <powdercloud-avalanche-rose></powdercloud-avalanche-rose>
                     </div>
                 </powdercloud-card>
 

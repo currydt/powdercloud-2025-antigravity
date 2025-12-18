@@ -5,7 +5,7 @@ import './components/DashboardGrid.js';
 import './components/PowdercloudContainer.js';
 import './components/PowdercloudGrid.js';
 import './components/PowdercloudCard.js';
-import './components/AvalancheRose.js';
+import './components/PowdercloudAvalancheRose.js';
 
 export class AnalysisWeatherPage extends LitElement {
     static properties = {
@@ -166,7 +166,7 @@ export class AnalysisWeatherPage extends LitElement {
 
                     <powdercloud-card title="Avalanche Rose (Weather)">
                         <div style="height: 300px;">
-                            <avalanche-rose></avalanche-rose>
+                            <powdercloud-avalanche-rose></powdercloud-avalanche-rose>
                         </div>
                     </powdercloud-card>
                 </powdercloud-grid>
