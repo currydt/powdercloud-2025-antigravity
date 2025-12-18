@@ -1,5 +1,5 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import './components/ObservationTypeListGrid.js';
+import './components/PowdercloudObservationTypeListGrid.js';
 
 export class AdminObservationTypeEditorPage extends LitElement {
     createRenderRoot() {
@@ -13,7 +13,7 @@ export class AdminObservationTypeEditorPage extends LitElement {
             </h1>
             <p style="margin-bottom: 20px;">Manage observation types and codes.</p>
             
-            <observation-type-list-grid></observation-type-list-grid>
+            <powdercloud-observation-type-list-grid></powdercloud-observation-type-list-grid>
         `;
     }
 }
