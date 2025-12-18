@@ -1,5 +1,5 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import './components/OperationListGrid.js';
+import './components/PowdercloudOperationListGrid.js';
 
 export class OperationListPage extends LitElement {
     createRenderRoot() {
@@ -13,7 +13,7 @@ export class OperationListPage extends LitElement {
             </h1>
             <p style="margin-bottom: 20px;">Manage system operations.</p>
             
-            <operation-list-grid></operation-list-grid>
+            <powdercloud-operation-list-grid></powdercloud-operation-list-grid>
         `;
     }
 }
