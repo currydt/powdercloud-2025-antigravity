@@ -3,7 +3,7 @@ import './components/PowdercloudContainer.js';
 import './components/ComponentDoc.js';
 import './components/PowdercloudFieldset.js';
 import './components/PowdercloudInput.js';
-import './components/AppTextarea.js';
+import './components/PowdercloudTextarea.js';
 import './components/PowdercloudSelect.js';
 import './components/PowdercloudCheckbox.js';
 import './components/PowdercloudRadio.js';
@@ -92,7 +92,7 @@ export class DesignSystemFormsPage extends LitElement {
 
         <!-- 3. Other Text Controls -->
         <powdercloud-fieldset legend="textarea">
-            <app-textarea label="Multi-line text input" rows="3"></app-textarea>
+            <powdercloud-textarea label="Multi-line text input" rows="3"></powdercloud-textarea>
         </powdercloud-fieldset>
 
         <!-- 4. Selection Menus -->
@@ -234,7 +234,7 @@ export class DesignSystemFormsPage extends LitElement {
 
                                 <!-- 3. Other Text Controls -->
                                 <powdercloud-fieldset legend="textarea">
-                                    <app-textarea label="Multi-line text input" rows="3"></app-textarea>
+                                    <powdercloud-textarea label="Multi-line text input" rows="3"></powdercloud-textarea>
                                 </powdercloud-fieldset>
 
                                 <!-- 4. Selection Menus -->

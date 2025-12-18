@@ -6,7 +6,7 @@ import './components/PowdercloudFieldset.js';
 import './components/CollapsiblePanel.js';
 import './components/PowdercloudTabs.js';
 import './components/PowdercloudInput.js';
-import './components/AppTextarea.js';
+import './components/PowdercloudTextarea.js';
 
 export class DesignSystemContainersPage extends LitElement {
     createRenderRoot() {

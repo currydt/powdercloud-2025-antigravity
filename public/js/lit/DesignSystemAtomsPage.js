@@ -3,7 +3,7 @@ import './components/PowdercloudContainer.js';
 import './components/ComponentDoc.js';
 import './components/PowdercloudButton.js';
 import './components/PowdercloudInput.js';
-import './components/AppTextarea.js';
+import './components/PowdercloudTextarea.js';
 import './components/PowdercloudSelect.js';
 import './components/PowdercloudCheckbox.js';
 import './components/PowdercloudRadio.js';
@@ -48,7 +48,7 @@ export class DesignSystemAtomsPage extends LitElement {
     }
 
     render() {
-        const textareaCode = `<app-textarea label="Comments" rows="4"></app-textarea>`;
+        const textareaCode = `<powdercloud-textarea label="Comments" rows="4"></powdercloud-textarea>`;
 
         const selectCode = `<powdercloud-select label="Choose Option" .options="\${[
     { label: 'Option 1', value: '1' },
@@ -210,10 +210,10 @@ export class DesignSystemAtomsPage extends LitElement {
 
                     <!-- Other Static Examples (Textarea, Select, etc.) -->
                     <component-doc 
-                        title="<app-textarea>" 
+                        title="<powdercloud-textarea>" 
                         description="Multi-line text input."
                         .code="${textareaCode}">
-                        <app-textarea label="Comments" placeholder="Enter your comments here..." rows="3"></app-textarea>
+                        <powdercloud-textarea label="Comments" placeholder="Enter your comments here..." rows="3"></powdercloud-textarea>
                     </component-doc>
 
                     <component-doc 

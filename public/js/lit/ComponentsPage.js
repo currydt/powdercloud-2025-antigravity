@@ -10,7 +10,7 @@ import './components/PowdercloudTabs.js';
 import './components/DashboardGrid.js';
 import './components/PowdercloudButton.js';
 import './components/PowdercloudInput.js';
-import './components/AppTextarea.js';
+import './components/PowdercloudTextarea.js';
 import './components/PowdercloudSelect.js';
 import './components/PowdercloudCheckbox.js';
 import './components/PowdercloudRadio.js';
@@ -312,7 +312,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
 <powdercloud-input label="Error State" error="Invalid value"></powdercloud-input>
 <powdercloud-input label="Disabled" disabled></powdercloud-input>`;
 
-        const textareaCode = `<app-textarea label="Comments" rows="4"></app-textarea>`;
+        const textareaCode = `<powdercloud-textarea label="Comments" rows="4"></powdercloud-textarea>`;
 
         const selectCode = `<powdercloud-select label="Choose Option" .options="\${[
     { label: 'Option 1', value: '1' },
@@ -460,7 +460,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
 
         <!-- 3. Other Text Controls -->
         <powdercloud-fieldset legend="textarea">
-            <app-textarea label="Multi-line text input" rows="3"></app-textarea>
+            <powdercloud-textarea label="Multi-line text input" rows="3"></powdercloud-textarea>
         </powdercloud-fieldset>
 
         <!-- 4. Selection Menus -->
@@ -1391,7 +1391,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
 
                                 <!-- 3. Other Text Controls -->
                                 <powdercloud-fieldset legend="textarea">
-                                    <app-textarea label="Multi-line text input" rows="3"></app-textarea>
+                                    <powdercloud-textarea label="Multi-line text input" rows="3"></powdercloud-textarea>
                                 </powdercloud-fieldset>
 
                                 <!-- 4. Selection Menus -->
@@ -1581,10 +1581,10 @@ PAGE SHELL (e.g., dashboard_lit.html)
 
                     <!-- Other Static Examples (Textarea, Select, etc.) -->
                     <component-doc 
-                        title="<app-textarea>" 
+                        title="<powdercloud-textarea>" 
                         description="Multi-line text input."
                         .code="${textareaCode}">
-                        <app-textarea label="Comments" placeholder="Enter your comments here..." rows="3"></app-textarea>
+                        <powdercloud-textarea label="Comments" placeholder="Enter your comments here..." rows="3"></powdercloud-textarea>
                     </component-doc>
 
                     <component-doc 
@@ -1640,7 +1640,7 @@ PAGE SHELL (e.g., dashboard_lit.html)
                                 <powdercloud-input label="First Name"></powdercloud-input>
                                 <powdercloud-input label="Last Name"></powdercloud-input>
                             </div>
-                            <app-textarea label="Bio" rows="2"></app-textarea>
+                            <powdercloud-textarea label="Bio" rows="2"></powdercloud-textarea>
                         </powdercloud-fieldset>
                     </component-doc>
 
