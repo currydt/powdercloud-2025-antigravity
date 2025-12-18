@@ -29,7 +29,7 @@ import './components/AppModal.js';
 import './components/AppToast.js';
 import './components/AppCombobox.js';
 import './components/AppDateRange.js';
-import './components/AppAvatar.js';
+import './components/PowdercloudAvatar.js';
 import './components/AppTooltip.js';
 import './components/AppFileUpload.js';
 import './components/AppRichText.js';
@@ -1072,15 +1072,15 @@ PAGE SHELL (e.g., dashboard_lit.html)
                 <div style="padding: 20px;">
                     
                     <component-doc 
-                        title="<app-avatar>" 
+                        title="<powdercloud-avatar>" 
                         description="User profile image or initials."
-                        .code="${`<app-avatar src='https://via.placeholder.com/150' size='md'></app-avatar>
-<app-avatar initials='JD' size='md' shape='square'></app-avatar>`}">
+                        .code="${`<powdercloud-avatar src='https://via.placeholder.com/150' size='md'></powdercloud-avatar>
+<powdercloud-avatar initials='JD' size='md' shape='square'></powdercloud-avatar>`}">
                         <div style="display: flex; gap: 20px; align-items: center;">
-                            <app-avatar src="https://via.placeholder.com/150" size="sm"></app-avatar>
-                            <app-avatar src="https://via.placeholder.com/150" size="md"></app-avatar>
-                            <app-avatar src="https://via.placeholder.com/150" size="lg"></app-avatar>
-                            <app-avatar initials="JD" size="md" shape="square"></app-avatar>
+                            <powdercloud-avatar src="https://via.placeholder.com/150" size="sm"></powdercloud-avatar>
+                            <powdercloud-avatar src="https://via.placeholder.com/150" size="md"></powdercloud-avatar>
+                            <powdercloud-avatar src="https://via.placeholder.com/150" size="lg"></powdercloud-avatar>
+                            <powdercloud-avatar initials="JD" size="md" shape="square"></powdercloud-avatar>
                         </div>
                     </component-doc>
 
