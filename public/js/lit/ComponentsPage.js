@@ -19,7 +19,7 @@ import './components/AppFieldset.js';
 import './components/AppSwitch.js';
 import './components/PowdercloudChip.js';
 import './components/AppProgress.js';
-import './components/AppDivider.js';
+import './components/PowdercloudDivider.js';
 import './components/PowdercloudCard.js';
 import './components/PowdercloudContainer.js';
 import './components/AppGrid.js';
@@ -336,7 +336,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
 <app-progress type="circular"></app-progress>`;
 
         const dividerCode = `<p>Item 1</p>
-<app-divider></app-divider>
+<powdercloud-divider></powdercloud-divider>
 <p>Item 2</p>`;
 
         const cardCode = `<powdercloud-card title="Card Title" subtitle="Subtitle">
@@ -1688,17 +1688,17 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </component-doc>
 
                     <component-doc 
-                        title="<app-divider>" 
+                        title="<powdercloud-divider>" 
                         description="Separators for content."
                         .code="${dividerCode}">
                         <div>
                             <p style="margin: 0;">Section A</p>
-                            <app-divider></app-divider>
+                            <powdercloud-divider></powdercloud-divider>
                             <p style="margin: 0;">Section B</p>
-                            <app-divider spacing="large"></app-divider>
+                            <powdercloud-divider spacing="large"></powdercloud-divider>
                             <div style="display: flex; align-items: center; height: 20px;">
                                 <span>Left</span>
-                                <app-divider vertical></app-divider>
+                                <powdercloud-divider vertical></powdercloud-divider>
                                 <span>Right</span>
                             </div>
                         </div>

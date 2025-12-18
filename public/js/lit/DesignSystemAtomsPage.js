@@ -10,7 +10,7 @@ import './components/AppRadio.js';
 import './components/AppSwitch.js';
 import './components/PowdercloudChip.js';
 import './components/AppProgress.js';
-import './components/AppDivider.js';
+import './components/PowdercloudDivider.js';
 
 export class DesignSystemAtomsPage extends LitElement {
     static properties = {
@@ -72,7 +72,7 @@ export class DesignSystemAtomsPage extends LitElement {
 <app-progress type="circular"></app-progress>`;
 
         const dividerCode = `<p>Item 1</p>
-<app-divider></app-divider>
+<powdercloud-divider></powdercloud-divider>
 <p>Item 2</p>`;
 
         return html`
@@ -304,17 +304,17 @@ export class DesignSystemAtomsPage extends LitElement {
                     </component-doc>
 
                     <component-doc 
-                        title="<app-divider>" 
+                        title="<powdercloud-divider>" 
                         description="Separators for content."
                         .code="${dividerCode}">
                         <div>
                             <p style="margin: 0;">Section A</p>
-                            <app-divider></app-divider>
+                            <powdercloud-divider></powdercloud-divider>
                             <p style="margin: 0;">Section B</p>
-                            <app-divider spacing="large"></app-divider>
+                            <powdercloud-divider spacing="large"></powdercloud-divider>
                             <div style="display: flex; align-items: center; height: 20px;">
                                 <span>Left</span>
-                                <app-divider vertical></app-divider>
+                                <powdercloud-divider vertical></powdercloud-divider>
                                 <span>Right</span>
                             </div>
                         </div>
