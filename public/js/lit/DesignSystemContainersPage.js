@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/AppContainer.js';
 import './components/ComponentDoc.js';
-import './components/AppCard.js';
+import './components/PowdercloudCard.js';
 import './components/AppFieldset.js';
 import './components/CollapsiblePanel.js';
 import './components/AppTabs.js';
@@ -14,7 +14,7 @@ export class DesignSystemContainersPage extends LitElement {
     }
 
     render() {
-        const cardCode = `<app-card title="Card Title" subtitle="Subtitle">
+        const cardCode = `<powdercloud-card title="Card Title" subtitle="Subtitle">
     <div slot="header-action">
         <i class="fa fa-ellipsis-v"></i>
     </div>
@@ -24,7 +24,7 @@ export class DesignSystemContainersPage extends LitElement {
         <a href="#">Edit</a>
         <a href="#">Delete</a>
     </div>
-</app-card>`;
+</powdercloud-card>`;
 
         const fieldsetCode = `<app-fieldset legend="User Details">
     <app-input label="Name"></app-input>
@@ -61,21 +61,21 @@ export class DesignSystemContainersPage extends LitElement {
                 <div style="padding: 20px;">
                     
                     <component-doc 
-                        title="<app-card>" 
+                        title="<powdercloud-card>" 
                         description="The primary container for grouping related content."
                         .code="${cardCode}">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <app-card title="Standard Card" subtitle="With Header Actions">
+                            <powdercloud-card title="Standard Card" subtitle="With Header Actions">
                                 <div slot="header-action"><i class="fa fa-ellipsis-v"></i></div>
                                 <p>Cards are the fundamental building blocks for content. They provide a clean surface with elevation.</p>
                                 <div slot="footer">
                                     <a href="#">Action 1</a>
                                     <a href="#">Action 2</a>
                                 </div>
-                            </app-card>
-                            <app-card title="Media Card" image="https://via.placeholder.com/400x200">
+                            </powdercloud-card>
+                            <powdercloud-card title="Media Card" image="https://via.placeholder.com/400x200">
                                 <p>Cards can feature hero images to highlight content.</p>
-                            </app-card>
+                            </powdercloud-card>
                         </div>
                     </component-doc>
 

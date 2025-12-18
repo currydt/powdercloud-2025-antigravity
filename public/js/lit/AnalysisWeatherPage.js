@@ -4,7 +4,7 @@ import './components/DashboardChart.js';
 import './components/DashboardGrid.js';
 import './components/AppContainer.js';
 import './components/AppGrid.js';
-import './components/AppCard.js';
+import './components/PowdercloudCard.js';
 import './components/AvalancheRose.js';
 
 export class AnalysisWeatherPage extends LitElement {
@@ -102,7 +102,7 @@ export class AnalysisWeatherPage extends LitElement {
                 <br />
 
                 <app-grid cols="2" gap="lg">
-                    <app-card title="HS & HN24">
+                    <powdercloud-card title="HS & HN24">
                         <dashboard-chart
                             title="Snow Height"
                             type="column"
@@ -115,9 +115,9 @@ export class AnalysisWeatherPage extends LitElement {
                 ]
             }}"
                         ></dashboard-chart>
-                    </app-card>
+                    </powdercloud-card>
 
-                    <app-card title="Temperature Range">
+                    <powdercloud-card title="Temperature Range">
                         <dashboard-chart
                             title="Temperature"
                             type="line"
@@ -130,9 +130,9 @@ export class AnalysisWeatherPage extends LitElement {
                 ]
             }}"
                         ></dashboard-chart>
-                    </app-card>
+                    </powdercloud-card>
 
-                    <app-card title="Wind Speed">
+                    <powdercloud-card title="Wind Speed">
                         <dashboard-chart
                             title="Wind Speed"
                             type="line"
@@ -146,9 +146,9 @@ export class AnalysisWeatherPage extends LitElement {
                 series: [{ name: 'Wind', data: this._windData, color: '#4572A7' }]
             }}"
                         ></dashboard-chart>
-                    </app-card>
+                    </powdercloud-card>
 
-                    <app-card title="Sky Conditions">
+                    <powdercloud-card title="Sky Conditions">
                         <dashboard-chart
                             title="Sky Conditions"
                             type="line"
@@ -162,13 +162,13 @@ export class AnalysisWeatherPage extends LitElement {
                 series: [{ name: 'Sky', data: this._skyData, color: '#4572A7' }]
             }}"
                         ></dashboard-chart>
-                    </app-card>
+                    </powdercloud-card>
 
-                    <app-card title="Avalanche Rose (Weather)">
+                    <powdercloud-card title="Avalanche Rose (Weather)">
                         <div style="height: 300px;">
                             <avalanche-rose></avalanche-rose>
                         </div>
-                    </app-card>
+                    </powdercloud-card>
                 </app-grid>
 
                 <br />

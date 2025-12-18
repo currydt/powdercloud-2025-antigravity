@@ -4,7 +4,7 @@ import './components/DashboardChart.js';
 import './components/DashboardGrid.js';
 import './components/AppContainer.js';
 import './components/AppGrid.js';
-import './components/AppCard.js';
+import './components/PowdercloudCard.js';
 
 export class AnalysisAvalancheActivityPage extends LitElement {
     static properties = {
@@ -63,7 +63,7 @@ export class AnalysisAvalancheActivityPage extends LitElement {
 
                 <br />
 
-                <app-card title="Avalanche Activity Overview">
+                <powdercloud-card title="Avalanche Activity Overview">
                     <dashboard-chart
                         title="Number of Avalanches"
                         type="column"
@@ -73,12 +73,12 @@ export class AnalysisAvalancheActivityPage extends LitElement {
                 series: [{ name: 'Avalanches', data: this._chartData, color: '#4572A7' }]
             }}"
                     ></dashboard-chart>
-                </app-card>
+                </powdercloud-card>
 
                 <br />
 
                 <app-grid cols="2" gap="lg">
-                    <app-card title="Failure Types">
+                    <powdercloud-card title="Failure Types">
                         <dashboard-chart
                             title="Failure Types"
                             type="bar"
@@ -88,9 +88,9 @@ export class AnalysisAvalancheActivityPage extends LitElement {
                 series: [{ name: 'Count', data: this._failureTypeData, color: '#AA4643' }]
             }}"
                         ></dashboard-chart>
-                    </app-card>
+                    </powdercloud-card>
 
-                    <app-card title="Trigger Types">
+                    <powdercloud-card title="Trigger Types">
                         <dashboard-chart
                             title="Trigger Types"
                             type="bar"
@@ -100,7 +100,7 @@ export class AnalysisAvalancheActivityPage extends LitElement {
                 series: [{ name: 'Count', data: this._triggerTypeData, color: '#89A54E' }]
             }}"
                         ></dashboard-chart>
-                    </app-card>
+                    </powdercloud-card>
                 </app-grid>
 
                 <br />

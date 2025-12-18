@@ -4,7 +4,7 @@ import './components/DashboardChart.js';
 import './components/DashboardGrid.js';
 import './components/AppContainer.js';
 import './components/AppGrid.js';
-import './components/AppCard.js';
+import './components/PowdercloudCard.js';
 
 export class AnalysisStabilityPage extends LitElement {
     static properties = {
@@ -60,7 +60,7 @@ export class AnalysisStabilityPage extends LitElement {
 
                 <br />
 
-                <app-card title="Stability Ratings Overview">
+                <powdercloud-card title="Stability Ratings Overview">
                     <dashboard-chart
                         title="Stability Ratings Over Time"
                         type="line"
@@ -78,7 +78,7 @@ export class AnalysisStabilityPage extends LitElement {
                 ]
             }}"
                     ></dashboard-chart>
-                </app-card>
+                </powdercloud-card>
 
                 <br />
 

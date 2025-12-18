@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/AppContainer.js';
-import './components/AppCard.js';
+import './components/PowdercloudCard.js';
 import './components/AppCombobox.js';
 
 export class AvalancheEventStandardPage extends LitElement {
@@ -86,7 +86,7 @@ export class AvalancheEventStandardPage extends LitElement {
                     Avalanche Event (Standard)
                 </h1>
 
-                <app-card title="Operational Header" collapsible>
+                <powdercloud-card title="Operational Header" collapsible>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <div>
                             <label style="display: block; font-weight: bold; margin-bottom: 5px;">Operation</label>
@@ -106,11 +106,11 @@ export class AvalancheEventStandardPage extends LitElement {
                             <input type="text" style="width: 100%; padding: 8px; box-sizing: border-box;" />
                         </div>
                     </div>
-                </app-card>
+                </powdercloud-card>
 
                 <br />
 
-                <app-card title="Scope" collapsible>
+                <powdercloud-card title="Scope" collapsible>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <div>
                             <label style="display: block; font-weight: bold; margin-bottom: 5px;">Date and Time</label>
@@ -118,11 +118,11 @@ export class AvalancheEventStandardPage extends LitElement {
                         </div>
                         <app-combobox label="Location" .items="${this._locations}"></app-combobox>
                     </div>
-                </app-card>
+                </powdercloud-card>
 
                 <br />
 
-                <app-card title="Details" collapsible>
+                <powdercloud-card title="Details" collapsible>
                     <h3 style="border-bottom: 1px solid #eee; padding-bottom: 5px; margin-bottom: 15px;">Occurrence</h3>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
                         <div>
@@ -170,7 +170,7 @@ export class AvalancheEventStandardPage extends LitElement {
                             <input type="date" style="width: 100%; padding: 8px; box-sizing: border-box;" />
                         </div>
                     </div>
-                </app-card>
+                </powdercloud-card>
 
                 <div style="margin-top: 20px; text-align: right;">
                     <button style="background: #5399a5; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 1em;">Save Observation</button>

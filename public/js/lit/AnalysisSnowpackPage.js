@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/co
 import './components/FilterPanel.js';
 import './components/DashboardGrid.js';
 import './components/AppContainer.js';
-import './components/AppCard.js';
+import './components/PowdercloudCard.js';
 import './components/AvalancheRose.js';
 
 export class AnalysisSnowpackPage extends LitElement {
@@ -42,19 +42,19 @@ export class AnalysisSnowpackPage extends LitElement {
 
                 <br />
 
-                <app-card title="Map Overlay" collapsible>
+                <powdercloud-card title="Map Overlay" collapsible>
                     <div style="height: 400px; display: flex; align-items: center; justify-content: center; background: #eee; color: #666;">
                         Map View Placeholder
                     </div>
-                </app-card>
+                </powdercloud-card>
 
                 <br />
 
-                <app-card title="Rose Overlay" collapsible collapsed>
+                <powdercloud-card title="Rose Overlay" collapsible collapsed>
                     <div style="height: 400px;">
                         <avalanche-rose></avalanche-rose>
                     </div>
-                </app-card>
+                </powdercloud-card>
 
                 <br />
 

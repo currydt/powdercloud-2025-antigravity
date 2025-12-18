@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './components/AppContainer.js';
-import './components/AppCard.js';
+import './components/PowdercloudCard.js';
 import './components/AppCombobox.js';
 
 export class WeatherStudyPlotStandardPage extends LitElement {
@@ -101,7 +101,7 @@ export class WeatherStudyPlotStandardPage extends LitElement {
                     Weather Study Plot (Standard)
                 </h1>
 
-                <app-card title="Operational Header" collapsible>
+                <powdercloud-card title="Operational Header" collapsible>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <div>
                             <label style="display: block; font-weight: bold; margin-bottom: 5px;">Operation</label>
@@ -121,11 +121,11 @@ export class WeatherStudyPlotStandardPage extends LitElement {
                             <input type="text" style="width: 100%; padding: 8px; box-sizing: border-box;" />
                         </div>
                     </div>
-                </app-card>
+                </powdercloud-card>
 
                 <br />
 
-                <app-card title="Scope" collapsible>
+                <powdercloud-card title="Scope" collapsible>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                         <div>
                             <label style="display: block; font-weight: bold; margin-bottom: 5px;">Date and Time</label>
@@ -133,11 +133,11 @@ export class WeatherStudyPlotStandardPage extends LitElement {
                         </div>
                         <app-combobox label="Location" .items="${this._locations}"></app-combobox>
                     </div>
-                </app-card>
+                </powdercloud-card>
 
                 <br />
 
-                <app-card title="Details" collapsible>
+                <powdercloud-card title="Details" collapsible>
                     <div style="margin-bottom: 20px;">
                         <app-combobox label="Measurement Type" .items="${this._measurementTypes}"></app-combobox>
                     </div>
@@ -240,7 +240,7 @@ export class WeatherStudyPlotStandardPage extends LitElement {
                         <app-combobox label="Blowing Snow Extent" .items="${this._blowingSnowExtents}"></app-combobox>
                         <app-combobox label="Blowing Snow Direction" .items="${this._windDirections}"></app-combobox>
                     </div>
-                </app-card>
+                </powdercloud-card>
 
                 <div style="margin-top: 20px; text-align: right;">
                     <button style="background: #5399a5; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-size: 1em;">Save Observation</button>

@@ -20,7 +20,7 @@ import './components/AppSwitch.js';
 import './components/AppChip.js';
 import './components/AppProgress.js';
 import './components/AppDivider.js';
-import './components/AppCard.js';
+import './components/PowdercloudCard.js';
 import './components/AppContainer.js';
 import './components/AppGrid.js';
 import './components/AppStack.js';
@@ -339,7 +339,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
 <app-divider></app-divider>
 <p>Item 2</p>`;
 
-        const cardCode = `<app-card title="Card Title" subtitle="Subtitle">
+        const cardCode = `<powdercloud-card title="Card Title" subtitle="Subtitle">
     <div slot="header-action">
         <i class="fa fa-ellipsis-v"></i>
     </div>
@@ -349,7 +349,7 @@ ${gridProps}    .columns="\${${columnsSnippet}}"
         <a href="#">Edit</a>
         <a href="#">Delete</a>
     </div>
-</app-card>`;
+</powdercloud-card>`;
 
         const modalCode = `<app-modal title="Example Modal" open>
     <p>Modal content goes here.</p>
@@ -999,21 +999,21 @@ PAGE SHELL (e.g., dashboard_lit.html)
                 <div style="padding: 20px;">
                     
                     <component-doc 
-                        title="<app-card>" 
+                        title="<powdercloud-card>" 
                         description="The primary container for grouping related content."
                         .code="${cardCode}">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <app-card title="Standard Card" subtitle="With Header Actions">
+                            <powdercloud-card title="Standard Card" subtitle="With Header Actions">
                                 <div slot="header-action"><i class="fa fa-ellipsis-v"></i></div>
                                 <p>Cards are the fundamental building blocks for content. They provide a clean surface with elevation.</p>
                                 <div slot="footer">
                                     <a href="#">Action 1</a>
                                     <a href="#">Action 2</a>
                                 </div>
-                            </app-card>
-                            <app-card title="Media Card" image="https://via.placeholder.com/400x200">
+                            </powdercloud-card>
+                            <powdercloud-card title="Media Card" image="https://via.placeholder.com/400x200">
                                 <p>Cards can feature hero images to highlight content.</p>
-                            </app-card>
+                            </powdercloud-card>
                         </div>
                     </component-doc>
 

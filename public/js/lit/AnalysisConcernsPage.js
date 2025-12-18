@@ -4,7 +4,7 @@ import './components/DashboardChart.js';
 import './components/DashboardGrid.js';
 import './components/AppContainer.js';
 import './components/AppGrid.js';
-import './components/AppCard.js';
+import './components/PowdercloudCard.js';
 
 export class AnalysisConcernsPage extends LitElement {
     static properties = {
@@ -71,7 +71,7 @@ export class AnalysisConcernsPage extends LitElement {
                 <br />
 
                 <app-grid cols="3" gap="lg">
-                    <app-card title="Alpine Hazard">
+                    <powdercloud-card title="Alpine Hazard">
                         <dashboard-chart
                             title="Alpine"
                             type="scatter"
@@ -80,9 +80,9 @@ export class AnalysisConcernsPage extends LitElement {
                 series: [{ name: 'Alpine', data: this._alpineData, color: 'rgba(223, 83, 83, .5)' }]
             }}"
                         ></dashboard-chart>
-                    </app-card>
+                    </powdercloud-card>
 
-                    <app-card title="Treeline Hazard">
+                    <powdercloud-card title="Treeline Hazard">
                         <dashboard-chart
                             title="Treeline"
                             type="scatter"
@@ -91,9 +91,9 @@ export class AnalysisConcernsPage extends LitElement {
                 series: [{ name: 'Treeline', data: this._treelineData, color: 'rgba(119, 152, 191, .5)' }]
             }}"
                         ></dashboard-chart>
-                    </app-card>
+                    </powdercloud-card>
 
-                    <app-card title="Below Treeline Hazard">
+                    <powdercloud-card title="Below Treeline Hazard">
                         <dashboard-chart
                             title="Below Treeline"
                             type="scatter"
@@ -102,7 +102,7 @@ export class AnalysisConcernsPage extends LitElement {
                 series: [{ name: 'Below TL', data: this._belowTreelineData, color: 'rgba(144, 237, 125, .5)' }]
             }}"
                         ></dashboard-chart>
-                    </app-card>
+                    </powdercloud-card>
                 </app-grid>
 
                 <br />

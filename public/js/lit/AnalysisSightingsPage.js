@@ -2,7 +2,7 @@ import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/co
 import './components/FilterPanel.js';
 import './components/DashboardGrid.js';
 import './components/AppContainer.js';
-import './components/AppCard.js';
+import './components/PowdercloudCard.js';
 
 export class AnalysisSightingsPage extends LitElement {
     static properties = {
