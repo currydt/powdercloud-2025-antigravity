@@ -37,7 +37,7 @@ import './components/PowdercloudFilterPanel.js';
 import './components/PowdercloudAvalancheRose.js';
 import './components/PowdercloudDashboardChart.js';
 import './components/PowdercloudFailureTypesChart.js';
-import './components/SeasonalChart.js';
+import './components/PowdercloudSeasonalChart.js';
 import './components/SkyConditionsChart.js';
 import './components/SnowpackHeightChart.js';
 import './components/TemperatureRangeChart.js';
@@ -1234,10 +1234,10 @@ PAGE SHELL (e.g., dashboard_lit.html)
 
                     <!--
                     <powdercloud-component-doc 
-                        title="<seasonal-chart>" 
+                        title="<powdercloud-seasonal-chart>" 
                         description="Seasonal Chart"
-                        .code="${`<seasonal-chart></seasonal-chart>`}">
-                        <seasonal-chart></seasonal-chart>
+                        .code="${`<powdercloud-seasonal-chart></powdercloud-seasonal-chart>`}">
+                        <powdercloud-seasonal-chart></powdercloud-seasonal-chart>
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 

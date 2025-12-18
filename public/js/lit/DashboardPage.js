@@ -4,7 +4,7 @@ import './components/PowdercloudCollapsiblePanel.js';
 import './components/PowdercloudAvalancheRose.js';
 
 // Charts
-import './components/SeasonalChart.js';
+import './components/PowdercloudSeasonalChart.js';
 import './components/PowdercloudFailureTypesChart.js';
 import './components/TriggerTypesChart.js';
 import './components/SnowpackHeightChart.js';
@@ -71,7 +71,7 @@ export class DashboardPage extends LitElement {
                 
                 <!-- Row 1: Seasonal Chart -->
                 <div class="chart-row">
-                    <seasonal-chart class="full-width-chart"></seasonal-chart>
+                    <powdercloud-seasonal-chart class="full-width-chart"></powdercloud-seasonal-chart>
                 </div>
 
                 <!-- Row 2: Rose, Failure, Trigger -->

@@ -4,7 +4,7 @@ import './components/PowdercloudComponentDoc.js';
 import './components/PowdercloudDashboardChart.js';
 import './components/PowdercloudAvalancheRose.js';
 import './components/PowdercloudSnowProfileGraph.js';
-import './components/SeasonalChart.js';
+import './components/PowdercloudSeasonalChart.js';
 import './components/PowdercloudFailureTypesChart.js';
 import './components/TriggerTypesChart.js';
 import './components/SnowpackHeightChart.js';
@@ -36,10 +36,10 @@ export class DesignSystemGraphicsPage extends LitElement {
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
-                        title="<seasonal-chart>" 
+                        title="<powdercloud-seasonal-chart>" 
                         description="Seasonal overview chart."
-                        .code="${`<seasonal-chart style='height: 300px;'></seasonal-chart>`}">
-                        <seasonal-chart style="height: 300px;"></seasonal-chart>
+                        .code="${`<powdercloud-seasonal-chart style='height: 300px;'></powdercloud-seasonal-chart>`}">
+                        <powdercloud-seasonal-chart style="height: 300px;"></powdercloud-seasonal-chart>
                     </powdercloud-component-doc>
 
                     <style>
