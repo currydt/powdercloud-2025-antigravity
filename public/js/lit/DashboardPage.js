@@ -5,7 +5,7 @@ import './components/PowdercloudAvalancheRose.js';
 
 // Charts
 import './components/SeasonalChart.js';
-import './components/FailureTypesChart.js';
+import './components/PowdercloudFailureTypesChart.js';
 import './components/TriggerTypesChart.js';
 import './components/SnowpackHeightChart.js';
 import './components/TemperatureRangeChart.js';
@@ -80,7 +80,7 @@ export class DashboardPage extends LitElement {
                         <powdercloud-avalanche-rose></powdercloud-avalanche-rose>
                     </div>
                     <div class="chart-container">
-                        <failure-types-chart></failure-types-chart>
+                        <powdercloud-failure-types-chart></powdercloud-failure-types-chart>
                     </div>
                     <div class="chart-container">
                         <trigger-types-chart></trigger-types-chart>

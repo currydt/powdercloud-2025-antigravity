@@ -5,7 +5,7 @@ import './components/PowdercloudDashboardChart.js';
 import './components/PowdercloudAvalancheRose.js';
 import './components/PowdercloudSnowProfileGraph.js';
 import './components/SeasonalChart.js';
-import './components/FailureTypesChart.js';
+import './components/PowdercloudFailureTypesChart.js';
 import './components/TriggerTypesChart.js';
 import './components/SnowpackHeightChart.js';
 import './components/TemperatureRangeChart.js';
@@ -80,10 +80,10 @@ export class DesignSystemGraphicsPage extends LitElement {
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
-                        title="<failure-types-chart>" 
+                        title="<powdercloud-failure-types-chart>" 
                         description="Bar chart showing distribution of avalanche failure types."
-                        .code="${`<failure-types-chart style='height: 300px;'></failure-types-chart>`}">
-                        <failure-types-chart style="height: 300px;"></failure-types-chart>
+                        .code="${`<powdercloud-failure-types-chart style='height: 300px;'></powdercloud-failure-types-chart>`}">
+                        <powdercloud-failure-types-chart style="height: 300px;"></powdercloud-failure-types-chart>
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 

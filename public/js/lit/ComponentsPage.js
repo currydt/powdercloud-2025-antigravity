@@ -36,7 +36,7 @@ import './components/PowdercloudRichText.js';
 import './components/PowdercloudFilterPanel.js';
 import './components/PowdercloudAvalancheRose.js';
 import './components/PowdercloudDashboardChart.js';
-import './components/FailureTypesChart.js';
+import './components/PowdercloudFailureTypesChart.js';
 import './components/SeasonalChart.js';
 import './components/SkyConditionsChart.js';
 import './components/SnowpackHeightChart.js';
@@ -1241,10 +1241,10 @@ PAGE SHELL (e.g., dashboard_lit.html)
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
-                        title="<failure-types-chart>" 
+                        title="<powdercloud-failure-types-chart>" 
                         description="Failure Types Chart"
-                        .code="${`<failure-types-chart></failure-types-chart>`}">
-                        <failure-types-chart></failure-types-chart>
+                        .code="${`<powdercloud-failure-types-chart></powdercloud-failure-types-chart>`}">
+                        <powdercloud-failure-types-chart></powdercloud-failure-types-chart>
                     </powdercloud-component-doc>
 
                     <powdercloud-component-doc 
