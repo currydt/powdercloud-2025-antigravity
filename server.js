@@ -67,7 +67,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/management/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html');
+    serveFile(res, __dirname + '/public/index.html');
 });
 
 app.get('/management/observation', (req, res) => {
@@ -83,7 +83,7 @@ app.get('/management/reports', (req, res) => {
 });
 
 app.get('/management/admin', (req, res) => {
-    res.sendFile(__dirname + '/public/admin.html');
+    serveFile(res, __dirname + '/public/admin.html');
 });
 
 app.get('/reports/avalanche_event', (req, res) => {
@@ -130,7 +130,7 @@ app.get('/operation/activity-generic', (req, res) => {
 app.get('/observation/weather_narrative', (req, res) => { res.sendFile(__dirname + '/public/observation/weather_narrative.html'); });
 app.get('/observation/weather_study_plot_standard', (req, res) => { res.sendFile(__dirname + '/public/observation/weather_study_plot_standard.html'); });
 app.get('/observation/weather_field_summary', (req, res) => { res.sendFile(__dirname + '/public/observation/weather_field_summary.html'); });
-app.get('/observation/avalanche_narrative', (req, res) => { res.sendFile(__dirname + '/public/observation/avalanche_narrative.html'); });
+app.get('/observation/avalanche_narrative', (req, res) => { serveFile(res, __dirname + '/public/observation/avalanche_narrative.html'); });
 app.get('/observation/avalanche_event_standard', (req, res) => { res.sendFile(__dirname + '/public/observation/avalanche_event_standard.html'); });
 app.get('/observation/avalanche_event_multiple', (req, res) => { res.sendFile(__dirname + '/public/observation/avalanche_event_multiple.html'); });
 app.get('/observation/avalanche_summary', (req, res) => { res.sendFile(__dirname + '/public/observation/avalanche_summary.html'); });
@@ -529,9 +529,21 @@ app.get('/json/entity_delete/', (req, res) => {
 
 const { onRequest } = require('firebase-functions/v2/https');
 
+// Helper for sendFile with logging
+const serveFile = (res, path) => {
+    console.log(`Sending file: ${path}`);
+    res.sendFile(path, (err) => {
+        if (err) {
+            console.error(`Error sending file ${path}:`, err);
+            if (!res.headersSent) res.status(err.status || 500).send(err.message);
+        }
+    });
+};
+
 if (require.main === module) {
     app.listen(port, () => {
         console.log(`Antigravity app listening at http://localhost:${port}`);
+        console.log(`Server root (__dirname): ${__dirname}`);
     });
 }
 

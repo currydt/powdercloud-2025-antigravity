@@ -7,14 +7,14 @@
     <title>PowderCloud - Layout Elements</title>
     <link href="/css/mainNew.css" rel="stylesheet" />
     <link rel="stylesheet" href="/resources/css/ext-all.css" />
-    <script type="module" src="/js/lit/AppLayout.js"></script>
+    <script type="module" src="/js/lit/layout/PowdercloudLayout.js"></script>
     <script type="module" src="/js/lit/pages/design-system/DesignSystemLayoutPage.js"></script>
 </head>
 
 <body>
-    <app-layout id="layout">
+    <powdercloud-layout id="layout">
         <design-system-layout-page></design-system-layout-page>
-    </app-layout>
+    </powdercloud-layout>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const layout = document.getElementById('layout');

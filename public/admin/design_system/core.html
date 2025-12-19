@@ -7,14 +7,14 @@
     <title>PowderCloud - Core Components</title>
     <link href="/css/mainNew.css" rel="stylesheet" />
     <link rel="stylesheet" href="/resources/css/ext-all.css" />
-    <script type="module" src="/js/lit/AppLayout.js"></script>
+    <script type="module" src="/js/lit/layout/PowdercloudLayout.js"></script>
     <script type="module" src="/js/lit/pages/design-system/DesignSystemCorePage.js"></script>
 </head>
 
 <body>
-    <app-layout id="layout">
+    <powdercloud-layout id="layout">
         <design-system-core-page></design-system-core-page>
-    </app-layout>
+    </powdercloud-layout>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const layout = document.getElementById('layout');

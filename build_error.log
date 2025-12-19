@@ -1,0 +1,61 @@
+vite v7.3.0 building client environment for production...
+<script src="/js/jquery.min-v1.6.3.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/jquery-ui-1.8.18.custom.min.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/jquery.cookie.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/jquery.buttons.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/ext/jquery/ext-jquery-adapter.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/ext/ext-all.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/ext/ux/Ext.ux.RowExpander.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/ext/ux/JSONErrorReader.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/ext/ux/Ext.ux.GMapsViewer.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/client/hc/highcharts.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/client/hc/modules/exporting.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/client/hs/highstock.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/vo/ModelsVO.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/vo/Stores.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/custom/ModeDaterangeFilter.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/custom/QuickAddLocation.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/custom/PhotoUploadCmp.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/custom/PhotoEditorCmp.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/custom/PieSlicesCmp.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/custom/RingSlicesCmp.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/custom/DateTimeCmp.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/custom/util.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/custom/local.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/apperrific.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/powdercloud.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/jquery.svg.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/powdercloud.svg.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/powdercloud.svg.rose.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/powdercloud.highcharts.util.js"> in "/index.html" can't be bundled without type="module" attribute
+<script src="/js/pages/charts_dashboard.js"> in "/index.html" can't be bundled without type="module" attribute
+
+Unable to parse HTML; parse5 error code non-conforming-doctype
+ at /Users/currydt/development/averts/powdercrowds/powdercrowd-project/powdercloud-2025-antigravity/public/index.html:1:1
+1  |  <!DOCTYPE html
+   |  ^^^^^^^^^^^^^^
+2  |      PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+   |  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+3  |  <html xmlns="http://www.w3.org/1999/xhtml">
+transforming...
+
+/static/client/jqueryui/powdercloud-theme/images/ui-icons_888888_256x240.png referenced in /static/client/jqueryui/powdercloud-theme/images/ui-icons_888888_256x240.png didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/static/resources/images/default/grid/row-over2.gif referenced in /static/resources/images/default/grid/row-over2.gif didn't resolve at build time, it will remain unchanged to be resolved at runtime
+
+/static/resources/images/default/grid/loading.gif referenced in /static/resources/images/default/grid/loading.gif didn't resolve at build time, it will remain unchanged to be resolved at runtime
+✓ 1 modules transformed.
+✗ Build failed in 76ms
+error during build:
+[vite:css] [postcss] /Users/currydt/development/averts/powdercrowds/powdercrowd-project/powdercloud-2025-antigravity/public/css/main.css:574:2: Unknown word !important
+file: /Users/currydt/development/averts/powdercrowds/powdercrowd-project/powdercloud-2025-antigravity/public/css/main.css:574:1
+    at Input.error (/Users/currydt/development/averts/powdercrowds/powdercrowd-project/powdercloud-2025-antigravity/node_modules/postcss/lib/input.js:135:16)
+    at Parser.unknownWord (/Users/currydt/development/averts/powdercrowds/powdercrowd-project/powdercloud-2025-antigravity/node_modules/postcss/lib/parser.js:595:22)
+    at Parser.other (/Users/currydt/development/averts/powdercrowds/powdercrowd-project/powdercloud-2025-antigravity/node_modules/postcss/lib/parser.js:437:12)
+    at Parser.parse (/Users/currydt/development/averts/powdercrowds/powdercrowd-project/powdercloud-2025-antigravity/node_modules/postcss/lib/parser.js:472:16)
+    at parse (/Users/currydt/development/averts/powdercrowds/powdercrowd-project/powdercloud-2025-antigravity/node_modules/postcss/lib/parse.js:11:12)
+    at new LazyResult (/Users/currydt/development/averts/powdercrowds/powdercrowd-project/powdercloud-2025-antigravity/node_modules/postcss/lib/lazy-result.js:165:16)
+    at Processor.process (/Users/currydt/development/averts/powdercrowds/powdercrowd-project/powdercloud-2025-antigravity/node_modules/postcss/lib/processor.js:53:14)
+    at runPostCSS (file:///Users/currydt/development/averts/powdercrowds/powdercrowd-project/powdercloud-2025-antigravity/node_modules/vite/dist/node/chunks/config.js:30144:68)
+    at async compilePostCSS (file:///Users/currydt/development/averts/powdercrowds/powdercrowd-project/powdercloud-2025-antigravity/node_modules/vite/dist/node/chunks/config.js:30128:6)
+    at async compileCSS (file:///Users/currydt/development/averts/powdercrowds/powdercrowd-project/powdercloud-2025-antigravity/node_modules/vite/dist/node/chunks/config.js:30058:26)

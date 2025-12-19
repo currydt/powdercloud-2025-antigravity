@@ -7,16 +7,16 @@
     <title>PowderCloud - Graphical Elements</title>
     <link href="/css/mainNew.css" rel="stylesheet" />
     <link rel="stylesheet" href="/resources/css/ext-all.css" />
-    <script type="module" src="/js/lit/AppLayout.js"></script>
+    <script type="module" src="/js/lit/layout/PowdercloudLayout.js"></script>
     <script type="module" src="/js/lit/pages/design-system/DesignSystemGraphicsPage.js"></script>
     <script src="/js/jquery.min-v1.6.3.js"></script>
     <script src="/js/highcharts.js"></script>
 </head>
 
 <body>
-    <app-layout id="layout">
+    <powdercloud-layout id="layout">
         <design-system-graphics-page></design-system-graphics-page>
-    </app-layout>
+    </powdercloud-layout>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const layout = document.getElementById('layout');

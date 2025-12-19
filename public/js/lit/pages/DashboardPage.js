@@ -1,0 +1,143 @@
+import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
+import '../utils/PowdercloudDateSelector.js';
+import '../utils/PowdercloudCollapsiblePanel.js';
+import '../utils/PowdercloudAvalancheRose.js';
+
+// Charts
+import '../charts/PowdercloudSeasonalChart.js';
+import '../charts/PowdercloudFailureTypesChart.js';
+import '../charts/PowdercloudTriggerTypesChart.js';
+import '../charts/PowdercloudSnowpackHeightChart.js';
+import '../charts/PowdercloudTemperatureRangeChart.js';
+import '../charts/PowdercloudWindSpeedChart.js';
+
+// Grids
+import '../grids/PowdercloudWeatherGrid.js';
+import '../grids/PowdercloudAvalancheGrid.js';
+import '../grids/PowdercloudSnowpackGrid.js';
+import '../grids/PowdercloudStabilityGrid.js';
+import '../grids/PowdercloudNewsGrid.js';
+
+export class DashboardPage extends LitElement {
+    createRenderRoot() {
+        return this; // Light DOM
+    }
+
+    constructor() {
+        super();
+        console.log("DashboardPage initialized");
+    }
+
+    render() {
+        return html`
+            <style>
+                .chart-row {
+                    margin-bottom: 20px;
+                }
+                .chart-row.three-col {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+                .chart-container {
+                    flex: 1;
+                    min-width: 300px;
+                    height: 300px;
+                }
+                .full-width-chart {
+                    height: 300px;
+                    display: block;
+                }
+                /* Ensure Highcharts containers fill their parent */
+                dashboard-chart, seasonal-chart, failure-types-chart, trigger-types-chart, 
+                snowpack-height-chart, temperature-range-chart, wind-speed-chart {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            </style>
+
+            <!-- Title & Date Selector -->
+            <h1 style="color: #5399a5; font-size: 1.9em; margin: 0 0 5px 0; padding: 0; font-weight: normal; font-family: Arial, sans-serif; text-transform: uppercase;">
+                Operation Dashboard
+            </h1>
+            <p style="margin-bottom: 15px;">The following dashboard displays the current status of the operation.</p>
+
+            <powdercloud-date-selector></powdercloud-date-selector>
+
+            <!-- Charts Section -->
+            <powdercloud-collapsible-panel title="Charts"
+                tagline="The following is a presentation of data for the past seven days, from the selected date. You can manage the date range, by adjusting the selected end date.">
+                
+                <!-- Row 1: Seasonal Chart -->
+                <div class="chart-row">
+                    <powdercloud-seasonal-chart class="full-width-chart"></powdercloud-seasonal-chart>
+                </div>
+
+                <!-- Row 2: Rose, Failure, Trigger -->
+                <div class="chart-row three-col">
+                    <div class="chart-container">
+                        <powdercloud-avalanche-rose></powdercloud-avalanche-rose>
+                    </div>
+                    <div class="chart-container">
+                        <powdercloud-failure-types-chart></powdercloud-failure-types-chart>
+                    </div>
+                    <div class="chart-container">
+                        <powdercloud-trigger-types-chart></powdercloud-trigger-types-chart>
+                    </div>
+                </div>
+
+                <!-- Row 3: HS, Temp, Wind -->
+                <div class="chart-row three-col">
+                    <div class="chart-container">
+                        <powdercloud-snowpack-height-chart></powdercloud-snowpack-height-chart>
+                    </div>
+                    <div class="chart-container">
+                        <powdercloud-temperature-range-chart></powdercloud-temperature-range-chart>
+                    </div>
+                    <div class="chart-container">
+                        <powdercloud-wind-speed-chart></powdercloud-wind-speed-chart>
+                    </div>
+                </div>
+            </powdercloud-collapsible-panel>
+
+            <br />
+
+            <!-- Grids Section -->
+            <powdercloud-collapsible-panel title="Weather Observations"
+                tagline="The following table displays weather observations in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
+                <powdercloud-weather-grid></powdercloud-weather-grid>
+            </powdercloud-collapsible-panel>
+
+            <br />
+
+            <powdercloud-collapsible-panel title="Avalanche Activity"
+                tagline="The following table displays avalanche activity in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
+                <powdercloud-avalanche-grid></powdercloud-avalanche-grid>
+            </powdercloud-collapsible-panel>
+
+            <br />
+
+            <powdercloud-collapsible-panel title="Snowpack Structure"
+                tagline="The following table displays snowpack structure in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
+                <powdercloud-snowpack-grid></powdercloud-snowpack-grid>
+            </powdercloud-collapsible-panel>
+
+            <br />
+
+            <powdercloud-collapsible-panel title="Stability Ratings"
+                tagline="The following table displays stability ratings in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
+                <powdercloud-stability-grid></powdercloud-stability-grid>
+            </powdercloud-collapsible-panel>
+
+            <br />
+
+            <powdercloud-collapsible-panel title="News & Updates"
+                tagline="The following table displays news and updates in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
+                <powdercloud-news-grid></powdercloud-news-grid>
+            </powdercloud-collapsible-panel>
+        `;
+    }
+}
+
+customElements.define('dashboard-page', DashboardPage);

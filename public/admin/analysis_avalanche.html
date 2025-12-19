@@ -8,14 +8,14 @@
     <link href="/css/mainNew.css" rel="stylesheet" />
     <link rel="stylesheet" href="/resources/css/ext-all.css" />
     <link rel="stylesheet" href="/resources/css/xtheme-gray.css" />
-    <script type="module" src="/js/lit/AppLayout.js"></script>
+    <script type="module" src="/js/lit/layout/PowdercloudLayout.js"></script>
     <script type="module" src="/js/lit/pages/AvalancheAnalysisPage.js"></script>
 </head>
 
 <body>
-    <app-layout id="layout">
+    <powdercloud-layout id="layout">
         <avalanche-analysis-page></avalanche-analysis-page>
-    </app-layout>
+    </powdercloud-layout>
     <script>
         document.getElementById('layout').breadcrumbs = [
             { label: 'Home', url: '/admin/index.html' },

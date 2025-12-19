@@ -38,10 +38,10 @@
 <body>
     <div id="dvBodyWrap">
         <!-- Header -->
-        <app-header></app-header>
+        <powdercloud-header></powdercloud-header>
 
         <!-- Breadcrumbs -->
-        <app-breadcrumbs .path="${[{label: 'Home', url: '/management/'}, {label: 'Dashboard'}]}"></app-breadcrumbs>
+        <powdercloud-breadcrumbs .path="${[{label: 'Home', url: '/management/'}, {label: 'Dashboard'}]}"></powdercloud-breadcrumbs>
 
         <div id="dvBody">
             <div id="content">
@@ -51,85 +51,85 @@
                 <p style="margin-bottom: 15px;">The following dashboard displays the current status of the operation.
                 </p>
 
-                <date-selector></date-selector>
+                <powdercloud-date-selector></powdercloud-date-selector>
 
                 <!-- Charts Section -->
-                <collapsible-panel title="Charts"
+                <powdercloud-collapsible-panel title="Charts"
                     tagline="The following is a presentation of data for the past seven days, from the selected date. You can manage the date range, by adjusting the selected end date.">
                     <!-- Row 1: Seasonal Chart -->
                     <div style="margin-bottom: 20px;">
-                        <dashboard-chart id="chartSeasonal" title="Seasonal Chart" type="column"
-                            style="height: 300px;"></dashboard-chart>
+                        <powdercloud-dashboard-chart id="chartSeasonal" title="Seasonal Chart" type="column"
+                            style="height: 300px;"></powdercloud-dashboard-chart>
                     </div>
 
                     <!-- Row 2: Rose, Failure, Trigger -->
                     <div style="display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
                         <div style="flex: 1; min-width: 300px;">
-                            <dashboard-chart id="chartRose" title="Avalanche Rose" type="pie"
-                                style="height: 300px;"></dashboard-chart>
+                            <powdercloud-dashboard-chart id="chartRose" title="Avalanche Rose" type="pie"
+                                style="height: 300px;"></powdercloud-dashboard-chart>
                         </div>
                         <div style="flex: 1; min-width: 300px;">
-                            <dashboard-chart id="chartFailure" title="Failure Types" type="bar"
-                                style="height: 300px;"></dashboard-chart>
+                            <powdercloud-dashboard-chart id="chartFailure" title="Failure Types" type="bar"
+                                style="height: 300px;"></powdercloud-dashboard-chart>
                         </div>
                         <div style="flex: 1; min-width: 300px;">
-                            <dashboard-chart id="chartTrigger" title="Trigger Types" type="bar"
-                                style="height: 300px;"></dashboard-chart>
+                            <powdercloud-dashboard-chart id="chartTrigger" title="Trigger Types" type="bar"
+                                style="height: 300px;"></powdercloud-dashboard-chart>
                         </div>
                     </div>
 
                     <!-- Row 3: HS, Temp, Wind -->
                     <div style="display: flex; flex-wrap: wrap; gap: 20px;">
                         <div style="flex: 1; min-width: 300px;">
-                            <dashboard-chart id="chartHS" title="HS & HN24" type="column"
-                                style="height: 300px;"></dashboard-chart>
+                            <powdercloud-dashboard-chart id="chartHS" title="HS & HN24" type="column"
+                                style="height: 300px;"></powdercloud-dashboard-chart>
                         </div>
                         <div style="flex: 1; min-width: 300px;">
-                            <dashboard-chart id="chartTemp" title="Temperature Range" type="line"
-                                style="height: 300px;"></dashboard-chart>
+                            <powdercloud-dashboard-chart id="chartTemp" title="Temperature Range" type="line"
+                                style="height: 300px;"></powdercloud-dashboard-chart>
                         </div>
                         <div style="flex: 1; min-width: 300px;">
-                            <dashboard-chart id="chartWind" title="Wind Speed" type="bar"
-                                style="height: 300px;"></dashboard-chart>
+                            <powdercloud-dashboard-chart id="chartWind" title="Wind Speed" type="bar"
+                                style="height: 300px;"></powdercloud-dashboard-chart>
                         </div>
                     </div>
-                </collapsible-panel>
+                </powdercloud-collapsible-panel>
 
                 <br />
 
                 <!-- Grids Section -->
-                <collapsible-panel title="Weather Observations"
+                <powdercloud-collapsible-panel title="Weather Observations"
                     tagline="The following table displays weather observations in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
-                    <weather-grid></weather-grid>
-                </collapsible-panel>
+                    <grids/></grids/>
+                </powdercloud-collapsible-panel>
 
                 <br />
 
-                <collapsible-panel title="Avalanche Activity"
+                <powdercloud-collapsible-panel title="Avalanche Activity"
                     tagline="The following table displays avalanche activity in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
-                    <avalanche-grid></avalanche-grid>
-                </collapsible-panel>
+                    <grids/></grids/>
+                </powdercloud-collapsible-panel>
 
                 <br />
 
-                <collapsible-panel title="Snowpack Structure"
+                <powdercloud-collapsible-panel title="Snowpack Structure"
                     tagline="The following table displays snowpack structure in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
-                    <snowpack-grid></snowpack-grid>
-                </collapsible-panel>
+                    <grids/></grids/>
+                </powdercloud-collapsible-panel>
 
                 <br />
 
-                <collapsible-panel title="Stability Ratings"
+                <powdercloud-collapsible-panel title="Stability Ratings"
                     tagline="The following table displays stability ratings in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
-                    <stability-grid></stability-grid>
-                </collapsible-panel>
+                    <grids/></grids/>
+                </powdercloud-collapsible-panel>
 
                 <br />
 
-                <collapsible-panel title="News & Updates"
+                <powdercloud-collapsible-panel title="News & Updates"
                     tagline="The following table displays news and updates in textual format. You can select an individual column to resize it; change its position, or to hide and show the column. You can sort by date and time in ascending or descending order.">
-                    <news-grid></news-grid>
-                </collapsible-panel>
+                    <grids/></grids/>
+                </powdercloud-collapsible-panel>
 
                 <!-- Chart Initialization (Mock Data) -->
                 <script>
@@ -208,13 +208,13 @@
             </div>
         </div>
 
-        <app-disclaimer></app-disclaimer>
+        <powdercloud-disclaimer></powdercloud-disclaimer>
 
         <div class="dvFooterForce"></div>
     </div>
 
     <!-- Footer -->
-    <app-footer></app-footer>
+    <powdercloud-footer></powdercloud-footer>
 </body>
 
 </html>

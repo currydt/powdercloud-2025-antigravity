@@ -1,0 +1,11 @@
+
+> powdercloud-2011-antigravity@5.0.0 start
+> node server.js
+
+[FIREBASE] Using Cloud Firestore (Emulator connection commented out)
+Antigravity app listening at http://localhost:3003
+Server root (__dirname): /Users/currydt/development/averts/powdercrowds/powdercrowd-project/powdercloud-2025-antigravity
+[REQUEST] HEAD /management/
+Sending file: /Users/currydt/development/averts/powdercrowds/powdercrowd-project/powdercloud-2025-antigravity/public/index.html
+[REQUEST] HEAD /management/admin
+Sending file: /Users/currydt/development/averts/powdercrowds/powdercrowd-project/powdercloud-2025-antigravity/public/admin.html
