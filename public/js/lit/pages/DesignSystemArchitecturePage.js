@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../layout/PowdercloudContainer.js';
-import '../containment/PowdercloudCard.js';
-import '../communication/PowdercloudAlert.js';
+import '../components/PowdercloudContainer.js';
+import '../components/PowdercloudCard.js';
+import '../components/PowdercloudAlert.js';
 
 export class DesignSystemArchitecturePage extends LitElement {
     createRenderRoot() {

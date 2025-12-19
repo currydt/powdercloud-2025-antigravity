@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../inputs/PowdercloudDateRange.js';
-import '../actions/PowdercloudButton.js';
+import './PowdercloudDateRange.js';
+import './PowdercloudButton.js';
 
 export class PowdercloudFilterPanel extends LitElement {
     static properties = {

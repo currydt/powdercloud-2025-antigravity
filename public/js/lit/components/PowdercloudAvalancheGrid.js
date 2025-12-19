@@ -1,9 +1,8 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../utils/PowdercloudDashboardGrid.js';
-import '../containment/PowdercloudModal.js';
-import '../forms/PowdercloudWeatherForm.js';
-
-export class PowdercloudWeatherGrid extends LitElement {
+import './PowdercloudDashboardGrid.js';
+import './PowdercloudModal.js';
+import './PowdercloudAvalancheForm.js';
+export class PowdercloudAvalancheGrid extends LitElement {
     createRenderRoot() { return this; }
 
     static properties = {
@@ -27,7 +26,7 @@ export class PowdercloudWeatherGrid extends LitElement {
     async _fetchData() {
         try {
             // Fetch data for Sorcerer Lodge (566179) in March 2012
-            const response = await fetch('https://powdercrowd-api.web.app/api/observations_shim/weather?limit=100');
+            const response = await fetch('https://powdercrowd-api.web.app/api/observations_shim/avalanche?limit=100');
             const result = await response.json();
 
             if (result.success && result.rows) {
@@ -47,11 +46,13 @@ export class PowdercloudWeatherGrid extends LitElement {
                         dateMatch = d.getFullYear() === 2012 && d.getMonth() === 2; // Month is 0-indexed
                     }
 
-                    // 3. Check Type (Weather)
+                    // 3. Check Type (Avalanche)
                     let typeMatch = false;
                     if (row.type) {
-                        const typeId = typeof row.type === 'object' ? row.type.id : row.type;
-                        typeMatch = [530808, 530813].some(id => String(typeId).includes(String(id)));
+                        // Check for avalanche specific fields
+                        if (row.destructive_size_max_code || row.trigger_code || row.aspect_code || row.elevation_start_zone_code) {
+                            typeMatch = true;
+                        }
                     }
 
                     return opMatch && dateMatch && typeMatch;
@@ -59,19 +60,17 @@ export class PowdercloudWeatherGrid extends LitElement {
 
                 // Map to display format
                 this._data = filtered.map(row => ({
-                    id: row.id,
                     date_time_start: this._formatDate(row.date_time_start),
                     terrain_desc: this._formatTerrain(row.terrain_desc || row.terrain),
-                    sky_condition_code: row.sky_condition_code || '-',
-                    precipitation_type_rate_code: row.precipitation_type_rate_code || '-',
-                    air_temperature_min: row.air_temperature_min || '-',
-                    air_temperature_max: row.air_temperature_max || '-',
-                    hn24_accumulated: row.hn24_accumulated || '-',
-                    hs_accumulated: row.hs_accumulated || '-'
+                    type_desc: row.type_desc || row.type || '-',
+                    destructive_size_max_code: row.destructive_size_max_code || '-',
+                    trigger_code: row.trigger_code || '-',
+                    aspect_start_code: row.aspect_start_code || '-',
+                    elevation_min: row.elevation_min || '-'
                 }));
             }
         } catch (e) {
-            console.error('Error fetching weather data:', e);
+            console.error('Error fetching avalanche data:', e);
         }
     }
 
@@ -112,7 +111,7 @@ export class PowdercloudWeatherGrid extends LitElement {
     _handleCreate() {
         this._selectedItem = {
             date_time_start: new Date().toISOString(),
-            operation: { id: 566179, name: 'Sorcerer Lodge' }
+            operation: { id: 566179, name: 'Sorcerer Lodge' } // Context default
         };
         this._isModalOpen = true;
     }
@@ -174,12 +173,11 @@ export class PowdercloudWeatherGrid extends LitElement {
         const columns = [
             { header: 'Date', field: 'date_time_start', width: '15%' },
             { header: 'Location', field: 'terrain_desc', width: '20%' },
-            { header: 'Sky', field: 'sky_condition_code', width: '10%' },
-            { header: 'Precip', field: 'precipitation_type_rate_code', width: '10%' },
-            { header: 'Temp (Min)', field: 'air_temperature_min', width: '10%' },
-            { header: 'Temp (Max)', field: 'air_temperature_max', width: '10%' },
-            { header: 'HN24', field: 'hn24_accumulated', width: '10%' },
-            { header: 'HS', field: 'hs_accumulated', width: '10%' }
+            { header: 'Type', field: 'type_desc', width: '15%' },
+            { header: 'Size', field: 'destructive_size_max_code', width: '10%' },
+            { header: 'Trigger', field: 'trigger_code', width: '10%' },
+            { header: 'Aspect', field: 'aspect_start_code', width: '10%' },
+            { header: 'Elevation', field: 'elevation_min', width: '10%' }
         ];
 
         return html`
@@ -190,32 +188,32 @@ export class PowdercloudWeatherGrid extends LitElement {
             </div>
 
             <powdercloud-dashboard-grid 
-                title="Weather Observations (Sorcerer Lodge - Mar 2012)"
+                title="Avalanche Observations (Sorcerer Lodge - Mar 2012)"
                 .columns="${columns}" 
                 .data="${this._data}"
                 ?paginated="${true}"
                 ._rowsPerPage="${10}"
                 @row-click="${this._handleRowClick}"
             ></powdercloud-dashboard-grid>
- 
+
             <powdercloud-modal 
                 .open="${this._isModalOpen}" 
-                title="Weather Observation" 
+                title="Avalanche Observation" 
                 size="medium"
                 @close="${this._closeModal}"
             >
                 ${this._selectedItem ? html`
-                    <powdercloud-weather-form 
+                    <powdercloud-avalanche-form 
                         .data="${this._selectedItem}"
                         .readOnly="${!!this._selectedItem.id}"
                         @close="${this._closeModal}"
                         @save="${this._handleSaveObservation}"
                         @delete="${this._handleDeleteObservation}"
-                    ></powdercloud-weather-form>
+                    ></powdercloud-avalanche-form>
                 ` : html`<p>Loading...</p>`}
             </powdercloud-modal>
         `;
     }
 }
 
-customElements.define('powdercloud-weather-grid', PowdercloudWeatherGrid);
+customElements.define('powdercloud-avalanche-grid', PowdercloudAvalancheGrid);

@@ -1,16 +1,16 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../layout/PowdercloudContainer.js';
-import '../utils/PowdercloudComponentDoc.js';
-import '../actions/PowdercloudButton.js';
-import '../inputs/PowdercloudInput.js';
-import '../inputs/PowdercloudTextarea.js';
-import '../inputs/PowdercloudSelect.js';
-import '../inputs/PowdercloudCheckbox.js';
-import '../inputs/PowdercloudRadio.js';
-import '../inputs/PowdercloudSwitch.js';
-import '../actions/PowdercloudChip.js';
-import '../communication/PowdercloudProgress.js';
-import '../containment/PowdercloudDivider.js';
+import '../components/PowdercloudContainer.js';
+import '../components/PowdercloudComponentDoc.js';
+import '../components/PowdercloudButton.js';
+import '../components/PowdercloudInput.js';
+import '../components/PowdercloudTextarea.js';
+import '../components/PowdercloudSelect.js';
+import '../components/PowdercloudCheckbox.js';
+import '../components/PowdercloudRadio.js';
+import '../components/PowdercloudSwitch.js';
+import '../components/PowdercloudChip.js';
+import '../components/PowdercloudProgress.js';
+import '../components/PowdercloudDivider.js';
 
 export class DesignSystemAtomsPage extends LitElement {
     static properties = {

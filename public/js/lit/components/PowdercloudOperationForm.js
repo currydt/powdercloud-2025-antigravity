@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../navigation/PowdercloudTabs.js';
-import '../data-display/PowdercloudLookup.js';
+import './PowdercloudTabs.js';
+import './PowdercloudLookup.js';
 
 export class PowdercloudOperationForm extends LitElement {
     static properties = {

@@ -1,8 +1,8 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../layout/PowdercloudContainer.js';
-import '../utils/PowdercloudComponentDoc.js';
-import '../inputs/PowdercloudInput.js';
-import { Validators } from '../utils/PowdercloudValidators.js';
+import '../components/PowdercloudContainer.js';
+import '../components/PowdercloudComponentDoc.js';
+import '../components/PowdercloudInput.js';
+import { Validators } from '../components/PowdercloudValidators.js';
 
 export class DesignSystemValidatorsPage extends LitElement {
     createRenderRoot() {

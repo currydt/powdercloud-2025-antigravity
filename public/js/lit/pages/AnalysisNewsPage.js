@@ -1,9 +1,9 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../layout/PowdercloudLayout.js';
-import '../utils/PowdercloudFilterPanel.js';
-import '../utils/PowdercloudDashboardGrid.js';
-import '../layout/PowdercloudContainer.js';
-import '../containment/PowdercloudCard.js';
+import '../components/PowdercloudLayout.js';
+import '../components/PowdercloudFilterPanel.js';
+import '../components/PowdercloudDashboardGrid.js';
+import '../components/PowdercloudContainer.js';
+import '../components/PowdercloudCard.js';
 
 export class AnalysisNewsPage extends LitElement {
     static properties = {

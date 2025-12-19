@@ -1,5 +1,5 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../navigation/PowdercloudMegaMenu.js';
+import './PowdercloudMegaMenu.js';
 
 export class PowdercloudHeader extends LitElement {
     createRenderRoot() {

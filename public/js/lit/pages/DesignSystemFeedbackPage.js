@@ -1,9 +1,9 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../layout/PowdercloudContainer.js';
-import '../utils/PowdercloudComponentDoc.js';
-import '../data-display/PowdercloudAvatar.js';
-import '../communication/PowdercloudTooltip.js';
-import '../actions/PowdercloudButton.js';
+import '../components/PowdercloudContainer.js';
+import '../components/PowdercloudComponentDoc.js';
+import '../components/PowdercloudAvatar.js';
+import '../components/PowdercloudTooltip.js';
+import '../components/PowdercloudButton.js';
 
 export class DesignSystemFeedbackPage extends LitElement {
     createRenderRoot() {

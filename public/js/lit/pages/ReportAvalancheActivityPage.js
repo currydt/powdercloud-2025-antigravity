@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../layout/PowdercloudLayout.js';
-import '../layout/PowdercloudContainer.js';
-import '../containment/PowdercloudCard.js';
+import '../components/PowdercloudLayout.js';
+import '../components/PowdercloudContainer.js';
+import '../components/PowdercloudCard.js';
 
 export class ReportAvalancheActivityPage extends LitElement {
     createRenderRoot() {

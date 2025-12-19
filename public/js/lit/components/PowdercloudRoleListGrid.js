@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../utils/PowdercloudDashboardGrid.js';
-import '../containment/PowdercloudModal.js';
-import '../forms/PowdercloudRoleForm.js';
+import './PowdercloudDashboardGrid.js';
+import './PowdercloudModal.js';
+import './PowdercloudRoleForm.js';
 
 export class PowdercloudRoleListGrid extends LitElement {
     static properties = {

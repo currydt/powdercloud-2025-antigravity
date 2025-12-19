@@ -1,8 +1,8 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../layout/PowdercloudLayout.js';
-import '../layout/PowdercloudContainer.js';
-import '../layout/PowdercloudGrid.js';
-import '../containment/PowdercloudCard.js';
+import '../components/PowdercloudLayout.js';
+import '../components/PowdercloudContainer.js';
+import '../components/PowdercloudGrid.js';
+import '../components/PowdercloudCard.js';
 
 export class BasicAnalysisPage extends LitElement {
     static properties = {

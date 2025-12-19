@@ -1,5 +1,5 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../grids/PowdercloudRoleListGrid.js';
+import '../components/PowdercloudRoleListGrid.js';
 
 export class AdminRoleEditorPage extends LitElement {
     createRenderRoot() {

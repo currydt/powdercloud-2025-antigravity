@@ -1,12 +1,12 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../layout/PowdercloudContainer.js';
-import '../utils/PowdercloudComponentDoc.js';
-import '../containment/PowdercloudCard.js';
-import '../containment/PowdercloudFieldset.js';
-import '../utils/PowdercloudCollapsiblePanel.js';
-import '../navigation/PowdercloudTabs.js';
-import '../inputs/PowdercloudInput.js';
-import '../inputs/PowdercloudTextarea.js';
+import '../components/PowdercloudContainer.js';
+import '../components/PowdercloudComponentDoc.js';
+import '../components/PowdercloudCard.js';
+import '../components/PowdercloudFieldset.js';
+import '../components/PowdercloudCollapsiblePanel.js';
+import '../components/PowdercloudTabs.js';
+import '../components/PowdercloudInput.js';
+import '../components/PowdercloudTextarea.js';
 
 export class DesignSystemContainersPage extends LitElement {
     createRenderRoot() {

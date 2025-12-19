@@ -1,5 +1,5 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../grids/PowdercloudPartyListGrid.js';
+import '../components/PowdercloudPartyListGrid.js';
 
 export class AdminUsersPage extends LitElement {
     createRenderRoot() {

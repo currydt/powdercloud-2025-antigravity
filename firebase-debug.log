@@ -870,3 +870,377 @@
 [debug] [2025-12-19T19:34:05.218Z] <<< [apiv2][status] GET http://localhost:5001/powdercrowd-project/us-central1/antigravity/json/entity_query_all/ 200
 [debug] [2025-12-19T19:34:05.218Z] <<< [apiv2][body] GET http://localhost:5001/powdercrowd-project/us-central1/antigravity/json/entity_query_all/ [stream]
 [info] i  hosting: ::1 - - [19/Dec/2025:19:34:05 +0000] "GET /json/entity_query_all/?entity=Observation&subtype=avalanche_event&limit=100 HTTP/1.1" 200 3120 "http://localhost:5003/admin/analysis_avalanche_activity.html" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15" {"metadata":{"emulator":{"name":"hosting"},"message":"::1 - - [19/Dec/2025:19:34:05 +0000] \"GET /json/entity_query_all/?entity=Observation&subtype=avalanche_event&limit=100 HTTP/1.1\" 200 3120 \"http://localhost:5003/admin/analysis_avalanche_activity.html\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/26.2 Safari/605.1.15\""}}
+[debug] [2025-12-19T21:18:02.445Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/fix_flat_imports.py changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/fix_flat_imports.py changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:03.459Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2025-12-19T21:18:03.926Z] > [functions] package.json contents: {
+  "name": "powdercloud-2011-antigravity",
+  "version": "5.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev-web": "vite",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": "22"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase": "^12.6.0",
+    "firebase-admin": "^13.6.0",
+    "firebase-functions": "^7.0.0"
+  },
+  "devDependencies": {
+    "pino": "^10.1.0",
+    "pino-pretty": "^13.1.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0"
+  }
+}
+[debug] [2025-12-19T21:18:03.926Z] Building nodejs source
+[debug] [2025-12-19T21:18:03.927Z] Failed to find version of module node: reached end of search path /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/node_modules
+[warn] ⚠  functions: Your requested "node" version "22" doesn't match your global version "24". Using node@24 from host. 
+[debug] [2025-12-19T21:18:03.940Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-12-19T21:18:03.941Z] Found firebase-functions binary at '/Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/node_modules/.bin/firebase-functions'
+[info] Serving at port 8041
+
+[info] [FIREBASE] Using Cloud Firestore (Emulator connection commented out)
+
+[debug] [2025-12-19T21:18:04.248Z] Got response from /__/functions.yaml {"endpoints":{"antigravity":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"antigravity"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[debug] [2025-12-19T21:18:08.162Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudSnowpackGrid.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudSnowpackGrid.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudWindSpeedChart.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudWindSpeedChart.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudAvalancheGrid.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudAvalancheGrid.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudSeasonalChart.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudSeasonalChart.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudPartyForm.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudPartyForm.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudOperationForm.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudOperationForm.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudSkyConditionsChart.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudSkyConditionsChart.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudTriggerTypesChart.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudTriggerTypesChart.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudOperationListGrid.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudOperationListGrid.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudTemperatureRangeChart.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudTemperatureRangeChart.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudObservationTypeListGrid.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudObservationTypeListGrid.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudWeatherGrid.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudWeatherGrid.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudRoleForm.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudRoleForm.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudSnowpackHeightChart.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudSnowpackHeightChart.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudTerrainAtlasGrid.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudTerrainAtlasGrid.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudNewsForm.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudNewsForm.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudLayout.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudLayout.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudHeader.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudHeader.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudFilterPanel.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudFilterPanel.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudStabilityGrid.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudStabilityGrid.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudNewsGrid.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudNewsGrid.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.163Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudSnowProfileChart.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudSnowProfileChart.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.164Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudRoleListGrid.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudRoleListGrid.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.164Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudPartyListGrid.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudPartyListGrid.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.164Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudFailureTypesChart.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/components/PowdercloudFailureTypesChart.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.164Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ObservationAvalancheNarrativePage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ObservationAvalancheNarrativePage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.164Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemCorePage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemCorePage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.164Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisSightingsPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisSightingsPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.164Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ObservationNewsPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ObservationNewsPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.164Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ObservationStabilityRatingPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ObservationStabilityRatingPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.164Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisSnowpackPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisSnowpackPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.164Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisDangerPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisDangerPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.164Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemValidatorsPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemValidatorsPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.167Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ReportAvalancheEventPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ReportAvalancheEventPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.168Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemLayoutPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemLayoutPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.168Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemAtomsPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemAtomsPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.168Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisStabilityPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisStabilityPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.168Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemArchitecturePage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemArchitecturePage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.168Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemFormsPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemFormsPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.168Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisSnowProfilePage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisSnowProfilePage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.168Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/WeatherStudyPlotStandardPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/WeatherStudyPlotStandardPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.168Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ObservationWeatherNarrativePage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ObservationWeatherNarrativePage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.168Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisWeatherPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisWeatherPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.168Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AdminAtlasPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AdminAtlasPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.168Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisPublicReportPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisPublicReportPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.168Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AvalancheEventStandardPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AvalancheEventStandardPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.168Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AdminUsersPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AdminUsersPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.169Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AdminObservationTypeEditorPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AdminObservationTypeEditorPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.169Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ObservationSnowProfilePage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ObservationSnowProfilePage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.169Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemPatternsPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemPatternsPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.269Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ComponentsPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ComponentsPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.269Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/BasicAnalysisPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/BasicAnalysisPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.269Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemOverviewPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemOverviewPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.269Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AdminRoleEditorPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AdminRoleEditorPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.269Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisAvalancheActivityPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisAvalancheActivityPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.269Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemContainersPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemContainersPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.269Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/RunStructurePage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/RunStructurePage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.269Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ProjectListPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ProjectListPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.269Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisCommunitySummaryPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisCommunitySummaryPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.269Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisConcernsPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisConcernsPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.269Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemOverlaysPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemOverlaysPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.269Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ReportAvalancheActivityPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ReportAvalancheActivityPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.269Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisNewsPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisNewsPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.269Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemFeedbackPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemFeedbackPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.269Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ObservationAvalancheStandardPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ObservationAvalancheStandardPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.269Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ObservationMasterPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ObservationMasterPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.269Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DashboardPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DashboardPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.269Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ObservationAvalancheSummaryPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/ObservationAvalancheSummaryPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.270Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/OperationListPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/OperationListPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.270Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemGraphicsPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/DesignSystemGraphicsPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.270Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisPublicReportPage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisPublicReportPage.js changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:08.271Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisSnowpackStructurePage.js changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/js/lit/pages/AnalysisSnowpackStructurePage.js changed, reloading triggers"}}
+[info] ✔  functions: Loaded functions definitions from source: antigravity. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: antigravity."}}
+[debug] [2025-12-19T21:18:08.278Z] [worker-pool] Shutting down IDLE worker (us-central1-antigravity) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-antigravity)"}}
+[debug] [2025-12-19T21:18:08.278Z] [worker-us-central1-antigravity-c73b523f-fa2a-4e8f-ac71-1367c0a10eef]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-antigravity"},"extension":{},"message":"[worker-us-central1-antigravity-c73b523f-fa2a-4e8f-ac71-1367c0a10eef]: FINISHING"}}
+[debug] [2025-12-19T21:18:08.278Z] [worker-pool] Shutting down IDLE worker (us-central1-antigravity) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-antigravity)"}}
+[debug] [2025-12-19T21:18:08.278Z] [worker-us-central1-antigravity-d907e36a-66f0-4838-871e-7b6c8592018d]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-antigravity"},"extension":{},"message":"[worker-us-central1-antigravity-d907e36a-66f0-4838-871e-7b6c8592018d]: FINISHING"}}
+[debug] [2025-12-19T21:18:08.279Z] [worker-pool] Shutting down IDLE worker (us-central1-antigravity) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-antigravity)"}}
+[debug] [2025-12-19T21:18:08.279Z] [worker-us-central1-antigravity-a140a637-7890-4a38-9295-1e7d0e8aaeab]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-antigravity"},"extension":{},"message":"[worker-us-central1-antigravity-a140a637-7890-4a38-9295-1e7d0e8aaeab]: FINISHING"}}
+[debug] [2025-12-19T21:18:08.279Z] [worker-pool] Shutting down IDLE worker (us-central1-antigravity) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-antigravity)"}}
+[debug] [2025-12-19T21:18:08.279Z] [worker-us-central1-antigravity-45e88874-e900-4f2c-8034-25e637f07276]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-antigravity"},"extension":{},"message":"[worker-us-central1-antigravity-45e88874-e900-4f2c-8034-25e637f07276]: FINISHING"}}
+[debug] [2025-12-19T21:18:08.279Z] [worker-pool] Shutting down IDLE worker (us-central1-antigravity) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-antigravity)"}}
+[debug] [2025-12-19T21:18:08.279Z] [worker-us-central1-antigravity-8f9d0099-6866-43f2-b516-8ad028084521]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-antigravity"},"extension":{},"message":"[worker-us-central1-antigravity-8f9d0099-6866-43f2-b516-8ad028084521]: FINISHING"}}
+[debug] [2025-12-19T21:18:08.279Z] [worker-pool] Shutting down IDLE worker (us-central1-antigravity) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Shutting down IDLE worker (us-central1-antigravity)"}}
+[debug] [2025-12-19T21:18:08.279Z] [worker-us-central1-antigravity-dba64040-8ffe-4100-b5ae-466eed127427]: FINISHING {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-antigravity"},"extension":{},"message":"[worker-us-central1-antigravity-dba64040-8ffe-4100-b5ae-466eed127427]: FINISHING"}}
+[debug] [2025-12-19T21:18:08.299Z] [worker-us-central1-antigravity-a140a637-7890-4a38-9295-1e7d0e8aaeab]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-antigravity"},"extension":{},"message":"[worker-us-central1-antigravity-a140a637-7890-4a38-9295-1e7d0e8aaeab]: exited"}}
+[debug] [2025-12-19T21:18:08.299Z] [worker-us-central1-antigravity-a140a637-7890-4a38-9295-1e7d0e8aaeab]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-antigravity"},"extension":{},"message":"[worker-us-central1-antigravity-a140a637-7890-4a38-9295-1e7d0e8aaeab]: FINISHED"}}
+[debug] [2025-12-19T21:18:08.299Z] [worker-us-central1-antigravity-45e88874-e900-4f2c-8034-25e637f07276]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-antigravity"},"extension":{},"message":"[worker-us-central1-antigravity-45e88874-e900-4f2c-8034-25e637f07276]: exited"}}
+[debug] [2025-12-19T21:18:08.299Z] [worker-us-central1-antigravity-45e88874-e900-4f2c-8034-25e637f07276]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-antigravity"},"extension":{},"message":"[worker-us-central1-antigravity-45e88874-e900-4f2c-8034-25e637f07276]: FINISHED"}}
+[debug] [2025-12-19T21:18:08.299Z] [worker-us-central1-antigravity-8f9d0099-6866-43f2-b516-8ad028084521]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-antigravity"},"extension":{},"message":"[worker-us-central1-antigravity-8f9d0099-6866-43f2-b516-8ad028084521]: exited"}}
+[debug] [2025-12-19T21:18:08.299Z] [worker-us-central1-antigravity-8f9d0099-6866-43f2-b516-8ad028084521]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-antigravity"},"extension":{},"message":"[worker-us-central1-antigravity-8f9d0099-6866-43f2-b516-8ad028084521]: FINISHED"}}
+[debug] [2025-12-19T21:18:08.299Z] [worker-us-central1-antigravity-d907e36a-66f0-4838-871e-7b6c8592018d]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-antigravity"},"extension":{},"message":"[worker-us-central1-antigravity-d907e36a-66f0-4838-871e-7b6c8592018d]: exited"}}
+[debug] [2025-12-19T21:18:08.299Z] [worker-us-central1-antigravity-d907e36a-66f0-4838-871e-7b6c8592018d]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-antigravity"},"extension":{},"message":"[worker-us-central1-antigravity-d907e36a-66f0-4838-871e-7b6c8592018d]: FINISHED"}}
+[debug] [2025-12-19T21:18:08.299Z] [worker-us-central1-antigravity-dba64040-8ffe-4100-b5ae-466eed127427]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-antigravity"},"extension":{},"message":"[worker-us-central1-antigravity-dba64040-8ffe-4100-b5ae-466eed127427]: exited"}}
+[debug] [2025-12-19T21:18:08.299Z] [worker-us-central1-antigravity-dba64040-8ffe-4100-b5ae-466eed127427]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-antigravity"},"extension":{},"message":"[worker-us-central1-antigravity-dba64040-8ffe-4100-b5ae-466eed127427]: FINISHED"}}
+[debug] [2025-12-19T21:18:08.300Z] [worker-us-central1-antigravity-c73b523f-fa2a-4e8f-ac71-1367c0a10eef]: exited {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-antigravity"},"extension":{},"message":"[worker-us-central1-antigravity-c73b523f-fa2a-4e8f-ac71-1367c0a10eef]: exited"}}
+[debug] [2025-12-19T21:18:08.300Z] [worker-us-central1-antigravity-c73b523f-fa2a-4e8f-ac71-1367c0a10eef]: FINISHED {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-antigravity"},"extension":{},"message":"[worker-us-central1-antigravity-c73b523f-fa2a-4e8f-ac71-1367c0a10eef]: FINISHED"}}
+[debug] [2025-12-19T21:18:09.277Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2025-12-19T21:18:09.555Z] > [functions] package.json contents: {
+  "name": "powdercloud-2011-antigravity",
+  "version": "5.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev-web": "vite",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": "22"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase": "^12.6.0",
+    "firebase-admin": "^13.6.0",
+    "firebase-functions": "^7.0.0"
+  },
+  "devDependencies": {
+    "pino": "^10.1.0",
+    "pino-pretty": "^13.1.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0"
+  }
+}
+[debug] [2025-12-19T21:18:09.555Z] Building nodejs source
+[debug] [2025-12-19T21:18:09.555Z] Failed to find version of module node: reached end of search path /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/node_modules
+[warn] ⚠  functions: Your requested "node" version "22" doesn't match your global version "24". Using node@24 from host. 
+[debug] [2025-12-19T21:18:09.570Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-12-19T21:18:09.571Z] Found firebase-functions binary at '/Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/node_modules/.bin/firebase-functions'
+[info] Serving at port 8791
+
+[info] [FIREBASE] Using Cloud Firestore (Emulator connection commented out)
+
+[debug] [2025-12-19T21:18:09.783Z] Got response from /__/functions.yaml {"endpoints":{"antigravity":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"antigravity"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: antigravity. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: antigravity."}}
+[debug] [2025-12-19T21:18:31.500Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/COMPONENT_STRUCTURE.md changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/COMPONENT_STRUCTURE.md changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:32.512Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2025-12-19T21:18:32.873Z] > [functions] package.json contents: {
+  "name": "powdercloud-2011-antigravity",
+  "version": "5.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev-web": "vite",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": "22"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase": "^12.6.0",
+    "firebase-admin": "^13.6.0",
+    "firebase-functions": "^7.0.0"
+  },
+  "devDependencies": {
+    "pino": "^10.1.0",
+    "pino-pretty": "^13.1.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0"
+  }
+}
+[debug] [2025-12-19T21:18:32.873Z] Building nodejs source
+[debug] [2025-12-19T21:18:32.873Z] Failed to find version of module node: reached end of search path /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/node_modules
+[warn] ⚠  functions: Your requested "node" version "22" doesn't match your global version "24". Using node@24 from host. 
+[debug] [2025-12-19T21:18:32.888Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-12-19T21:18:32.889Z] Found firebase-functions binary at '/Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/node_modules/.bin/firebase-functions'
+[info] Serving at port 8638
+
+[info] [FIREBASE] Using Cloud Firestore (Emulator connection commented out)
+
+[debug] [2025-12-19T21:18:33.189Z] Got response from /__/functions.yaml {"endpoints":{"antigravity":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"antigravity"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: antigravity. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: antigravity."}}
+[debug] [2025-12-19T21:18:58.537Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/fix_flat_imports.py changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/fix_flat_imports.py changed, reloading triggers"}}
+[debug] [2025-12-19T21:18:59.550Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2025-12-19T21:18:59.932Z] > [functions] package.json contents: {
+  "name": "powdercloud-2011-antigravity",
+  "version": "5.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev-web": "vite",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": "22"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase": "^12.6.0",
+    "firebase-admin": "^13.6.0",
+    "firebase-functions": "^7.0.0"
+  },
+  "devDependencies": {
+    "pino": "^10.1.0",
+    "pino-pretty": "^13.1.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0"
+  }
+}
+[debug] [2025-12-19T21:18:59.932Z] Building nodejs source
+[debug] [2025-12-19T21:18:59.932Z] Failed to find version of module node: reached end of search path /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/node_modules
+[warn] ⚠  functions: Your requested "node" version "22" doesn't match your global version "24". Using node@24 from host. 
+[debug] [2025-12-19T21:18:59.943Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-12-19T21:18:59.944Z] Found firebase-functions binary at '/Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/node_modules/.bin/firebase-functions'
+[info] Serving at port 8110
+
+[info] [FIREBASE] Using Cloud Firestore (Emulator connection commented out)
+
+[debug] [2025-12-19T21:19:00.172Z] Got response from /__/functions.yaml {"endpoints":{"antigravity":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"antigravity"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: antigravity. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: antigravity."}}
+[debug] [2025-12-19T21:19:04.672Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/dashboard_lit.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/dashboard_lit.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.673Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/report_snowpack.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/report_snowpack.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.769Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/activity_generic.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/activity_generic.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.769Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/report_danger.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/report_danger.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.769Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/overview.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/overview.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.769Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/report_infoex.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/report_infoex.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.769Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/activity_zone_status.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/activity_zone_status.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.769Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/analysis_avalanche.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/analysis_avalanche.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.769Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/report_news.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/report_news.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.769Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/validators.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/validators.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.769Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/observation.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/observation.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.769Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_sighting_event.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_sighting_event.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.769Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/patterns.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/patterns.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.769Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/forms.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/forms.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.769Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/admin_settings.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/admin_settings.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.769Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/admin_obs_type_editor.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/admin_obs_type_editor.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.769Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/core.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/core.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.769Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/admin_role_editor.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/admin_role_editor.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/architecture.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/architecture.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/report_field_weather.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/report_field_weather.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/report_weather_plots.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/report_weather_plots.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/graphics.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/graphics.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/report_stability.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/report_stability.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/activity_zone_usage.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/activity_zone_usage.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_weather_field.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_weather_field.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_layer_narrative.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_layer_narrative.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/user_profile.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/user_profile.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_avalanche_multiple.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_avalanche_multiple.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_snowpack_concerns.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_snowpack_concerns.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_news.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_news.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_weather_study_plot.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_weather_study_plot.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_stability_rating.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_stability_rating.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/layout.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/layout.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/admin_app_editor.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/admin_app_editor.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/admin_atlas.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/admin_atlas.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/activity_hazard_evaluation.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/activity_hazard_evaluation.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/activity_run_usage.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/activity_run_usage.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_snowpack_structure.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_snowpack_structure.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.770Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/docs/run_structure.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/docs/run_structure.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.771Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_danger_rating.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_danger_rating.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.771Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/activity_hazard_forecast.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/activity_hazard_forecast.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.771Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_sighting_narrative.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_sighting_narrative.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.771Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/feedback.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/feedback.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.771Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_weather_narrative.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_weather_narrative.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.771Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_layers.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_layers.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.774Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/operation_list.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/operation_list.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.774Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_avalanche_narrative.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/obs_avalanche_narrative.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.774Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/admin_users.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/admin_users.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.774Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/activity_run_status.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/activity_run_status.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.774Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/admin_data_sharing.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/admin_data_sharing.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.774Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/atoms.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/atoms.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.774Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/lookup_editor.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/lookup_editor.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.774Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/development_components.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/development_components.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.774Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/containers.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/containers.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:04.774Z] File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/overlays.html changed, reloading triggers {"metadata":{"emulator":{"name":"functions"},"message":"File /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/public/admin/design_system/overlays.html changed, reloading triggers"}}
+[debug] [2025-12-19T21:19:05.794Z] Validating nodejs source
+[warn] ⚠  functions: package.json indicates an outdated version of firebase-functions. Please upgrade using npm install --save firebase-functions@latest in your functions directory. 
+[debug] [2025-12-19T21:19:06.215Z] > [functions] package.json contents: {
+  "name": "powdercloud-2011-antigravity",
+  "version": "5.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev-web": "vite",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "engines": {
+    "node": "22"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "firebase": "^12.6.0",
+    "firebase-admin": "^13.6.0",
+    "firebase-functions": "^7.0.0"
+  },
+  "devDependencies": {
+    "pino": "^10.1.0",
+    "pino-pretty": "^13.1.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0"
+  }
+}
+[debug] [2025-12-19T21:19:06.215Z] Building nodejs source
+[debug] [2025-12-19T21:19:06.215Z] Failed to find version of module node: reached end of search path /Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/node_modules
+[warn] ⚠  functions: Your requested "node" version "22" doesn't match your global version "24". Using node@24 from host. 
+[debug] [2025-12-19T21:19:06.231Z] Could not find functions.yaml. Must use http discovery
+[debug] [2025-12-19T21:19:06.232Z] Found firebase-functions binary at '/Users/currydt/development/powderclouds/powdercloud-project/powdercloud-2025-antigravity/node_modules/.bin/firebase-functions'
+[info] Serving at port 8922
+
+[info] [FIREBASE] Using Cloud Firestore (Emulator connection commented out)
+
+[debug] [2025-12-19T21:19:06.576Z] Got response from /__/functions.yaml {"endpoints":{"antigravity":{"availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"concurrency":null,"serviceAccountEmail":null,"vpc":null,"platform":"gcfv2","labels":{},"httpsTrigger":{},"entryPoint":"antigravity"}},"specVersion":"v1alpha1","requiredAPIs":[],"extensions":{}}
+[info] ✔  functions: Loaded functions definitions from source: antigravity. {"metadata":{"emulator":{"name":"functions"},"message":"Loaded functions definitions from source: antigravity."}}

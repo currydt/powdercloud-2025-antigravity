@@ -1,7 +1,7 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../utils/PowdercloudDashboardGrid.js';
-import '../containment/PowdercloudModal.js';
-import '../forms/PowdercloudSnowpackForm.js';
+import './PowdercloudDashboardGrid.js';
+import './PowdercloudModal.js';
+import './PowdercloudSnowpackForm.js';
 
 export class PowdercloudSnowpackGrid extends LitElement {
     createRenderRoot() { return this; }

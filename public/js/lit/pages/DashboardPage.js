@@ -1,22 +1,22 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../utils/PowdercloudDateSelector.js';
-import '../utils/PowdercloudCollapsiblePanel.js';
-import '../utils/PowdercloudAvalancheRose.js';
+import '../components/PowdercloudDateSelector.js';
+import '../components/PowdercloudCollapsiblePanel.js';
+import '../components/PowdercloudAvalancheRose.js';
 
 // Charts
-import '../charts/PowdercloudSeasonalChart.js';
-import '../charts/PowdercloudFailureTypesChart.js';
-import '../charts/PowdercloudTriggerTypesChart.js';
-import '../charts/PowdercloudSnowpackHeightChart.js';
-import '../charts/PowdercloudTemperatureRangeChart.js';
-import '../charts/PowdercloudWindSpeedChart.js';
+import '../components/PowdercloudSeasonalChart.js';
+import '../components/PowdercloudFailureTypesChart.js';
+import '../components/PowdercloudTriggerTypesChart.js';
+import '../components/PowdercloudSnowpackHeightChart.js';
+import '../components/PowdercloudTemperatureRangeChart.js';
+import '../components/PowdercloudWindSpeedChart.js';
 
 // Grids
-import '../grids/PowdercloudWeatherGrid.js';
-import '../grids/PowdercloudAvalancheGrid.js';
-import '../grids/PowdercloudSnowpackGrid.js';
-import '../grids/PowdercloudStabilityGrid.js';
-import '../grids/PowdercloudNewsGrid.js';
+import '../components/PowdercloudWeatherGrid.js';
+import '../components/PowdercloudAvalancheGrid.js';
+import '../components/PowdercloudSnowpackGrid.js';
+import '../components/PowdercloudStabilityGrid.js';
+import '../components/PowdercloudNewsGrid.js';
 
 export class DashboardPage extends LitElement {
     createRenderRoot() {

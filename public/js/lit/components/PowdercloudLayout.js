@@ -1,8 +1,8 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
 import './PowdercloudHeader.js';
 import './PowdercloudFooter.js';
-import '../data-display/PowdercloudDisclaimer.js'; // Still imported but not seemingly used in template?
-import '../navigation/PowdercloudBreadcrumbs.js';
+import './PowdercloudDisclaimer.js'; // Still imported but not seemingly used in template?
+import './PowdercloudBreadcrumbs.js';
 
 export class PowdercloudLayout extends LitElement {
     static properties = {

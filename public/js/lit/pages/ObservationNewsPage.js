@@ -1,5 +1,5 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../grids/PowdercloudNewsGrid.js';
+import '../components/PowdercloudNewsGrid.js';
 
 export class ObservationNewsPage extends LitElement {
     createRenderRoot() {

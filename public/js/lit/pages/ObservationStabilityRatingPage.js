@@ -1,5 +1,5 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../grids/PowdercloudStabilityGrid.js';
+import '../components/PowdercloudStabilityGrid.js';
 
 export class ObservationStabilityRatingPage extends LitElement {
     createRenderRoot() {

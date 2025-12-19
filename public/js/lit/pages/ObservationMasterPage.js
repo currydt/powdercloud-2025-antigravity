@@ -1,5 +1,5 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../grids/PowdercloudWeatherGrid.js';
+import '../components/PowdercloudWeatherGrid.js';
 
 export class ObservationMasterPage extends LitElement {
     createRenderRoot() {

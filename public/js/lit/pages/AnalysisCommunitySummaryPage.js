@@ -1,13 +1,13 @@
 import { LitElement, html } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../layout/PowdercloudLayout.js';
-import '../utils/PowdercloudFilterPanel.js';
-import '../utils/PowdercloudDashboardChart.js';
-import '../utils/PowdercloudDashboardGrid.js';
-import '../layout/PowdercloudContainer.js';
-import '../layout/PowdercloudGrid.js';
-import '../containment/PowdercloudCard.js';
-import '../utils/PowdercloudAvalancheRose.js';
-import '../navigation/PowdercloudTabs.js';
+import '../components/PowdercloudLayout.js';
+import '../components/PowdercloudFilterPanel.js';
+import '../components/PowdercloudDashboardChart.js';
+import '../components/PowdercloudDashboardGrid.js';
+import '../components/PowdercloudContainer.js';
+import '../components/PowdercloudGrid.js';
+import '../components/PowdercloudCard.js';
+import '../components/PowdercloudAvalancheRose.js';
+import '../components/PowdercloudTabs.js';
 
 export class AnalysisCommunitySummaryPage extends LitElement {
     static properties = {

@@ -1,14 +1,14 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../layout/PowdercloudContainer.js';
-import '../utils/PowdercloudComponentDoc.js';
-import '../communication/PowdercloudAlert.js';
-import '../data-display/PowdercloudDisclaimer.js';
-import '../utils/PowdercloudCollapsiblePanel.js';
-import '../navigation/PowdercloudBreadcrumbs.js';
-import '../layout/PowdercloudFooter.js';
-import '../layout/PowdercloudHeader.js';
-import '../layout/PowdercloudLayout.js';
-import '../navigation/PowdercloudMegaMenu.js';
+import '../components/PowdercloudContainer.js';
+import '../components/PowdercloudComponentDoc.js';
+import '../components/PowdercloudAlert.js';
+import '../components/PowdercloudDisclaimer.js';
+import '../components/PowdercloudCollapsiblePanel.js';
+import '../components/PowdercloudBreadcrumbs.js';
+import '../components/PowdercloudFooter.js';
+import '../components/PowdercloudHeader.js';
+import '../components/PowdercloudLayout.js';
+import '../components/PowdercloudMegaMenu.js';
 
 export class DesignSystemCorePage extends LitElement {
     createRenderRoot() {

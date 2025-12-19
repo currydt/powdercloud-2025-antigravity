@@ -1,11 +1,11 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../layout/PowdercloudLayout.js';
-import '../layout/PowdercloudContainer.js';
-import '../containment/PowdercloudCard.js';
-import '../actions/PowdercloudButton.js';
-import '../layout/PowdercloudGrid.js';
-import '../inputs/PowdercloudSelect.js';
-import '../inputs/PowdercloudDateRange.js';
+import '../components/PowdercloudLayout.js';
+import '../components/PowdercloudContainer.js';
+import '../components/PowdercloudCard.js';
+import '../components/PowdercloudButton.js';
+import '../components/PowdercloudGrid.js';
+import '../components/PowdercloudSelect.js';
+import '../components/PowdercloudDateRange.js';
 
 // Reference: public/reports/avalanche_event.html
 

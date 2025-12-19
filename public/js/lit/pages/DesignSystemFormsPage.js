@@ -1,13 +1,13 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../layout/PowdercloudContainer.js';
-import '../utils/PowdercloudComponentDoc.js';
-import '../containment/PowdercloudFieldset.js';
-import '../inputs/PowdercloudInput.js';
-import '../inputs/PowdercloudTextarea.js';
-import '../inputs/PowdercloudSelect.js';
-import '../inputs/PowdercloudCheckbox.js';
-import '../inputs/PowdercloudRadio.js';
-import '../actions/PowdercloudButton.js';
+import '../components/PowdercloudContainer.js';
+import '../components/PowdercloudComponentDoc.js';
+import '../components/PowdercloudFieldset.js';
+import '../components/PowdercloudInput.js';
+import '../components/PowdercloudTextarea.js';
+import '../components/PowdercloudSelect.js';
+import '../components/PowdercloudCheckbox.js';
+import '../components/PowdercloudRadio.js';
+import '../components/PowdercloudButton.js';
 
 export class DesignSystemFormsPage extends LitElement {
     createRenderRoot() {

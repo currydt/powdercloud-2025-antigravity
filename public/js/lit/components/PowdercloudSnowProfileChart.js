@@ -1,5 +1,5 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import { PowdercloudSvgSnowprofile } from '../utils/PowdercloudSvgSnowprofile.js';
+import { PowdercloudSvgSnowprofile } from './PowdercloudSvgSnowprofile.js';
 
 /**
  * PowdercloudSnowProfileChart

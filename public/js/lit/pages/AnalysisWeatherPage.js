@@ -1,11 +1,11 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../utils/PowdercloudFilterPanel.js';
-import '../utils/PowdercloudDashboardChart.js';
-import '../utils/PowdercloudDashboardGrid.js';
-import '../layout/PowdercloudContainer.js';
-import '../layout/PowdercloudGrid.js';
-import '../containment/PowdercloudCard.js';
-import '../utils/PowdercloudAvalancheRose.js';
+import '../components/PowdercloudFilterPanel.js';
+import '../components/PowdercloudDashboardChart.js';
+import '../components/PowdercloudDashboardGrid.js';
+import '../components/PowdercloudContainer.js';
+import '../components/PowdercloudGrid.js';
+import '../components/PowdercloudCard.js';
+import '../components/PowdercloudAvalancheRose.js';
 
 export class AnalysisWeatherPage extends LitElement {
     static properties = {

@@ -1,4 +1,4 @@
-import { DashboardChart } from '../utils/PowdercloudDashboardChart.js';
+import { DashboardChart } from './PowdercloudDashboardChart.js';
 
 
 export class PowdercloudSeasonalChart extends DashboardChart {

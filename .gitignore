@@ -1,3 +1,7 @@
 node_modules
 .DS_Store
 reference/
+
+dist_web/
+firebase-debug.log
+server_debug.log

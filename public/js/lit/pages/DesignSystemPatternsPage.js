@@ -1,8 +1,8 @@
 import { LitElement, html, css } from 'https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js';
-import '../layout/PowdercloudContainer.js';
-import '../utils/PowdercloudComponentDoc.js';
-import '../utils/PowdercloudFilterPanel.js';
-import '../utils/PowdercloudDashboardGrid.js';
+import '../components/PowdercloudContainer.js';
+import '../components/PowdercloudComponentDoc.js';
+import '../components/PowdercloudFilterPanel.js';
+import '../components/PowdercloudDashboardGrid.js';
 
 export class DesignSystemPatternsPage extends LitElement {
     static properties = {
